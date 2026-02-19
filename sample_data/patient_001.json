@@ -1,0 +1,21 @@
+﻿{
+  "patient_id": "PAT-001",
+  "nom": "Patient Exemple",
+  "age": 62,
+  "sexe": "M",
+  "contexte_clinique": "Adenocarcinome pulmonaire non a petites cellules, stade IIIA",
+  "diagnostic": "NSCLC localement avance",
+  "antecedents": [
+    "Hypertension arterielle",
+    "Tabagisme sevre depuis 6 ans"
+  ],
+  "symptomes": [
+    "Toux chronique",
+    "Dyspnee d'effort"
+  ],
+  "traitements": [
+    "Chimiotherapie induction",
+    "Radiotherapie thoracique"
+  ],
+  "description": "Patient avec reponse partielle apres traitement d'induction. Evaluation multidisciplinaire demandee."
+}

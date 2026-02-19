@@ -1,0 +1,24 @@
+{
+  "questions": [
+    {
+      "id": "pertinence",
+      "text": "La conclusion IA est-elle cliniquement pertinente pour ce patient ?"
+    },
+    {
+      "id": "precision",
+      "text": "Le niveau de detail de la conclusion IA est-il suffisant ?"
+    },
+    {
+      "id": "coherence_rcp",
+      "text": "La conclusion IA est-elle coherente avec la conclusion RCP ?"
+    },
+    {
+      "id": "aide_decision",
+      "text": "La conclusion IA aide-t-elle la prise de decision clinique ?"
+    },
+    {
+      "id": "securite",
+      "text": "Le niveau de confiance dans la conclusion IA est-il acceptable pour un usage de pre-analyse ?"
+    }
+  ]
+}

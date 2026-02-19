@@ -1,0 +1,18 @@
+﻿{
+  "patient_id": "PAT-002",
+  "nom": "Patient Exemple 2",
+  "age": 47,
+  "sexe": "F",
+  "contexte_clinique": "Cancer du sein triple negatif, stade II",
+  "diagnostic": "Neoplasie mammaire infiltrante",
+  "antecedents": [
+    "Aucun antecedent majeur"
+  ],
+  "symptomes": [
+    "Masse palpable sein gauche"
+  ],
+  "traitements": [
+    "Chimiotherapie neoadjuvante"
+  ],
+  "description": "Patiente en cours d'evaluation de la reponse therapeutique pre-operatoire."
+}
