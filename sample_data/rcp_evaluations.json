@@ -1,0 +1,16 @@
+{
+  "evaluations": [
+    {
+      "patient_id": "P001",
+      "conclusion": "Proposition RCP: hormonothérapie adjuvante, pas d'indication de chimiothérapie complémentaire au vu du profil de risque."
+    },
+    {
+      "patient_id": "P002",
+      "conclusion": "Proposition RCP: chimio-immunothérapie de première ligne avec surveillance clinique rapprochée respiratoire."
+    },
+    {
+      "patient_id": "P003",
+      "conclusion": "Proposition RCP: adaptation des doses de chimiothérapie adjuvante compte tenu de la fonction rénale et de la fragilité gériatrique."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "patients": [
+    {
+      "patient_id": "P001",
+      "nom": "Mme A.",
+      "age": 63,
+      "sexe": "F",
+      "diagnostic": "Cancer du sein RH+, HER2-",
+      "stade": "IIA",
+      "description": "Patiente de 63 ans, opérée il y a 4 semaines, en bon état général (ECOG 0).",
+      "antecedents": [
+        "HTA équilibrée",
+        "Pas d'allergie médicamenteuse connue"
+      ]
+    },
+    {
+      "patient_id": "P002",
+      "nom": "M. B.",
+      "age": 58,
+      "sexe": "M",
+      "diagnostic": "Cancer bronchique non à petites cellules",
+      "stade": "IIIB",
+      "description": "Patient tabagique sevré, dyspnée d'effort modérée, ECOG 1.",
+      "biomarqueurs": {
+        "PD-L1": "60%",
+        "EGFR": "Négatif",
+        "ALK": "Négatif"
+      }
+    },
+    {
+      "patient_id": "P003",
+      "nom": "Mme C.",
+      "age": 71,
+      "sexe": "F",
+      "diagnostic": "Adénocarcinome colique",
+      "stade": "III",
+      "description": "Patiente fragile avec insuffisance rénale modérée et perte de poids récente.",
+      "comorbidites": [
+        "Diabète de type 2",
+        "Insuffisance rénale chronique stade 3"
+      ]
+    }
+  ]
+}

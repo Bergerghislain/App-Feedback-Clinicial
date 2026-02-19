@@ -1,0 +1,11 @@
+{
+  "P001": {
+    "conclusion": "IA: bonne candidate à une hormonothérapie adjuvante. Le bénéfice attendu d'une chimiothérapie paraît limité."
+  },
+  "P002": {
+    "conclusion": "IA: priorité à une stratégie d'immunothérapie combinée, avec évaluation précoce de la réponse à 8 semaines."
+  },
+  "P003": {
+    "conclusion": "IA: risque accru de toxicité; recommander une approche personnalisée avec possible réduction de dose initiale."
+  }
+}

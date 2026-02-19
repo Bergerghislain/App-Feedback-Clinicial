@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.spec
+resultats_questionnaire.csv
+sample_data/resultats_questionnaire.csv
