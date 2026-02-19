@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from app import (
+from core import (
     QUESTION_HEADERS,
     append_feedback_rows,
     load_json_file,
