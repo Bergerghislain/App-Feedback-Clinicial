@@ -1,6 +1,6 @@
 # App-Feedback-Clinicial
 
-Application desktop (interface graphique) pour permettre a des cliniciens d'evaluer la pertinence de conclusions IA par rapport aux conclusions RCP, a partir de fichiers JSON.
+Application desktop (interface graphique PyQt6, plus ergonomique et coloree) pour permettre a des cliniciens d'evaluer la pertinence de conclusions IA par rapport aux conclusions RCP, a partir de fichiers JSON.
 
 ## Objectif
 
@@ -15,14 +15,19 @@ L'application permet de:
 
 ## Structure du projet
 
-- `app.py`: application principale (Tkinter).
+- `app.py`: application principale (PyQt6).
 - `questions.json`: liste des questions modifiables sans changer le code.
 - `sample_data/`: exemples JSON pour tester le flux complet.
 - `results/`: dossier par defaut des CSV de sortie.
 
 ## Prerequis
 
-- Python 3.9+ (Tkinter inclus par defaut sur la plupart des installations Windows).
+- Python 3.9+
+- Module Qt pour Python:
+
+```powershell
+pip install PyQt6
+```
 
 ## Lancer l'application
 
@@ -34,25 +39,15 @@ python app.py
 
 ## Utilisation
 
-### Mode manuel (1 patient)
-
-1. Selectionner:
-   - le JSON patient;
-   - le JSON conclusion RCP;
-   - le JSON conclusion IA.
-2. Cliquer sur `Charger les donnees`.
-3. Lire les informations affichees.
-4. Noter toutes les questions (1 a 5), ajouter un commentaire si besoin.
-5. Choisir un fichier CSV de sortie puis cliquer `Enregistrer cette evaluation`.
-
-### Mode batch (plusieurs patients)
+### Mode batch automatique (plusieurs patients)
 
 1. Choisir le `Dossier batch`.
-2. Cliquer sur `Charger le batch`.
-3. L'application detecte automatiquement les trios JSON (`patient` + `RCP` + `IA`).
-4. Remplir le questionnaire puis cliquer `Enregistrer cette evaluation`.
-5. L'application charge automatiquement le patient suivant.
-6. Utiliser `Patient precedent` / `Patient suivant` si besoin.
+2. Cliquer sur `Rafraichir liste JSON`.
+3. L'application explore tous les sous-dossiers et detecte automatiquement les trios JSON (`patient` + `RCP` + `IA`).
+4. Selectionner un patient dans la liste (a gauche).
+5. Remplir le questionnaire puis cliquer `Enregistrer evaluation`.
+6. L'application charge automatiquement le patient suivant.
+7. Utiliser `Patient precedent` / `Patient suivant` si besoin.
 
 Le statut de progression du batch est affiche dans l'interface.
 
@@ -65,13 +60,18 @@ Le CSV contiendra:
 - les scores de chaque question;
 - le commentaire libre.
 
-## Convention de nommage pour le batch
+## Repertoires et appariement batch
 
-Le mode batch fonctionne si le dossier contient des fichiers nommes avec des mots-cles reconnaissables:
+Tu peux organiser tes fichiers comme tu veux, par exemple:
 
-- patient: `patient_001.json`, `patient_PAT-001.json`
-- RCP: `rcp_eval_001.json`, `rcp_conclusion_PAT-001.json`
-- IA: `ia_eval_001.json`, `ai_conclusion_PAT-001.json`
+- `batch/patients/*.json`
+- `batch/rcp/*.json`
+- `batch/ia/*.json`
+
+L'application lit recursivement tous les JSON du dossier selectionne puis identifie les roles via:
+
+- le nom du fichier / dossier (`patient`, `rcp`, `ia`, etc.);
+- le contenu JSON (champs cliniques patient, texte d'evaluation, source/model).
 
 L'appariement se fait automatiquement via:
 
@@ -79,6 +79,13 @@ L'appariement se fait automatiquement via:
 - la partie commune du nom de fichier (ex: `001`, `PAT-001`).
 
 Chaque patient doit avoir les 3 JSON requis pour etre charge dans le batch.
+Les JSON de configuration des questions (ex: `questions.json`) sont ignores dans le batch.
+
+## Important pour les cliniciens
+
+- Les cliniciens ne choisissent plus les JSON un par un.
+- Ils choisissent seulement le dossier de donnees (ou utilisent le dossier par defaut), puis l'app liste les patients prets a evaluer.
+- L'export CSV reste automatique: une ligne par patient evalue.
 
 ## Modifier les questions
 
