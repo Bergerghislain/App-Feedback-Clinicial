@@ -1,6 +1,6 @@
 # App-Feedback-Clinicial
 
-Application desktop (interface graphique PyQt6, plus ergonomique et coloree) pour permettre a des cliniciens d'evaluer la pertinence de conclusions IA par rapport aux conclusions RCP, a partir de fichiers JSON.
+Application desktop permettant a des cliniciens d'evaluer la pertinence de conclusions IA par rapport aux conclusions RCP, a partir de fichiers JSON.
 
 ## Objectif
 
@@ -83,8 +83,9 @@ Les JSON de configuration des questions (ex: `questions.json`) sont ignores dans
 
 ## Important pour les cliniciens
 
-- Les cliniciens ne choisissent plus les JSON un par un.
-- Ils choisissent seulement le dossier de donnees (ou utilisent le dossier par defaut), puis l'app liste les patients prets a evaluer.
+- Les cliniciens ne choisissent pas les JSON un par un.
+- Ils choisissent seulement le dossier de donnees (ou utilisent le dossier par defaut present dans l'arborescence qui leur ai fournit avec l'executable, en cliquant sur l'executable , un chemin vers le dossier des patients est charge dans l'app par defaut), puis l'app liste les patients prets a evaluer.
+-  Ils n'ont qu'a evaluer les evaluations des patients via l'interface une a une , puis cliquer sur patient suivant , et a la fin enregistrer les resultats qui seront telecharges automatiquement dans un dossier results ( qui sera cree si non deja existant ) sous formats csv
 - L'export CSV reste automatique: une ligne par patient evalue.
 
 ## Modifier les questions
