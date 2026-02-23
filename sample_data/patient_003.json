@@ -1,0 +1,18 @@
+{
+  "patient_id": "PAT-003",
+  "nom": "Patient 003",
+  "age": 65,
+  "sexe": "M",
+  "contexte_clinique": "Dedifferentiated recurrent retroperitoneal liposarcoma threatening solitary kidney",
+  "diagnostic": "Dedifferentiated recurrent retroperitoneal liposarcoma threatening solitary kidney",
+  "antecedents": [
+    "Hypertension",
+    "Chronic kidney disease with solitary kidney",
+    "History of retroperitoneal liposarcoma"
+  ],
+  "traitements": [
+    "Surgery R0 in 2018"
+  ],
+  "recent_exam_results": "Rapidly growing retroperitoneal mass with obstructive renal failure episode",
+  "description": "65-year-old man. Rapidly growing retroperitoneal mass with obstructive renal failure episode."
+}

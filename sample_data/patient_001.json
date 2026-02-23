@@ -1,21 +1,16 @@
-﻿{
+{
   "patient_id": "PAT-001",
-  "nom": "Patient Exemple",
-  "age": 62,
+  "nom": "Patient 001",
+  "age": 29,
   "sexe": "M",
-  "contexte_clinique": "Adenocarcinome pulmonaire non a petites cellules, stade IIIA",
-  "diagnostic": "NSCLC localement avance",
+  "contexte_clinique": "Metastatic gastric GIST with liver involvement, KIT wild-type and PDGFRA non-mutated, early progression under imatinib",
+  "diagnostic": "Metastatic gastric GIST with liver involvement, KIT wild-type and PDGFRA non-mutated, early progression under imatinib",
   "antecedents": [
-    "Hypertension arterielle",
-    "Tabagisme sevre depuis 6 ans"
-  ],
-  "symptomes": [
-    "Toux chronique",
-    "Dyspnee d'effort"
+    "None"
   ],
   "traitements": [
-    "Chimiotherapie induction",
-    "Radiotherapie thoracique"
+    "Imatinib 400 mg/day with hepatic progression"
   ],
-  "description": "Patient avec reponse partielle apres traitement d'induction. Evaluation multidisciplinaire demandee."
+  "recent_exam_results": "Imaging showing hepatic progression after 3 months of treatment",
+  "description": "29-year-old man. Imaging showing hepatic progression after 3 months of treatment."
 }

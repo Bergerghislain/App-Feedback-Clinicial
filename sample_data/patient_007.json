@@ -1,0 +1,16 @@
+{
+  "patient_id": "PAT-007",
+  "nom": "Patient 007",
+  "age": 60,
+  "sexe": "M",
+  "contexte_clinique": "Progressive pleural monophasic synovial sarcoma grade 3",
+  "diagnostic": "Progressive pleural monophasic synovial sarcoma grade 3",
+  "antecedents": [
+    "None"
+  ],
+  "traitements": [
+    "Pleural drainage with talc pleurodesis"
+  ],
+  "recent_exam_results": "CT scan showing worsening pleural nodular thickening",
+  "description": "60-year-old man. CT scan showing worsening pleural nodular thickening."
+}

@@ -1,0 +1,17 @@
+{
+  "patient_id": "PAT-004",
+  "nom": "Patient 004",
+  "age": 29,
+  "sexe": "M",
+  "contexte_clinique": "Suspected oligometastatic pulmonary relapse of Ewing sarcoma",
+  "diagnostic": "Suspected oligometastatic pulmonary relapse of Ewing sarcoma",
+  "antecedents": [
+    "Type 2 diabetes",
+    "History of treated costal Ewing sarcoma"
+  ],
+  "traitements": [
+    "VDC/IE chemotherapy, R0 surgery, adjuvant chemotherapy and radiotherapy"
+  ],
+  "recent_exam_results": "Two isolated pulmonary nodules",
+  "description": "29-year-old man. Two isolated pulmonary nodules."
+}

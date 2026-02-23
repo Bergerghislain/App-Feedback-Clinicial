@@ -1,18 +1,18 @@
-﻿{
+{
   "patient_id": "PAT-002",
-  "nom": "Patient Exemple 2",
-  "age": 47,
+  "nom": "Patient 002",
+  "age": 69,
   "sexe": "F",
-  "contexte_clinique": "Cancer du sein triple negatif, stade II",
-  "diagnostic": "Neoplasie mammaire infiltrante",
+  "contexte_clinique": "Large retroperitoneal leiomyosarcoma grade 2, initially unresectable",
+  "diagnostic": "Large retroperitoneal leiomyosarcoma grade 2, initially unresectable",
   "antecedents": [
-    "Aucun antecedent majeur"
-  ],
-  "symptomes": [
-    "Masse palpable sein gauche"
+    "Hypertension",
+    "Type 2 diabetes",
+    "Dyslipidemia"
   ],
   "traitements": [
-    "Chimiotherapie neoadjuvante"
+    "No prior oncologic treatment"
   ],
-  "description": "Patiente en cours d'evaluation de la reponse therapeutique pre-operatoire."
+  "recent_exam_results": "CT scan showing a 20 cm retroperitoneal mass without metastasis",
+  "description": "69-year-old woman. CT scan showing a 20 cm retroperitoneal mass without metastasis."
 }

@@ -1,0 +1,16 @@
+{
+  "patient_id": "PAT-010",
+  "nom": "Patient 010",
+  "age": 49,
+  "sexe": "M",
+  "contexte_clinique": "Hepatic progression of metastatic myxoid liposarcoma",
+  "diagnostic": "Hepatic progression of metastatic myxoid liposarcoma",
+  "antecedents": [
+    "None"
+  ],
+  "traitements": [
+    "Trabectedin first line then doxorubicin second line"
+  ],
+  "recent_exam_results": "CT scan showing significant hepatic progression",
+  "description": "49-year-old man. CT scan showing significant hepatic progression."
+}

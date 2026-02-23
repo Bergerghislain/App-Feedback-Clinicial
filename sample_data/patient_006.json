@@ -1,0 +1,16 @@
+{
+  "patient_id": "PAT-006",
+  "nom": "Patient 006",
+  "age": 37,
+  "sexe": "M",
+  "contexte_clinique": "Pulmonary metastases with pleural effusion after pleomorphic liposarcoma",
+  "diagnostic": "Pulmonary metastases with pleural effusion after pleomorphic liposarcoma",
+  "antecedents": [
+    "Active smoking"
+  ],
+  "traitements": [
+    "Neoadjuvant Adriamycin-Ifosfamide followed by surgery R0"
+  ],
+  "recent_exam_results": "Three pulmonary nodules and right pleural effusion",
+  "description": "37-year-old man. Three pulmonary nodules and right pleural effusion."
+}

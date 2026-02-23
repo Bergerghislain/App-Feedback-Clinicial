@@ -1,0 +1,17 @@
+{
+  "patient_id": "PAT-011",
+  "nom": "Patient 011",
+  "age": 78,
+  "sexe": "F",
+  "contexte_clinique": "Localized ileocecal progression of ALK-positive inflammatory myofibroblastic tumor",
+  "diagnostic": "Localized ileocecal progression of ALK-positive inflammatory myofibroblastic tumor",
+  "antecedents": [
+    "Hypertension",
+    "Osteoporosis"
+  ],
+  "traitements": [
+    "Crizotinib followed by Lorlatinib"
+  ],
+  "recent_exam_results": "PET scan showing ileocecal progression",
+  "description": "78-year-old woman. PET scan showing ileocecal progression."
+}

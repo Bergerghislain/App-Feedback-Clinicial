@@ -1,0 +1,16 @@
+{
+  "patient_id": "PAT-009",
+  "nom": "Patient 009",
+  "age": 39,
+  "sexe": "M",
+  "contexte_clinique": "Nodal recurrence of epithelioid sarcoma with INI1 loss",
+  "diagnostic": "Nodal recurrence of epithelioid sarcoma with INI1 loss",
+  "antecedents": [
+    "History of epithelioid sarcoma treated with amputation"
+  ],
+  "traitements": [
+    "Neoadjuvant chemotherapy, amputation, adjuvant chemotherapy"
+  ],
+  "recent_exam_results": "Biopsy confirming nodal recurrence",
+  "description": "39-year-old man. Biopsy confirming nodal recurrence."
+}

@@ -1,0 +1,16 @@
+{
+  "patient_id": "PAT-005",
+  "nom": "Patient 005",
+  "age": 62,
+  "sexe": "F",
+  "contexte_clinique": "Rapidly progressive pulmonary recurrence of undifferentiated pleomorphic sarcoma",
+  "diagnostic": "Rapidly progressive pulmonary recurrence of undifferentiated pleomorphic sarcoma",
+  "antecedents": [
+    "Hypertension"
+  ],
+  "traitements": [
+    "Neoadjuvant radiotherapy, R0 surgery, SBRT for lung nodules"
+  ],
+  "recent_exam_results": "New rapidly growing pulmonary nodule >3 cm",
+  "description": "62-year-old woman. New rapidly growing pulmonary nodule >3 cm."
+}

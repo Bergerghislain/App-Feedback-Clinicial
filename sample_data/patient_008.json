@@ -1,0 +1,16 @@
+{
+  "patient_id": "PAT-008",
+  "nom": "Patient 008",
+  "age": 32,
+  "sexe": "M",
+  "contexte_clinique": "Desmoplastic small round cell tumor with peritoneal carcinomatosis",
+  "diagnostic": "Desmoplastic small round cell tumor with peritoneal carcinomatosis",
+  "antecedents": [
+    "None"
+  ],
+  "traitements": [
+    "None"
+  ],
+  "recent_exam_results": "CT showing multiple peritoneal masses and lymphadenopathy",
+  "description": "32-year-old man. CT showing multiple peritoneal masses and lymphadenopathy."
+}
