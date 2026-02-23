@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QColor
 from PyQt6.QtWidgets import (
     QApplication,
     QButtonGroup,
@@ -97,6 +98,8 @@ def get_app_base_dir() -> Path:
 
 APP_DIR = get_app_base_dir()
 DEFAULT_RESULTS_DIR = APP_DIR / "results"
+OUTPUT_CSV_DELIMITER = ";"
+COLLECTION_CSV_NAME = "evaluations.csv"
 
 
 @dataclass
@@ -307,6 +310,78 @@ def load_questions_from_json(path: Path) -> List[Dict[str, str]]:
     return parsed_questions or DEFAULT_QUESTIONS
 
 
+def detect_csv_delimiter(path: Path) -> str:
+    try:
+        with path.open("r", encoding="utf-8-sig") as file:
+            sample = file.read(4096)
+    except Exception:
+        return OUTPUT_CSV_DELIMITER
+
+    if not sample.strip():
+        return OUTPUT_CSV_DELIMITER
+
+    try:
+        dialect = csv.Sniffer().sniff(sample, delimiters=";,")
+        return dialect.delimiter if dialect.delimiter in (";", ",") else OUTPUT_CSV_DELIMITER
+    except Exception:
+        if sample.count(";") >= sample.count(","):
+            return ";"
+        return ","
+
+
+def read_csv_rows(path: Path):
+    delimiter = detect_csv_delimiter(path)
+    with path.open("r", newline="", encoding="utf-8-sig") as file:
+        reader = csv.DictReader(file, delimiter=delimiter)
+        return (reader.fieldnames or []), list(reader)
+
+
+def bootstrap_collection_csv(default_path: Path) -> Path:
+    default_path.parent.mkdir(parents=True, exist_ok=True)
+    if default_path.exists():
+        return default_path
+
+    legacy_paths = sorted(default_path.parent.glob("evaluations_*.csv"))
+    if not legacy_paths:
+        return default_path
+
+    merged_columns: List[str] = []
+    merged_rows: List[Dict[str, Any]] = []
+    seen_rows = set()
+
+    for legacy_path in legacy_paths:
+        try:
+            columns, rows = read_csv_rows(legacy_path)
+        except Exception:
+            continue
+
+        for column in columns:
+            if column not in merged_columns:
+                merged_columns.append(column)
+
+        for row in rows:
+            row_signature = json.dumps(row, ensure_ascii=False, sort_keys=True)
+            if row_signature in seen_rows:
+                continue
+            seen_rows.add(row_signature)
+            merged_rows.append(row)
+
+    if not merged_columns:
+        return default_path
+
+    normalized_rows = [{column: row.get(column, "") for column in merged_columns} for row in merged_rows]
+    with default_path.open("w", newline="", encoding="utf-8-sig") as file:
+        writer = csv.DictWriter(file, fieldnames=merged_columns, delimiter=OUTPUT_CSV_DELIMITER)
+        writer.writeheader()
+        writer.writerows(normalized_rows)
+
+    return default_path
+
+
+def get_collection_csv_path() -> Path:
+    return bootstrap_collection_csv(DEFAULT_RESULTS_DIR / COLLECTION_CSV_NAME)
+
+
 def discover_patient_bundles(root: Path):
     entries: Dict[str, Dict[str, Any]] = {}
 
@@ -398,12 +473,13 @@ class ClinicianFeedbackApp(QMainWindow):
         self.questions = load_questions_from_json(self.questions_path)
         self.question_groups: Dict[str, QButtonGroup] = {}
 
-        default_csv = DEFAULT_RESULTS_DIR / f"evaluations_{datetime.now():%Y%m%d}.csv"
+        default_csv = get_collection_csv_path()
         self.output_csv_path = default_csv
         self.data_dir = self._default_data_dir()
         self.bundles: List[PatientBundle] = []
         self.current_index = -1
         self.evaluated_keys = set()
+        self.evaluation_counts: Dict[str, int] = {}
 
         self._build_ui()
         self._apply_styles()
@@ -440,10 +516,12 @@ class ClinicianFeedbackApp(QMainWindow):
         self.refresh_btn.clicked.connect(lambda: self.scan_data_directory(show_message=True))
         top_layout.addWidget(self.refresh_btn, 0, 3)
 
-        top_layout.addWidget(QLabel("CSV resultats"), 1, 0)
+        top_layout.addWidget(QLabel("CSV collecte (unique)"), 1, 0)
         self.csv_output_input = QLineEdit(str(self.output_csv_path))
+        self.csv_output_input.setReadOnly(True)
+        self.csv_output_input.editingFinished.connect(self.on_csv_path_changed)
         top_layout.addWidget(self.csv_output_input, 1, 1)
-        self.pick_csv_btn = QPushButton("Choisir CSV")
+        self.pick_csv_btn = QPushButton("Recharger CSV")
         self.pick_csv_btn.clicked.connect(self.pick_output_csv)
         top_layout.addWidget(self.pick_csv_btn, 1, 2)
 
@@ -479,6 +557,8 @@ class ClinicianFeedbackApp(QMainWindow):
 
         self.progress_label = QLabel("Patients evalues: 0/0")
         left_layout.addWidget(self.progress_label)
+        self.legend_label = QLabel("Legende: [A FAIRE] non evalue | [EVALUE] deja enregistre")
+        left_layout.addWidget(self.legend_label)
         splitter.addWidget(left_panel)
 
         right_scroll = QScrollArea()
@@ -565,6 +645,15 @@ class ClinicianFeedbackApp(QMainWindow):
                 border-radius: 8px;
                 padding: 6px;
             }
+            QListWidget::item {
+                padding: 6px;
+                border-radius: 6px;
+                margin: 2px;
+            }
+            QListWidget::item:selected {
+                border: 2px solid #1d4ed8;
+                color: #0b1020;
+            }
             QPushButton {
                 background: #2f80ed;
                 color: white;
@@ -590,36 +679,61 @@ class ClinicianFeedbackApp(QMainWindow):
         self.scan_data_directory(show_message=True)
 
     def pick_output_csv(self):
-        selected, _ = QFileDialog.getSaveFileName(
-            self,
-            "Choisir fichier CSV de sortie",
-            str(self.output_csv_path),
-            "CSV Files (*.csv);;All Files (*)",
-        )
-        if not selected:
-            return
-        self.output_csv_path = Path(selected)
+        # Le fichier de collecte est unique pour garantir une consolidation globale.
+        self.output_csv_path = get_collection_csv_path()
         self.csv_output_input.setText(str(self.output_csv_path))
-        self.load_evaluated_keys_from_csv()
-        self.refresh_patient_list_status()
+        self.on_csv_path_changed()
 
-    def load_evaluated_keys_from_csv(self):
+    def on_csv_path_changed(self):
+        self.output_csv_path = get_collection_csv_path()
+        self.csv_output_input.setText(str(self.output_csv_path))
+        csv_path = self.output_csv_path
+        loaded_rows = self.load_evaluated_keys_from_csv()
+        self.refresh_patient_list_status()
+        if self.bundles:
+            self.patient_list.setCurrentRow(self._first_unevaluated_index())
+        if csv_path.exists():
+            self.set_status(f"CSV charge: {csv_path} | Lignes reconnues: {loaded_rows}")
+        else:
+            self.set_status(f"Nouveau CSV (sera cree): {csv_path}")
+
+    def load_evaluated_keys_from_csv(self) -> int:
         self.evaluated_keys = set()
-        csv_path = Path(self.csv_output_input.text().strip())
+        self.evaluation_counts = {}
+        csv_path = self.output_csv_path
         if not csv_path.exists():
-            return
+            return 0
+
+        def get_row_value(row: Dict[str, Any], aliases: List[str]) -> str:
+            normalized = {str(key).strip().lower(): value for key, value in row.items()}
+            for alias in aliases:
+                value = normalized.get(alias.lower())
+                if value not in (None, ""):
+                    return str(value).strip()
+            return ""
+
+        loaded_rows = 0
         try:
-            with csv_path.open("r", newline="", encoding="utf-8") as file:
-                reader = csv.DictReader(file)
+            delimiter = detect_csv_delimiter(csv_path)
+            with csv_path.open("r", newline="", encoding="utf-8-sig") as file:
+                reader = csv.DictReader(file, delimiter=delimiter)
                 for row in reader:
-                    batch_key = (row.get("batch_key") or "").strip()
-                    patient_id = (row.get("patient_id") or "").strip()
-                    if batch_key:
-                        self.evaluated_keys.add(normalize_pair_key(batch_key))
-                    elif patient_id:
-                        self.evaluated_keys.add(normalize_pair_key(patient_id))
+                    batch_key = get_row_value(row, ["batch_key", "batchkey", "key"])
+                    patient_id = get_row_value(row, ["patient_id", "patientid", "id_patient", "id"])
+                    raw_key = batch_key or patient_id
+                    if not raw_key:
+                        continue
+                    normalized = normalize_pair_key(raw_key)
+                    self.evaluated_keys.add(normalized)
+                    self.evaluation_counts[normalized] = self.evaluation_counts.get(normalized, 0) + 1
+                    loaded_rows += 1
+                    if patient_id:
+                        patient_norm = normalize_pair_key(patient_id)
+                        self.evaluated_keys.add(patient_norm)
+                        self.evaluation_counts[patient_norm] = self.evaluation_counts.get(patient_norm, 0) + 1
         except Exception:
-            pass
+            return 0
+        return loaded_rows
 
     def scan_data_directory(self, show_message: bool):
         root = Path(self.data_dir_input.text().strip())
@@ -632,7 +746,7 @@ class ClinicianFeedbackApp(QMainWindow):
         self.current_index = -1
         self.patient_list.clear()
         self.clear_view()
-        self.load_evaluated_keys_from_csv()
+        loaded_rows = self.load_evaluated_keys_from_csv()
 
         for bundle in self.bundles:
             item = QListWidgetItem(self._item_text(bundle))
@@ -645,7 +759,8 @@ class ClinicianFeedbackApp(QMainWindow):
         self.refresh_patient_list_status()
 
         self.set_status(
-            f"JSON detectes: {len(self.bundles)} patients complets, {incomplete} incomplets ignores (cles: {total_keys})."
+            f"JSON detectes: {len(self.bundles)} patients complets, {incomplete} incomplets ignores "
+            f"(cles: {total_keys}). Lignes CSV reconnues: {loaded_rows}."
         )
         if show_message:
             QMessageBox.information(
@@ -661,22 +776,37 @@ class ClinicianFeedbackApp(QMainWindow):
         return 0
 
     def _is_evaluated(self, bundle: PatientBundle) -> bool:
-        return normalize_pair_key(bundle.key) in self.evaluated_keys or normalize_pair_key(bundle.patient_id) in self.evaluated_keys
+        return self._evaluation_count(bundle) > 0
+
+    def _evaluation_count(self, bundle: PatientBundle) -> int:
+        key_norm = normalize_pair_key(bundle.key)
+        patient_norm = normalize_pair_key(bundle.patient_id)
+        return max(self.evaluation_counts.get(key_norm, 0), self.evaluation_counts.get(patient_norm, 0))
 
     def _item_text(self, bundle: PatientBundle) -> str:
-        status = "Evalue" if self._is_evaluated(bundle) else "A evaluer"
-        return f"[{status}] {bundle.patient_id} ({bundle.key})"
+        count = self._evaluation_count(bundle)
+        if count > 0:
+            return f"[EVALUE x{count}] {bundle.patient_id} ({bundle.key})"
+        return f"[A FAIRE] {bundle.patient_id} ({bundle.key})"
 
     def refresh_patient_list_status(self):
         done = 0
         for index, bundle in enumerate(self.bundles):
-            if self._is_evaluated(bundle):
+            is_done = self._is_evaluated(bundle)
+            if is_done:
                 done += 1
             item = self.patient_list.item(index)
             if item is not None:
                 item.setText(self._item_text(bundle))
+                if is_done:
+                    item.setBackground(QColor("#22c55e"))
+                    item.setForeground(QColor("#06240f"))
+                else:
+                    item.setBackground(QColor("#f59e0b"))
+                    item.setForeground(QColor("#2f1a00"))
         total = len(self.bundles)
-        self.progress_label.setText(f"Patients evalues: {done}/{total}")
+        remaining = max(0, total - done)
+        self.progress_label.setText(f"Patients evalues: {done}/{total} | Restants: {remaining}")
 
     def on_patient_selected(self, row: int):
         if row < 0 or row >= len(self.bundles):
@@ -747,23 +877,40 @@ class ClinicianFeedbackApp(QMainWindow):
             QMessageBox.warning(self, "Questionnaire incomplet", "Renseignez toutes les notes de 1 a 5.")
             return
 
-        csv_path = Path(self.csv_output_input.text().strip())
+        csv_path = self.output_csv_path
         if not csv_path.name:
             QMessageBox.warning(self, "CSV invalide", "Definissez un chemin CSV valide.")
             return
         csv_path.parent.mkdir(parents=True, exist_ok=True)
 
         bundle = self.bundles[self.current_index]
+        previous_count = self._evaluation_count(bundle)
+        if previous_count > 0:
+            response = QMessageBox.question(
+                self,
+                "Patient deja evalue",
+                f"Ce patient possede deja {previous_count} evaluation(s) dans le CSV.\n"
+                "Voulez-vous ajouter une nouvelle evaluation ?",
+                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                QMessageBox.StandardButton.Yes,
+            )
+            if response != QMessageBox.StandardButton.Yes:
+                return
+
+        timestamp = datetime.now()
         row = {
-            "timestamp": datetime.now().isoformat(timespec="seconds"),
+            "timestamp": timestamp.isoformat(timespec="seconds"),
+            "evaluation_id": timestamp.strftime("%Y%m%d%H%M%S"),
             "patient_id": bundle.patient_id,
             "batch_key": bundle.key,
+            "evaluation_numero_patient": previous_count + 1,
             "patient_json_path": str(bundle.patient_path),
             "rcp_json_path": str(bundle.rcp_path),
             "ia_json_path": str(bundle.ia_path),
             "commentaire": self.comment_edit.toPlainText().strip(),
         }
         for question in self.questions:
+            row[f"question_{question['id']}"] = question["text"]
             row[f"score_{question['id']}"] = ratings[question["id"]]
 
         try:
@@ -772,10 +919,23 @@ class ClinicianFeedbackApp(QMainWindow):
             QMessageBox.critical(self, "Erreur export CSV", str(error))
             return
 
-        self.evaluated_keys.add(normalize_pair_key(bundle.key))
-        self.evaluated_keys.add(normalize_pair_key(bundle.patient_id))
+        key_norm = normalize_pair_key(bundle.key)
+        patient_norm = normalize_pair_key(bundle.patient_id)
+        self.evaluated_keys.add(key_norm)
+        self.evaluated_keys.add(patient_norm)
+        self.evaluation_counts[key_norm] = self.evaluation_counts.get(key_norm, 0) + 1
+        self.evaluation_counts[patient_norm] = self.evaluation_counts.get(patient_norm, 0) + 1
         self.refresh_patient_list_status()
         self.set_status(f"Evaluation enregistree dans {final_path}")
+
+        if previous_count > 0:
+            self.reset_form()
+            QMessageBox.information(
+                self,
+                "Re-evaluation enregistree",
+                f"Nouvelle evaluation enregistree pour {bundle.patient_id}.\nCSV: {final_path}",
+            )
+            return
 
         if self.current_index < len(self.bundles) - 1:
             self.patient_list.setCurrentRow(self.current_index + 1)
@@ -784,22 +944,37 @@ class ClinicianFeedbackApp(QMainWindow):
 
     def append_row_to_csv(self, output_csv_path: Path, row: Dict[str, Any]) -> Path:
         target_path = output_csv_path
-        expected_columns = list(row.keys())
+        target_path.parent.mkdir(parents=True, exist_ok=True)
+        new_columns = list(row.keys())
+        existing_rows: List[Dict[str, Any]] = []
+        existing_columns: List[str] = []
 
         if target_path.exists():
-            with target_path.open("r", newline="", encoding="utf-8") as file:
-                reader = csv.DictReader(file)
+            delimiter = detect_csv_delimiter(target_path)
+            with target_path.open("r", newline="", encoding="utf-8-sig") as file:
+                reader = csv.DictReader(file, delimiter=delimiter)
                 existing_columns = reader.fieldnames or []
-            if existing_columns != expected_columns:
-                timestamp = datetime.now().strftime("%H%M%S")
-                target_path = target_path.with_stem(f"{target_path.stem}_{timestamp}")
+                existing_rows = list(reader)
 
-        file_exists = target_path.exists()
-        with target_path.open("a", newline="", encoding="utf-8") as file:
-            writer = csv.DictWriter(file, fieldnames=expected_columns)
-            if not file_exists:
-                writer.writeheader()
-            writer.writerow(row)
+        merged_columns = list(existing_columns)
+        for column in new_columns:
+            if column not in merged_columns:
+                merged_columns.append(column)
+        if not merged_columns:
+            merged_columns = new_columns
+
+        normalized_rows = [{column: existing_row.get(column, "") for column in merged_columns} for existing_row in existing_rows]
+        normalized_rows.append({column: row.get(column, "") for column in merged_columns})
+
+        with target_path.open("w", newline="", encoding="utf-8-sig") as file:
+            writer = csv.DictWriter(
+                file,
+                fieldnames=merged_columns,
+                delimiter=OUTPUT_CSV_DELIMITER,
+                extrasaction="ignore",
+            )
+            writer.writeheader()
+            writer.writerows(normalized_rows)
         return target_path
 
 
