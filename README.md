@@ -1,142 +1,91 @@
 # App-Feedback-Clinicial
 
-Application desktop permettant a des cliniciens d'evaluer la pertinence de conclusions IA par rapport aux conclusions RCP, a partir de fichiers JSON.
+Application desktop PyQt6 pour evaluation clinique en 2 etapes:
 
-## Objectif
+- etape 1: evaluation de deux conclusions affichees de facon neutre (`Conclusion 1` et `Conclusion 2`);
+- etape 2: evaluation de la reflexion IA pour le meme patient.
 
-L'application permet de:
+L'application collecte automatiquement les resultats dans des CSV dans `results/`.
 
-- charger 3 JSON (patient, conclusion RCP, conclusion IA) via des chemins locaux;
-- charger automatiquement un batch de patients depuis un dossier;
-- afficher les informations patient + les 2 conclusions en texte lisible;
-- faire remplir un questionnaire de notation de 1 a 5;
-- sauvegarder les reponses dans un CSV (une ligne par evaluation/patient);
-- enchainer les evaluations sans recharger manuellement les fichiers a chaque patient.
+## Structure attendue
 
-## Structure du projet
+Pour un test clinique, placer les fichiers avec cette structure:
 
-- `app.py`: application principale (PyQt6).
-- `questions.json`: liste des questions modifiables sans changer le code.
-- `sample_data/`: exemples JSON pour tester le flux complet.
-- `results/`: dossier par defaut des CSV de sortie.
+- `app.py`
+- `data/` (ou `sample_data/` en fallback)
+- `results/` (cree automatiquement si absent)
 
-## Prerequis
+Le dossier `data/` doit contenir les JSON patients + JSON evaluations (RCP et IA), apparies par patient.
 
-- Python 3.9+
-- Module Qt pour Python:
+## Test chez un clinicien (acces repo Git)
+
+### 1) Recuperer le repo
 
 ```powershell
-pip install PyQt6
+git clone <URL_DU_REPO>
+cd App-Feedback-Clinicial
 ```
 
-## Lancer l'application
+### 2) Installer l'environnement
 
-Depuis le dossier du projet:
+```powershell
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 3) Lancer l'application
 
 ```powershell
 python app.py
 ```
 
-## Utilisation
+### 4) Parcours utilisateur clinique
 
-### Mode batch automatique (plusieurs patients)
+1. Ouvrir l'application (les donnees sont chargees depuis `data/` ou `sample_data/`).
+2. Lire la description patient (bloc principal, en haut).
+3. Noter `Conclusion 1` et `Conclusion 2` (sans connaitre la source IA/RCP).
+4. Cliquer `Go to the next page` (les notes de conclusions sont sauvegardees et verrouillees).
+5. Sur la page 2, evaluer la reflexion IA (QCM + commentaire).
+6. Cliquer `Go to the next patient`.
+7. Sur le dernier patient, cliquer `Finish`.
 
-1. Choisir le `Dossier batch`.
-2. Cliquer sur `Rafraichir liste JSON`.
-3. L'application explore tous les sous-dossiers et detecte automatiquement les trios JSON (`patient` + `RCP` + `IA`).
-4. Selectionner un patient dans la liste (a gauche).
-5. Remplir le questionnaire puis cliquer `Enregistrer evaluation`.
-6. L'application charge automatiquement le patient suivant.
-7. Utiliser `Patient precedent` / `Patient suivant` si besoin.
+## Fichiers de sortie (collecte resultats)
 
-Le statut de progression du batch est affiche dans l'interface.
+Apres les evaluations, 3 CSV sont produits dans `results/`:
 
-Le CSV contiendra:
+- `evaluations_conclusion_ia.csv`
+- `evaluations_conclusion_rcp.csv`
+- `evaluations_reflexion_ia.csv`
 
-- un timestamp;
-- l'identifiant patient;
-- une cle de batch (`batch_key`);
-- les chemins des JSON utilises;
-- les scores de chaque question;
-- le commentaire libre.
+Chaque ligne est identifiable de facon unique par:
 
-## Repertoires et appariement batch
+- `evaluation_id`
+- `patient_id`
+- `batch_key`
+- `timestamp`
 
-Tu peux organiser tes fichiers comme tu veux, par exemple:
+## Contenu de demo
 
-- `batch/patients/*.json`
-- `batch/rcp/*.json`
-- `batch/ia/*.json`
+Le repo contient des exemples prets a presenter:
 
-L'application lit recursivement tous les JSON du dossier selectionne puis identifie les roles via:
+- `sample_data/patient_001.json` ... `sample_data/patient_011.json`
+- `sample_data/rcp_eval_001.json` ... `sample_data/rcp_eval_009.json`
+- `sample_data/ia_eval_001.json` ... `sample_data/ia_eval_009.json`
+- `sample_data/ia_reasoning_001.json` ... `sample_data/ia_reasoning_011.json`
 
-- le nom du fichier / dossier (`patient`, `rcp`, `ia`, etc.);
-- le contenu JSON (champs cliniques patient, texte d'evaluation, source/model).
+## Notes importantes
 
-L'appariement se fait automatiquement via:
+- Les cliniciens n'importent pas les JSON manuellement depuis l'interface.
+- L'etape 1 est volontairement "blindee" (pas de label IA/RCP).
+- Une fois l'etape 1 enregistree pour un patient, elle n'est plus modifiable.
+- Le bouton `Previous page` permet de revenir consulter la page 1 du meme patient uniquement.
 
-- l'ID patient trouve dans le JSON (si present), et/ou
-- la partie commune du nom de fichier (ex: `001`, `PAT-001`).
-
-Chaque patient doit avoir les 3 JSON requis pour etre charge dans le batch.
-Les JSON de configuration des questions (ex: `questions.json`) sont ignores dans le batch.
-
-## Important pour les cliniciens
-
-- Les cliniciens ne choisissent pas les JSON un par un.
-- Ils choisissent seulement le dossier de donnees (ou utilisent le dossier par defaut present dans l'arborescence qui leur ai fournit avec l'executable, en cliquant sur l'executable , un chemin vers le dossier des patients est charge dans l'app par defaut), puis l'app liste les patients prets a evaluer.
--  Ils n'ont qu'a evaluer les evaluations des patients via l'interface une a une , puis cliquer sur patient suivant , et a la fin enregistrer les resultats qui seront telecharges automatiquement dans un dossier results ( qui sera cree si non deja existant ) sous formats csv
-- L'export CSV reste automatique: une ligne par patient evalue.
-
-## Modifier les questions
-
-Editer `questions.json`:
-
-```json
-{
-  "questions": [
-    { "id": "q1", "text": "Texte de la question 1" },
-    { "id": "q2", "text": "Texte de la question 2" }
-  ]
-}
-```
-
-Tu peux ajouter/supprimer des questions. L'interface les recharge au demarrage.
-
-## Exemples JSON fournis
-
-- `sample_data/patient_001.json`
-- `sample_data/rcp_eval_001.json`
-- `sample_data/ia_eval_001.json`
-- `sample_data/patient_002.json`
-- `sample_data/rcp_eval_002.json`
-- `sample_data/ia_eval_002.json`
-
-Ces fichiers permettent de tester:
-
-- le flux unitaire (mode manuel);
-- le flux multi-patients (mode batch) avec enchainement automatique.
-
-## Generer un executable Windows (.exe)
-
-Installer PyInstaller:
+## Build executable (optionnel)
 
 ```powershell
 pip install pyinstaller
-```
-
-Construire l'executable:
-
-```powershell
 pyinstaller --noconfirm --onefile --windowed --name ClinicianFeedback app.py
 ```
 
-Le `.exe` sera genere dans:
-
-- `dist/ClinicianFeedback.exe`
-
-Pour distribuer l'outil aux cliniciens, transmettre:
-
-- l'executable;
-- un `questions.json` (si tu veux personnaliser le questionnaire);
-- les JSON patient/RCP/IA qu'ils doivent charger.
+Executable genere dans `dist/ClinicianFeedback.exe`.

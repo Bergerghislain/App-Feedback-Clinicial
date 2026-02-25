@@ -8,25 +8,20 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QColor
 from PyQt6.QtWidgets import (
     QApplication,
     QButtonGroup,
-    QFileDialog,
     QFrame,
     QGridLayout,
     QGroupBox,
     QHBoxLayout,
     QLabel,
-    QLineEdit,
-    QListWidget,
-    QListWidgetItem,
     QMainWindow,
     QMessageBox,
     QPlainTextEdit,
     QPushButton,
     QScrollArea,
-    QSplitter,
+    QStackedWidget,
     QVBoxLayout,
     QWidget,
 )
@@ -466,24 +461,49 @@ def discover_patient_bundles(root: Path):
 class ClinicianFeedbackApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Clinical Feedback - Evaluation IA vs RCP")
-        self.resize(1420, 920)
+        self.setWindowTitle("Clinical Feedback - Evaluation Clinique")
+        self.resize(1280, 820)
 
         self.questions_path = APP_DIR / "questions.json"
         self.questions = load_questions_from_json(self.questions_path)
-        self.question_groups: Dict[str, QButtonGroup] = {}
+        self.reasoning_qcm = [
+            {
+                "id": "clarte",
+                "text": "La reflexion de l'IA est-elle claire ?",
+                "options": [("tres_claire", "Tres claire"), ("moyenne", "Moyennement claire"), ("peu_claire", "Peu claire")],
+            },
+            {
+                "id": "coherence",
+                "text": "La reflexion est-elle coherent avec les donnees patient ?",
+                "options": [("coherente", "Oui"), ("partielle", "Partiellement"), ("non_coherente", "Non")],
+            },
+            {
+                "id": "utilite",
+                "text": "La reflexion apporte-t-elle une aide clinique utile ?",
+                "options": [("utile", "Utile"), ("limitee", "Utilite limitee"), ("inutile", "Peu utile")],
+            },
+        ]
 
-        default_csv = get_collection_csv_path()
-        self.output_csv_path = default_csv
         self.data_dir = self._default_data_dir()
-        self.bundles: List[PatientBundle] = []
-        self.current_index = -1
-        self.evaluated_keys = set()
-        self.evaluation_counts: Dict[str, int] = {}
+        self.results_dir = APP_DIR / "results"
+        self.results_dir.mkdir(parents=True, exist_ok=True)
+        self.csv_conclusion_ia_path = self.results_dir / "evaluations_conclusion_ia.csv"
+        self.csv_conclusion_rcp_path = self.results_dir / "evaluations_conclusion_rcp.csv"
+        self.csv_reasoning_path = self.results_dir / "evaluations_reflexion_ia.csv"
+
+        self.bundles, _, _ = discover_patient_bundles(self.data_dir)
+        self.current_index = 0
+        self.patient_states: Dict[str, Dict[str, Any]] = {}
+        self.completed_count = 0
+        self.current_conclusion_mapping: Dict[str, Any] = {}
+
+        self.page1_groups: Dict[str, Dict[str, QButtonGroup]] = {}
+        self.page2_qcm_groups: Dict[str, QButtonGroup] = {}
+        self.page2_qcm_options: Dict[str, List[Any]] = {}
 
         self._build_ui()
         self._apply_styles()
-        self.scan_data_directory(show_message=False)
+        self._load_current_patient()
 
     def _default_data_dir(self) -> Path:
         if (APP_DIR / "data").exists():
@@ -499,130 +519,157 @@ class ClinicianFeedbackApp(QMainWindow):
         root_layout.setSpacing(10)
         self.setCentralWidget(central)
 
-        top_card = QFrame()
-        top_layout = QGridLayout(top_card)
-        top_layout.setContentsMargins(12, 12, 12, 12)
-        top_layout.setHorizontalSpacing(8)
-        top_layout.setVerticalSpacing(8)
+        header = QFrame()
+        header_layout = QVBoxLayout(header)
+        header_layout.setContentsMargins(12, 12, 12, 12)
+        header_layout.setSpacing(4)
+        self.patient_counter_label = QLabel("Patient 0/0")
+        self.progress_label = QLabel("Evaluations finalisees: 0/0")
+        self.status_label = QLabel(f"Dossier de donnees detecte: {self.data_dir}")
+        header_layout.addWidget(self.patient_counter_label)
+        header_layout.addWidget(self.progress_label)
+        header_layout.addWidget(self.status_label)
+        root_layout.addWidget(header)
 
-        top_layout.addWidget(QLabel("Dossier donnees JSON"), 0, 0)
-        self.data_dir_input = QLineEdit(str(self.data_dir))
-        self.data_dir_input.setReadOnly(True)
-        top_layout.addWidget(self.data_dir_input, 0, 1)
-        self.change_dir_btn = QPushButton("Changer dossier")
-        self.change_dir_btn.clicked.connect(self.select_data_directory)
-        top_layout.addWidget(self.change_dir_btn, 0, 2)
-        self.refresh_btn = QPushButton("Rafraichir liste JSON")
-        self.refresh_btn.clicked.connect(lambda: self.scan_data_directory(show_message=True))
-        top_layout.addWidget(self.refresh_btn, 0, 3)
+        self.stack = QStackedWidget()
+        root_layout.addWidget(self.stack, 1)
 
-        top_layout.addWidget(QLabel("CSV collecte (unique)"), 1, 0)
-        self.csv_output_input = QLineEdit(str(self.output_csv_path))
-        self.csv_output_input.setReadOnly(True)
-        self.csv_output_input.editingFinished.connect(self.on_csv_path_changed)
-        top_layout.addWidget(self.csv_output_input, 1, 1)
-        self.pick_csv_btn = QPushButton("Recharger CSV")
-        self.pick_csv_btn.clicked.connect(self.pick_output_csv)
-        top_layout.addWidget(self.pick_csv_btn, 1, 2)
+        # Page 1: evaluation des conclusions (blindees)
+        self.page1 = QWidget()
+        page1_layout = QVBoxLayout(self.page1)
+        page1_layout.setContentsMargins(8, 8, 8, 8)
+        page1_layout.setSpacing(10)
 
-        self.save_btn = QPushButton("Enregistrer evaluation")
-        self.save_btn.clicked.connect(self.save_current_evaluation)
-        top_layout.addWidget(self.save_btn, 1, 3)
+        self.page1_title_label = QLabel("Etape 1 - Evaluation des conclusions")
+        page1_layout.addWidget(self.page1_title_label)
 
-        self.status_label = QLabel("Pret.")
-        top_layout.addWidget(self.status_label, 2, 0, 1, 4)
-        root_layout.addWidget(top_card)
+        description_group = QGroupBox("Description patient (a lire en premier)")
+        description_layout = QVBoxLayout(description_group)
+        self.description_text = QPlainTextEdit()
+        self.description_text.setReadOnly(True)
+        self.description_text.setMinimumHeight(120)
+        self.description_text.setMaximumHeight(180)
+        description_layout.addWidget(self.description_text)
+        page1_layout.addWidget(description_group)
 
-        splitter = QSplitter(Qt.Orientation.Horizontal)
-        root_layout.addWidget(splitter, 1)
-
-        left_panel = QFrame()
-        left_layout = QVBoxLayout(left_panel)
-        left_layout.setContentsMargins(10, 10, 10, 10)
-        left_layout.setSpacing(8)
-        left_layout.addWidget(QLabel("Patients detectes"))
-
-        self.patient_list = QListWidget()
-        self.patient_list.currentRowChanged.connect(self.on_patient_selected)
-        left_layout.addWidget(self.patient_list, 1)
-
-        nav_row = QHBoxLayout()
-        self.prev_btn = QPushButton("Precedent")
-        self.prev_btn.clicked.connect(self.go_previous)
-        self.next_btn = QPushButton("Suivant")
-        self.next_btn.clicked.connect(self.go_next)
-        nav_row.addWidget(self.prev_btn)
-        nav_row.addWidget(self.next_btn)
-        left_layout.addLayout(nav_row)
-
-        self.progress_label = QLabel("Patients evalues: 0/0")
-        left_layout.addWidget(self.progress_label)
-        self.legend_label = QLabel("Legende: [A FAIRE] non evalue | [EVALUE] deja enregistre")
-        left_layout.addWidget(self.legend_label)
-        splitter.addWidget(left_panel)
-
-        right_scroll = QScrollArea()
-        right_scroll.setWidgetResizable(True)
-        right_container = QWidget()
-        right_layout = QVBoxLayout(right_container)
-        right_layout.setContentsMargins(10, 10, 10, 10)
-        right_layout.setSpacing(10)
-        right_scroll.setWidget(right_container)
-        splitter.addWidget(right_scroll)
-        splitter.setStretchFactor(1, 1)
-
-        self.current_patient_label = QLabel("Patient courant: -")
-        right_layout.addWidget(self.current_patient_label)
-
-        details_group = QGroupBox("Informations en texte")
-        details_layout = QGridLayout(details_group)
-        details_layout.setVerticalSpacing(6)
-        details_layout.addWidget(QLabel("Description patient"), 0, 0)
-        details_layout.addWidget(QLabel("Conclusion RCP"), 0, 1)
-        details_layout.addWidget(QLabel("Conclusion IA"), 0, 2)
-
-        self.patient_text = QPlainTextEdit()
-        self.rcp_text = QPlainTextEdit()
-        self.ia_text = QPlainTextEdit()
-        for widget in (self.patient_text, self.rcp_text, self.ia_text):
+        conclusions_group = QGroupBox("Conclusions (affichage neutre)")
+        conclusions_layout = QGridLayout(conclusions_group)
+        conclusions_layout.addWidget(QLabel("Conclusion 1"), 0, 0)
+        conclusions_layout.addWidget(QLabel("Conclusion 2"), 0, 1)
+        self.conclusion1_text = QPlainTextEdit()
+        self.conclusion2_text = QPlainTextEdit()
+        for widget in (self.conclusion1_text, self.conclusion2_text):
             widget.setReadOnly(True)
-            widget.setMinimumHeight(220)
+            widget.setMinimumHeight(90)
+            widget.setMaximumHeight(140)
+        conclusions_layout.addWidget(self.conclusion1_text, 1, 0)
+        conclusions_layout.addWidget(self.conclusion2_text, 1, 1)
+        page1_layout.addWidget(conclusions_group)
 
-        details_layout.addWidget(self.patient_text, 1, 0)
-        details_layout.addWidget(self.rcp_text, 1, 1)
-        details_layout.addWidget(self.ia_text, 1, 2)
-        right_layout.addWidget(details_group)
+        questionnaire_group = QGroupBox("Noter chaque conclusion (1 a 5)")
+        questionnaire_layout = QGridLayout(questionnaire_group)
+        questionnaire_layout.addWidget(QLabel("Question"), 0, 0)
+        questionnaire_layout.addWidget(QLabel("Conclusion 1"), 0, 1)
+        questionnaire_layout.addWidget(QLabel("Conclusion 2"), 0, 2)
 
-        questionnaire_group = QGroupBox("Questionnaire (notes 1 a 5)")
-        questionnaire_layout = QVBoxLayout(questionnaire_group)
-        questionnaire_layout.setSpacing(8)
-        for index, question in enumerate(self.questions, start=1):
+        for row, question in enumerate(self.questions, start=1):
+            question_label = QLabel(f"{row}. {question['text']}")
+            question_label.setWordWrap(True)
+            questionnaire_layout.addWidget(question_label, row, 0)
+
+            self.page1_groups[question["id"]] = {}
+            for col, label in enumerate(("c1", "c2"), start=1):
+                score_row = QHBoxLayout()
+                group = QButtonGroup(self)
+                group.setExclusive(True)
+                self.page1_groups[question["id"]][label] = group
+                for score in range(1, 6):
+                    button = QPushButton(str(score))
+                    button.setCheckable(True)
+                    button.setMaximumWidth(36)
+                    group.addButton(button, score)
+                    score_row.addWidget(button)
+                container = QWidget()
+                container.setLayout(score_row)
+                questionnaire_layout.addWidget(container, row, col)
+        page1_layout.addWidget(questionnaire_group)
+
+        action_row = QHBoxLayout()
+        self.page1_locked_label = QLabel("")
+        self.page1_locked_label.hide()
+        self.page1_next_btn = QPushButton("Go to the next page")
+        self.page1_next_btn.clicked.connect(self._on_page1_next)
+        action_row.addWidget(self.page1_locked_label, 1)
+        action_row.addWidget(self.page1_next_btn)
+        page1_layout.addLayout(action_row)
+        self.stack.addWidget(self._wrap_in_scroll_area(self.page1))
+
+        # Page 2: evaluation de la reflexion IA
+        self.page2 = QWidget()
+        page2_layout = QVBoxLayout(self.page2)
+        page2_layout.setContentsMargins(8, 8, 8, 8)
+        page2_layout.setSpacing(10)
+
+        self.page2_title_label = QLabel("Etape 2 - Evaluation de la reflexion IA (meme patient)")
+        page2_layout.addWidget(self.page2_title_label)
+
+        reasoning_group = QGroupBox("Reflexion de l'IA")
+        reasoning_layout = QVBoxLayout(reasoning_group)
+        self.reasoning_text = QPlainTextEdit()
+        self.reasoning_text.setReadOnly(True)
+        self.reasoning_text.setMinimumHeight(140)
+        self.reasoning_text.setMaximumHeight(210)
+        reasoning_layout.addWidget(self.reasoning_text)
+        page2_layout.addWidget(reasoning_group)
+
+        qcm_group = QGroupBox("QCM reflexion IA")
+        qcm_layout = QVBoxLayout(qcm_group)
+        for question in self.reasoning_qcm:
             row = QHBoxLayout()
-            text_label = QLabel(f"{index}. {question['text']}")
-            text_label.setWordWrap(True)
-            row.addWidget(text_label, 2)
+            label = QLabel(question["text"])
+            label.setWordWrap(True)
+            row.addWidget(label, 2)
 
-            buttons_box = QHBoxLayout()
+            options_layout = QHBoxLayout()
             group = QButtonGroup(self)
             group.setExclusive(True)
-            self.question_groups[question["id"]] = group
-            for score in range(1, 6):
-                button = QPushButton(str(score))
-                button.setCheckable(True)
-                button.setMaximumWidth(38)
-                group.addButton(button, score)
-                buttons_box.addWidget(button)
-            row.addLayout(buttons_box, 1)
-            questionnaire_layout.addLayout(row)
-        right_layout.addWidget(questionnaire_group)
+            self.page2_qcm_groups[question["id"]] = group
+            self.page2_qcm_options[question["id"]] = question["options"]
 
-        comment_group = QGroupBox("Commentaire libre (optionnel)")
+            for index, (_, option_label) in enumerate(question["options"]):
+                button = QPushButton(option_label)
+                button.setCheckable(True)
+                group.addButton(button, index)
+                options_layout.addWidget(button)
+            row.addLayout(options_layout, 3)
+            qcm_layout.addLayout(row)
+        page2_layout.addWidget(qcm_group)
+
+        comment_group = QGroupBox("Commentaire libre sur la reflexion IA")
         comment_layout = QVBoxLayout(comment_group)
-        self.comment_edit = QPlainTextEdit()
-        self.comment_edit.setPlaceholderText("Commentaire clinique libre...")
-        self.comment_edit.setMinimumHeight(120)
-        comment_layout.addWidget(self.comment_edit)
-        right_layout.addWidget(comment_group)
+        self.reasoning_comment_edit = QPlainTextEdit()
+        self.reasoning_comment_edit.setPlaceholderText("Commentaire clinique libre sur la reflexion IA...")
+        self.reasoning_comment_edit.setMinimumHeight(90)
+        self.reasoning_comment_edit.setMaximumHeight(140)
+        comment_layout.addWidget(self.reasoning_comment_edit)
+        page2_layout.addWidget(comment_group)
+
+        nav_row = QHBoxLayout()
+        self.page2_previous_btn = QPushButton("Previous page")
+        self.page2_previous_btn.clicked.connect(self._on_page2_previous)
+        self.page2_next_patient_btn = QPushButton("Go to the next patient")
+        self.page2_next_patient_btn.clicked.connect(self._on_page2_next_patient)
+        nav_row.addWidget(self.page2_previous_btn)
+        nav_row.addStretch(1)
+        nav_row.addWidget(self.page2_next_patient_btn)
+        page2_layout.addLayout(nav_row)
+        self.stack.addWidget(self._wrap_in_scroll_area(self.page2))
+
+    def _wrap_in_scroll_area(self, page_widget: QWidget) -> QScrollArea:
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll.setWidget(page_widget)
+        return scroll
 
     def _apply_styles(self):
         self.setStyleSheet(
@@ -638,21 +685,16 @@ class ClinicianFeedbackApp(QMainWindow):
                 padding-top: 10px;
                 font-weight: 600;
             }
-            QLabel { color: #233142; }
-            QLineEdit, QPlainTextEdit, QListWidget {
+            QLabel { color: #233142; font-size: 13px; }
+            QPlainTextEdit {
                 background: #fbfdff;
                 border: 1px solid #c9d8ee;
                 border-radius: 8px;
-                padding: 6px;
+                padding: 8px;
             }
-            QListWidget::item {
-                padding: 6px;
-                border-radius: 6px;
-                margin: 2px;
-            }
-            QListWidget::item:selected {
-                border: 2px solid #1d4ed8;
-                color: #0b1020;
+            QScrollArea {
+                border: none;
+                background: transparent;
             }
             QPushButton {
                 background: #2f80ed;
@@ -667,291 +709,260 @@ class ClinicianFeedbackApp(QMainWindow):
             """
         )
 
-    def set_status(self, text: str):
+    def _set_status(self, text: str):
         self.status_label.setText(text)
 
-    def select_data_directory(self):
-        selected = QFileDialog.getExistingDirectory(self, "Choisir dossier de donnees", str(self.data_dir))
-        if not selected:
-            return
-        self.data_dir = Path(selected)
-        self.data_dir_input.setText(str(self.data_dir))
-        self.scan_data_directory(show_message=True)
+    def _extract_reasoning_text(self, ia_data: Any) -> str:
+        if isinstance(ia_data, dict):
+            for key in (
+                "reasoning",
+                "reflexion",
+                "reflection",
+                "raisonnement",
+                "reasoning_text",
+                "justification",
+                "explication",
+                "explanation",
+                "analysis",
+            ):
+                value = ia_data.get(key)
+                if value not in (None, "", []):
+                    return format_value(value)
+        return "Aucune reflexion IA fournie dans le JSON."
 
-    def pick_output_csv(self):
-        # Le fichier de collecte est unique pour garantir une consolidation globale.
-        self.output_csv_path = get_collection_csv_path()
-        self.csv_output_input.setText(str(self.output_csv_path))
-        self.on_csv_path_changed()
+    def _assign_conclusion_mapping(self, bundle: PatientBundle) -> Dict[str, Any]:
+        rcp_text = extract_evaluation_text(bundle.rcp_data)
+        ia_text = extract_evaluation_text(bundle.ia_data)
+        parity = sum(ord(character) for character in normalize_pair_key(bundle.key)) % 2
+        if parity == 0:
+            return {"c1_role": "ia", "c2_role": "rcp", "c1_text": ia_text, "c2_text": rcp_text}
+        return {"c1_role": "rcp", "c2_role": "ia", "c1_text": rcp_text, "c2_text": ia_text}
 
-    def on_csv_path_changed(self):
-        self.output_csv_path = get_collection_csv_path()
-        self.csv_output_input.setText(str(self.output_csv_path))
-        csv_path = self.output_csv_path
-        loaded_rows = self.load_evaluated_keys_from_csv()
-        self.refresh_patient_list_status()
-        if self.bundles:
-            self.patient_list.setCurrentRow(self._first_unevaluated_index())
-        if csv_path.exists():
-            self.set_status(f"CSV charge: {csv_path} | Lignes reconnues: {loaded_rows}")
-        else:
-            self.set_status(f"Nouveau CSV (sera cree): {csv_path}")
+    def _set_page1_editable(self, editable: bool):
+        for group_map in self.page1_groups.values():
+            for group in group_map.values():
+                for button in group.buttons():
+                    button.setEnabled(editable)
 
-    def load_evaluated_keys_from_csv(self) -> int:
-        self.evaluated_keys = set()
-        self.evaluation_counts = {}
-        csv_path = self.output_csv_path
-        if not csv_path.exists():
-            return 0
+    def _reset_page1_form(self):
+        for group_map in self.page1_groups.values():
+            for group in group_map.values():
+                group.setExclusive(False)
+                for button in group.buttons():
+                    button.setChecked(False)
+                group.setExclusive(True)
 
-        def get_row_value(row: Dict[str, Any], aliases: List[str]) -> str:
-            normalized = {str(key).strip().lower(): value for key, value in row.items()}
-            for alias in aliases:
-                value = normalized.get(alias.lower())
-                if value not in (None, ""):
-                    return str(value).strip()
-            return ""
-
-        loaded_rows = 0
-        try:
-            delimiter = detect_csv_delimiter(csv_path)
-            with csv_path.open("r", newline="", encoding="utf-8-sig") as file:
-                reader = csv.DictReader(file, delimiter=delimiter)
-                for row in reader:
-                    batch_key = get_row_value(row, ["batch_key", "batchkey", "key"])
-                    patient_id = get_row_value(row, ["patient_id", "patientid", "id_patient", "id"])
-                    raw_key = batch_key or patient_id
-                    if not raw_key:
-                        continue
-                    normalized = normalize_pair_key(raw_key)
-                    self.evaluated_keys.add(normalized)
-                    self.evaluation_counts[normalized] = self.evaluation_counts.get(normalized, 0) + 1
-                    loaded_rows += 1
-                    if patient_id:
-                        patient_norm = normalize_pair_key(patient_id)
-                        self.evaluated_keys.add(patient_norm)
-                        self.evaluation_counts[patient_norm] = self.evaluation_counts.get(patient_norm, 0) + 1
-        except Exception:
-            return 0
-        return loaded_rows
-
-    def scan_data_directory(self, show_message: bool):
-        root = Path(self.data_dir_input.text().strip())
-        if not root.exists() or not root.is_dir():
-            QMessageBox.warning(self, "Dossier invalide", f"Dossier introuvable: {root}")
-            return
-
-        bundles, total_keys, incomplete = discover_patient_bundles(root)
-        self.bundles = bundles
-        self.current_index = -1
-        self.patient_list.clear()
-        self.clear_view()
-        loaded_rows = self.load_evaluated_keys_from_csv()
-
-        for bundle in self.bundles:
-            item = QListWidgetItem(self._item_text(bundle))
-            item.setData(Qt.ItemDataRole.UserRole, bundle.key)
-            self.patient_list.addItem(item)
-
-        if self.bundles:
-            target_index = self._first_unevaluated_index()
-            self.patient_list.setCurrentRow(target_index)
-        self.refresh_patient_list_status()
-
-        self.set_status(
-            f"JSON detectes: {len(self.bundles)} patients complets, {incomplete} incomplets ignores "
-            f"(cles: {total_keys}). Lignes CSV reconnues: {loaded_rows}."
-        )
-        if show_message:
-            QMessageBox.information(
-                self,
-                "Scan termine",
-                f"Patients complets detectes: {len(self.bundles)}\nPatients incomplets ignores: {incomplete}",
-            )
-
-    def _first_unevaluated_index(self) -> int:
-        for index, bundle in enumerate(self.bundles):
-            if not self._is_evaluated(bundle):
-                return index
-        return 0
-
-    def _is_evaluated(self, bundle: PatientBundle) -> bool:
-        return self._evaluation_count(bundle) > 0
-
-    def _evaluation_count(self, bundle: PatientBundle) -> int:
-        key_norm = normalize_pair_key(bundle.key)
-        patient_norm = normalize_pair_key(bundle.patient_id)
-        return max(self.evaluation_counts.get(key_norm, 0), self.evaluation_counts.get(patient_norm, 0))
-
-    def _item_text(self, bundle: PatientBundle) -> str:
-        count = self._evaluation_count(bundle)
-        if count > 0:
-            return f"[EVALUE x{count}] {bundle.patient_id} ({bundle.key})"
-        return f"[A FAIRE] {bundle.patient_id} ({bundle.key})"
-
-    def refresh_patient_list_status(self):
-        done = 0
-        for index, bundle in enumerate(self.bundles):
-            is_done = self._is_evaluated(bundle)
-            if is_done:
-                done += 1
-            item = self.patient_list.item(index)
-            if item is not None:
-                item.setText(self._item_text(bundle))
-                if is_done:
-                    item.setBackground(QColor("#22c55e"))
-                    item.setForeground(QColor("#06240f"))
-                else:
-                    item.setBackground(QColor("#f59e0b"))
-                    item.setForeground(QColor("#2f1a00"))
-        total = len(self.bundles)
-        remaining = max(0, total - done)
-        self.progress_label.setText(f"Patients evalues: {done}/{total} | Restants: {remaining}")
-
-    def on_patient_selected(self, row: int):
-        if row < 0 or row >= len(self.bundles):
-            self.current_index = -1
-            self.clear_view()
-            return
-        self.current_index = row
-        self.load_patient_into_view(self.bundles[row])
-
-    def clear_view(self):
-        self.current_patient_label.setText("Patient courant: -")
-        self.patient_text.clear()
-        self.rcp_text.clear()
-        self.ia_text.clear()
-        self.reset_form()
-
-    def load_patient_into_view(self, bundle: PatientBundle):
-        self.current_patient_label.setText(
-            f"Patient courant: {bundle.patient_id} | {self.current_index + 1}/{len(self.bundles)}"
-        )
-        self.patient_text.setPlainText(format_patient_description(bundle.patient_data))
-        self.rcp_text.setPlainText(extract_evaluation_text(bundle.rcp_data))
-        self.ia_text.setPlainText(extract_evaluation_text(bundle.ia_data))
-        self.reset_form()
-        self.set_status(f"Patient charge: {bundle.patient_id}")
-
-    def reset_form(self):
-        for group in self.question_groups.values():
+    def _reset_page2_form(self):
+        for group in self.page2_qcm_groups.values():
             group.setExclusive(False)
             for button in group.buttons():
                 button.setChecked(False)
             group.setExclusive(True)
-        self.comment_edit.clear()
+        self.reasoning_comment_edit.clear()
 
-    def go_previous(self):
+    def _update_header(self):
+        total = len(self.bundles)
+        current = self.current_index + 1 if 0 <= self.current_index < total else 0
+        self.patient_counter_label.setText(f"Patient {current}/{total}")
+        self.progress_label.setText(f"Evaluations finalisees: {self.completed_count}/{total}")
+
+    def _load_current_patient(self):
         if not self.bundles:
+            self.patient_counter_label.setText("Patient 0/0")
+            self.progress_label.setText("Evaluations finalisees: 0/0")
+            self.description_text.setPlainText("Aucun patient charge. Verifiez le dossier data/.")
+            self.conclusion1_text.clear()
+            self.conclusion2_text.clear()
+            self.reasoning_text.clear()
+            self.page1_next_btn.setEnabled(False)
+            self.page2_next_patient_btn.setEnabled(False)
+            self._set_status(f"Aucun patient detecte dans {self.data_dir}")
             return
-        if self.current_index <= 0:
-            self.set_status("Premier patient deja selectionne.")
-            return
-        self.patient_list.setCurrentRow(self.current_index - 1)
 
-    def go_next(self):
-        if not self.bundles:
-            return
-        if self.current_index >= len(self.bundles) - 1:
-            self.set_status("Dernier patient atteint.")
-            return
-        self.patient_list.setCurrentRow(self.current_index + 1)
+        self._update_header()
+        bundle = self.bundles[self.current_index]
+        self.current_conclusion_mapping = self._assign_conclusion_mapping(bundle)
 
-    def collect_ratings(self) -> Optional[Dict[str, int]]:
-        ratings = {}
+        self.page1_title_label.setText(
+            f"Etape 1 - Evaluation des conclusions pour patient {bundle.patient_id}"
+        )
+        self.page2_title_label.setText(
+            f"Etape 2 - Evaluation de la reflexion IA pour patient {bundle.patient_id}"
+        )
+
+        self.description_text.setPlainText(format_patient_description(bundle.patient_data))
+        self.conclusion1_text.setPlainText(self.current_conclusion_mapping["c1_text"])
+        self.conclusion2_text.setPlainText(self.current_conclusion_mapping["c2_text"])
+        self.reasoning_text.setPlainText(self._extract_reasoning_text(bundle.ia_data))
+        self._reset_page2_form()
+
+        state = self.patient_states.get(bundle.key, {})
+        if state.get("stage1_saved"):
+            self.page1_locked_label.setText("Evaluation des conclusions deja enregistree. Modification desactivee.")
+            self.page1_locked_label.show()
+            self._set_page1_editable(False)
+        else:
+            self.page1_locked_label.hide()
+            self._set_page1_editable(True)
+            self._reset_page1_form()
+
+        is_last = self.current_index == len(self.bundles) - 1
+        self.page2_next_patient_btn.setText("Finish" if is_last else "Go to the next patient")
+        self.stack.setCurrentIndex(0)
+        self._set_status(f"Patient charge: {bundle.patient_id}")
+
+    def _collect_page1_scores(self):
+        scores = {"c1": {}, "c2": {}}
         for question in self.questions:
-            group = self.question_groups[question["id"]]
-            score = group.checkedId()
-            if score not in (1, 2, 3, 4, 5):
+            question_id = question["id"]
+            score_c1 = self.page1_groups[question_id]["c1"].checkedId()
+            score_c2 = self.page1_groups[question_id]["c2"].checkedId()
+            if score_c1 not in (1, 2, 3, 4, 5) or score_c2 not in (1, 2, 3, 4, 5):
                 return None
-            ratings[question["id"]] = score
-        return ratings
+            scores["c1"][question_id] = score_c1
+            scores["c2"][question_id] = score_c2
+        return scores
 
-    def save_current_evaluation(self):
-        if self.current_index < 0 or self.current_index >= len(self.bundles):
-            QMessageBox.warning(self, "Aucun patient", "Selectionnez un patient a evaluer.")
-            return
+    def _collect_page2_answers(self):
+        answers: Dict[str, Dict[str, str]] = {}
+        for question in self.reasoning_qcm:
+            question_id = question["id"]
+            selected_index = self.page2_qcm_groups[question_id].checkedId()
+            if selected_index < 0:
+                return None
+            option_id, option_label = self.page2_qcm_options[question_id][selected_index]
+            answers[question_id] = {"option_id": option_id, "option_label": option_label}
+        return answers
 
-        ratings = self.collect_ratings()
-        if ratings is None:
-            QMessageBox.warning(self, "Questionnaire incomplet", "Renseignez toutes les notes de 1 a 5.")
+    def _on_page1_next(self):
+        if not self.bundles:
             return
-
-        csv_path = self.output_csv_path
-        if not csv_path.name:
-            QMessageBox.warning(self, "CSV invalide", "Definissez un chemin CSV valide.")
-            return
-        csv_path.parent.mkdir(parents=True, exist_ok=True)
 
         bundle = self.bundles[self.current_index]
-        previous_count = self._evaluation_count(bundle)
-        if previous_count > 0:
-            response = QMessageBox.question(
-                self,
-                "Patient deja evalue",
-                f"Ce patient possede deja {previous_count} evaluation(s) dans le CSV.\n"
-                "Voulez-vous ajouter une nouvelle evaluation ?",
-                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
-                QMessageBox.StandardButton.Yes,
-            )
-            if response != QMessageBox.StandardButton.Yes:
-                return
+        state = self.patient_states.setdefault(bundle.key, {})
+        if state.get("stage1_saved"):
+            self.stack.setCurrentIndex(1)
+            return
+
+        scores = self._collect_page1_scores()
+        if scores is None:
+            QMessageBox.warning(self, "Questionnaire incomplet", "Renseignez toutes les notes pour Conclusion 1 et Conclusion 2.")
+            return
 
         timestamp = datetime.now()
-        row = {
+        evaluation_id = f"{bundle.patient_id}_{timestamp.strftime('%Y%m%d%H%M%S%f')}"
+        common_data = {
+            "evaluation_id": evaluation_id,
             "timestamp": timestamp.isoformat(timespec="seconds"),
-            "evaluation_id": timestamp.strftime("%Y%m%d%H%M%S"),
             "patient_id": bundle.patient_id,
             "batch_key": bundle.key,
-            "evaluation_numero_patient": previous_count + 1,
             "patient_json_path": str(bundle.patient_path),
             "rcp_json_path": str(bundle.rcp_path),
             "ia_json_path": str(bundle.ia_path),
-            "commentaire": self.comment_edit.toPlainText().strip(),
         }
-        for question in self.questions:
-            row[f"question_{question['id']}"] = question["text"]
-            row[f"score_{question['id']}"] = ratings[question["id"]]
+
+        rows_to_save = []
+        for display_key, display_label in (("c1", "Conclusion 1"), ("c2", "Conclusion 2")):
+            role = self.current_conclusion_mapping[f"{display_key}_role"]
+            row = {
+                **common_data,
+                "conclusion_affichee": display_label,
+                "source_reelle": role.upper(),
+                "conclusion_text": self.current_conclusion_mapping[f"{display_key}_text"],
+            }
+            for question in self.questions:
+                question_id = question["id"]
+                row[f"question_{question_id}"] = question["text"]
+                row[f"score_{question_id}"] = scores[display_key][question_id]
+            rows_to_save.append((role, row))
 
         try:
-            final_path = self.append_row_to_csv(csv_path, row)
+            for role, row in rows_to_save:
+                target_csv = self.csv_conclusion_ia_path if role == "ia" else self.csv_conclusion_rcp_path
+                self.append_row_to_csv(target_csv, row)
         except Exception as error:
-            QMessageBox.critical(self, "Erreur export CSV", str(error))
+            QMessageBox.critical(self, "Erreur export CSV", f"Impossible d'enregistrer les conclusions:\n{error}")
             return
 
-        key_norm = normalize_pair_key(bundle.key)
-        patient_norm = normalize_pair_key(bundle.patient_id)
-        self.evaluated_keys.add(key_norm)
-        self.evaluated_keys.add(patient_norm)
-        self.evaluation_counts[key_norm] = self.evaluation_counts.get(key_norm, 0) + 1
-        self.evaluation_counts[patient_norm] = self.evaluation_counts.get(patient_norm, 0) + 1
-        self.refresh_patient_list_status()
-        self.set_status(f"Evaluation enregistree dans {final_path}")
+        state["stage1_saved"] = True
+        state["evaluation_id"] = evaluation_id
+        self.page1_locked_label.setText("Evaluation des conclusions enregistree. Modification desactivee.")
+        self.page1_locked_label.show()
+        self._set_page1_editable(False)
+        self._set_status(f"Conclusions enregistrees pour {bundle.patient_id}.")
+        self.stack.setCurrentIndex(1)
 
-        if previous_count > 0:
-            self.reset_form()
+    def _on_page2_previous(self):
+        self.stack.setCurrentIndex(0)
+
+    def _on_page2_next_patient(self):
+        if not self.bundles:
+            return
+
+        bundle = self.bundles[self.current_index]
+        state = self.patient_states.get(bundle.key, {})
+        if not state.get("stage1_saved"):
+            QMessageBox.warning(self, "Etape 1 requise", "Enregistrez d'abord l'evaluation des conclusions (page 1).")
+            return
+        if state.get("stage2_saved"):
+            QMessageBox.information(self, "Deja enregistre", "L'evaluation de reflexion IA est deja enregistree pour ce patient.")
+            return
+
+        answers = self._collect_page2_answers()
+        if answers is None:
+            QMessageBox.warning(self, "QCM incomplet", "Merci de repondre a tout le QCM de reflexion IA.")
+            return
+
+        row = {
+            "evaluation_id": state["evaluation_id"],
+            "timestamp": datetime.now().isoformat(timespec="seconds"),
+            "patient_id": bundle.patient_id,
+            "batch_key": bundle.key,
+            "patient_json_path": str(bundle.patient_path),
+            "ia_json_path": str(bundle.ia_path),
+            "commentaire_reflexion": self.reasoning_comment_edit.toPlainText().strip(),
+        }
+        for question in self.reasoning_qcm:
+            question_id = question["id"]
+            row[f"qcm_{question_id}_question"] = question["text"]
+            row[f"qcm_{question_id}_option_id"] = answers[question_id]["option_id"]
+            row[f"qcm_{question_id}_option_label"] = answers[question_id]["option_label"]
+
+        try:
+            self.append_row_to_csv(self.csv_reasoning_path, row)
+        except Exception as error:
+            QMessageBox.critical(self, "Erreur export CSV", f"Impossible d'enregistrer l'evaluation de reflexion IA:\n{error}")
+            return
+
+        if not state.get("stage2_saved"):
+            state["stage2_saved"] = True
+            self.completed_count += 1
+
+        if self.current_index == len(self.bundles) - 1:
+            self._update_header()
             QMessageBox.information(
                 self,
-                "Re-evaluation enregistree",
-                f"Nouvelle evaluation enregistree pour {bundle.patient_id}.\nCSV: {final_path}",
+                "Finish",
+                "Evaluation terminee.\n"
+                f"- {self.csv_conclusion_ia_path}\n"
+                f"- {self.csv_conclusion_rcp_path}\n"
+                f"- {self.csv_reasoning_path}",
             )
+            self._set_status("Collecte terminee pour tous les patients.")
             return
 
-        if self.current_index < len(self.bundles) - 1:
-            self.patient_list.setCurrentRow(self.current_index + 1)
-        else:
-            QMessageBox.information(self, "Batch termine", f"Toutes les evaluations sont enregistrees.\nCSV: {final_path}")
+        self.current_index += 1
+        self._load_current_patient()
 
     def append_row_to_csv(self, output_csv_path: Path, row: Dict[str, Any]) -> Path:
-        target_path = output_csv_path
-        target_path.parent.mkdir(parents=True, exist_ok=True)
+        output_csv_path.parent.mkdir(parents=True, exist_ok=True)
         new_columns = list(row.keys())
         existing_rows: List[Dict[str, Any]] = []
         existing_columns: List[str] = []
 
-        if target_path.exists():
-            delimiter = detect_csv_delimiter(target_path)
-            with target_path.open("r", newline="", encoding="utf-8-sig") as file:
+        if output_csv_path.exists():
+            delimiter = detect_csv_delimiter(output_csv_path)
+            with output_csv_path.open("r", newline="", encoding="utf-8-sig") as file:
                 reader = csv.DictReader(file, delimiter=delimiter)
                 existing_columns = reader.fieldnames or []
                 existing_rows = list(reader)
@@ -963,19 +974,14 @@ class ClinicianFeedbackApp(QMainWindow):
         if not merged_columns:
             merged_columns = new_columns
 
-        normalized_rows = [{column: existing_row.get(column, "") for column in merged_columns} for existing_row in existing_rows]
+        normalized_rows = [{column: old_row.get(column, "") for column in merged_columns} for old_row in existing_rows]
         normalized_rows.append({column: row.get(column, "") for column in merged_columns})
 
-        with target_path.open("w", newline="", encoding="utf-8-sig") as file:
-            writer = csv.DictWriter(
-                file,
-                fieldnames=merged_columns,
-                delimiter=OUTPUT_CSV_DELIMITER,
-                extrasaction="ignore",
-            )
+        with output_csv_path.open("w", newline="", encoding="utf-8-sig") as file:
+            writer = csv.DictWriter(file, fieldnames=merged_columns, delimiter=OUTPUT_CSV_DELIMITER)
             writer.writeheader()
             writer.writerows(normalized_rows)
-        return target_path
+        return output_csv_path
 
 
 def main():
