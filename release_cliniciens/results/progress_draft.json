@@ -1,0 +1,30 @@
+{
+  "patient_key": "001",
+  "patient_id": "PAT-001",
+  "current_index": 0,
+  "page_index": 0,
+  "page1_scores": {
+    "q1": {
+      "c1": -1,
+      "c2": -1
+    },
+    "q2": {
+      "c1": -1,
+      "c2": -1
+    },
+    "q3": {
+      "c1": -1,
+      "c2": -1
+    },
+    "q4": {
+      "c1": -1,
+      "c2": -1
+    }
+  },
+  "page2_answers": {
+    "clarte": -1,
+    "coherence": -1,
+    "utilite": -1
+  },
+  "page2_comment": ""
+}

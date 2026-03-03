@@ -1,7 +1,12 @@
 import csv
 import json
 import re
+import shutil
 import sys
+import tempfile
+import zipfile
+import os
+import base64
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
@@ -26,12 +31,17 @@ from PyQt6.QtWidgets import (
     QWidget,
 )
 
+try:
+    import pyzipper
+except Exception:
+    pyzipper = None
+
 
 DEFAULT_QUESTIONS = [
-    {"id": "q1", "text": "La conclusion IA est-elle cliniquement pertinente pour ce patient ?"},
-    {"id": "q2", "text": "Le niveau de detail de l'evaluation IA est-il suffisant ?"},
-    {"id": "q3", "text": "L'evaluation IA est-elle globalement coherente avec la conclusion RCP ?"},
-    {"id": "q4", "text": "L'evaluation IA aide-t-elle a la prise de decision clinique ?"},
+    {"id": "q1", "text": "Cette conclusion est-elle cliniquement pertinente pour ce patient ?"},
+    {"id": "q2", "text": "Le niveau de detail de cette conclusion est-il suffisant ?"},
+    {"id": "q3", "text": "Cette conclusion est-elle coherente avec les donnees du patient ?"},
+    {"id": "q4", "text": "Cette conclusion aide-t-elle a la prise de decision clinique ?"},
 ]
 
 PAIR_KEYWORD_STOPWORDS = {
@@ -95,6 +105,11 @@ APP_DIR = get_app_base_dir()
 DEFAULT_RESULTS_DIR = APP_DIR / "results"
 OUTPUT_CSV_DELIMITER = ";"
 COLLECTION_CSV_NAME = "evaluations.csv"
+APP_DATA_KEY_FILE = ".data_access.key"
+APP_DATA_KEY_FILE_ALTERNATES = [".data_access.key", "data_access.key"]
+APP_DATA_KEY_ENV_VAR = "APP_FEEDBACK_DATA_PASSWORD"
+APP_DATA_OBFUSCATION_SECRET = b"AppFeedbackClinical"
+APP_DATA_KEY_PREFIX = "AFCLINICAL"
 
 
 @dataclass
@@ -377,6 +392,49 @@ def get_collection_csv_path() -> Path:
     return bootstrap_collection_csv(DEFAULT_RESULTS_DIR / COLLECTION_CSV_NAME)
 
 
+def _xor_bytes(data: bytes, key: bytes) -> bytes:
+    return bytes(data[index] ^ key[index % len(key)] for index in range(len(data)))
+
+
+def decode_app_data_password(token: str) -> Optional[str]:
+    cleaned = token.strip()
+    if not cleaned:
+        return None
+    try:
+        decoded = base64.urlsafe_b64decode(cleaned.encode("utf-8"))
+        plaintext = _xor_bytes(decoded, APP_DATA_OBFUSCATION_SECRET).decode("utf-8")
+    except Exception:
+        return None
+    if not plaintext.startswith(f"{APP_DATA_KEY_PREFIX}:"):
+        return None
+    return plaintext.split(":", 1)[1]
+
+
+def blind_question_text(text: str) -> str:
+    replacements = [
+        (r"(?i)\bla\s+conclusion\s+ia\b", "la conclusion évaluee"),
+        (r"(?i)\ble\s+niveau\s+de\s+detail\s+de\s+la\s+conclusion\s+ia\b", "le niveau de detail de cette conclusion"),
+        (r"(?i)\bla\s+conclusion\s+rcp\b", "l'autre conclusion"),
+        (r"(?i)\bl['’]evaluation\s+ia\b", "l'évaluation de cette conclusion"),
+        (r"(?i)\bevaluation\s+ia\b", "évaluation de cette conclusion"),
+        (r"(?i)\bconclusion\s+ia\b", "conclusion évaluee"),
+        (r"(?i)\bconclusion\s+rcp\b", "autre conclusion"),
+        (r"(?i)\bRCP\b", "autre conclusion"),
+        (r"(?i)\bIA\b", "cette conclusion"),
+        (r"(?i)du modele", "de cette conclusion"),
+        (r"(?i)du modèle", "de cette conclusion"),
+    ]
+    output = text
+    for pattern, replacement in replacements:
+        output = re.sub(pattern, replacement, output)
+    output = re.sub(r"\bla\s+cette\b", "cette", output, flags=re.IGNORECASE)
+    output = re.sub(r"\bla\s+la\b", "la", output, flags=re.IGNORECASE)
+    output = re.sub(r"\s{2,}", " ", output)
+    if text and text[0].isupper() and output:
+        output = output[0].upper() + output[1:]
+    return output.strip()
+
+
 def discover_patient_bundles(root: Path):
     entries: Dict[str, Dict[str, Any]] = {}
 
@@ -461,7 +519,7 @@ def discover_patient_bundles(root: Path):
 class ClinicianFeedbackApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Clinical Feedback - Evaluation Clinique")
+        self.setWindowTitle("Clinical Feedback - Évaluation clinique")
         self.resize(1280, 820)
 
         self.questions_path = APP_DIR / "questions.json"
@@ -469,22 +527,24 @@ class ClinicianFeedbackApp(QMainWindow):
         self.reasoning_qcm = [
             {
                 "id": "clarte",
-                "text": "La reflexion de l'IA est-elle claire ?",
+                "text": "La réflexion de l'IA est-elle claire ?",
                 "options": [("tres_claire", "Tres claire"), ("moyenne", "Moyennement claire"), ("peu_claire", "Peu claire")],
             },
             {
                 "id": "coherence",
-                "text": "La reflexion est-elle coherent avec les donnees patient ?",
+                "text": "La réflexion est-elle cohérente avec les données patient ?",
                 "options": [("coherente", "Oui"), ("partielle", "Partiellement"), ("non_coherente", "Non")],
             },
             {
                 "id": "utilite",
-                "text": "La reflexion apporte-t-elle une aide clinique utile ?",
+                "text": "La réflexion apporte-t-elle une aide clinique utile ?",
                 "options": [("utile", "Utile"), ("limitee", "Utilite limitee"), ("inutile", "Peu utile")],
             },
         ]
 
-        self.data_dir = self._default_data_dir()
+        self._temp_data_root: Optional[Path] = None
+        self._data_origin_label = "dossier local"
+        self.data_dir = self._resolve_data_dir()
         self.results_dir = APP_DIR / "results"
         self.results_dir.mkdir(parents=True, exist_ok=True)
         self.csv_conclusion_ia_path = self.results_dir / "evaluations_conclusion_ia.csv"
@@ -500,35 +560,169 @@ class ClinicianFeedbackApp(QMainWindow):
         self.page1_groups: Dict[str, Dict[str, QButtonGroup]] = {}
         self.page2_qcm_groups: Dict[str, QButtonGroup] = {}
         self.page2_qcm_options: Dict[str, List[Any]] = {}
+        self.progress_draft_path = self.results_dir / "progress_draft.json"
+        self._pending_draft: Optional[Dict[str, Any]] = None
 
         self._build_ui()
         self._apply_styles()
+        self._load_existing_progress()
+        self._restore_draft_progress_if_any()
         self._load_current_patient()
 
     def _default_data_dir(self) -> Path:
-        if (APP_DIR / "data").exists():
-            return APP_DIR / "data"
-        if (APP_DIR / "sample_data").exists():
-            return APP_DIR / "sample_data"
+        for base_dir in self._candidate_base_dirs():
+            if (base_dir / "data").exists():
+                return base_dir / "data"
+            if (base_dir / "sample_data").exists():
+                return base_dir / "sample_data"
         return APP_DIR
+
+    def _candidate_base_dirs(self) -> List[Path]:
+        candidates = [APP_DIR]
+        parent_dir = APP_DIR.parent
+        if parent_dir != APP_DIR:
+            candidates.append(parent_dir)
+        # Evite les doublons tout en gardant l'ordre.
+        seen = set()
+        ordered = []
+        for candidate in candidates:
+            normalized = str(candidate.resolve())
+            if normalized in seen:
+                continue
+            seen.add(normalized)
+            ordered.append(candidate)
+        return ordered
+
+    def _resolve_data_dir(self) -> Path:
+        for base_dir in self._candidate_base_dirs():
+            data_zip_path = base_dir / "data.zip"
+            if not data_zip_path.exists():
+                continue
+
+            password = self._load_data_zip_password(base_dir)
+            if not password:
+                fallback = self._default_data_dir()
+                self._data_origin_label = str(fallback)
+                QMessageBox.warning(
+                    self,
+                    "Configuration securite manquante",
+                    f"Le fichier de cle ({' ou '.join(APP_DATA_KEY_FILE_ALTERNATES)}) est requis a cote de data.zip.",
+                )
+                return fallback
+
+            extracted = self._extract_data_zip_silent(data_zip_path, password)
+            if extracted is not None:
+                self._data_origin_label = f"data.zip (dechiffre automatique): {data_zip_path}"
+                return extracted
+
+            fallback = self._default_data_dir()
+            self._data_origin_label = str(fallback)
+            if fallback == APP_DIR:
+                QMessageBox.warning(
+                    self,
+                    "Donnees non accessibles",
+                    "Aucun dossier data lisible n'est disponible.",
+                )
+            return fallback
+
+        fallback = self._default_data_dir()
+        self._data_origin_label = str(fallback)
+        return fallback
+
+    def _load_data_zip_password(self, base_dir: Path) -> Optional[str]:
+        password_from_env = os.getenv(APP_DATA_KEY_ENV_VAR, "").strip()
+        if password_from_env:
+            return password_from_env
+
+        candidate_files = []
+        for key_filename in APP_DATA_KEY_FILE_ALTERNATES:
+            candidate_files.append(base_dir / key_filename)
+        for key_filename in APP_DATA_KEY_FILE_ALTERNATES:
+            candidate_files.append(APP_DIR / key_filename)
+        key_file = next((path for path in candidate_files if path.exists()), None)
+        if key_file is None:
+            return None
+
+        try:
+            token = key_file.read_text(encoding="utf-8-sig")
+        except Exception:
+            return None
+        return decode_app_data_password(token)
+
+    def _extract_data_zip_silent(self, zip_path: Path, password: str) -> Optional[Path]:
+        temp_root = Path(tempfile.mkdtemp(prefix="app_feedback_data_"))
+        try:
+            self._extract_zip_content(zip_path, temp_root, password)
+            self._extract_nested_payload_if_present(temp_root)
+            extracted_data_dir = self._locate_data_directory(temp_root)
+            if extracted_data_dir is None:
+                raise ValueError("Aucun JSON detecte apres extraction de data.zip.")
+        except Exception as error:
+            shutil.rmtree(temp_root, ignore_errors=True)
+            QMessageBox.warning(self, "Acces data.zip impossible", f"Impossible d'ouvrir data.zip : {error}")
+            return None
+
+        self._temp_data_root = temp_root
+        return extracted_data_dir
+
+    def _extract_nested_payload_if_present(self, extracted_root: Path):
+        payload_file = extracted_root / "payload.bin"
+        if not payload_file.exists():
+            return
+        with zipfile.ZipFile(payload_file, "r") as inner_zip:
+            inner_zip.extractall(extracted_root)
+        payload_file.unlink(missing_ok=True)
+
+    def _extract_zip_content(self, zip_path: Path, target_dir: Path, password: str):
+        encoded_pwd = password.encode("utf-8")
+        if pyzipper is not None:
+            with pyzipper.AESZipFile(zip_path, "r") as zip_file:
+                zip_file.pwd = encoded_pwd
+                zip_file.extractall(target_dir)
+            return
+
+        with zipfile.ZipFile(zip_path, "r") as zip_file:
+            try:
+                zip_file.extractall(target_dir, pwd=encoded_pwd)
+            except NotImplementedError as error:
+                raise RuntimeError(
+                    "Ce zip semble utiliser un chiffrement AES. Installez la dependance 'pyzipper'."
+                ) from error
+
+    def _locate_data_directory(self, extracted_root: Path) -> Optional[Path]:
+        direct_data = extracted_root / "data"
+        if direct_data.exists() and direct_data.is_dir():
+            return direct_data
+
+        # Cas: le zip contient directement les JSON.
+        if any(extracted_root.rglob("*.json")):
+            subdirs = [path for path in extracted_root.iterdir() if path.is_dir()]
+            if len(subdirs) == 1 and any(subdirs[0].rglob("*.json")):
+                return subdirs[0]
+            return extracted_root
+        return None
 
     def _build_ui(self):
         central = QWidget()
         root_layout = QVBoxLayout(central)
-        root_layout.setContentsMargins(12, 12, 12, 12)
-        root_layout.setSpacing(10)
+        root_layout.setContentsMargins(16, 16, 16, 16)
+        root_layout.setSpacing(12)
         self.setCentralWidget(central)
 
         header = QFrame()
         header_layout = QVBoxLayout(header)
-        header_layout.setContentsMargins(12, 12, 12, 12)
-        header_layout.setSpacing(4)
+        header_layout.setContentsMargins(14, 12, 14, 12)
+        header_layout.setSpacing(8)
         self.patient_counter_label = QLabel("Patient 0/0")
         self.progress_label = QLabel("Evaluations finalisees: 0/0")
-        self.status_label = QLabel(f"Dossier de donnees detecte: {self.data_dir}")
+        self.status_label = QLabel(f"Dossier de données détecté: {self._data_origin_label}")
+        self.save_progress_btn = QPushButton("Sauvegarder en cours")
+        self.save_progress_btn.setProperty("actionButton", True)
+        self.save_progress_btn.clicked.connect(self._save_progress_draft)
         header_layout.addWidget(self.patient_counter_label)
         header_layout.addWidget(self.progress_label)
         header_layout.addWidget(self.status_label)
+        header_layout.addWidget(self.save_progress_btn)
         root_layout.addWidget(header)
 
         self.stack = QStackedWidget()
@@ -537,13 +731,13 @@ class ClinicianFeedbackApp(QMainWindow):
         # Page 1: evaluation des conclusions (blindees)
         self.page1 = QWidget()
         page1_layout = QVBoxLayout(self.page1)
-        page1_layout.setContentsMargins(8, 8, 8, 8)
-        page1_layout.setSpacing(10)
+        page1_layout.setContentsMargins(12, 12, 12, 12)
+        page1_layout.setSpacing(12)
 
-        self.page1_title_label = QLabel("Etape 1 - Evaluation des conclusions")
+        self.page1_title_label = QLabel("Étape 1 - Évaluation des conclusions")
         page1_layout.addWidget(self.page1_title_label)
 
-        description_group = QGroupBox("Description patient (a lire en premier)")
+        description_group = QGroupBox("Description patient (à lire en premier)")
         description_layout = QVBoxLayout(description_group)
         self.description_text = QPlainTextEdit()
         self.description_text.setReadOnly(True)
@@ -566,27 +760,31 @@ class ClinicianFeedbackApp(QMainWindow):
         conclusions_layout.addWidget(self.conclusion2_text, 1, 1)
         page1_layout.addWidget(conclusions_group)
 
-        questionnaire_group = QGroupBox("Noter chaque conclusion (1 a 5)")
+        questionnaire_group = QGroupBox("Noter chaque conclusion (1 à 5)")
         questionnaire_layout = QGridLayout(questionnaire_group)
         questionnaire_layout.addWidget(QLabel("Question"), 0, 0)
         questionnaire_layout.addWidget(QLabel("Conclusion 1"), 0, 1)
         questionnaire_layout.addWidget(QLabel("Conclusion 2"), 0, 2)
 
         for row, question in enumerate(self.questions, start=1):
-            question_label = QLabel(f"{row}. {question['text']}")
+            question_label = QLabel(f"{row}. {blind_question_text(question['text'])}")
             question_label.setWordWrap(True)
             questionnaire_layout.addWidget(question_label, row, 0)
 
             self.page1_groups[question["id"]] = {}
             for col, label in enumerate(("c1", "c2"), start=1):
                 score_row = QHBoxLayout()
+                score_row.setContentsMargins(0, 0, 0, 0)
+                score_row.setSpacing(6)
                 group = QButtonGroup(self)
                 group.setExclusive(True)
                 self.page1_groups[question["id"]][label] = group
                 for score in range(1, 6):
                     button = QPushButton(str(score))
                     button.setCheckable(True)
-                    button.setMaximumWidth(36)
+                    button.setFixedSize(48, 38)
+                    button.setProperty("scoreButton", True)
+                    button.setProperty("scoreLevel", str(score))
                     group.addButton(button, score)
                     score_row.addWidget(button)
                 container = QWidget()
@@ -598,22 +796,23 @@ class ClinicianFeedbackApp(QMainWindow):
         self.page1_locked_label = QLabel("")
         self.page1_locked_label.hide()
         self.page1_next_btn = QPushButton("Go to the next page")
+        self.page1_next_btn.setProperty("actionButton", True)
         self.page1_next_btn.clicked.connect(self._on_page1_next)
         action_row.addWidget(self.page1_locked_label, 1)
         action_row.addWidget(self.page1_next_btn)
         page1_layout.addLayout(action_row)
         self.stack.addWidget(self._wrap_in_scroll_area(self.page1))
 
-        # Page 2: evaluation de la reflexion IA
+        # Page 2: évaluation de la réflexion IA
         self.page2 = QWidget()
         page2_layout = QVBoxLayout(self.page2)
-        page2_layout.setContentsMargins(8, 8, 8, 8)
-        page2_layout.setSpacing(10)
+        page2_layout.setContentsMargins(12, 12, 12, 12)
+        page2_layout.setSpacing(12)
 
-        self.page2_title_label = QLabel("Etape 2 - Evaluation de la reflexion IA (meme patient)")
+        self.page2_title_label = QLabel("Étape 2 - Évaluation de la réflexion IA (même patient)")
         page2_layout.addWidget(self.page2_title_label)
 
-        reasoning_group = QGroupBox("Reflexion de l'IA")
+        reasoning_group = QGroupBox("Réflexion de l'IA")
         reasoning_layout = QVBoxLayout(reasoning_group)
         self.reasoning_text = QPlainTextEdit()
         self.reasoning_text.setReadOnly(True)
@@ -622,15 +821,18 @@ class ClinicianFeedbackApp(QMainWindow):
         reasoning_layout.addWidget(self.reasoning_text)
         page2_layout.addWidget(reasoning_group)
 
-        qcm_group = QGroupBox("QCM reflexion IA")
+        qcm_group = QGroupBox("QCM réflexion IA")
         qcm_layout = QVBoxLayout(qcm_group)
         for question in self.reasoning_qcm:
             row = QHBoxLayout()
+            row.setSpacing(10)
             label = QLabel(question["text"])
             label.setWordWrap(True)
             row.addWidget(label, 2)
 
             options_layout = QHBoxLayout()
+            options_layout.setContentsMargins(0, 0, 0, 0)
+            options_layout.setSpacing(8)
             group = QButtonGroup(self)
             group.setExclusive(True)
             self.page2_qcm_groups[question["id"]] = group
@@ -639,16 +841,18 @@ class ClinicianFeedbackApp(QMainWindow):
             for index, (_, option_label) in enumerate(question["options"]):
                 button = QPushButton(option_label)
                 button.setCheckable(True)
+                button.setProperty("scoreButton", True)
+                button.setProperty("optionButton", True)
                 group.addButton(button, index)
                 options_layout.addWidget(button)
             row.addLayout(options_layout, 3)
             qcm_layout.addLayout(row)
         page2_layout.addWidget(qcm_group)
 
-        comment_group = QGroupBox("Commentaire libre sur la reflexion IA")
+        comment_group = QGroupBox("Commentaire libre sur la réflexion IA")
         comment_layout = QVBoxLayout(comment_group)
         self.reasoning_comment_edit = QPlainTextEdit()
-        self.reasoning_comment_edit.setPlaceholderText("Commentaire clinique libre sur la reflexion IA...")
+        self.reasoning_comment_edit.setPlaceholderText("Commentaire clinique libre sur la réflexion IA...")
         self.reasoning_comment_edit.setMinimumHeight(90)
         self.reasoning_comment_edit.setMaximumHeight(140)
         comment_layout.addWidget(self.reasoning_comment_edit)
@@ -656,8 +860,10 @@ class ClinicianFeedbackApp(QMainWindow):
 
         nav_row = QHBoxLayout()
         self.page2_previous_btn = QPushButton("Previous page")
+        self.page2_previous_btn.setProperty("actionButton", True)
         self.page2_previous_btn.clicked.connect(self._on_page2_previous)
         self.page2_next_patient_btn = QPushButton("Go to the next patient")
+        self.page2_next_patient_btn.setProperty("actionButton", True)
         self.page2_next_patient_btn.clicked.connect(self._on_page2_next_patient)
         nav_row.addWidget(self.page2_previous_btn)
         nav_row.addStretch(1)
@@ -674,43 +880,251 @@ class ClinicianFeedbackApp(QMainWindow):
     def _apply_styles(self):
         self.setStyleSheet(
             """
-            QMainWindow { background: #f4f7fb; color: #17212b; }
+            QMainWindow { background: #f8fafc; color: #0f172a; }
             QFrame, QGroupBox {
                 background: white;
-                border: 1px solid #d8e2f0;
-                border-radius: 10px;
+                border: 1px solid #cbd5e1;
+                border-radius: 12px;
             }
             QGroupBox {
-                margin-top: 10px;
-                padding-top: 10px;
+                margin-top: 12px;
+                padding-top: 12px;
                 font-weight: 600;
             }
-            QLabel { color: #233142; font-size: 13px; }
+            QLabel {
+                color: #0f172a;
+                font-size: 15px;
+                line-height: 1.3;
+            }
             QPlainTextEdit {
-                background: #fbfdff;
-                border: 1px solid #c9d8ee;
+                background: #ffffff;
+                border: 1px solid #94a3b8;
                 border-radius: 8px;
                 padding: 8px;
+                font-size: 16px;
+                color: #0f172a;
             }
             QScrollArea {
                 border: none;
                 background: transparent;
             }
             QPushButton {
-                background: #2f80ed;
-                color: white;
-                border: none;
+                background: #ffffff;
+                color: #0f172a;
+                border: 1px solid #94a3b8;
                 border-radius: 8px;
-                padding: 8px 12px;
+                padding: 9px 12px;
                 font-weight: 600;
+                font-size: 15px;
             }
-            QPushButton:hover { background: #2568c4; }
-            QPushButton:checked { background: #1f5fb6; }
+            QPushButton:hover { background: #f8fafc; border: 1px solid #64748b; }
+            QPushButton:focus { border: 2px solid #111827; }
+            QPushButton:disabled { background: #f1f5f9; color: #94a3b8; border: 1px solid #cbd5e1; }
+            QPushButton:checked { background: #065f46; color: #ffffff; border: 1px solid #064e3b; }
+            QPushButton[actionButton="true"] {
+                background: #1d4ed8;
+                color: #ffffff;
+                border: 1px solid #1d4ed8;
+                min-height: 40px;
+            }
+            QPushButton[actionButton="true"]:hover { background: #1e40af; }
+            QPushButton[actionButton="true"]:checked { background: #1e40af; color: #ffffff; border: 1px solid #1e3a8a; }
+            QPushButton[scoreButton="true"] {
+                min-height: 38px;
+                min-width: 48px;
+                max-height: 38px;
+                max-width: 48px;
+                font-size: 16px;
+                border: 2px solid #94a3b8;
+                border-radius: 10px;
+            }
+            QPushButton[optionButton="true"] {
+                min-width: 130px;
+                max-width: 220px;
+                min-height: 38px;
+                max-height: 38px;
+                background: #eef2ff;
+                color: #1e3a8a;
+                border-color: #93c5fd;
+            }
+            QPushButton[optionButton="true"]:hover { background: #dbeafe; }
+            QPushButton[optionButton="true"]:checked { background: #1d4ed8; color: #ffffff; border-color: #1e40af; }
+            QPushButton[scoreButton="true"][scoreLevel="1"] { background: #fee2e2; color: #7f1d1d; border-color: #fca5a5; }
+            QPushButton[scoreButton="true"][scoreLevel="2"] { background: #ffedd5; color: #9a3412; border-color: #fdba74; }
+            QPushButton[scoreButton="true"][scoreLevel="3"] { background: #fef9c3; color: #854d0e; border-color: #fde047; }
+            QPushButton[scoreButton="true"][scoreLevel="4"] { background: #dcfce7; color: #166534; border-color: #86efac; }
+            QPushButton[scoreButton="true"][scoreLevel="5"] { background: #d1fae5; color: #065f46; border-color: #6ee7b7; }
+            QPushButton[scoreButton="true"][scoreLevel="1"]:hover { background: #fecaca; }
+            QPushButton[scoreButton="true"][scoreLevel="2"]:hover { background: #fed7aa; }
+            QPushButton[scoreButton="true"][scoreLevel="3"]:hover { background: #fef08a; }
+            QPushButton[scoreButton="true"][scoreLevel="4"]:hover { background: #bbf7d0; }
+            QPushButton[scoreButton="true"][scoreLevel="5"]:hover { background: #a7f3d0; }
+            QPushButton[scoreButton="true"][scoreLevel="1"]:checked { background: #b91c1c; color: #ffffff; border-color: #991b1b; }
+            QPushButton[scoreButton="true"][scoreLevel="2"]:checked { background: #c2410c; color: #ffffff; border-color: #9a3412; }
+            QPushButton[scoreButton="true"][scoreLevel="3"]:checked { background: #ca8a04; color: #111827; border-color: #a16207; }
+            QPushButton[scoreButton="true"][scoreLevel="4"]:checked { background: #15803d; color: #ffffff; border-color: #166534; }
+            QPushButton[scoreButton="true"][scoreLevel="5"]:checked { background: #047857; color: #ffffff; border-color: #065f46; }
+            QPushButton[scoreButton="true"]:focus { border: 3px solid #111827; }
             """
         )
 
     def _set_status(self, text: str):
         self.status_label.setText(text)
+
+    def _find_bundle_key(self, patient_id: str, batch_key: str) -> Optional[str]:
+        patient_norm = normalize_pair_key(patient_id) if patient_id else ""
+        batch_norm = normalize_pair_key(batch_key) if batch_key else ""
+        for bundle in self.bundles:
+            if batch_norm and normalize_pair_key(bundle.key) == batch_norm:
+                return bundle.key
+            if patient_norm and normalize_pair_key(bundle.patient_id) == patient_norm:
+                return bundle.key
+        return None
+
+    def _read_csv_rows(self, csv_path: Path) -> List[Dict[str, Any]]:
+        if not csv_path.exists():
+            return []
+        try:
+            delimiter = detect_csv_delimiter(csv_path)
+            with csv_path.open("r", newline="", encoding="utf-8-sig") as file:
+                reader = csv.DictReader(file, delimiter=delimiter)
+                return list(reader)
+        except Exception:
+            return []
+
+    def _load_existing_progress(self):
+        self.patient_states = {}
+        self.completed_count = 0
+        if not self.bundles:
+            self.current_index = 0
+            return
+
+        # Étape 1: présence d'une ligne dans les CSV de conclusions
+        stage1_rows = self._read_csv_rows(self.csv_conclusion_ia_path) + self._read_csv_rows(self.csv_conclusion_rcp_path)
+        for row in stage1_rows:
+            bundle_key = self._find_bundle_key(
+                str(row.get("patient_id", "")),
+                str(row.get("batch_key", "")),
+            )
+            if not bundle_key:
+                continue
+            state = self.patient_states.setdefault(bundle_key, {})
+            state["stage1_saved"] = True
+            if row.get("evaluation_id"):
+                state["evaluation_id"] = row.get("evaluation_id")
+
+        # Étape 2: présence d'une ligne dans le CSV de réflexion IA
+        for row in self._read_csv_rows(self.csv_reasoning_path):
+            bundle_key = self._find_bundle_key(
+                str(row.get("patient_id", "")),
+                str(row.get("batch_key", "")),
+            )
+            if not bundle_key:
+                continue
+            state = self.patient_states.setdefault(bundle_key, {})
+            state["stage2_saved"] = True
+            state["stage1_saved"] = True
+            if row.get("evaluation_id"):
+                state["evaluation_id"] = row.get("evaluation_id")
+
+        self.completed_count = sum(
+            1 for bundle in self.bundles if self.patient_states.get(bundle.key, {}).get("stage2_saved")
+        )
+
+        for index, bundle in enumerate(self.bundles):
+            if not self.patient_states.get(bundle.key, {}).get("stage2_saved"):
+                self.current_index = index
+                return
+        self.current_index = len(self.bundles) - 1
+
+    def _save_progress_draft(self, silent: bool = False):
+        if not self.bundles:
+            return
+        bundle = self.bundles[self.current_index]
+        state = self.patient_states.get(bundle.key, {})
+        if state.get("stage2_saved"):
+            if self.progress_draft_path.exists():
+                self.progress_draft_path.unlink(missing_ok=True)
+            return
+        draft = {
+            "patient_key": bundle.key,
+            "patient_id": bundle.patient_id,
+            "current_index": self.current_index,
+            "page_index": self.stack.currentIndex(),
+            "page1_scores": {},
+            "page2_answers": {},
+            "page2_comment": self.reasoning_comment_edit.toPlainText().strip(),
+        }
+
+        for question in self.questions:
+            qid = question["id"]
+            draft["page1_scores"][qid] = {
+                "c1": self.page1_groups[qid]["c1"].checkedId(),
+                "c2": self.page1_groups[qid]["c2"].checkedId(),
+            }
+
+        for question in self.reasoning_qcm:
+            qid = question["id"]
+            draft["page2_answers"][qid] = self.page2_qcm_groups[qid].checkedId()
+
+        self.progress_draft_path.parent.mkdir(parents=True, exist_ok=True)
+        self.progress_draft_path.write_text(json.dumps(draft, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        if not silent:
+            self._set_status(f"Progression sauvegardee: {self.progress_draft_path.name}")
+            QMessageBox.information(self, "Sauvegarde en cours", "Progression sauvegardee. Vous pourrez reprendre plus tard.")
+
+    def _restore_draft_progress_if_any(self):
+        if not self.progress_draft_path.exists() or not self.bundles:
+            return
+        try:
+            draft = json.loads(self.progress_draft_path.read_text(encoding="utf-8-sig"))
+        except Exception:
+            return
+
+        draft_key = str(draft.get("patient_key", ""))
+        if not draft_key:
+            return
+        for index, bundle in enumerate(self.bundles):
+            if bundle.key == draft_key:
+                self.current_index = index
+                self._pending_draft = draft
+                self._set_status("Brouillon detecte: reprise de progression chargee.")
+                return
+
+    def _apply_pending_draft_if_needed(self, bundle: PatientBundle):
+        draft = getattr(self, "_pending_draft", None)
+        if not draft or draft.get("patient_key") != bundle.key:
+            return
+
+        page1_scores = draft.get("page1_scores", {})
+        for question in self.questions:
+            qid = question["id"]
+            scores = page1_scores.get(qid, {})
+            c1_score = int(scores.get("c1", -1))
+            c2_score = int(scores.get("c2", -1))
+            if c1_score in (1, 2, 3, 4, 5):
+                button = self.page1_groups[qid]["c1"].button(c1_score)
+                if button:
+                    button.setChecked(True)
+            if c2_score in (1, 2, 3, 4, 5):
+                button = self.page1_groups[qid]["c2"].button(c2_score)
+                if button:
+                    button.setChecked(True)
+
+        page2_answers = draft.get("page2_answers", {})
+        for question in self.reasoning_qcm:
+            qid = question["id"]
+            selected = int(page2_answers.get(qid, -1))
+            if selected >= 0:
+                button = self.page2_qcm_groups[qid].button(selected)
+                if button:
+                    button.setChecked(True)
+        self.reasoning_comment_edit.setPlainText(str(draft.get("page2_comment", "")))
+
+        page_index = int(draft.get("page_index", 0))
+        if page_index in (0, 1):
+            self.stack.setCurrentIndex(page_index)
+        self._pending_draft = None
 
     def _extract_reasoning_text(self, ia_data: Any) -> str:
         if isinstance(ia_data, dict):
@@ -728,7 +1142,7 @@ class ClinicianFeedbackApp(QMainWindow):
                 value = ia_data.get(key)
                 if value not in (None, "", []):
                     return format_value(value)
-        return "Aucune reflexion IA fournie dans le JSON."
+        return "Aucune réflexion IA fournie dans le JSON."
 
     def _assign_conclusion_mapping(self, bundle: PatientBundle) -> Dict[str, Any]:
         rcp_text = extract_evaluation_text(bundle.rcp_data)
@@ -784,10 +1198,10 @@ class ClinicianFeedbackApp(QMainWindow):
         self.current_conclusion_mapping = self._assign_conclusion_mapping(bundle)
 
         self.page1_title_label.setText(
-            f"Etape 1 - Evaluation des conclusions pour patient {bundle.patient_id}"
+            f"Étape 1 - Évaluation des conclusions pour patient {bundle.patient_id}"
         )
         self.page2_title_label.setText(
-            f"Etape 2 - Evaluation de la reflexion IA pour patient {bundle.patient_id}"
+            f"Étape 2 - Évaluation de la réflexion IA pour patient {bundle.patient_id}"
         )
 
         self.description_text.setPlainText(format_patient_description(bundle.patient_data))
@@ -798,7 +1212,7 @@ class ClinicianFeedbackApp(QMainWindow):
 
         state = self.patient_states.get(bundle.key, {})
         if state.get("stage1_saved"):
-            self.page1_locked_label.setText("Evaluation des conclusions deja enregistree. Modification desactivee.")
+            self.page1_locked_label.setText("Évaluation des conclusions déjà enregistrée. Modification désactivée.")
             self.page1_locked_label.show()
             self._set_page1_editable(False)
         else:
@@ -809,6 +1223,7 @@ class ClinicianFeedbackApp(QMainWindow):
         is_last = self.current_index == len(self.bundles) - 1
         self.page2_next_patient_btn.setText("Finish" if is_last else "Go to the next patient")
         self.stack.setCurrentIndex(0)
+        self._apply_pending_draft_if_needed(bundle)
         self._set_status(f"Patient charge: {bundle.patient_id}")
 
     def _collect_page1_scores(self):
@@ -872,7 +1287,7 @@ class ClinicianFeedbackApp(QMainWindow):
             }
             for question in self.questions:
                 question_id = question["id"]
-                row[f"question_{question_id}"] = question["text"]
+                row[f"question_{question_id}"] = blind_question_text(question["text"])
                 row[f"score_{question_id}"] = scores[display_key][question_id]
             rows_to_save.append((role, row))
 
@@ -902,15 +1317,15 @@ class ClinicianFeedbackApp(QMainWindow):
         bundle = self.bundles[self.current_index]
         state = self.patient_states.get(bundle.key, {})
         if not state.get("stage1_saved"):
-            QMessageBox.warning(self, "Etape 1 requise", "Enregistrez d'abord l'evaluation des conclusions (page 1).")
+            QMessageBox.warning(self, "Étape 1 requise", "Enregistrez d'abord l'évaluation des conclusions (page 1).")
             return
         if state.get("stage2_saved"):
-            QMessageBox.information(self, "Deja enregistre", "L'evaluation de reflexion IA est deja enregistree pour ce patient.")
+            QMessageBox.information(self, "Déjà enregistré", "L'évaluation de réflexion IA est déjà enregistrée pour ce patient.")
             return
 
         answers = self._collect_page2_answers()
         if answers is None:
-            QMessageBox.warning(self, "QCM incomplet", "Merci de repondre a tout le QCM de reflexion IA.")
+            QMessageBox.warning(self, "QCM incomplet", "Merci de répondre à tout le QCM de réflexion IA.")
             return
 
         row = {
@@ -931,12 +1346,14 @@ class ClinicianFeedbackApp(QMainWindow):
         try:
             self.append_row_to_csv(self.csv_reasoning_path, row)
         except Exception as error:
-            QMessageBox.critical(self, "Erreur export CSV", f"Impossible d'enregistrer l'evaluation de reflexion IA:\n{error}")
+            QMessageBox.critical(self, "Erreur export CSV", f"Impossible d'enregistrer l'évaluation de réflexion IA:\n{error}")
             return
 
         if not state.get("stage2_saved"):
             state["stage2_saved"] = True
             self.completed_count += 1
+        if self.progress_draft_path.exists():
+            self.progress_draft_path.unlink(missing_ok=True)
 
         if self.current_index == len(self.bundles) - 1:
             self._update_header()
@@ -953,6 +1370,12 @@ class ClinicianFeedbackApp(QMainWindow):
 
         self.current_index += 1
         self._load_current_patient()
+
+    def closeEvent(self, event):
+        self._save_progress_draft(silent=True)
+        if self._temp_data_root and self._temp_data_root.exists():
+            shutil.rmtree(self._temp_data_root, ignore_errors=True)
+        super().closeEvent(event)
 
     def append_row_to_csv(self, output_csv_path: Path, row: Dict[str, Any]) -> Path:
         output_csv_path.parent.mkdir(parents=True, exist_ok=True)
