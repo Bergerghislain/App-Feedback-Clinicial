@@ -4,19 +4,23 @@
   "current_index": 0,
   "page_index": 0,
   "page1_scores": {
-    "q1": {
+    "pertinence": {
       "c1": -1,
       "c2": -1
     },
-    "q2": {
+    "precision": {
       "c1": -1,
       "c2": -1
     },
-    "q3": {
+    "coherence_rcp": {
       "c1": -1,
       "c2": -1
     },
-    "q4": {
+    "aide_decision": {
+      "c1": -1,
+      "c2": -1
+    },
+    "securite": {
       "c1": -1,
       "c2": -1
     }

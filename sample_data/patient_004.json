@@ -3,15 +3,15 @@
   "nom": "Patient 004",
   "age": 29,
   "sexe": "M",
-  "contexte_clinique": "Suspected oligometastatic pulmonary relapse of Ewing sarcoma",
-  "diagnostic": "Suspected oligometastatic pulmonary relapse of Ewing sarcoma",
+  "contexte_clinique": "Suspicion de rechute pulmonaire oligométastatique d'un sarcome d'Ewing",
+  "diagnostic": "Suspicion de rechute pulmonaire oligométastatique d'un sarcome d'Ewing",
   "antecedents": [
-    "Type 2 diabetes",
-    "History of treated costal Ewing sarcoma"
+    "Diabète de type 2",
+    "Antécédent de sarcome d'Ewing costal traité"
   ],
   "traitements": [
-    "VDC/IE chemotherapy, R0 surgery, adjuvant chemotherapy and radiotherapy"
+    "Chimiothérapie VDC/IE, chirurgie R0, chimiothérapie adjuvante et radiothérapie"
   ],
-  "recent_exam_results": "Two isolated pulmonary nodules",
-  "description": "29-year-old man. Two isolated pulmonary nodules."
+  "recent_exam_results": "Deux nodules pulmonaires isolés",
+  "description": "Homme de 29 ans. Deux nodules pulmonaires isolés."
 }

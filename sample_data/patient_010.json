@@ -3,14 +3,14 @@
   "nom": "Patient 010",
   "age": 49,
   "sexe": "M",
-  "contexte_clinique": "Hepatic progression of metastatic myxoid liposarcoma",
-  "diagnostic": "Hepatic progression of metastatic myxoid liposarcoma",
+  "contexte_clinique": "Progression hépatique d'un liposarcome myxoïde métastatique",
+  "diagnostic": "Progression hépatique d'un liposarcome myxoïde métastatique",
   "antecedents": [
-    "None"
+    "Aucun"
   ],
   "traitements": [
-    "Trabectedin first line then doxorubicin second line"
+    "Trabectédine en première ligne puis doxorubicine en deuxième ligne"
   ],
-  "recent_exam_results": "CT scan showing significant hepatic progression",
-  "description": "49-year-old man. CT scan showing significant hepatic progression."
+  "recent_exam_results": "Scanner montrant une progression hépatique significative",
+  "description": "Homme de 49 ans. Scanner montrant une progression hépatique significative."
 }

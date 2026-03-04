@@ -3,16 +3,16 @@
   "nom": "Patient 002",
   "age": 69,
   "sexe": "F",
-  "contexte_clinique": "Large retroperitoneal leiomyosarcoma grade 2, initially unresectable",
-  "diagnostic": "Large retroperitoneal leiomyosarcoma grade 2, initially unresectable",
+  "contexte_clinique": "Léiomyosarcome rétropéritonéal volumineux de grade 2, initialement non résécable",
+  "diagnostic": "Léiomyosarcome rétropéritonéal volumineux de grade 2, initialement non résécable",
   "antecedents": [
     "Hypertension",
-    "Type 2 diabetes",
-    "Dyslipidemia"
+    "Diabète de type 2",
+    "Dyslipidémie"
   ],
   "traitements": [
-    "No prior oncologic treatment"
+    "Aucun traitement oncologique antérieur"
   ],
-  "recent_exam_results": "CT scan showing a 20 cm retroperitoneal mass without metastasis",
-  "description": "69-year-old woman. CT scan showing a 20 cm retroperitoneal mass without metastasis."
+  "recent_exam_results": "Scanner montrant une masse rétropéritonéale de 20 cm sans métastase",
+  "description": "Femme de 69 ans. Scanner montrant une masse rétropéritonéale de 20 cm sans métastase."
 }

@@ -3,14 +3,14 @@
   "nom": "Patient 008",
   "age": 32,
   "sexe": "M",
-  "contexte_clinique": "Desmoplastic small round cell tumor with peritoneal carcinomatosis",
-  "diagnostic": "Desmoplastic small round cell tumor with peritoneal carcinomatosis",
+  "contexte_clinique": "Tumeur desmoplastique à petites cellules rondes avec carcinose péritonéale",
+  "diagnostic": "Tumeur desmoplastique à petites cellules rondes avec carcinose péritonéale",
   "antecedents": [
-    "None"
+    "Aucun"
   ],
   "traitements": [
-    "None"
+    "Aucun"
   ],
-  "recent_exam_results": "CT showing multiple peritoneal masses and lymphadenopathy",
-  "description": "32-year-old man. CT showing multiple peritoneal masses and lymphadenopathy."
+  "recent_exam_results": "Scanner montrant des masses péritonéales multiples et des adénopathies",
+  "description": "Homme de 32 ans. Scanner montrant des masses péritonéales multiples et des adénopathies."
 }

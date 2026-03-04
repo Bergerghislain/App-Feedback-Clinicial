@@ -1,7 +1,7 @@
 {
-  "patient_key": "001",
-  "patient_id": "PAT-001",
-  "current_index": 0,
+  "patient_key": "003",
+  "patient_id": "PAT-003",
+  "current_index": 2,
   "page_index": 0,
   "page1_scores": {
     "pertinence": {

@@ -3,16 +3,16 @@
   "nom": "Patient 003",
   "age": 65,
   "sexe": "M",
-  "contexte_clinique": "Dedifferentiated recurrent retroperitoneal liposarcoma threatening solitary kidney",
-  "diagnostic": "Dedifferentiated recurrent retroperitoneal liposarcoma threatening solitary kidney",
+  "contexte_clinique": "Liposarcome rétropéritonéal récidivant dédifférencié menaçant le rein unique",
+  "diagnostic": "Liposarcome rétropéritonéal récidivant dédifférencié menaçant le rein unique",
   "antecedents": [
     "Hypertension",
-    "Chronic kidney disease with solitary kidney",
-    "History of retroperitoneal liposarcoma"
+    "Maladie rénale chronique avec rein unique",
+    "Antécédent de liposarcome rétropéritonéal"
   ],
   "traitements": [
-    "Surgery R0 in 2018"
+    "Chirurgie R0 en 2018"
   ],
-  "recent_exam_results": "Rapidly growing retroperitoneal mass with obstructive renal failure episode",
-  "description": "65-year-old man. Rapidly growing retroperitoneal mass with obstructive renal failure episode."
+  "recent_exam_results": "Masse rétropéritonéale à croissance rapide avec épisode d'insuffisance rénale obstructive",
+  "description": "Homme de 65 ans. Masse rétropéritonéale à croissance rapide avec épisode d'insuffisance rénale obstructive."
 }

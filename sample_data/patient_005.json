@@ -3,14 +3,14 @@
   "nom": "Patient 005",
   "age": 62,
   "sexe": "F",
-  "contexte_clinique": "Rapidly progressive pulmonary recurrence of undifferentiated pleomorphic sarcoma",
-  "diagnostic": "Rapidly progressive pulmonary recurrence of undifferentiated pleomorphic sarcoma",
+  "contexte_clinique": "Récidive pulmonaire rapidement progressive d'un sarcome pléomorphe indifférencié",
+  "diagnostic": "Récidive pulmonaire rapidement progressive d'un sarcome pléomorphe indifférencié",
   "antecedents": [
     "Hypertension"
   ],
   "traitements": [
-    "Neoadjuvant radiotherapy, R0 surgery, SBRT for lung nodules"
+    "Radiothérapie néoadjuvante, chirurgie R0, SBRT pour nodules pulmonaires"
   ],
-  "recent_exam_results": "New rapidly growing pulmonary nodule >3 cm",
-  "description": "62-year-old woman. New rapidly growing pulmonary nodule >3 cm."
+  "recent_exam_results": "Nouveau nodule pulmonaire > 3 cm à croissance rapide",
+  "description": "Femme de 62 ans. Nouveau nodule pulmonaire > 3 cm à croissance rapide."
 }

@@ -3,14 +3,14 @@
   "nom": "Patient 009",
   "age": 39,
   "sexe": "M",
-  "contexte_clinique": "Nodal recurrence of epithelioid sarcoma with INI1 loss",
-  "diagnostic": "Nodal recurrence of epithelioid sarcoma with INI1 loss",
+  "contexte_clinique": "Récidive ganglionnaire d'un sarcome épithélioïde avec perte d'INI1",
+  "diagnostic": "Récidive ganglionnaire d'un sarcome épithélioïde avec perte d'INI1",
   "antecedents": [
-    "History of epithelioid sarcoma treated with amputation"
+    "Antécédent de sarcome épithélioïde traité par amputation"
   ],
   "traitements": [
-    "Neoadjuvant chemotherapy, amputation, adjuvant chemotherapy"
+    "Chimiothérapie néoadjuvante, amputation, chimiothérapie adjuvante"
   ],
-  "recent_exam_results": "Biopsy confirming nodal recurrence",
-  "description": "39-year-old man. Biopsy confirming nodal recurrence."
+  "recent_exam_results": "Biopsie confirmant une récidive ganglionnaire",
+  "description": "Homme de 39 ans. Biopsie confirmant une récidive ganglionnaire."
 }

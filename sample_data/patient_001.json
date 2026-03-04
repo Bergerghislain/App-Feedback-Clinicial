@@ -3,14 +3,14 @@
   "nom": "Patient 001",
   "age": 29,
   "sexe": "M",
-  "contexte_clinique": "Metastatic gastric GIST with liver involvement, KIT wild-type and PDGFRA non-mutated, early progression under imatinib",
-  "diagnostic": "Metastatic gastric GIST with liver involvement, KIT wild-type and PDGFRA non-mutated, early progression under imatinib",
+  "contexte_clinique": "GIST gastrique métastatique avec atteinte hépatique, KIT de type sauvage et PDGFRA non muté, progression précoce sous imatinib",
+  "diagnostic": "GIST gastrique métastatique avec atteinte hépatique, KIT de type sauvage et PDGFRA non muté, progression précoce sous imatinib",
   "antecedents": [
-    "None"
+    "Aucun"
   ],
   "traitements": [
-    "Imatinib 400 mg/day with hepatic progression"
+    "Imatinib 400 mg/jour avec progression hépatique"
   ],
-  "recent_exam_results": "Imaging showing hepatic progression after 3 months of treatment",
-  "description": "29-year-old man. Imaging showing hepatic progression after 3 months of treatment."
+  "recent_exam_results": "Imagerie montrant une progression hépatique après 3 mois de traitement",
+  "description": "Homme de 29 ans. Imagerie montrant une progression hépatique après 3 mois de traitement."
 }

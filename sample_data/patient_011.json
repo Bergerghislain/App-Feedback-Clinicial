@@ -3,15 +3,15 @@
   "nom": "Patient 011",
   "age": 78,
   "sexe": "F",
-  "contexte_clinique": "Localized ileocecal progression of ALK-positive inflammatory myofibroblastic tumor",
-  "diagnostic": "Localized ileocecal progression of ALK-positive inflammatory myofibroblastic tumor",
+  "contexte_clinique": "Progression iléocæcale localisée d'une tumeur myofibroblastique inflammatoire ALK positive",
+  "diagnostic": "Progression iléocæcale localisée d'une tumeur myofibroblastique inflammatoire ALK positive",
   "antecedents": [
     "Hypertension",
-    "Osteoporosis"
+    "Ostéoporose"
   ],
   "traitements": [
-    "Crizotinib followed by Lorlatinib"
+    "Crizotinib puis lorlatinib"
   ],
-  "recent_exam_results": "PET scan showing ileocecal progression",
-  "description": "78-year-old woman. PET scan showing ileocecal progression."
+  "recent_exam_results": "TEP-TDM montrant une progression iléocæcale",
+  "description": "Femme de 78 ans. TEP-TDM montrant une progression iléocæcale."
 }

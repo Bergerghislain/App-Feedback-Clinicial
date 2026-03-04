@@ -3,14 +3,14 @@
   "nom": "Patient 007",
   "age": 60,
   "sexe": "M",
-  "contexte_clinique": "Progressive pleural monophasic synovial sarcoma grade 3",
-  "diagnostic": "Progressive pleural monophasic synovial sarcoma grade 3",
+  "contexte_clinique": "Sarcome synovial monophasique pleural de grade 3 en progression",
+  "diagnostic": "Sarcome synovial monophasique pleural de grade 3 en progression",
   "antecedents": [
-    "None"
+    "Aucun"
   ],
   "traitements": [
-    "Pleural drainage with talc pleurodesis"
+    "Drainage pleural avec pleurodèse au talc"
   ],
-  "recent_exam_results": "CT scan showing worsening pleural nodular thickening",
-  "description": "60-year-old man. CT scan showing worsening pleural nodular thickening."
+  "recent_exam_results": "Scanner montrant une aggravation de l'épaississement nodulaire pleural",
+  "description": "Homme de 60 ans. Scanner montrant une aggravation de l'épaississement nodulaire pleural."
 }

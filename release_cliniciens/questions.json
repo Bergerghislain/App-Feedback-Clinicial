@@ -1,0 +1,24 @@
+{
+  "questions": [
+    {
+      "id": "pertinence",
+      "text": "Cette conclusion est-elle cliniquement pertinente pour ce patient ?"
+    },
+    {
+      "id": "precision",
+      "text": "Le niveau de détail de cette conclusion est-il suffisant ?"
+    },
+    {
+      "id": "coherence_rcp",
+      "text": "Cette conclusion est-elle cohérente avec l'autre conclusion ?"
+    },
+    {
+      "id": "aide_decision",
+      "text": "Cette conclusion aide-t-elle la prise de décision clinique ?"
+    },
+    {
+      "id": "securite",
+      "text": "Le niveau de confiance dans cette conclusion est-il acceptable pour un usage de pré-analyse ?"
+    }
+  ]
+}

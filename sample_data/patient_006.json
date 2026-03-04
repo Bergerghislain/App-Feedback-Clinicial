@@ -3,14 +3,14 @@
   "nom": "Patient 006",
   "age": 37,
   "sexe": "M",
-  "contexte_clinique": "Pulmonary metastases with pleural effusion after pleomorphic liposarcoma",
-  "diagnostic": "Pulmonary metastases with pleural effusion after pleomorphic liposarcoma",
+  "contexte_clinique": "Métastases pulmonaires avec épanchement pleural après liposarcome pléomorphe",
+  "diagnostic": "Métastases pulmonaires avec épanchement pleural après liposarcome pléomorphe",
   "antecedents": [
-    "Active smoking"
+    "Tabagisme actif"
   ],
   "traitements": [
-    "Neoadjuvant Adriamycin-Ifosfamide followed by surgery R0"
+    "Adriamycine-Ifosfamide néoadjuvant suivi d'une chirurgie R0"
   ],
-  "recent_exam_results": "Three pulmonary nodules and right pleural effusion",
-  "description": "37-year-old man. Three pulmonary nodules and right pleural effusion."
+  "recent_exam_results": "Trois nodules pulmonaires et épanchement pleural droit",
+  "description": "Homme de 37 ans. Trois nodules pulmonaires et épanchement pleural droit."
 }

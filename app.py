@@ -39,9 +39,9 @@ except Exception:
 
 DEFAULT_QUESTIONS = [
     {"id": "q1", "text": "Cette conclusion est-elle cliniquement pertinente pour ce patient ?"},
-    {"id": "q2", "text": "Le niveau de detail de cette conclusion est-il suffisant ?"},
-    {"id": "q3", "text": "Cette conclusion est-elle coherente avec les donnees du patient ?"},
-    {"id": "q4", "text": "Cette conclusion aide-t-elle a la prise de decision clinique ?"},
+    {"id": "q2", "text": "Le niveau de détail de cette conclusion est-il suffisant ?"},
+    {"id": "q3", "text": "Cette conclusion est-elle cohérente avec les données du patient ?"},
+    {"id": "q4", "text": "Cette conclusion aide-t-elle à la prise de décision clinique ?"},
 ]
 
 PAIR_KEYWORD_STOPWORDS = {
@@ -247,13 +247,14 @@ def format_patient_description(patient_data) -> str:
     known_fields = {
         "Identifiant patient": ["patient_id", "id", "identifiant"],
         "Nom": ["nom", "name"],
-        "Age": ["age"],
+        "Âge": ["age"],
         "Sexe": ["sexe", "sex", "genre"],
         "Contexte clinique": ["contexte_clinique", "clinical_context", "contexte"],
         "Diagnostic": ["diagnostic"],
-        "Antecedents": ["antecedents", "history"],
-        "Symptomes": ["symptomes", "symptoms"],
+        "Antécédents": ["antecedents", "history"],
+        "Symptômes": ["symptomes", "symptoms"],
         "Traitements": ["traitements", "treatments"],
+        "Résultats d'examens récents": ["recent_exam_results", "resultats_examens_recents", "examens_recents"],
         "Description libre": ["description", "description_patient", "summary"],
     }
 
@@ -412,12 +413,12 @@ def decode_app_data_password(token: str) -> Optional[str]:
 
 def blind_question_text(text: str) -> str:
     replacements = [
-        (r"(?i)\bla\s+conclusion\s+ia\b", "la conclusion évaluee"),
-        (r"(?i)\ble\s+niveau\s+de\s+detail\s+de\s+la\s+conclusion\s+ia\b", "le niveau de detail de cette conclusion"),
+        (r"(?i)\bla\s+conclusion\s+ia\b", "la conclusion évaluée"),
+        (r"(?i)\ble\s+niveau\s+de\s+detail\s+de\s+la\s+conclusion\s+ia\b", "le niveau de détail de cette conclusion"),
         (r"(?i)\bla\s+conclusion\s+rcp\b", "l'autre conclusion"),
         (r"(?i)\bl['’]evaluation\s+ia\b", "l'évaluation de cette conclusion"),
         (r"(?i)\bevaluation\s+ia\b", "évaluation de cette conclusion"),
-        (r"(?i)\bconclusion\s+ia\b", "conclusion évaluee"),
+        (r"(?i)\bconclusion\s+ia\b", "conclusion évaluée"),
         (r"(?i)\bconclusion\s+rcp\b", "autre conclusion"),
         (r"(?i)\bRCP\b", "autre conclusion"),
         (r"(?i)\bIA\b", "cette conclusion"),
@@ -519,7 +520,7 @@ def discover_patient_bundles(root: Path):
 class ClinicianFeedbackApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Clinical Feedback - Évaluation clinique")
+        self.setWindowTitle("Retour Clinique - Évaluation clinique")
         self.resize(1280, 820)
 
         self.questions_path = APP_DIR / "questions.json"
@@ -528,7 +529,7 @@ class ClinicianFeedbackApp(QMainWindow):
             {
                 "id": "clarte",
                 "text": "La réflexion de l'IA est-elle claire ?",
-                "options": [("tres_claire", "Tres claire"), ("moyenne", "Moyennement claire"), ("peu_claire", "Peu claire")],
+                "options": [("tres_claire", "Très claire"), ("moyenne", "Moyennement claire"), ("peu_claire", "Peu claire")],
             },
             {
                 "id": "coherence",
@@ -538,7 +539,7 @@ class ClinicianFeedbackApp(QMainWindow):
             {
                 "id": "utilite",
                 "text": "La réflexion apporte-t-elle une aide clinique utile ?",
-                "options": [("utile", "Utile"), ("limitee", "Utilite limitee"), ("inutile", "Peu utile")],
+                "options": [("utile", "Utile"), ("limitee", "Utilité limitée"), ("inutile", "Peu utile")],
             },
         ]
 
@@ -605,14 +606,14 @@ class ClinicianFeedbackApp(QMainWindow):
                 self._data_origin_label = str(fallback)
                 QMessageBox.warning(
                     self,
-                    "Configuration securite manquante",
-                    f"Le fichier de cle ({' ou '.join(APP_DATA_KEY_FILE_ALTERNATES)}) est requis a cote de data.zip.",
+                    "Configuration sécurité manquante",
+                    f"Le fichier de clé ({' ou '.join(APP_DATA_KEY_FILE_ALTERNATES)}) est requis à côté de data.zip.",
                 )
                 return fallback
 
             extracted = self._extract_data_zip_silent(data_zip_path, password)
             if extracted is not None:
-                self._data_origin_label = f"data.zip (dechiffre automatique): {data_zip_path}"
+                self._data_origin_label = f"data.zip (déchiffrement automatique): {data_zip_path}"
                 return extracted
 
             fallback = self._default_data_dir()
@@ -620,7 +621,7 @@ class ClinicianFeedbackApp(QMainWindow):
             if fallback == APP_DIR:
                 QMessageBox.warning(
                     self,
-                    "Donnees non accessibles",
+                    "Données non accessibles",
                     "Aucun dossier data lisible n'est disponible.",
                 )
             return fallback
@@ -656,10 +657,10 @@ class ClinicianFeedbackApp(QMainWindow):
             self._extract_nested_payload_if_present(temp_root)
             extracted_data_dir = self._locate_data_directory(temp_root)
             if extracted_data_dir is None:
-                raise ValueError("Aucun JSON detecte apres extraction de data.zip.")
+                raise ValueError("Aucun JSON détecté après extraction de data.zip.")
         except Exception as error:
             shutil.rmtree(temp_root, ignore_errors=True)
-            QMessageBox.warning(self, "Acces data.zip impossible", f"Impossible d'ouvrir data.zip : {error}")
+            QMessageBox.warning(self, "Accès data.zip impossible", f"Impossible d'ouvrir data.zip : {error}")
             return None
 
         self._temp_data_root = temp_root
@@ -710,22 +711,42 @@ class ClinicianFeedbackApp(QMainWindow):
         self.setCentralWidget(central)
 
         header = QFrame()
+        header.setObjectName("headerCard")
         header_layout = QVBoxLayout(header)
         header_layout.setContentsMargins(14, 12, 14, 12)
         header_layout.setSpacing(8)
+        top_row = QHBoxLayout()
+        top_row.setSpacing(10)
         self.patient_counter_label = QLabel("Patient 0/0")
-        self.progress_label = QLabel("Evaluations finalisees: 0/0")
-        self.status_label = QLabel(f"Dossier de données détecté: {self._data_origin_label}")
+        self.patient_counter_label.setProperty("headerPrimary", True)
+        self.progress_label = QLabel("Progression: 0/0 (0%)")
+        self.progress_label.setProperty("headerPrimary", True)
+        self.status_label = QLabel(f"Données: {self._data_origin_label}")
+        self.status_label.setProperty("headerSecondary", True)
+        top_row.addWidget(self.patient_counter_label)
+        top_row.addWidget(self.progress_label)
+        top_row.addStretch(1)
         self.save_progress_btn = QPushButton("Sauvegarder en cours")
         self.save_progress_btn.setProperty("actionButton", True)
         self.save_progress_btn.clicked.connect(self._save_progress_draft)
-        header_layout.addWidget(self.patient_counter_label)
-        header_layout.addWidget(self.progress_label)
+        top_row.addWidget(self.save_progress_btn)
+        header_layout.addLayout(top_row)
         header_layout.addWidget(self.status_label)
-        header_layout.addWidget(self.save_progress_btn)
+
+        steps_row = QHBoxLayout()
+        steps_row.setSpacing(8)
+        self.step1_badge = QLabel("Étape 1: Conclusions")
+        self.step1_badge.setProperty("stepBadge", True)
+        self.step2_badge = QLabel("Étape 2: Réflexion IA")
+        self.step2_badge.setProperty("stepBadge", True)
+        steps_row.addWidget(self.step1_badge)
+        steps_row.addWidget(self.step2_badge)
+        steps_row.addStretch(1)
+        header_layout.addLayout(steps_row)
         root_layout.addWidget(header)
 
         self.stack = QStackedWidget()
+        self.stack.currentChanged.connect(self._on_step_changed)
         root_layout.addWidget(self.stack, 1)
 
         # Page 1: evaluation des conclusions (blindees)
@@ -735,9 +756,11 @@ class ClinicianFeedbackApp(QMainWindow):
         page1_layout.setSpacing(12)
 
         self.page1_title_label = QLabel("Étape 1 - Évaluation des conclusions")
+        self.page1_title_label.setProperty("sectionTitle", True)
         page1_layout.addWidget(self.page1_title_label)
 
         description_group = QGroupBox("Description patient (à lire en premier)")
+        description_group.setObjectName("descriptionCard")
         description_layout = QVBoxLayout(description_group)
         self.description_text = QPlainTextEdit()
         self.description_text.setReadOnly(True)
@@ -747,9 +770,10 @@ class ClinicianFeedbackApp(QMainWindow):
         page1_layout.addWidget(description_group)
 
         conclusions_group = QGroupBox("Conclusions (affichage neutre)")
+        conclusions_group.setObjectName("conclusionsCard")
         conclusions_layout = QGridLayout(conclusions_group)
-        conclusions_layout.addWidget(QLabel("Conclusion 1"), 0, 0)
-        conclusions_layout.addWidget(QLabel("Conclusion 2"), 0, 1)
+        conclusions_layout.addWidget(QLabel("Conclusion A"), 0, 0)
+        conclusions_layout.addWidget(QLabel("Conclusion B"), 0, 1)
         self.conclusion1_text = QPlainTextEdit()
         self.conclusion2_text = QPlainTextEdit()
         for widget in (self.conclusion1_text, self.conclusion2_text):
@@ -760,11 +784,17 @@ class ClinicianFeedbackApp(QMainWindow):
         conclusions_layout.addWidget(self.conclusion2_text, 1, 1)
         page1_layout.addWidget(conclusions_group)
 
-        questionnaire_group = QGroupBox("Noter chaque conclusion (1 à 5)")
+        questionnaire_group = QGroupBox("Évaluation des conclusions (notes de 1 à 5)")
+        questionnaire_group.setObjectName("evaluationCard")
         questionnaire_layout = QGridLayout(questionnaire_group)
+        questionnaire_layout.setVerticalSpacing(10)
+        questionnaire_layout.setHorizontalSpacing(8)
+        questionnaire_layout.setColumnStretch(0, 4)
+        questionnaire_layout.setColumnStretch(1, 2)
+        questionnaire_layout.setColumnStretch(2, 2)
         questionnaire_layout.addWidget(QLabel("Question"), 0, 0)
-        questionnaire_layout.addWidget(QLabel("Conclusion 1"), 0, 1)
-        questionnaire_layout.addWidget(QLabel("Conclusion 2"), 0, 2)
+        questionnaire_layout.addWidget(QLabel("Conclusion A"), 0, 1)
+        questionnaire_layout.addWidget(QLabel("Conclusion B"), 0, 2)
 
         for row, question in enumerate(self.questions, start=1):
             question_label = QLabel(f"{row}. {blind_question_text(question['text'])}")
@@ -775,14 +805,14 @@ class ClinicianFeedbackApp(QMainWindow):
             for col, label in enumerate(("c1", "c2"), start=1):
                 score_row = QHBoxLayout()
                 score_row.setContentsMargins(0, 0, 0, 0)
-                score_row.setSpacing(6)
+                score_row.setSpacing(4)
                 group = QButtonGroup(self)
                 group.setExclusive(True)
                 self.page1_groups[question["id"]][label] = group
                 for score in range(1, 6):
                     button = QPushButton(str(score))
                     button.setCheckable(True)
-                    button.setFixedSize(48, 38)
+                    button.setFixedSize(44, 36)
                     button.setProperty("scoreButton", True)
                     button.setProperty("scoreLevel", str(score))
                     group.addButton(button, score)
@@ -795,7 +825,7 @@ class ClinicianFeedbackApp(QMainWindow):
         action_row = QHBoxLayout()
         self.page1_locked_label = QLabel("")
         self.page1_locked_label.hide()
-        self.page1_next_btn = QPushButton("Go to the next page")
+        self.page1_next_btn = QPushButton("Aller à l'étape 2")
         self.page1_next_btn.setProperty("actionButton", True)
         self.page1_next_btn.clicked.connect(self._on_page1_next)
         action_row.addWidget(self.page1_locked_label, 1)
@@ -810,9 +840,11 @@ class ClinicianFeedbackApp(QMainWindow):
         page2_layout.setSpacing(12)
 
         self.page2_title_label = QLabel("Étape 2 - Évaluation de la réflexion IA (même patient)")
+        self.page2_title_label.setProperty("sectionTitle", True)
         page2_layout.addWidget(self.page2_title_label)
 
         reasoning_group = QGroupBox("Réflexion de l'IA")
+        reasoning_group.setObjectName("reasoningCard")
         reasoning_layout = QVBoxLayout(reasoning_group)
         self.reasoning_text = QPlainTextEdit()
         self.reasoning_text.setReadOnly(True)
@@ -822,6 +854,7 @@ class ClinicianFeedbackApp(QMainWindow):
         page2_layout.addWidget(reasoning_group)
 
         qcm_group = QGroupBox("QCM réflexion IA")
+        qcm_group.setObjectName("qcmCard")
         qcm_layout = QVBoxLayout(qcm_group)
         for question in self.reasoning_qcm:
             row = QHBoxLayout()
@@ -830,9 +863,9 @@ class ClinicianFeedbackApp(QMainWindow):
             label.setWordWrap(True)
             row.addWidget(label, 2)
 
-            options_layout = QHBoxLayout()
+            options_layout = QVBoxLayout()
             options_layout.setContentsMargins(0, 0, 0, 0)
-            options_layout.setSpacing(8)
+            options_layout.setSpacing(6)
             group = QButtonGroup(self)
             group.setExclusive(True)
             self.page2_qcm_groups[question["id"]] = group
@@ -841,8 +874,7 @@ class ClinicianFeedbackApp(QMainWindow):
             for index, (_, option_label) in enumerate(question["options"]):
                 button = QPushButton(option_label)
                 button.setCheckable(True)
-                button.setProperty("scoreButton", True)
-                button.setProperty("optionButton", True)
+                button.setProperty("qcmOptionButton", True)
                 group.addButton(button, index)
                 options_layout.addWidget(button)
             row.addLayout(options_layout, 3)
@@ -850,19 +882,26 @@ class ClinicianFeedbackApp(QMainWindow):
         page2_layout.addWidget(qcm_group)
 
         comment_group = QGroupBox("Commentaire libre sur la réflexion IA")
+        comment_group.setObjectName("commentCard")
         comment_layout = QVBoxLayout(comment_group)
         self.reasoning_comment_edit = QPlainTextEdit()
-        self.reasoning_comment_edit.setPlaceholderText("Commentaire clinique libre sur la réflexion IA...")
+        self.reasoning_comment_edit.setPlaceholderText(
+            "Exemple: points forts, limites, risques, applicabilité clinique..."
+        )
         self.reasoning_comment_edit.setMinimumHeight(90)
         self.reasoning_comment_edit.setMaximumHeight(140)
+        self.reasoning_comment_edit.textChanged.connect(self._update_comment_counter)
         comment_layout.addWidget(self.reasoning_comment_edit)
+        self.reasoning_comment_counter = QLabel("0 caractères (conseillé: 100 à 400)")
+        self.reasoning_comment_counter.setProperty("helperText", True)
+        comment_layout.addWidget(self.reasoning_comment_counter)
         page2_layout.addWidget(comment_group)
 
         nav_row = QHBoxLayout()
-        self.page2_previous_btn = QPushButton("Previous page")
+        self.page2_previous_btn = QPushButton("Revenir à l'étape 1")
         self.page2_previous_btn.setProperty("actionButton", True)
         self.page2_previous_btn.clicked.connect(self._on_page2_previous)
-        self.page2_next_patient_btn = QPushButton("Go to the next patient")
+        self.page2_next_patient_btn = QPushButton("Patient suivant")
         self.page2_next_patient_btn.setProperty("actionButton", True)
         self.page2_next_patient_btn.clicked.connect(self._on_page2_next_patient)
         nav_row.addWidget(self.page2_previous_btn)
@@ -870,6 +909,8 @@ class ClinicianFeedbackApp(QMainWindow):
         nav_row.addWidget(self.page2_next_patient_btn)
         page2_layout.addLayout(nav_row)
         self.stack.addWidget(self._wrap_in_scroll_area(self.page2))
+        self._set_active_step(0)
+        self._update_comment_counter()
 
     def _wrap_in_scroll_area(self, page_widget: QWidget) -> QScrollArea:
         scroll = QScrollArea()
@@ -880,11 +921,39 @@ class ClinicianFeedbackApp(QMainWindow):
     def _apply_styles(self):
         self.setStyleSheet(
             """
-            QMainWindow { background: #f8fafc; color: #0f172a; }
+            QMainWindow { background: #f3f6fb; color: #0f172a; }
             QFrame, QGroupBox {
                 background: white;
                 border: 1px solid #cbd5e1;
                 border-radius: 12px;
+            }
+            QFrame#headerCard {
+                background: #dbeafe;
+                border: 1px solid #93c5fd;
+            }
+            QGroupBox#descriptionCard {
+                background: #fff7ed;
+                border: 1px solid #fdba74;
+            }
+            QGroupBox#conclusionsCard {
+                background: #eef2ff;
+                border: 1px solid #a5b4fc;
+            }
+            QGroupBox#evaluationCard {
+                background: #f8fafc;
+                border: 1px solid #cbd5e1;
+            }
+            QGroupBox#reasoningCard {
+                background: #ecfeff;
+                border: 1px solid #67e8f9;
+            }
+            QGroupBox#qcmCard {
+                background: #f0f9ff;
+                border: 1px solid #7dd3fc;
+            }
+            QGroupBox#commentCard {
+                background: #f8fafc;
+                border: 1px solid #cbd5e1;
             }
             QGroupBox {
                 margin-top: 12px;
@@ -895,6 +964,39 @@ class ClinicianFeedbackApp(QMainWindow):
                 color: #0f172a;
                 font-size: 15px;
                 line-height: 1.3;
+            }
+            QLabel[headerPrimary="true"] {
+                font-size: 16px;
+                font-weight: 700;
+                color: #0c4a6e;
+            }
+            QLabel[headerSecondary="true"] {
+                font-size: 13px;
+                color: #1e3a8a;
+            }
+            QLabel[sectionTitle="true"] {
+                font-size: 17px;
+                font-weight: 700;
+                color: #0f172a;
+                margin-bottom: 4px;
+            }
+            QLabel[helperText="true"] {
+                font-size: 12px;
+                color: #475569;
+            }
+            QLabel[stepBadge="true"] {
+                background: #e2e8f0;
+                border: 1px solid #94a3b8;
+                border-radius: 999px;
+                padding: 4px 10px;
+                font-size: 13px;
+                font-weight: 600;
+                color: #334155;
+            }
+            QLabel[stepBadge="true"][stepActive="true"] {
+                background: #1d4ed8;
+                color: #ffffff;
+                border: 1px solid #1e3a8a;
             }
             QPlainTextEdit {
                 background: #ffffff;
@@ -928,27 +1030,28 @@ class ClinicianFeedbackApp(QMainWindow):
                 min-height: 40px;
             }
             QPushButton[actionButton="true"]:hover { background: #1e40af; }
+            QPushButton[actionButton="true"]:focus { border: 2px solid #0f172a; }
             QPushButton[actionButton="true"]:checked { background: #1e40af; color: #ffffff; border: 1px solid #1e3a8a; }
             QPushButton[scoreButton="true"] {
-                min-height: 38px;
-                min-width: 48px;
-                max-height: 38px;
-                max-width: 48px;
-                font-size: 16px;
+                min-height: 36px;
+                min-width: 44px;
+                max-height: 36px;
+                max-width: 44px;
+                font-size: 15px;
                 border: 2px solid #94a3b8;
                 border-radius: 10px;
             }
-            QPushButton[optionButton="true"] {
-                min-width: 130px;
-                max-width: 220px;
+            QPushButton[qcmOptionButton="true"] {
+                min-width: 150px;
+                max-width: 360px;
                 min-height: 38px;
                 max-height: 38px;
                 background: #eef2ff;
                 color: #1e3a8a;
                 border-color: #93c5fd;
             }
-            QPushButton[optionButton="true"]:hover { background: #dbeafe; }
-            QPushButton[optionButton="true"]:checked { background: #1d4ed8; color: #ffffff; border-color: #1e40af; }
+            QPushButton[qcmOptionButton="true"]:hover { background: #dbeafe; }
+            QPushButton[qcmOptionButton="true"]:checked { background: #1d4ed8; color: #ffffff; border-color: #1e40af; }
             QPushButton[scoreButton="true"][scoreLevel="1"] { background: #fee2e2; color: #7f1d1d; border-color: #fca5a5; }
             QPushButton[scoreButton="true"][scoreLevel="2"] { background: #ffedd5; color: #9a3412; border-color: #fdba74; }
             QPushButton[scoreButton="true"][scoreLevel="3"] { background: #fef9c3; color: #854d0e; border-color: #fde047; }
@@ -967,6 +1070,23 @@ class ClinicianFeedbackApp(QMainWindow):
             QPushButton[scoreButton="true"]:focus { border: 3px solid #111827; }
             """
         )
+
+    def _on_step_changed(self, index: int):
+        self._set_active_step(index)
+
+    def _set_active_step(self, step_index: int):
+        badges = (self.step1_badge, self.step2_badge)
+        for index, badge in enumerate(badges):
+            badge.setProperty("stepActive", index == step_index)
+            badge.style().unpolish(badge)
+            badge.style().polish(badge)
+            badge.update()
+
+    def _update_comment_counter(self):
+        text = self.reasoning_comment_edit.toPlainText()
+        count = len(text)
+        unit = "caractère" if count == 1 else "caractères"
+        self.reasoning_comment_counter.setText(f"{count} {unit} (conseillé: 100 à 400)")
 
     def _set_status(self, text: str):
         self.status_label.setText(text)
@@ -1070,8 +1190,8 @@ class ClinicianFeedbackApp(QMainWindow):
         self.progress_draft_path.parent.mkdir(parents=True, exist_ok=True)
         self.progress_draft_path.write_text(json.dumps(draft, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         if not silent:
-            self._set_status(f"Progression sauvegardee: {self.progress_draft_path.name}")
-            QMessageBox.information(self, "Sauvegarde en cours", "Progression sauvegardee. Vous pourrez reprendre plus tard.")
+            self._set_status(f"Progression sauvegardée: {self.progress_draft_path.name}")
+            QMessageBox.information(self, "Sauvegarde en cours", "Progression sauvegardée. Vous pourrez reprendre plus tard.")
 
     def _restore_draft_progress_if_any(self):
         if not self.progress_draft_path.exists() or not self.bundles:
@@ -1088,7 +1208,7 @@ class ClinicianFeedbackApp(QMainWindow):
             if bundle.key == draft_key:
                 self.current_index = index
                 self._pending_draft = draft
-                self._set_status("Brouillon detecte: reprise de progression chargee.")
+                self._set_status("Brouillon détecté: reprise de progression chargée.")
                 return
 
     def _apply_pending_draft_if_needed(self, bundle: PatientBundle):
@@ -1178,19 +1298,20 @@ class ClinicianFeedbackApp(QMainWindow):
         total = len(self.bundles)
         current = self.current_index + 1 if 0 <= self.current_index < total else 0
         self.patient_counter_label.setText(f"Patient {current}/{total}")
-        self.progress_label.setText(f"Evaluations finalisees: {self.completed_count}/{total}")
+        percent = int((self.completed_count / total) * 100) if total else 0
+        self.progress_label.setText(f"Progression: {self.completed_count}/{total} ({percent}%)")
 
     def _load_current_patient(self):
         if not self.bundles:
             self.patient_counter_label.setText("Patient 0/0")
-            self.progress_label.setText("Evaluations finalisees: 0/0")
-            self.description_text.setPlainText("Aucun patient charge. Verifiez le dossier data/.")
+            self.progress_label.setText("Progression: 0/0 (0%)")
+            self.description_text.setPlainText("Aucun patient chargé. Vérifiez le dossier data/.")
             self.conclusion1_text.clear()
             self.conclusion2_text.clear()
             self.reasoning_text.clear()
             self.page1_next_btn.setEnabled(False)
             self.page2_next_patient_btn.setEnabled(False)
-            self._set_status(f"Aucun patient detecte dans {self.data_dir}")
+            self._set_status(f"Aucun patient détecté dans {self.data_dir}")
             return
 
         self._update_header()
@@ -1221,10 +1342,10 @@ class ClinicianFeedbackApp(QMainWindow):
             self._reset_page1_form()
 
         is_last = self.current_index == len(self.bundles) - 1
-        self.page2_next_patient_btn.setText("Finish" if is_last else "Go to the next patient")
+        self.page2_next_patient_btn.setText("Terminer" if is_last else "Patient suivant")
         self.stack.setCurrentIndex(0)
         self._apply_pending_draft_if_needed(bundle)
-        self._set_status(f"Patient charge: {bundle.patient_id}")
+        self._set_status(f"Patient chargé: {bundle.patient_id}")
 
     def _collect_page1_scores(self):
         scores = {"c1": {}, "c2": {}}
@@ -1261,7 +1382,7 @@ class ClinicianFeedbackApp(QMainWindow):
 
         scores = self._collect_page1_scores()
         if scores is None:
-            QMessageBox.warning(self, "Questionnaire incomplet", "Renseignez toutes les notes pour Conclusion 1 et Conclusion 2.")
+            QMessageBox.warning(self, "Questionnaire incomplet", "Renseignez toutes les notes pour Conclusion A et Conclusion B.")
             return
 
         timestamp = datetime.now()
@@ -1277,7 +1398,7 @@ class ClinicianFeedbackApp(QMainWindow):
         }
 
         rows_to_save = []
-        for display_key, display_label in (("c1", "Conclusion 1"), ("c2", "Conclusion 2")):
+        for display_key, display_label in (("c1", "Conclusion A"), ("c2", "Conclusion B")):
             role = self.current_conclusion_mapping[f"{display_key}_role"]
             row = {
                 **common_data,
@@ -1301,10 +1422,10 @@ class ClinicianFeedbackApp(QMainWindow):
 
         state["stage1_saved"] = True
         state["evaluation_id"] = evaluation_id
-        self.page1_locked_label.setText("Evaluation des conclusions enregistree. Modification desactivee.")
+        self.page1_locked_label.setText("Évaluation des conclusions enregistrée. Modification désactivée.")
         self.page1_locked_label.show()
         self._set_page1_editable(False)
-        self._set_status(f"Conclusions enregistrees pour {bundle.patient_id}.")
+        self._set_status(f"Conclusions enregistrées pour {bundle.patient_id}.")
         self.stack.setCurrentIndex(1)
 
     def _on_page2_previous(self):
@@ -1359,13 +1480,13 @@ class ClinicianFeedbackApp(QMainWindow):
             self._update_header()
             QMessageBox.information(
                 self,
-                "Finish",
-                "Evaluation terminee.\n"
+                "Terminé",
+                "Évaluation terminée.\n"
                 f"- {self.csv_conclusion_ia_path}\n"
                 f"- {self.csv_conclusion_rcp_path}\n"
                 f"- {self.csv_reasoning_path}",
             )
-            self._set_status("Collecte terminee pour tous les patients.")
+            self._set_status("Collecte terminée pour tous les patients.")
             return
 
         self.current_index += 1
