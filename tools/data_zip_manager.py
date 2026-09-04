@@ -24,6 +24,20 @@ def encode_app_data_password(password: str) -> str:
     return base64.urlsafe_b64encode(obfuscated).decode("utf-8")
 
 
+def decode_app_data_password(token: str) -> Optional[str]:
+    cleaned = token.strip()
+    if not cleaned:
+        return None
+    try:
+        decoded = base64.urlsafe_b64decode(cleaned.encode("utf-8"))
+        plaintext = _xor_bytes(decoded, APP_DATA_OBFUSCATION_SECRET).decode("utf-8")
+    except Exception:
+        return None
+    if not plaintext.startswith(f"{APP_DATA_KEY_PREFIX}:"):
+        return None
+    return plaintext.split(":", 1)[1]
+
+
 def write_app_key_file(password: str, key_file_path: Path):
     key_file_path.parent.mkdir(parents=True, exist_ok=True)
     key_file_path.write_text(encode_app_data_password(password) + "\n", encoding="utf-8")
@@ -73,6 +87,48 @@ def pack_data_folder(source_dir: Path, zip_path: Path, app_key_file: Optional[Pa
         write_app_key_file(pwd_1, app_key_file)
 
 
+def validate_zip_password(zip_path: Path, password: str):
+    if not zip_path.exists() or not zip_path.is_file():
+        raise FileNotFoundError(f"Archive introuvable: {zip_path}")
+
+    with pyzipper.AESZipFile(zip_path, "r") as zip_file:
+        zip_file.pwd = password.encode("utf-8")
+        members = zip_file.namelist()
+        if not members:
+            raise ValueError("Archive vide.")
+        # La lecture d'un octet force la verification du mot de passe.
+        with zip_file.open(members[0], "r") as member_stream:
+            member_stream.read(1)
+
+
+def recover_app_key(zip_path: Path, app_key_file: Path, password: Optional[str]):
+    if password:
+        pwd = password
+    else:
+        pwd = getpass.getpass("Entrer le code d'acces de data.zip (pour regenerer la cle app): ")
+    if not pwd:
+        raise ValueError("Le code d'acces ne peut pas etre vide.")
+
+    validate_zip_password(zip_path, pwd)
+    write_app_key_file(pwd, app_key_file)
+    print("OK - Flux 'mot de passe oublie' termine: la cle applicative est regeneree.")
+
+
+def inspect_app_key(key_file_path: Path, zip_path: Optional[Path]):
+    if not key_file_path.exists() or not key_file_path.is_file():
+        raise FileNotFoundError(f"Fichier de cle introuvable: {key_file_path}")
+    token = key_file_path.read_text(encoding="utf-8-sig").strip()
+    password = decode_app_data_password(token)
+    if not password:
+        raise ValueError("Cle invalide ou non decodable.")
+
+    print(f"OK - Cle lisible: {key_file_path}")
+    print(f"Info - Mot de passe decode (admin): {password}")
+    if zip_path is not None:
+        validate_zip_password(zip_path, password)
+        print(f"OK - Cle valide pour l'archive: {zip_path}")
+
+
 def unpack_data_zip(zip_path: Path, output_dir: Path):
     if not zip_path.exists() or not zip_path.is_file():
         raise FileNotFoundError(f"Archive introuvable: {zip_path}")
@@ -109,7 +165,10 @@ def remove_plain_data_folder(source_dir: Path):
 
 def main():
     parser = argparse.ArgumentParser(description="Pack/Unpack securise du dossier data.")
-    parser.add_argument("action", choices=["pack", "unpack", "pack-and-hide"])
+    parser.add_argument(
+        "action",
+        choices=["pack", "unpack", "pack-and-hide", "recover-key", "inspect-key"],
+    )
     parser.add_argument("--source", default="data", help="Dossier source pour pack (par defaut: data)")
     parser.add_argument("--zip", default="data.zip", help="Nom de l'archive zip (par defaut: data.zip)")
     parser.add_argument("--output", default=".", help="Dossier de sortie pour unpack (par defaut: .)")
@@ -128,6 +187,11 @@ def main():
         default="",
         help="Code data.zip en clair (optionnel, sinon prompt interactif).",
     )
+    parser.add_argument(
+        "--check-zip",
+        default="",
+        help="Chemin d'archive a verifier avec inspect-key (optionnel).",
+    )
     args = parser.parse_args()
 
     source_dir = Path(args.source).resolve()
@@ -135,6 +199,7 @@ def main():
     output_dir = Path(args.output).resolve()
     app_key_file = None if args.no_app_key else Path(args.app_key_file).resolve()
     password = args.password.strip() or None
+    check_zip_path = Path(args.check_zip).resolve() if args.check_zip.strip() else None
 
     if args.action == "pack":
         pack_data_folder(source_dir, zip_path, app_key_file, password)
@@ -147,6 +212,16 @@ def main():
 
     if args.action == "unpack":
         unpack_data_zip(zip_path, output_dir)
+        return
+
+    if args.action == "recover-key":
+        target_key_file = Path(args.app_key_file).resolve()
+        recover_app_key(zip_path, target_key_file, password)
+        return
+
+    if args.action == "inspect-key":
+        target_key_file = Path(args.app_key_file).resolve()
+        inspect_app_key(target_key_file, check_zip_path)
         return
 
 

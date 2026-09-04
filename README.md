@@ -106,6 +106,26 @@ python tools/data_zip_manager.py unpack --zip data.zip --output .
 python tools/data_zip_manager.py pack --source data --zip data.zip --no-app-key
 ```
 
+### Flux "mot de passe oublie" (admin/referent technique)
+
+Si le fichier `.data_access.key` est perdu, mais que le mot de passe de `data.zip` est connu:
+
+```powershell
+python tools/data_zip_manager.py recover-key --zip data.zip --app-key-file .data_access.key
+```
+
+Verification rapide d'une cle app:
+
+```powershell
+# Affiche le mot de passe decode (usage admin uniquement)
+python tools/data_zip_manager.py inspect-key --app-key-file .data_access.key
+
+# Verifie en plus que la cle correspond bien a data.zip
+python tools/data_zip_manager.py inspect-key --app-key-file .data_access.key --check-zip data.zip
+```
+
+> Important: si le mot de passe `data.zip` est perdu **et** que le dossier `data/` en clair n'existe plus, la restauration est impossible par conception (chiffrement AES). Dans ce cas, il faut repartir d'une source de donnees claire sauvegardee puis recreer `data.zip`.
+
 ## Build executable (optionnel)
 
 ```powershell
@@ -129,3 +149,10 @@ Mode d'utilisation clinique:
 1. Le clinicien ouvre `ClinicialFeedback.exe`.
 2. L'app charge automatiquement les patients depuis `data.zip`.
 3. Les CSV de collecte sont ecrits dans `dist/results/`.
+
+## Documentation projet (niveau passation / revue technique)
+
+- `docs/ARCANE_PROJET_DEEP_DIVE.md` : description technique exhaustive (fichiers, fonctions, choix d'implementation, avantages, limites, axes d'amelioration).
+- `docs/IHU_PRISM_PRESENTATION_FORMAT.md` : presentation du projet selon une structure "contexte/objectifs/methode/resultats/gouvernance".
+- `docs/BACKLOG_PRIORISE.md` : tickets restants ordonnes par priorite.
+- `docs/HANDOVER_NOTE.md` : mot humain pour la prochaine personne qui reprend le projet.
