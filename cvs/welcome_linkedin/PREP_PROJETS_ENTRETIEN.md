@@ -24,3 +24,5 @@ Règle : repo GitHub + README + tests + démo 5 min. Dire « projet perso pour m
 6. Basikon / Skello / Escape ensuite
 
 | P1 | Withings | `health-metrics-api-spec` | OpenAPI + FastAPI + React admin + petit PHP REST starter |
+
+| P1 | 360Learning | `collaborative-course-studio` | Node/TS + Vue + MongoDB LMS MVP + analytics dashboard |
