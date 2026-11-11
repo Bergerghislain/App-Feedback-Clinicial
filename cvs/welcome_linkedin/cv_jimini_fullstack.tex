@@ -1,0 +1,150 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.65in}
+\addtolength{\textheight}{1.25in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-7pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \scshape Ghislain THEUBO} \\ \vspace{1pt}
+    \small Paris, France $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+    \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French $|$ \href{https://github.com/Bergerghislain}{GitHub}
+\end{center}
+
+\vspace{-8pt}
+
+\section{Professional Summary}
+\small{
+Full-Stack Software Engineer from a top engineering school (\textbf{Ensimag}), with production experience on APIs and platforms at \textbf{Dassault Syst\`emes} and Gustave Roussy. Strong analytical mindset, detail-oriented delivery, and hands-on work with \textbf{React}, \textbf{Node/NestJS-style APIs}, and \textbf{LLM applications}. Excited by \textbf{Jimini AI}'s mission to transform legal research, analysis, and drafting with generative AI --- ready to ship robust, scalable product features end-to-end.
+}
+
+\section{Core Strengths}
+\small{
+\textbf{React / TypeScript} $\cdot$ \textbf{NestJS / Node APIs} $\cdot$ \textbf{Python (AI \& backends)} $\cdot$ \textbf{REST} $\cdot$ \textbf{UI/UX collaboration} $\cdot$ \textbf{LLM / RAG notions} $\cdot$ \textbf{Architecture \& scalability} $\cdot$ \textbf{Communication} $\cdot$ \textbf{Fast learning}
+}
+
+\section{Experience}
+
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer (Platform Architecture)}{Apr 2025 -- Oct 2025}
+    \resumeItemListStart
+      \resumeItem{Shipped platform features in a demanding R\&D environment; wrote technical design notes and automated tests (85\% coverage).}
+      \resumeItem{Improved critical paths by \textbf{35\%}; collaborated cross-team with product and senior engineers --- precision and ownership mindset.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Gustave Roussy Cancer Institute \& CentraleSup\'elec MICS Lab}{Paris, France}
+    {Backend Engineer (CDD)}{Jan 2026 -- Present}
+    \resumeItemListStart
+      \resumeItem{Built FastAPI/PostgreSQL services with RBAC and monitoring; optimized SQL (\textbf{30\%}); Docker + GitHub Actions.}
+      \resumeItem{Worked on sensitive data workflows --- useful for high-trust domains like legal AI.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab}{Montbonnot-Saint-Martin, France}
+    {Research Intern}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{Solved complex real-time data problems (+40\% responsiveness); documented solutions clearly for multidisciplinary stakeholders.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Personal Projects -- Legal AI Full Stack}
+
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{Legal Draft Assistant (MVP)} $|$ React, NestJS, TypeScript, PostgreSQL}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Full-stack app: React UI for document Q\&A / drafting assistance + NestJS API for auth, document store, and LLM tool calls.}
+      \resumeItem{Focused on UX clarity for non-technical legal users; structured citations and editable outputs.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Case Corpus RAG Pipeline} $|$ Python, LangChain, NestJS gateway}{GitHub}
+    \resumeItemListStart
+      \resumeItem{RAG over a mock case/document corpus with retrieval evaluation; NestJS gateway exposes REST endpoints to the React client.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Frontend}: React, TypeScript, modern UI patterns \\
+    \textbf{Backend}: NestJS/Node, Python/FastAPI, PostgreSQL, REST \\
+    \textbf{AI}: LangChain/RAG notions, prompt/tool design \\
+    \textbf{Quality}: tests, CI, code reviews, technical writing
+  }}
+\end{itemize}
+
+\section{Education}
+
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP - Ensimag}{Grenoble, France}
+    {Engineering Degree in Computer Science \& Software Engineering}{2023 -- 2025}
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}
+    {Master's Degree in Computer Engineering (Top 12\%)}{2019 -- 2023}
+\resumeSubHeadingListEnd
+
+\section{Languages}
+
+\small{
+\textbf{English:} Bilingual (professional working proficiency) \\
+\textbf{French:} Fluent \\
+\textbf{Spanish:} Intermediate
+}
+
+\end{document}
