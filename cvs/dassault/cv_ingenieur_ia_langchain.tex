@@ -1,0 +1,165 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.65in}
+\addtolength{\textheight}{1.25in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-7pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \scshape Ghislain THEUBO} \\ \vspace{1pt}
+    \small Paris, France $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+    \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French $|$ \href{https://github.com/Bergerghislain}{GitHub}
+\end{center}
+
+\vspace{-8pt}
+
+\section{Professional Summary}
+\small{
+AI-oriented Software Engineer with \textbf{Java} and \textbf{Python} fluency, prior R\&D experience on the \textbf{3DEXPERIENCE} platform at \textbf{Dassault Syst\`emes}, and hands-on work building \textbf{LLM applications} with \textbf{LangChain / LangGraph} and \textbf{REST APIs}. Combines object-oriented design, robust services, and first Machine Learning projects to deliver reusable infrastructure components for AI agents. Comfortable writing specifications, documenting technical choices, and shipping automated tests. Motivated to join ENOVIA R\&D lifecycle-behavior teams standardizing AI agent infrastructure for industrial use cases (automotive, aerospace, \ldots).
+}
+
+\section{Core Strengths}
+\small{
+\textbf{Java \& Python (OOP)} $\cdot$ \textbf{LangChain / LangGraph} $\cdot$ \textbf{LLM applications \& RAG} $\cdot$ \textbf{Machine Learning (first experience)} $\cdot$ \textbf{REST APIs} $\cdot$ \textbf{Data models \& algorithms} $\cdot$ \textbf{Automated testing} $\cdot$ \textbf{Technical specifications} $\cdot$ \textbf{3DEXPERIENCE exposure} $\cdot$ \textbf{English}
+}
+
+\section{Experience}
+
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer (Platform Architecture \& Performance)}{Apr 2025 -- Oct 2025}
+    \resumeItemListStart
+      \resumeItem{Contributed to \textbf{3DEXPERIENCE} platform components in a ~20-person R\&D team --- direct exposure to industrial software quality and multi-team collaboration (France \& international).}
+      \resumeItem{Participated in \textbf{functional understanding}, technical design, and documentation of platform features; planned and delivered work with measurable quality criteria.}
+      \resumeItem{Delivered \textbf{35\%} performance gains on critical paths via algorithmic optimization and careful data modeling --- relevant to robust AI infrastructure services.}
+      \resumeItem{Built \textbf{automated unit/integration tests} (85\% coverage) and enforced CI quality gates for regression-safe delivery.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Gustave Roussy Cancer Institute \& CentraleSup\'elec MICS Lab}{Paris, France}
+    {Backend / Data Engineer (CDD -- APIs \& Production Systems)}{Jan 2026 -- Present}
+    \resumeItemListStart
+      \resumeItem{Designed and maintained \textbf{REST APIs} (Python/FastAPI, PostgreSQL) with validation, RBAC, logging, and monitoring.}
+      \resumeItem{Optimized queries/indexing (\textbf{30\%} faster); Dockerized services and automated CI/CD with GitHub Actions.}
+      \resumeItem{Worked on sensitive data lifecycles --- useful mindset for governed, reliable AI components in enterprise platforms.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab / Froll'N'Roll}{Montbonnot-Saint-Martin, France}
+    {Research Intern (Real-Time Systems \& Data Processing)}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{Developed real-time C/Python modules under latency constraints; improved pipeline responsiveness by \textbf{40\%}.}
+      \resumeItem{Collaborated in a research team, validated designs with users, and documented technical choices.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Personal Projects -- AI Agents, ML \& Platform-Ready APIs}
+
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{LangGraph Lifecycle Agent (PLM-inspired)} $|$ Python, LangChain, LangGraph, FastAPI}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Built a multi-step \textbf{LangGraph} agent that plans, retrieves context, and proposes lifecycle actions on a mock product graph (create / revise / release / obsolete) --- illustrates \textbf{reusable AI agent infrastructure}.}
+      \resumeItem{Exposed the agent behind a \textbf{REST API} with typed request/response models, auth stub, and structured traces for debugging --- ready for platform-style integration.}
+      \resumeItem{Documented functional specs + technical design (tools, memory, graph nodes, failure modes) similar to industrial R\&D deliverables.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Engineering Docs RAG + Evaluation Harness} $|$ Python, LangChain, vector store, pytest}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Implemented a \textbf{RAG} pipeline over technical documents (chunking, embeddings, retrieval, grounded answers) with an automated evaluation set.}
+      \resumeItem{First \textbf{Machine Learning} experience: embedding model selection, retrieval metrics, and simple classification baseline for ticket routing.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Java Agent Tooling SDK (prototype)} $|$ Java, Spring Boot / plain HTTP, JSON Schema}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Prototype \textbf{Java} library defining tool contracts and orchestration hooks for LLM agents --- communalizing shared needs across applications (validation, retries, telemetry).}
+      \resumeItem{Includes automated tests and API docs to meet robustness/performance expectations for shared infrastructure.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages}: \textbf{Java}, \textbf{Python}, SQL, C/C++, Bash \\
+    \textbf{AI / LLM}: \textbf{LangChain}, \textbf{LangGraph}, RAG, prompt/tool design, agent graphs, evaluation basics \\
+    \textbf{ML}: first practical experience (embeddings, retrieval metrics, simple classifiers) \\
+    \textbf{APIs \& platform}: REST, JSON, data models, service design, Docker, CI/CD \\
+    \textbf{Quality}: unit/integration tests, pytest/JUnit, technical specifications \& design docs \\
+    \textbf{Domain exposure}: \textbf{3DEXPERIENCE} R\&D; interest in industrial AI (automotive, aerospace)
+  }}
+\end{itemize}
+
+\section{Education}
+
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP - Ensimag}{Grenoble, France}
+    {Engineering Degree in Computer Science \& Software Engineering}{2023 -- 2025}
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}
+    {Master's Degree in Computer Engineering (Top 12\%)}{2019 -- 2023}
+\resumeSubHeadingListEnd
+
+\section{Languages}
+
+\small{
+\textbf{English:} Bilingual (written \& spoken --- required for international DS collaboration) \\
+\textbf{French:} Fluent \\
+\textbf{Spanish:} Intermediate
+}
+
+\end{document}
