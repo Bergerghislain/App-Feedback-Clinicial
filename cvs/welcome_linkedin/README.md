@@ -13,3 +13,4 @@
 | `cv_prelude_backend_go.pdf` | Prelude |
 
 Voir aussi `PREP_PROJETS_ENTRETIEN.md` et `../README.md` (timeline Shift).
+| `cv_withings_api_engineer.pdf` | Withings |

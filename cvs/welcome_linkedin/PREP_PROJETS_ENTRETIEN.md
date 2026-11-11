@@ -22,3 +22,5 @@ Règle : repo GitHub + README + tests + démo 5 min. Dire « projet perso pour m
 4. Un des GovTech (Atexo ou Manty) selon priorité perso  
 5. Respire dbt si tu vises data  
 6. Basikon / Skello / Escape ensuite
+
+| P1 | Withings | `health-metrics-api-spec` | OpenAPI + FastAPI + React admin + petit PHP REST starter |
