@@ -31,4 +31,11 @@ Board: https://jobs.ashbyhq.com/harmattan-ai · Détail: `cvs/harmattan/RESUME_O
 
 Écartées Harmattan: Multimedia, SoM, Cybersecurity, Gimbal, Forward Deployed, C2, MLOps/Data/CV, Industrial Deploy, Early Talent (stage).
 
+## CNRS / public recherche (Ensimag Alumni — postée 09 nov. 2026)
+| CV | Offre | Postuler |
+|----|-------|----------|
+| `27_CNRS_LPC2E_Comet_Interceptor.pdf` | IR développement apps — Comet Interceptor / LPC2E Orléans — CDI mission 84 mois — **deadline 1 déc. 2026** | https://emploi.cnrs.fr/Offres/CDI/UMR7328-ISALAN-052/Default.aspx?lang=FR |
+| idem | Version EN | https://emploi.cnrs.fr/Offres/CDI/UMR7328-ISALAN-052/Default.aspx?lang=EN |
+| idem | Miroir Ensimag Alumni | https://www.ensimag-alumni.com/jobs/10082 |
+
 Exclus globaux: Pigment (à re-vérifier), Talan (>1 mois), Theodo Extend (5+ ans).
