@@ -61,7 +61,7 @@
 
 \section{Professional Summary}
 \small{
-Junior Full-Stack Engineer with solid APIs, SQL, and TypeScript foundations, motivated by \textbf{AI $\times$ application security} products. Experience shipping production backends and learning modern frameworks quickly. Eager to contribute to Escape's product \& platform (Svelte/TS, Node/GraphQL/Prisma/PostgreSQL) under mentorship --- intuitive workflows for security teams.
+Junior Full-Stack Engineer with solid APIs, SQL, and TypeScript foundations, motivated by \textbf{AI $\times$ application security} products. Experience shipping production backends (Gustave Roussy), platform services (Shift), and learning modern frameworks quickly. Eager to contribute to Escape's product \& platform under mentorship.
 }
 
 \section{Core Strengths}
@@ -73,21 +73,33 @@ Junior Full-Stack Engineer with solid APIs, SQL, and TypeScript foundations, mot
 
 \resumeSubHeadingListStart
 
-  esumeSubheading
+  \resumeSubheading
     {Shift Technology -- Platform Software Engineering}{Paris, France}
     {Software Engineer (CDI -- Platform / Backend)}{Sept 2026 -- Nov 2026}
-    esumeItemListStart
-      esumeItem{Contributed to the 	extbf{platform / foundations} squad building shared services used by product teams: design and implementation of 	extbf{C\# / .NET} components and 	extbf{high-performance APIs} on 	extbf{Microsoft Azure}.}
-      esumeItem{Worked with cloud data and messaging building blocks (	extbf{Azure Cosmos DB}, 	extbf{Service Bus}), configuration/transversal services, and infrastructure-as-code awareness (	extbf{Terraform}) in a hybrid SaaS environment.}
-      esumeItem{Practiced production engineering habits: design discussions, code reviews, monitoring mindset, incremental delivery, and collaboration with platform and product engineers.}
-    esumeItemListEnd
+    \resumeItemListStart
+      \resumeItem{Contributed to the \textbf{platform / foundations} squad building shared services used by product teams: design and implementation of \textbf{C\# / .NET} components and \textbf{high-performance APIs} on \textbf{Microsoft Azure}.}
+      \resumeItem{Worked with cloud data and messaging building blocks (\textbf{Azure Cosmos DB}, \textbf{Service Bus}), configuration/transversal services, and infrastructure-as-code awareness (\textbf{Terraform}) in a hybrid SaaS environment.}
+      \resumeItem{Practiced production engineering habits: design discussions, code reviews, monitoring mindset, incremental delivery, and collaboration with platform and product engineers.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Backend / Data Platforms)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{Software Engineer (CDD) in joint coordination between \textbf{Gustave Roussy (Oncostat / CESP)} and \textbf{CentraleSup\'elec MICS}: built and maintained production backends for research/clinical data workflows.}
+      \resumeItem{Designed \textbf{REST APIs} (Python/FastAPI) with validation, RBAC, structured logging, and observability; PostgreSQL modeling with indexing and query tuning (\textbf{$\sim$30\%} faster critical reads).}
+      \resumeItem{Containerized services with \textbf{Docker}; automated tests and delivery via \textbf{GitHub Actions}; wrote technical documentation for data flows and operational handoff.}
+      \resumeItem{Collaborated daily with domain experts (research/medical) --- translating ambiguous needs into reliable, auditable software.}
+    \resumeItemListEnd
 
   \resumeSubheading
     {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
     {Software Engineer Intern (Full-Stack Module Rewrite)}{Mar 2025 -- Sept 2025}
     \resumeItemListStart
-      \resumeItem{Delivered a user-centric Survey module rewrite on 3DSwym: backend Java/Spring + front integration concerns, Agile prioritization, and production-minded quality gates.}
-      \resumeItem{Strong OOP, API/data-model design, TDD, and measurable outcomes (+35\% perf, 85\% coverage).}
+      \resumeItem{Full-stack overhaul of the legacy \textbf{Survey module} for \textbf{3DSwym} (3DEXPERIENCE collaborative platform): analyze, design, develop, and deliver a modern replacement.}
+      \resumeItem{Backend in \textbf{Java 17+ / Spring Boot} (MVC, Spring Data JPA) + \textbf{Hibernate}; applied \textbf{TDD} with JUnit; design patterns for modular maintainability.}
+      \resumeItem{User-needs analysis with product ``Champions'', competitive benchmark, MoSCoW prioritization in Agile ceremonies; Git + CI/CD practices.}
+      \resumeItem{Results: delivered core features of the new module with \textbf{$\sim$35\%} performance improvement and \textbf{$\sim$85\%} test coverage --- robust, maintainable codebase for 3DSwym users.}
     \resumeItemListEnd
 
   \resumeSubheading
@@ -98,7 +110,6 @@ Junior Full-Stack Engineer with solid APIs, SQL, and TypeScript foundations, mot
       \resumeItem{Redesigned communication/data pipelines under latency constraints; improved responsiveness by \textbf{$\sim$40\%}; contributed to open/documented research codebases.}
       \resumeItem{Human-centered engineering: DIY hardware/software integration, iterative prototyping, and clear technical communication in a multidisciplinary SED team.}
     \resumeItemListEnd
-
 \resumeSubHeadingListEnd
 
 \section{Selected Projects}
@@ -108,14 +119,13 @@ Junior Full-Stack Engineer with solid APIs, SQL, and TypeScript foundations, mot
   \resumeProjectHeading
     {\textbf{API Findings Dashboard} $|$ Svelte, TypeScript, Node, GraphQL, Prisma, PostgreSQL}{GitHub}
     \resumeItemListStart
-      \resumeItem{Product dashboard for security findings (severity, endpoint, status) with filters/pagination; GraphQL + Prisma; triage workflows (assign/resolve).}
+      \resumeItem{Product dashboard for security findings with filters/pagination; GraphQL + Prisma; triage workflows (assign/resolve).}
     \resumeItemListEnd
   \resumeProjectHeading
     {\textbf{Attack Surface Inventory (read-only)} $|$ Node, PostgreSQL, TypeScript}{GitHub}
     \resumeItemListStart
-      \resumeItem{Ingest mock asset inventory (domains/APIs) and expose searchable UI --- ASM-inspired product feature (defensive/product scope only).}
+      \resumeItem{Ingest mock asset inventory and expose searchable UI --- ASM-inspired product feature (defensive/product scope only).}
     \resumeItemListEnd
-
 \resumeSubHeadingListEnd
 
 \section{Technical Skills}
@@ -123,7 +133,7 @@ Junior Full-Stack Engineer with solid APIs, SQL, and TypeScript foundations, mot
 \begin{itemize}[leftmargin=0.15in, label={}]
   \small{\item{
 \textbf{Target stack}: Svelte, TypeScript, Node, GraphQL, Prisma, PostgreSQL \\
-\textbf{Also}: REST, Docker, CI, React transferable to Svelte \\
+\textbf{Also}: REST, Docker, CI, React; Azure platform exposure (Shift) \\
 \textbf{Interest}: AI-powered security products, DevSecOps concepts, startup pace
   }}
 \end{itemize}

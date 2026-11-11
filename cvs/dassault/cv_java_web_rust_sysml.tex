@@ -61,7 +61,7 @@
 
 \section{Professional Summary}
 \small{
-Software Engineer (Ensimag) with production Java/Spring experience at \textbf{Dassault Syst\`emes} (3DSwym Survey rewrite) and platform exposure at \textbf{Shift Technology}. Strong foundations in \textbf{OOP}, APIs, testing, and performance. Actively building language-tooling skills (parsing, symbol tables, indexing, LSP-style IDE services) aligned with SysML v2 / AI-native systems-engineering platforms. Comfortable with incremental analysis, caching, and low-latency service design; Rust notions for performance-critical sidecars. Seeking CDI -- Ing\'enieur Dev Java / Web / Rust (CATIA R\&D, V\'elizy).
+Software Engineer (Ensimag) with production Java/Spring experience at \textbf{Dassault Syst\`emes} (3DSwym Survey rewrite) and platform engineering at \textbf{Shift Technology} (C\#/.NET, Azure). Strong foundations in OOP, APIs, testing, and performance. Building language-tooling skills (parsing, symbol tables, indexing, LSP-style IDE services) aligned with SysML v2 / AI-native systems-engineering platforms. Seeking CDI -- Ing\'enieur Dev Java / Web / Rust (CATIA R\&D, V\'elizy).
 }
 
 \section{Core Strengths}
@@ -73,14 +73,24 @@ Software Engineer (Ensimag) with production Java/Spring experience at \textbf{Da
 
 \resumeSubHeadingListStart
 
-  esumeSubheading
+  \resumeSubheading
     {Shift Technology -- Platform Software Engineering}{Paris, France}
     {Software Engineer (CDI -- Platform / Backend)}{Sept 2026 -- Nov 2026}
-    esumeItemListStart
-      esumeItem{Contributed to the 	extbf{platform / foundations} squad building shared services used by product teams: design and implementation of 	extbf{C\# / .NET} components and 	extbf{high-performance APIs} on 	extbf{Microsoft Azure}.}
-      esumeItem{Worked with cloud data and messaging building blocks (	extbf{Azure Cosmos DB}, 	extbf{Service Bus}), configuration/transversal services, and infrastructure-as-code awareness (	extbf{Terraform}) in a hybrid SaaS environment.}
-      esumeItem{Practiced production engineering habits: design discussions, code reviews, monitoring mindset, incremental delivery, and collaboration with platform and product engineers.}
-    esumeItemListEnd
+    \resumeItemListStart
+      \resumeItem{Contributed to the \textbf{platform / foundations} squad building shared services used by product teams: design and implementation of \textbf{C\# / .NET} components and \textbf{high-performance APIs} on \textbf{Microsoft Azure}.}
+      \resumeItem{Worked with cloud data and messaging building blocks (\textbf{Azure Cosmos DB}, \textbf{Service Bus}), configuration/transversal services, and infrastructure-as-code awareness (\textbf{Terraform}) in a hybrid SaaS environment.}
+      \resumeItem{Practiced production engineering habits: design discussions, code reviews, monitoring mindset, incremental delivery, and collaboration with platform and product engineers.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Backend / Data Platforms)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{Software Engineer (CDD) in joint coordination between \textbf{Gustave Roussy (Oncostat / CESP)} and \textbf{CentraleSup\'elec MICS}: built and maintained production backends for research/clinical data workflows.}
+      \resumeItem{Designed \textbf{REST APIs} (Python/FastAPI) with validation, RBAC, structured logging, and observability; PostgreSQL modeling with indexing and query tuning (\textbf{$\sim$30\%} faster critical reads).}
+      \resumeItem{Containerized services with \textbf{Docker}; automated tests and delivery via \textbf{GitHub Actions}; wrote technical documentation for data flows and operational handoff.}
+      \resumeItem{Collaborated daily with domain experts (research/medical) --- translating ambiguous needs into reliable, auditable software.}
+    \resumeItemListEnd
 
   \resumeSubheading
     {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
@@ -105,10 +115,9 @@ Software Engineer (Ensimag) with production Java/Spring experience at \textbf{Da
     {LIG -- Laboratoire d'Informatique de Grenoble}{Grenoble, France}
     {Cloud Infrastructure Intern (VM Migration on OpenStack / Grid'5000)}{Feb 2025 -- Mar 2025}
     \resumeItemListStart
-      \resumeItem{Automated and studied \textbf{VM live/migration} experiments on OpenStack within Grid'5000; analyzed performance vs availability trade-offs for hosted applications.}
+      \resumeItem{Automated and studied \textbf{VM migration} experiments on OpenStack within Grid'5000; analyzed performance vs availability trade-offs for hosted applications.}
       \resumeItem{Wrote reproducible scripts and measurement notes under supervision of Alain Tchana --- deepened virtualization and distributed cloud skills.}
     \resumeItemListEnd
-
 \resumeSubHeadingListEnd
 
 \section{Selected Projects}
@@ -118,30 +127,29 @@ Software Engineer (Ensimag) with production Java/Spring experience at \textbf{Da
   \resumeProjectHeading
     {\textbf{Mini LSP Server for a Systems DSL} $|$ Java, LSP4J, ANTLR, JUnit}{GitHub}
     \resumeItemListStart
-      \resumeItem{Language server offering \textbf{completion}, \textbf{hover}, \textbf{go-to-definition}, \textbf{find references}, \textbf{rename}, and \textbf{diagnostics} --- IDE services expected for SysML-style tooling.}
-      \resumeItem{Parser + semantic model with name resolution, symbol table, multi-file workspace; \textbf{incremental re-analysis} on change; in-memory symbol \textbf{index} with cache invalidation for responsive navigation APIs.}
+      \resumeItem{Language server offering \textbf{completion}, \textbf{hover}, \textbf{go-to-definition}, \textbf{find references}, \textbf{rename}, and \textbf{diagnostics}.}
+      \resumeItem{Parser + semantic model with name resolution, multi-file workspace, \textbf{incremental re-analysis}, and symbol \textbf{index} with cache invalidation.}
     \resumeItemListEnd
   \resumeProjectHeading
     {\textbf{Incremental Indexer \& Semantic Query API} $|$ Java (+ Rust CLI sidecar), REST}{GitHub}
     \resumeItemListStart
-      \resumeItem{Indexing service storing symbols/references and exposing low-latency semantic queries over HTTP; Rust sidecar prototype for hot-path search (ownership, predictable latency).}
+      \resumeItem{Indexing service exposing low-latency semantic queries; Rust sidecar prototype for hot-path search.}
     \resumeItemListEnd
   \resumeProjectHeading
-    {\textbf{Ensimag DECA Compiler (team of 5)} $|$ Java, compilers, OOP language subset}{2023--2024}
+    {\textbf{Ensimag DECA Compiler (team of 5)} $|$ Java}{2023--2024}
     \resumeItemListStart
-      \resumeItem{Built a compiler in Java for DECA (OO subset of Java): lexing/parsing, semantic analysis, code generation --- direct credibility for language tooling \& semantic validation.}
+      \resumeItem{Compiler for DECA (OO subset of Java): lexing/parsing, semantic analysis, code generation --- credibility for language tooling.}
     \resumeItemListEnd
-
 \resumeSubHeadingListEnd
 
 \section{Technical Skills}
 
 \begin{itemize}[leftmargin=0.15in, label={}]
   \small{\item{
-\textbf{Languages}: Java (primary), Python, C/C++, Rust (notions), JS/TS, SQL \\
-\textbf{Language tooling}: LSP concepts, ANTLR parsing, symbol tables, indexing, caching, incremental analysis \\
+\textbf{Languages}: Java (primary), Python, C/C++, Rust (notions), JS/TS, SQL, C\# (.NET at Shift) \\
+\textbf{Language tooling}: LSP concepts, ANTLR, symbol tables, indexing, caching, incremental analysis \\
 \textbf{Backend}: Spring Boot, Hibernate, REST, TDD/JUnit, CI/CD, Docker, Linux \\
-\textbf{Platforms}: prior 3DEXPERIENCE / 3DSwym R\&D; Shift platform engineering exposure
+\textbf{Cloud}: Azure, Cosmos DB, Service Bus, Terraform notions (Shift)
   }}
 \end{itemize}
 

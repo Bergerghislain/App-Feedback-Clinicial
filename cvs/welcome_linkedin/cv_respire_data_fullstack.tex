@@ -61,34 +61,45 @@
 
 \section{Professional Summary}
 \small{
-Data Full Stack / Analytics Engineer with advanced \textbf{SQL}, \textbf{Python}, and production data-lifecycle ownership at Gustave Roussy. Builds reliable models, documents sources, and turns Ops/B2B questions into reusable marts. Building \textbf{dbt} projects, ELT (Airbyte), self-BI metrics, and LLM agents on a certified semantic layer --- ready to own Ops \& B2B data at Respire.
+Data Full Stack / Analytics Engineer with advanced \textbf{SQL}, \textbf{Python}, and production data-lifecycle ownership at Gustave Roussy, plus platform/data-service exposure at Shift Technology. Builds reliable models, documents sources, and turns Ops/B2B questions into reusable marts. Building \textbf{dbt}, ELT (Airbyte), self-BI metrics, and LLM agents on a certified semantic layer.
 }
 
 \section{Core Strengths}
 \small{
-\textbf{SQL (advanced)} $\cdot$ \textbf{dbt} $\cdot$ Python / GCP notions $\cdot$ Data quality \& docs $\cdot$ Dashboards / self-BI $\cdot$ Semantic layer $\cdot$ AI agents on metrics $\cdot$ Business impact / ROI mindset
+\textbf{SQL (advanced)} $\cdot$ \textbf{dbt} $\cdot$ Python / GCP notions $\cdot$ Data quality \& docs $\cdot$ Dashboards / self-BI $\cdot$ Semantic layer $\cdot$ AI agents on metrics $\cdot$ Business impact mindset
 }
 
 \section{Experience}
 
 \resumeSubHeadingListStart
 
-  esumeSubheading
+  \resumeSubheading
     {Shift Technology -- Platform Software Engineering}{Paris, France}
     {Software Engineer (CDI -- Platform / Backend)}{Sept 2026 -- Nov 2026}
-    esumeItemListStart
-      esumeItem{Contributed to the 	extbf{platform / foundations} squad building shared services used by product teams: design and implementation of 	extbf{C\# / .NET} components and 	extbf{high-performance APIs} on 	extbf{Microsoft Azure}.}
-      esumeItem{Worked with cloud data and messaging building blocks (	extbf{Azure Cosmos DB}, 	extbf{Service Bus}), configuration/transversal services, and infrastructure-as-code awareness (	extbf{Terraform}) in a hybrid SaaS environment.}
-      esumeItem{Practiced production engineering habits: design discussions, code reviews, monitoring mindset, incremental delivery, and collaboration with platform and product engineers.}
-    esumeItemListEnd
+    \resumeItemListStart
+      \resumeItem{Contributed to the \textbf{platform / foundations} squad building shared services used by product teams: design and implementation of \textbf{C\# / .NET} components and \textbf{high-performance APIs} on \textbf{Microsoft Azure}.}
+      \resumeItem{Worked with cloud data and messaging building blocks (\textbf{Azure Cosmos DB}, \textbf{Service Bus}), configuration/transversal services, and infrastructure-as-code awareness (\textbf{Terraform}) in a hybrid SaaS environment.}
+      \resumeItem{Practiced production engineering habits: design discussions, code reviews, monitoring mindset, incremental delivery, and collaboration with platform and product engineers.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Backend / Data Platforms)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{Software Engineer (CDD) in joint coordination between \textbf{Gustave Roussy (Oncostat / CESP)} and \textbf{CentraleSup\'elec MICS}: built and maintained production backends for research/clinical data workflows.}
+      \resumeItem{Designed \textbf{REST APIs} (Python/FastAPI) with validation, RBAC, structured logging, and observability; PostgreSQL modeling with indexing and query tuning (\textbf{$\sim$30\%} faster critical reads).}
+      \resumeItem{Containerized services with \textbf{Docker}; automated tests and delivery via \textbf{GitHub Actions}; wrote technical documentation for data flows and operational handoff.}
+      \resumeItem{Collaborated daily with domain experts (research/medical) --- translating ambiguous needs into reliable, auditable software.}
+    \resumeItemListEnd
 
   \resumeSubheading
     {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
     {Software Engineer Intern (Full-Stack Module Rewrite)}{Mar 2025 -- Sept 2025}
     \resumeItemListStart
-      \resumeItem{R\&D internship on 3DEXPERIENCE / 3DSwym: end-to-end modernization of a critical collaborative Survey module (specs $\rightarrow$ implementation $\rightarrow$ quality).}
-      \resumeItem{Java/Spring Boot + Hibernate; algorithmic and data-access optimization culminating in \textbf{$\sim$35\%} gains; rigorous TDD (\textbf{$\sim$85\%} coverage).}
-      \resumeItem{Cross-functional collaboration with product champions; documented design choices for long-term maintainability.}
+      \resumeItem{Full-stack overhaul of the legacy \textbf{Survey module} for \textbf{3DSwym} (3DEXPERIENCE collaborative platform): analyze, design, develop, and deliver a modern replacement.}
+      \resumeItem{Backend in \textbf{Java 17+ / Spring Boot} (MVC, Spring Data JPA) + \textbf{Hibernate}; applied \textbf{TDD} with JUnit; design patterns for modular maintainability.}
+      \resumeItem{User-needs analysis with product ``Champions'', competitive benchmark, MoSCoW prioritization in Agile ceremonies; Git + CI/CD practices.}
+      \resumeItem{Results: delivered core features of the new module with \textbf{$\sim$35\%} performance improvement and \textbf{$\sim$85\%} test coverage --- robust, maintainable codebase for 3DSwym users.}
     \resumeItemListEnd
 
   \resumeSubheading
@@ -99,7 +110,6 @@ Data Full Stack / Analytics Engineer with advanced \textbf{SQL}, \textbf{Python}
       \resumeItem{Redesigned communication/data pipelines under latency constraints; improved responsiveness by \textbf{$\sim$40\%}; contributed to open/documented research codebases.}
       \resumeItem{Human-centered engineering: DIY hardware/software integration, iterative prototyping, and clear technical communication in a multidisciplinary SED team.}
     \resumeItemListEnd
-
 \resumeSubHeadingListEnd
 
 \section{Selected Projects}
@@ -109,7 +119,7 @@ Data Full Stack / Analytics Engineer with advanced \textbf{SQL}, \textbf{Python}
   \resumeProjectHeading
     {\textbf{Ops \& B2B Commerce Marts} $|$ dbt, SQL, Postgres/BigQuery-style, metrics docs}{GitHub}
     \resumeItemListStart
-      \resumeItem{dbt staging $\rightarrow$ intermediate $\rightarrow$ marts for orders, stock, B2B accounts; tests + documentation; certified metrics/dimensions for self-BI.}
+      \resumeItem{dbt staging $\rightarrow$ intermediate $\rightarrow$ marts for orders, stock, B2B accounts; tests + documentation; certified metrics.}
     \resumeItemListEnd
   \resumeProjectHeading
     {\textbf{Metrics Q\&A Agent} $|$ Python, LLM, certified metrics API}{GitHub}
@@ -121,7 +131,6 @@ Data Full Stack / Analytics Engineer with advanced \textbf{SQL}, \textbf{Python}
     \resumeItemListStart
       \resumeItem{Connected sample sources, monitored freshness, documented lineage for humans and agents.}
     \resumeItemListEnd
-
 \resumeSubHeadingListEnd
 
 \section{Technical Skills}
@@ -130,6 +139,7 @@ Data Full Stack / Analytics Engineer with advanced \textbf{SQL}, \textbf{Python}
   \small{\item{
 \textbf{Analytics Eng}: SQL, dbt, testing, documentation, semantic metrics \\
 \textbf{Engineering}: Python, Airbyte notions, GCP notions, CI \\
+\textbf{Cloud data}: Azure Cosmos / messaging notions (Shift) \\
 \textbf{BI/AI}: dashboards, self-BI enablement, LLM agents on certified data
   }}
 \end{itemize}

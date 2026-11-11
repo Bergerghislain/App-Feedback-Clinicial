@@ -61,7 +61,7 @@
 
 \section{Professional Summary}
 \small{
-Backend Engineer focused on scalable APIs, reliability, and product impact. Optimized critical paths at Dassault Syst\`emes; shipped production services with observability at Gustave Roussy; platform exposure at Shift (Azure, high-perf APIs). Building strong \textbf{Go} skills via dedicated systems projects (plus TypeScript). Product-led, bias for simplicity, fluent English --- ready to help Prelude scale trust/authentication infrastructure.
+Backend Engineer focused on scalable APIs, reliability, and product impact. Optimized critical paths at Dassault Syst\`emes; shipped production services at Gustave Roussy; built platform foundations at \textbf{Shift Technology} (C\#/.NET, Azure, high-perf APIs). Building strong \textbf{Go} skills via dedicated systems projects (plus TypeScript). Product-led, bias for simplicity, fluent English --- ready to help Prelude scale trust/authentication infrastructure.
 }
 
 \section{Core Strengths}
@@ -73,22 +73,33 @@ Backend Engineer focused on scalable APIs, reliability, and product impact. Opti
 
 \resumeSubHeadingListStart
 
-  esumeSubheading
+  \resumeSubheading
     {Shift Technology -- Platform Software Engineering}{Paris, France}
     {Software Engineer (CDI -- Platform / Backend)}{Sept 2026 -- Nov 2026}
-    esumeItemListStart
-      esumeItem{Contributed to the 	extbf{platform / foundations} squad building shared services used by product teams: design and implementation of 	extbf{C\# / .NET} components and 	extbf{high-performance APIs} on 	extbf{Microsoft Azure}.}
-      esumeItem{Worked with cloud data and messaging building blocks (	extbf{Azure Cosmos DB}, 	extbf{Service Bus}), configuration/transversal services, and infrastructure-as-code awareness (	extbf{Terraform}) in a hybrid SaaS environment.}
-      esumeItem{Practiced production engineering habits: design discussions, code reviews, monitoring mindset, incremental delivery, and collaboration with platform and product engineers.}
-    esumeItemListEnd
+    \resumeItemListStart
+      \resumeItem{Contributed to the \textbf{platform / foundations} squad building shared services used by product teams: design and implementation of \textbf{C\# / .NET} components and \textbf{high-performance APIs} on \textbf{Microsoft Azure}.}
+      \resumeItem{Worked with cloud data and messaging building blocks (\textbf{Azure Cosmos DB}, \textbf{Service Bus}), configuration/transversal services, and infrastructure-as-code awareness (\textbf{Terraform}) in a hybrid SaaS environment.}
+      \resumeItem{Practiced production engineering habits: design discussions, code reviews, monitoring mindset, incremental delivery, and collaboration with platform and product engineers.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Backend / Data Platforms)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{Software Engineer (CDD) in joint coordination between \textbf{Gustave Roussy (Oncostat / CESP)} and \textbf{CentraleSup\'elec MICS}: built and maintained production backends for research/clinical data workflows.}
+      \resumeItem{Designed \textbf{REST APIs} (Python/FastAPI) with validation, RBAC, structured logging, and observability; PostgreSQL modeling with indexing and query tuning (\textbf{$\sim$30\%} faster critical reads).}
+      \resumeItem{Containerized services with \textbf{Docker}; automated tests and delivery via \textbf{GitHub Actions}; wrote technical documentation for data flows and operational handoff.}
+      \resumeItem{Collaborated daily with domain experts (research/medical) --- translating ambiguous needs into reliable, auditable software.}
+    \resumeItemListEnd
 
   \resumeSubheading
     {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
     {Software Engineer Intern (Full-Stack Module Rewrite)}{Mar 2025 -- Sept 2025}
     \resumeItemListStart
-      \resumeItem{R\&D internship on 3DEXPERIENCE / 3DSwym: end-to-end modernization of a critical collaborative Survey module (specs $\rightarrow$ implementation $\rightarrow$ quality).}
-      \resumeItem{Java/Spring Boot + Hibernate; algorithmic and data-access optimization culminating in \textbf{$\sim$35\%} gains; rigorous TDD (\textbf{$\sim$85\%} coverage).}
-      \resumeItem{Cross-functional collaboration with product champions; documented design choices for long-term maintainability.}
+      \resumeItem{Full-stack overhaul of the legacy \textbf{Survey module} for \textbf{3DSwym} (3DEXPERIENCE collaborative platform): analyze, design, develop, and deliver a modern replacement.}
+      \resumeItem{Backend in \textbf{Java 17+ / Spring Boot} (MVC, Spring Data JPA) + \textbf{Hibernate}; applied \textbf{TDD} with JUnit; design patterns for modular maintainability.}
+      \resumeItem{User-needs analysis with product ``Champions'', competitive benchmark, MoSCoW prioritization in Agile ceremonies; Git + CI/CD practices.}
+      \resumeItem{Results: delivered core features of the new module with \textbf{$\sim$35\%} performance improvement and \textbf{$\sim$85\%} test coverage --- robust, maintainable codebase for 3DSwym users.}
     \resumeItemListEnd
 
   \resumeSubheading
@@ -104,10 +115,9 @@ Backend Engineer focused on scalable APIs, reliability, and product impact. Opti
     {LIG -- Laboratoire d'Informatique de Grenoble}{Grenoble, France}
     {Cloud Infrastructure Intern (VM Migration on OpenStack / Grid'5000)}{Feb 2025 -- Mar 2025}
     \resumeItemListStart
-      \resumeItem{Automated and studied \textbf{VM live/migration} experiments on OpenStack within Grid'5000; analyzed performance vs availability trade-offs for hosted applications.}
+      \resumeItem{Automated and studied \textbf{VM migration} experiments on OpenStack within Grid'5000; analyzed performance vs availability trade-offs for hosted applications.}
       \resumeItem{Wrote reproducible scripts and measurement notes under supervision of Alain Tchana --- deepened virtualization and distributed cloud skills.}
     \resumeItemListEnd
-
 \resumeSubHeadingListEnd
 
 \section{Selected Projects}
@@ -117,19 +127,18 @@ Backend Engineer focused on scalable APIs, reliability, and product impact. Opti
   \resumeProjectHeading
     {\textbf{OTP Orchestrator} $|$ Go, PostgreSQL, queue workers, metrics}{GitHub}
     \resumeItemListStart
-      \resumeItem{Go service selecting delivery channel, rate-limiting, and recording verification attempts --- Prelude-inspired auth building block with idempotency and load tests.}
+      \resumeItem{Go service selecting delivery channel, rate-limiting, and recording verification attempts --- auth building block with idempotency and load tests.}
     \resumeItemListEnd
   \resumeProjectHeading
     {\textbf{Fraud Signal Worker} $|$ Go, message queue, worker pattern}{GitHub}
     \resumeItemListStart
-      \resumeItem{Async workers scoring risk signals and applying block rules; emphasis on simplicity, extensibility, and operability.}
+      \resumeItem{Async workers scoring risk signals and applying block rules; simplicity, extensibility, operability.}
     \resumeItemListEnd
   \resumeProjectHeading
     {\textbf{gRPC + TypeScript Admin Tool} $|$ Go gRPC, TypeScript}{GitHub}
     \resumeItemListStart
-      \resumeItem{Internal tool to inspect verification sessions --- DX for developers/support; product empathy + TypeScript plus.}
+      \resumeItem{Internal tool to inspect verification sessions --- DX for developers/support.}
     \resumeItemListEnd
-
 \resumeSubHeadingListEnd
 
 \section{Technical Skills}
@@ -138,7 +147,7 @@ Backend Engineer focused on scalable APIs, reliability, and product impact. Opti
   \small{\item{
 \textbf{Primary}: Go, API design, concurrency, testing, observability \\
 \textbf{Systems}: queues, workers, caching, reliability \\
-\textbf{Plus}: TypeScript, Python, SQL, Azure/.NET exposure (Shift) \\
+\textbf{Also}: C\#/.NET, Azure, Cosmos DB, Service Bus, Terraform notions (Shift); TypeScript, Python, SQL \\
 \textbf{Culture}: ownership, bias for action, care for quality
   }}
 \end{itemize}
