@@ -1,4 +1,4 @@
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,10.5pt]{article}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage[usenames,dvipsnames]{color}
@@ -15,11 +15,11 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-\addtolength{\oddsidemargin}{-0.55in}
-\addtolength{\evensidemargin}{-0.55in}
-\addtolength{\textwidth}{1.1in}
-\addtolength{\topmargin}{-0.65in}
-\addtolength{\textheight}{1.25in}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{1.15in}
 
 \urlstyle{same}
 \raggedbottom
@@ -27,46 +27,46 @@
 \setlength{\tabcolsep}{0in}
 
 \titleformat{\section}{
-  \vspace{-7pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
 
-\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-1.5pt}}}
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
+  \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-5pt}
 }
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-5pt}
 }
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
 
 \begin{document}
 
 \begin{center}
-    {\Huge \scshape Ghislain THEUBO} \\ \vspace{1pt}
+    {\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
     \small Paris, France $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
     \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French $|$ \href{https://github.com/Bergerghislain}{GitHub}
 \end{center}
 
-\vspace{-8pt}
+\vspace{-6pt}
 
 \section{Professional Summary}
 \small{
-Junior Full-Stack Engineer with solid web foundations (APIs, SQL, TypeScript appetite) and strong interest in \textbf{AI $\times$ application security} products. Experience building production APIs and data models; comfortable learning modern frameworks quickly. Excited to contribute to \textbf{Escape}'s product \& platform (Svelte/TS front, Node/GraphQL/Prisma/PostgreSQL) under mentorship --- shipping intuitive workflows for security teams.
+Junior Full-Stack Engineer with solid APIs, SQL, and TypeScript foundations, motivated by \textbf{AI $\times$ application security} products. Experience shipping production backends and learning modern frameworks quickly. Eager to contribute to Escape's product \& platform (Svelte/TS, Node/GraphQL/Prisma/PostgreSQL) under mentorship --- intuitive workflows for security teams.
 }
 
 \section{Core Strengths}
 \small{
-\textbf{TypeScript / JavaScript} $\cdot$ \textbf{Node.js APIs} $\cdot$ \textbf{PostgreSQL} $\cdot$ \textbf{REST / GraphQL notions} $\cdot$ \textbf{Frontend (React; Svelte learning)} $\cdot$ \textbf{Query optimization} $\cdot$ \textbf{Teamwork \& communication} $\cdot$ \textbf{AI product interest} $\cdot$ \textbf{Security curiosity (DevSecOps notions)}
+\textbf{TypeScript / JavaScript} $\cdot$ Node.js $\cdot$ PostgreSQL $\cdot$ REST / GraphQL notions $\cdot$ Frontend (React; Svelte learning) $\cdot$ Query optimization $\cdot$ Teamwork $\cdot$ AI product interest $\cdot$ Security curiosity (defensive/product)
 }
 
 \section{Experience}
@@ -74,44 +74,56 @@ Junior Full-Stack Engineer with solid web foundations (APIs, SQL, TypeScript app
 \resumeSubHeadingListStart
 
   \resumeSubheading
-    {Gustave Roussy \& CentraleSup\'elec MICS}{Paris, France}
-    {Backend Engineer (CDD)}{Jan 2026 -- Present}
+    {Shift Technology -- Platform Software Engineering}{Paris, France}
+    {Software Engineer (CDI -- Platform / Backend)}{Sept 2026 -- Nov 2026}
     \resumeItemListStart
-      \resumeItem{Designed REST APIs and relational data models; pagination/perf tuning (+30\%); monitoring and access control.}
-      \resumeItem{Production ownership with Docker/CI --- ready to learn GraphQL/Prisma patterns in a product squad.}
+      \resumeItem{Joined the \textbf{platform / foundations} engineering context: C\# / .NET services on \textbf{Microsoft Azure}, contributing to shared building blocks used by product squads (APIs, config/transversal services).}
+      \resumeItem{Worked with \textbf{high-performance API} patterns, cloud data stores (\textbf{Azure Cosmos DB} notions), messaging (\textbf{Service Bus} notions), and infrastructure-as-code awareness (\textbf{Terraform} notions) in a hybrid SaaS environment.}
+      \resumeItem{Practiced ownership habits: design discussions, code reviews, monitoring mindset, and shipping incremental improvements on shared platform components.}
     \resumeItemListEnd
 
   \resumeSubheading
-    {Dassault Syst\`emes -- 3DEXPERIENCE R\&D}{V\'elizy-Villacoublay, France}
-    {Software Engineer}{Apr 2025 -- Oct 2025}
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Backend / Data Platforms)}{Jan 2026 -- Sept 2026}
     \resumeItemListStart
-      \resumeItem{Shipped robust platform features with tests and performance focus; collaborated in multi-team product delivery.}
+      \resumeItem{Software Engineer (CDD) in joint coordination between \textbf{Gustave Roussy (Oncostat / CESP)} and \textbf{CentraleSup\'elec MICS}: built and maintained production backends for research/clinical data workflows.}
+      \resumeItem{Designed \textbf{REST APIs} (Python/FastAPI) with validation, RBAC, structured logging, and observability; PostgreSQL modeling with indexing and query tuning (\textbf{$\sim$30\%} faster critical reads).}
+      \resumeItem{Containerized services with \textbf{Docker}; automated tests and delivery via \textbf{GitHub Actions}; wrote technical documentation for data flows and operational handoff.}
+      \resumeItem{Collaborated daily with domain experts (research/medical) --- translating ambiguous needs into reliable, auditable software.}
     \resumeItemListEnd
 
   \resumeSubheading
-    {INRIA Grenoble}{Montbonnot-Saint-Martin, France}
-    {Research Intern}{May 2024 -- Aug 2024}
+    {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern (Full-Stack Module Rewrite)}{Mar 2025 -- Sept 2025}
     \resumeItemListStart
-      \resumeItem{Built reliable systems under constraints; clear communication and eagerness to learn from seniors.}
+      \resumeItem{Delivered a user-centric Survey module rewrite on 3DSwym: backend Java/Spring + front integration concerns, Agile prioritization, and production-minded quality gates.}
+      \resumeItem{Strong OOP, API/data-model design, TDD, and measurable outcomes (+35\% perf, 85\% coverage).}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab / Froll'N'Roll}{Montbonnot-Saint-Martin, France}
+    {Research Intern -- Real-Time Control Modules (Assistive Wheelchair)}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{Developed real-time control modules in \textbf{C/FreeRTOS} and Python for an electrically assisted manual wheelchair --- direct user impact with continuous validation with the end user.}
+      \resumeItem{Redesigned communication/data pipelines under latency constraints; improved responsiveness by \textbf{$\sim$40\%}; contributed to open/documented research codebases.}
+      \resumeItem{Human-centered engineering: DIY hardware/software integration, iterative prototyping, and clear technical communication in a multidisciplinary SED team.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-\section{Personal Projects -- Security Product Surfaces}
+\section{Selected Projects}
 
 \resumeSubHeadingListStart
 
   \resumeProjectHeading
     {\textbf{API Findings Dashboard} $|$ Svelte, TypeScript, Node, GraphQL, Prisma, PostgreSQL}{GitHub}
     \resumeItemListStart
-      \resumeItem{Product-style dashboard listing API security findings (severity, endpoint, status) with filters and pagination --- Escape UX practice.}
-      \resumeItem{GraphQL API + Prisma models; focus on intuitive workflows for AppSec teams (triage, assign, resolve).}
+      \resumeItem{Product dashboard for security findings (severity, endpoint, status) with filters/pagination; GraphQL + Prisma; triage workflows (assign/resolve).}
     \resumeItemListEnd
-
   \resumeProjectHeading
     {\textbf{Attack Surface Inventory (read-only)} $|$ Node, PostgreSQL, TypeScript}{GitHub}
     \resumeItemListStart
-      \resumeItem{Ingest mock asset inventory (domains/APIs) and expose searchable inventory UI --- ASM-inspired product feature, defensive/product scope only.}
+      \resumeItem{Ingest mock asset inventory (domains/APIs) and expose searchable UI --- ASM-inspired product feature (defensive/product scope only).}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -120,29 +132,30 @@ Junior Full-Stack Engineer with solid web foundations (APIs, SQL, TypeScript app
 
 \begin{itemize}[leftmargin=0.15in, label={}]
   \small{\item{
-    \textbf{Stack target}: Svelte, TypeScript, Node, GraphQL, Prisma, PostgreSQL \\
-    \textbf{Also}: REST, Docker, CI, React experience transferable to Svelte \\
-    \textbf{Interest}: AI-powered security products, DevSecOps concepts, startup pace
+\textbf{Target stack}: Svelte, TypeScript, Node, GraphQL, Prisma, PostgreSQL \\
+\textbf{Also}: REST, Docker, CI, React transferable to Svelte \\
+\textbf{Interest}: AI-powered security products, DevSecOps concepts, startup pace
   }}
 \end{itemize}
 
-\section{Education}
+\section{Education \& Certifications}
 
 \resumeSubHeadingListStart
   \resumeSubheading
     {Grenoble INP - Ensimag}{Grenoble, France}
-    {Engineering Degree in Computer Science \& Software Engineering}{2023 -- 2025}
+    {Engineering Degree -- Information Systems / Software Engineering (Double Degree)}{2023 -- 2025}
   \resumeSubheading
     {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}
-    {Master's Degree in Computer Engineering (Top 12\%)}{2019 -- 2023}
+    {Master's Degree in Computer Engineering -- Top 12\% of class}{2019 -- 2023}
 \resumeSubHeadingListEnd
-
-\section{Languages}
-
 \small{
-\textbf{English:} Bilingual (professional working proficiency) \\
-\textbf{French:} Fluent \\
-\textbf{Spanish:} Intermediate
+\textbf{Certifications:} Programming Foundations -- TDD (LinkedIn, 2025) $\cdot$ Primerli -- Insurance Industry Foundations (2025)
+}
+
+\section{Languages \& Extra}
+\small{
+\textbf{English:} bilingual / professional $\cdot$ \textbf{French:} fluent $\cdot$ \textbf{Spanish:} intermediate \\
+\textbf{Extra:} academic tutoring (UGA DAEU maths; 4 years mentoring baccalaureate students in Cameroon) $\cdot$ tennis, football
 }
 
 \end{document}
