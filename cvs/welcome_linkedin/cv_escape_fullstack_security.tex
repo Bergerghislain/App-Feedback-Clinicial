@@ -1,0 +1,148 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.65in}
+\addtolength{\textheight}{1.25in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-7pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \scshape Ghislain THEUBO} \\ \vspace{1pt}
+    \small Paris, France $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+    \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French $|$ \href{https://github.com/Bergerghislain}{GitHub}
+\end{center}
+
+\vspace{-8pt}
+
+\section{Professional Summary}
+\small{
+Junior Full-Stack Engineer with solid web foundations (APIs, SQL, TypeScript appetite) and strong interest in \textbf{AI $\times$ application security} products. Experience building production APIs and data models; comfortable learning modern frameworks quickly. Excited to contribute to \textbf{Escape}'s product \& platform (Svelte/TS front, Node/GraphQL/Prisma/PostgreSQL) under mentorship --- shipping intuitive workflows for security teams.
+}
+
+\section{Core Strengths}
+\small{
+\textbf{TypeScript / JavaScript} $\cdot$ \textbf{Node.js APIs} $\cdot$ \textbf{PostgreSQL} $\cdot$ \textbf{REST / GraphQL notions} $\cdot$ \textbf{Frontend (React; Svelte learning)} $\cdot$ \textbf{Query optimization} $\cdot$ \textbf{Teamwork \& communication} $\cdot$ \textbf{AI product interest} $\cdot$ \textbf{Security curiosity (DevSecOps notions)}
+}
+
+\section{Experience}
+
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS}{Paris, France}
+    {Backend Engineer (CDD)}{Jan 2026 -- Present}
+    \resumeItemListStart
+      \resumeItem{Designed REST APIs and relational data models; pagination/perf tuning (+30\%); monitoring and access control.}
+      \resumeItem{Production ownership with Docker/CI --- ready to learn GraphQL/Prisma patterns in a product squad.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer}{Apr 2025 -- Oct 2025}
+    \resumeItemListStart
+      \resumeItem{Shipped robust platform features with tests and performance focus; collaborated in multi-team product delivery.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {INRIA Grenoble}{Montbonnot-Saint-Martin, France}
+    {Research Intern}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{Built reliable systems under constraints; clear communication and eagerness to learn from seniors.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Personal Projects -- Security Product Surfaces}
+
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{API Findings Dashboard} $|$ Svelte, TypeScript, Node, GraphQL, Prisma, PostgreSQL}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Product-style dashboard listing API security findings (severity, endpoint, status) with filters and pagination --- Escape UX practice.}
+      \resumeItem{GraphQL API + Prisma models; focus on intuitive workflows for AppSec teams (triage, assign, resolve).}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Attack Surface Inventory (read-only)} $|$ Node, PostgreSQL, TypeScript}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Ingest mock asset inventory (domains/APIs) and expose searchable inventory UI --- ASM-inspired product feature, defensive/product scope only.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Stack target}: Svelte, TypeScript, Node, GraphQL, Prisma, PostgreSQL \\
+    \textbf{Also}: REST, Docker, CI, React experience transferable to Svelte \\
+    \textbf{Interest}: AI-powered security products, DevSecOps concepts, startup pace
+  }}
+\end{itemize}
+
+\section{Education}
+
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP - Ensimag}{Grenoble, France}
+    {Engineering Degree in Computer Science \& Software Engineering}{2023 -- 2025}
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}
+    {Master's Degree in Computer Engineering (Top 12\%)}{2019 -- 2023}
+\resumeSubHeadingListEnd
+
+\section{Languages}
+
+\small{
+\textbf{English:} Bilingual (professional working proficiency) \\
+\textbf{French:} Fluent \\
+\textbf{Spanish:} Intermediate
+}
+
+\end{document}

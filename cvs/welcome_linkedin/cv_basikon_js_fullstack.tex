@@ -1,0 +1,149 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.65in}
+\addtolength{\textheight}{1.25in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-7pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \scshape Ghislain THEUBO} \\ \vspace{1pt}
+    \small Paris, France $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+    \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French $|$ \href{https://github.com/Bergerghislain}{GitHub}
+\end{center}
+
+\vspace{-8pt}
+
+\section{Professional Summary}
+\small{
+Full-Stack JavaScript-oriented engineer (Bac+5 Ensimag) with production API experience and product/integration mindset. Comfortable reading and evolving JS/TS codebases, building workflows/UI, and translating client needs into robust configurations. Excited by \textbf{Basikon}'s API-first SaaS financing platform and low-code delivery model --- ready to configure client projects and contribute to the platform codebase with autonomy and structured thinking. \textbf{Fluent English}.
+}
+
+\section{Core Strengths}
+\small{
+\textbf{JavaScript / TypeScript} $\cdot$ \textbf{Full-stack web} $\cdot$ \textbf{REST APIs} $\cdot$ \textbf{Workflow / UI configuration} $\cdot$ \textbf{Integration mindset} $\cdot$ \textbf{CI \& automation} $\cdot$ \textbf{Analytical \& autonomous} $\cdot$ \textbf{English (fluent)}
+}
+
+\section{Experience}
+
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS}{Paris, France}
+    {Backend Engineer (CDD -- APIs \& Integrations)}{Jan 2026 -- Present}
+    \resumeItemListStart
+      \resumeItem{Translated product/business rules into API behaviors (validation, RBAC, data flows); optimized SQL (+30\%).}
+      \resumeItem{Owned delivery with Docker/CI; documented integrations for reuse --- close to Basikon configurator posture.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer}{Apr 2025 -- Oct 2025}
+    \resumeItemListStart
+      \resumeItem{Shipped platform features with specs, tests, and performance focus (+35\%); collaborated with product stakeholders.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {INRIA Grenoble}{Montbonnot-Saint-Martin, France}
+    {Research Intern}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{Built and adapted systems under real constraints; strong solution orientation and clear communication.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Personal Projects -- JS Platform \& Financing Flows}
+
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{Loan Decision Workflow Studio} $|$ Node.js, TypeScript, React, PostgreSQL}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Configurable workflow engine (eligibility rules, scoring steps, UI forms) for a simplified lending journey --- Basikon-like financing use case.}
+      \resumeItem{API-first design; low-code style rule editor + ability to drop into source for custom JS extensions.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Partner Integration Sandbox} $|$ JavaScript, REST, webhooks, CI}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Mock partner/bank integration with webhooks, retries, and automated tests --- demonstrates integration best practices.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages}: JavaScript, TypeScript, Python, SQL \\
+    \textbf{Stack}: Node, React, REST APIs, PostgreSQL, Docker, CI \\
+    \textbf{Mindset}: client needs $\rightarrow$ robust config/code; autonomy; English oral \& written \\
+    \textbf{Bonus interest}: finance / credit workflows
+  }}
+\end{itemize}
+
+\section{Education}
+
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP - Ensimag}{Grenoble, France}
+    {Engineering Degree in Computer Science \& Software Engineering}{2023 -- 2025}
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}
+    {Master's Degree in Computer Engineering (Top 12\%)}{2019 -- 2023}
+\resumeSubHeadingListEnd
+
+\section{Languages}
+
+\small{
+\textbf{English:} Bilingual (professional working proficiency) \\
+\textbf{French:} Fluent \\
+\textbf{Spanish:} Intermediate
+}
+
+\end{document}

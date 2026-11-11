@@ -1,0 +1,156 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.65in}
+\addtolength{\textheight}{1.25in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-7pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \scshape Ghislain THEUBO} \\ \vspace{1pt}
+    \small Paris, France $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+    \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French $|$ \href{https://github.com/Bergerghislain}{GitHub}
+\end{center}
+
+\vspace{-8pt}
+
+\section{Professional Summary}
+\small{
+Backend Engineer focused on \textbf{scalable APIs}, reliability, and product impact. Experience optimizing high-traffic paths at \textbf{Dassault Syst\`emes} and shipping production services with observability. Building strong \textbf{Go} skills through dedicated systems projects (plus TypeScript/Rust notions). Product-led, bias for simplicity, fluent English. Eager to help \textbf{Prelude} scale authentication/trust infrastructure (Go, DynamoDB, SQS, Lambdas) with ownership and on-call mindset.
+}
+
+\section{Core Strengths}
+\small{
+\textbf{Go} $\cdot$ \textbf{Distributed systems notions} $\cdot$ \textbf{APIs (REST / gRPC notions)} $\cdot$ \textbf{Performance \& reliability} $\cdot$ \textbf{SQL / NoSQL notions} $\cdot$ \textbf{TypeScript / Rust (plus)} $\cdot$ \textbf{Product mindset} $\cdot$ \textbf{English (fluent)}
+}
+
+\section{Experience}
+
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer (Platform Performance)}{Apr 2025 -- Oct 2025}
+    \resumeItemListStart
+      \resumeItem{Engineered for scale on a large platform; \textbf{35\%} latency improvement via simple, measurable changes --- prefer simplicity that scales.}
+      \resumeItem{Automated tests (85\%), CI gates, design docs; collaborated internationally in English.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS}{Paris, France}
+    {Backend Engineer (CDD)}{Jan 2026 -- Present}
+    \resumeItemListStart
+      \resumeItem{Production APIs with validation, RBAC, monitoring/alerting; SQL tuning (+30\%); Docker/CI ownership.}
+      \resumeItem{Client/stakeholder interaction to ship features that unblock real workflows.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {INRIA Grenoble}{Montbonnot-Saint-Martin, France}
+    {Research Intern}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{Latency-sensitive systems (+40\%); reliability under constraints --- transferable to auth API SLOs.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Personal Projects -- Go Backend \& Trust APIs}
+
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{OTP Orchestrator (Go)} $|$ Go, PostgreSQL/DynamoDB-style design, SQS-like queue}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Go service that selects a delivery channel, rate-limits, and records verification attempts --- Prelude-inspired auth building block.}
+      \resumeItem{Focus on simplicity, idempotency, metrics, and load tests; documentation for on-call readiness.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Fraud Signal Worker} $|$ Go, message queue, Lambda-style workers}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Async workers scoring risk signals and blocking obvious abuse patterns; emphasizes extensibility and operability.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{gRPC + TypeScript Admin Tool} $|$ Go gRPC, TypeScript}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Internal tool to inspect verification sessions --- DX for developers/support; highlights TypeScript plus and product empathy.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Primary push}: \textbf{Go}, API design, concurrency, testing \\
+    \textbf{Systems}: queues, workers, caching, observability, reliability \\
+    \textbf{Plus}: TypeScript, Rust notions, Python, SQL \\
+    \textbf{Culture fit}: ownership, bias for action, care for customers \& quality
+  }}
+\end{itemize}
+
+\section{Education}
+
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP - Ensimag}{Grenoble, France}
+    {Engineering Degree in Computer Science \& Software Engineering}{2023 -- 2025}
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}
+    {Master's Degree in Computer Engineering (Top 12\%)}{2019 -- 2023}
+\resumeSubHeadingListEnd
+
+\section{Languages}
+
+\small{
+\textbf{English:} Bilingual (professional working proficiency) \\
+\textbf{French:} Fluent \\
+\textbf{Spanish:} Intermediate
+}
+
+\end{document}
