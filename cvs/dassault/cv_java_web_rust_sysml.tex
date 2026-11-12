@@ -1,0 +1,171 @@
+\documentclass[letterpaper,10.5pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{1.15in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-1.5pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
+    \small Paris, France $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+    \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French $|$ \href{https://github.com/Bergerghislain}{GitHub}
+\end{center}
+
+\vspace{-6pt}
+
+\section{Professional Summary}
+\small{
+Former \textbf{Dassault Syst\`emes} Software Engineer Intern on the \textbf{3DEXPERIENCE / 3DSwym} platform (Survey module rewrite in Java 17 / Spring Boot / Hibernate, TDD, $\sim$35\% performance, $\sim$85\% coverage), now seeking to return in CDI as Ing\'enieur Dev Java / Web / Rust (CATIA R\&D, V\'elizy). Strong OOP, APIs, testing, and performance foundations; building language-tooling skills (parsing, symbol tables, indexing, LSP-style IDE services) aligned with SysML v2 / AI-native systems-engineering platforms. Additional production experience at Gustave Roussy and platform engineering at Shift Technology (C\#/.NET, Azure).
+}
+
+\section{Core Strengths}
+\small{
+\textbf{Java / Spring Boot} $\cdot$ \textbf{Hibernate / JPA} $\cdot$ Parsing \& semantic models $\cdot$ LSP / IDE tooling notions $\cdot$ Indexing \& caching $\cdot$ REST APIs $\cdot$ TDD / JUnit $\cdot$ Performance $\cdot$ Rust notions $\cdot$ English
+}
+
+\section{Experience}
+
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern (Full-Stack Module Rewrite)}{Mar 2025 -- Sept 2025}
+    \resumeItemListStart
+      \resumeItem{Full-stack overhaul of the legacy \textbf{Survey module} for \textbf{3DSwym} (3DEXPERIENCE collaborative platform): analyze, design, develop, and deliver a modern replacement.}
+      \resumeItem{Backend in \textbf{Java 17+ / Spring Boot} (MVC, Spring Data JPA) + \textbf{Hibernate}; applied \textbf{TDD} with JUnit; design patterns for modular maintainability.}
+      \resumeItem{User-needs analysis with product ``Champions'', competitive benchmark, MoSCoW prioritization in Agile ceremonies; Git + CI/CD practices.}
+      \resumeItem{Results: delivered core features of the new module with \textbf{$\sim$35\%} performance improvement and \textbf{$\sim$85\%} test coverage --- robust, maintainable codebase for 3DSwym users.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Shift Technology -- Platform Software Engineering}{Paris, France}
+    {Software Engineer (CDI -- Platform / Backend)}{Sept 2026 -- Nov 2026}
+    \resumeItemListStart
+      \resumeItem{Contributed to the \textbf{platform / foundations} squad building shared services used by product teams: design and implementation of \textbf{C\# / .NET} components and \textbf{high-performance APIs} on \textbf{Microsoft Azure}.}
+      \resumeItem{Worked with cloud data and messaging building blocks (\textbf{Azure Cosmos DB}, \textbf{Service Bus}), configuration/transversal services, and infrastructure-as-code awareness (\textbf{Terraform}) in a hybrid SaaS environment.}
+      \resumeItem{Practiced production engineering habits: design discussions, code reviews, monitoring mindset, incremental delivery, and collaboration with platform and product engineers.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Backend / Data Platforms)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{Software Engineer (CDD) in joint coordination between \textbf{Gustave Roussy (Oncostat / CESP)} and \textbf{CentraleSup\'elec MICS}: built and maintained production backends for research/clinical data workflows.}
+      \resumeItem{Designed \textbf{REST APIs} (Python/FastAPI) with validation, RBAC, structured logging, and observability; PostgreSQL modeling with indexing and query tuning (\textbf{$\sim$30\%} faster critical reads).}
+      \resumeItem{Containerized services with \textbf{Docker}; automated tests and delivery via \textbf{GitHub Actions}; wrote technical documentation for data flows and operational handoff.}
+      \resumeItem{Collaborated daily with domain experts (research/medical) --- translating ambiguous needs into reliable, auditable software.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab / Froll'N'Roll}{Montbonnot-Saint-Martin, France}
+    {Research Intern -- Real-Time Control Modules (Assistive Wheelchair)}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{Developed real-time control modules in \textbf{C/FreeRTOS} and Python for an electrically assisted manual wheelchair --- direct user impact with continuous validation with the end user.}
+      \resumeItem{Redesigned communication/data pipelines under latency constraints; improved responsiveness by \textbf{$\sim$40\%}; contributed to open/documented research codebases.}
+      \resumeItem{Human-centered engineering: DIY hardware/software integration, iterative prototyping, and clear technical communication in a multidisciplinary SED team.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {LIG -- Laboratoire d'Informatique de Grenoble}{Grenoble, France}
+    {Cloud Infrastructure Intern (VM Migration on OpenStack / Grid'5000)}{Feb 2025 -- Mar 2025}
+    \resumeItemListStart
+      \resumeItem{Automated and studied \textbf{VM migration} experiments on OpenStack within Grid'5000; analyzed performance vs availability trade-offs for hosted applications.}
+      \resumeItem{Wrote reproducible scripts and measurement notes under supervision of Alain Tchana --- deepened virtualization and distributed cloud skills.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Selected Projects}
+
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{Mini LSP Server for a Systems DSL} $|$ Java, LSP4J, ANTLR, JUnit}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Language server offering \textbf{completion}, \textbf{hover}, \textbf{go-to-definition}, \textbf{find references}, \textbf{rename}, and \textbf{diagnostics}.}
+      \resumeItem{Parser + semantic model with name resolution, multi-file workspace, \textbf{incremental re-analysis}, and symbol \textbf{index} with cache invalidation.}
+    \resumeItemListEnd
+  \resumeProjectHeading
+    {\textbf{Incremental Indexer \& Semantic Query API} $|$ Java (+ Rust CLI sidecar), REST}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Indexing service exposing low-latency semantic queries; Rust sidecar prototype for hot-path search.}
+    \resumeItemListEnd
+  \resumeProjectHeading
+    {\textbf{Ensimag DECA Compiler (team of 5)} $|$ Java}{2023--2024}
+    \resumeItemListStart
+      \resumeItem{Compiler for DECA (OO subset of Java): lexing/parsing, semantic analysis, code generation --- credibility for language tooling.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+\textbf{Languages}: Java (primary), Python, C/C++, Rust (notions), JS/TS, SQL, C\# (.NET at Shift) \\
+\textbf{Language tooling}: LSP concepts, ANTLR, symbol tables, indexing, caching, incremental analysis \\
+\textbf{Backend}: Spring Boot, Hibernate, REST, TDD/JUnit, CI/CD, Docker, Linux \\
+\textbf{Cloud}: Azure, Cosmos DB, Service Bus, Terraform notions (Shift)
+  }}
+\end{itemize}
+
+\section{Education \& Certifications}
+
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP - Ensimag}{Grenoble, France}
+    {Engineering Degree -- Information Systems / Software Engineering (Double Degree)}{2023 -- 2025}
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}
+    {Master's Degree in Computer Engineering -- Top 12\% of class}{2019 -- 2023}
+\resumeSubHeadingListEnd
+\small{
+\textbf{Certifications:} Programming Foundations -- TDD (LinkedIn, 2025) $\cdot$ Primerli -- Insurance Industry Foundations (2025)
+}
+
+\section{Languages \& Extra}
+\small{
+\textbf{English:} bilingual / professional $\cdot$ \textbf{French:} fluent $\cdot$ \textbf{Spanish:} intermediate \\
+\textbf{Extra:} academic tutoring (UGA DAEU maths; 4 years mentoring baccalaureate students in Cameroon) $\cdot$ tennis, football
+}
+
+\end{document}

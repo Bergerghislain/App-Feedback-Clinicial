@@ -1,0 +1,173 @@
+\documentclass[letterpaper,10.5pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{1.15in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-1.5pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
+    \small Paris / Corbeil-Essonnes area $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+    \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French $|$ \href{https://github.com/Bergerghislain}{GitHub}
+\end{center}
+
+\vspace{-6pt}
+
+\section{Professional Summary}
+\small{
+Software Engineer (Ensimag) with hands-on delivery on the \textbf{Dassault Syst\`emes 3DEXPERIENCE} ecosystem: full rewrite of the \textbf{3DSwym Survey} module (Java/Spring, specs, TDD, \textbf{$\sim$85\%} coverage). Strong in web stacks (\textbf{TypeScript/JavaScript}, REST/JSON, HTML/CSS), CI/CD, and translating functional needs into detailed technical designs with architects and product partners. Seeking \textbf{Ing\'enieur D\'eveloppement Logiciel 3DExperience} at Safran Aircraft Engines (Continuit\'e Num\'erique, Corbeil-Essonnes) to build widgets, customizations, POCs, and automations on 3DEX (on-prem \& cloud) for the PLM/MES continuity program.
+}
+
+\section{Core Strengths}
+\small{
+\textbf{3DEXPERIENCE / 3DSwym delivery (Dassault)} $\cdot$ Java / Spring $\cdot$ TypeScript / JS web $\cdot$ REST / JSON $\cdot$ Specs \& User Stories $\cdot$ TDD / CI/CD $\cdot$ PLM awareness $\cdot$ Multi-stakeholder DSI collaboration $\cdot$ English
+}
+
+\section{Experience}
+
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern (Full-Stack Module Rewrite)}{Mar 2025 -- Sept 2025}
+    \resumeItemListStart
+      \resumeItem{\textbf{Primary signal for this role:} owned the overhaul of the legacy \textbf{Survey module} inside \textbf{3DSwym} on the \textbf{3DEXPERIENCE} collaborative platform --- analyze, design, develop, deliver.}
+      \resumeItem{Backend \textbf{Java 17+ / Spring Boot} (MVC, Spring Data JPA) + Hibernate; applied \textbf{TDD} (JUnit); design patterns for modular, maintainable customizations.}
+      \resumeItem{Translated Champion/PM needs into MoSCoW-prioritized increments, acceptance-minded delivery, and documented design --- same loop as Safran architects / tech leads.}
+      \resumeItem{Results: core features shipped with \textbf{$\sim$35\%} performance improvement and \textbf{$\sim$85\%} test coverage; Git + CI/CD industrial practices.}
+      \resumeItem{Gained platform context: 3DEX collaborative apps, API-oriented delivery, quality/security expectations of a large PLM vendor ecosystem.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Shift Technology -- Platform Software Engineering}{Paris, France}
+    {Software Engineer (CDI -- Platform / Backend)}{Sept 2026 -- Nov 2026}
+    \resumeItemListStart
+      \resumeItem{Contributed to the \textbf{platform / foundations} squad building shared services used by product teams: design and implementation of \textbf{C\# / .NET} components and \textbf{high-performance APIs} on \textbf{Microsoft Azure}.}
+      \resumeItem{Worked with cloud data and messaging building blocks (\textbf{Azure Cosmos DB}, \textbf{Service Bus}), configuration/transversal services, and infrastructure-as-code awareness (\textbf{Terraform}) in a hybrid SaaS environment.}
+      \resumeItem{Practiced production engineering habits: design discussions, code reviews, monitoring mindset, incremental delivery, and collaboration with platform and product engineers.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Backend / APIs)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{Python/FastAPI REST APIs, RBAC, logging, PostgreSQL; Docker + GitHub Actions; specs and docs for multi-actor handoff.}
+      \resumeItem{Incident-minded delivery and continuous improvement of robustness --- transferable to 3DEX widget/customization support.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab / Froll'N'Roll}{Montbonnot-Saint-Martin, France}
+    {Research Intern -- Real-Time Control}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{C/FreeRTOS + Python; rigorous validation and documentation in a multidisciplinary team.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {LIG -- Laboratoire d'Informatique de Grenoble}{Grenoble, France}
+    {Cloud Infrastructure Intern}{Feb 2025 -- Mar 2025}
+    \resumeItemListStart
+      \resumeItem{Automation and measurement on OpenStack/Grid'5000 --- DevOps curiosity for CI/deploy chains.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Selected Projects}
+
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{3DEX-style Widget / Extension Lab} $|$ TypeScript, REST/JSON, HTML/CSS}{GitHub}
+    \resumeItemListStart
+      \resumeItem{SPA widget consuming REST/JSON mock PLM services; auth-aware calls; unit tests; CI pipeline --- ramp for 3DEX widget stack.}
+      \resumeItem{Documented mapping of functional stories $\rightarrow$ acceptance criteria $\rightarrow$ detailed design.}
+    \resumeItemListEnd
+  \resumeProjectHeading
+    {\textbf{3DSwym Survey Module (Dassault)} $|$ Java/Spring, 3DEXPERIENCE}{Dassault}
+    \resumeItemListStart
+      \resumeItem{Production-grade customization/module delivery on 3DEX ecosystem with TDD and performance focus.}
+    \resumeItemListEnd
+  \resumeProjectHeading
+    {\textbf{PLM Continuity Automation Sketch} $|$ Python/TS, webhooks, CI}{GitHub}
+    \resumeItemListStart
+      \resumeItem{POC automating status sync between mock design and manufacturing boards --- continuity-program mindset.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+\textbf{3DEX signal}: 3DSwym / 3DEXPERIENCE module delivery at Dassault; eager ramp on widgets, APIs, JPO/JSP/TCL-MQL customs \\
+\textbf{Web}: TypeScript/JavaScript, HTML/CSS, REST, JSON, front frameworks \\
+\textbf{Backend}: Java/Spring Boot, Python/FastAPI, C\#/.NET exposure \\
+\textbf{DevOps}: Git, CI/CD, Docker, artifact/build discipline \\
+\textbf{Soft}: multi-actor DSI collaboration, documentation, POCs, continuous improvement
+  }}
+\end{itemize}
+
+\section{Education \& Certifications}
+
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP - Ensimag}{Grenoble, France}
+    {Engineering Degree -- Information Systems / Software Engineering (Double Degree)}{2023 -- 2025}
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}
+    {Master's Degree in Computer Engineering -- Top 12\% of class}{2019 -- 2023}
+\resumeSubHeadingListEnd
+\small{
+\textbf{Certifications:} Programming Foundations -- TDD (LinkedIn, 2025) $\cdot$ Primerli -- Insurance Industry Foundations (2025)
+}
+
+\section{Languages \& Extra}
+\small{
+\textbf{English:} bilingual / professional $\cdot$ \textbf{French:} fluent $\cdot$ \textbf{Spanish:} intermediate \\
+\textbf{Extra:} tutoring $\cdot$ tennis, football $\cdot$ motivated to deepen 3DEX customizations for Safran digital continuity
+}
+
+\end{document}
