@@ -88,4 +88,15 @@ Re-vérifiés : Jimini `05` · Escape `10` (**55–75 k€**) · Skello `09` · 
 
 **Fermées / skip batch 2 :** Pigment Lever 404 · Eleven Labs (>5 ans) · Capgemini (drop user) · Carbon IT (~30–38 k€) · Ekkiden (2–6 ans).
 
-Exclus globaux: Talan (>1 mois), Theodo Extend (5+ ans), BlaBlaCar Junior Care (fermée), Pigment/Capgemini (indispo).
+## Batch 3 — 12 nov. soir (explications + nouveaux CV)
+
+| CV | Offre | Postuler | Note |
+|----|-------|----------|------|
+| `37_Eridanis_Data_Engineer_Junior.pdf` | Eridanis Data Engineer Junior | https://www.welcometothejungle.com/fr/companies/eridanis/jobs/data-engineer_paris | **45–70 k€** · Python/FastAPI/ETL |
+| `35_Licorne_Python_React_FastAPI.pdf` | Licorne — FastAPI/React (client conseil Data & AI) | https://www.welcometothejungle.com/fr/companies/licorne-society/jobs/solutions-software-engineer-fullstack-python-react-h-f_paris | **45–55 k€** · cabinet recrute pour client |
+| `36_Wavestone_Junior_IA_SI.pdf` | Wavestone Junior IA & SI | https://jobs.smartrecruiters.com/wavestone1/744000160871986 | Cabinet conseil · junior |
+| `16`/`17`/`18`/`34` Theodo | Fullstack / FinTech / HealthTech / GovTech | WTTJ Theodo* | **40–50 k€** · 0–2 ans |
+| `39_Arhis_Java_Data_Junior.pdf` | Arhis Java → Data Junior | https://arhis.com/fr/job/consultant-junior-java/ | **~36–40 k€** · Bordeaux/Lyon/Valencia |
+| `40_Meritis_Python_Angular.pdf` | Meritis Python/Angular Paris | https://www.welcometothejungle.com/fr/companies/meritis/jobs/developpeur-python-angular-h-f_paris | ESN · ~3 j |
+
+Exclus globaux: Talan (>1 mois), Theodo Extend (5+ ans), BlaBlaCar Junior Care (fermée), Pigment/Capgemini (indispo), Warren Walter (5+ ans).
