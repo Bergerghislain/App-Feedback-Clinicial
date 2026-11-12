@@ -73,4 +73,19 @@ Détail complet : `LISTE_OFFRES_VERIFIEES_12nov.md`
 
 **Fermées / skip :** Ippon JD (indispo) · Mistral New Grad (Ashby 404) · AXOPEN Lyon (28–34 k€ trop bas).
 
+## Batch 2 — 12 nov. après-midi (nouvelles)
+
+Détail : `LISTE_OFFRES_BATCH2_12nov.md`
+
+| CV | Offre | Postuler | Salaire / note |
+|----|-------|----------|----------------|
+| `35_Licorne_Python_React_FastAPI.pdf` | Licorne — Python/FastAPI + React Solutions SWE | https://www.welcometothejungle.com/fr/companies/licorne-society/jobs/solutions-software-engineer-fullstack-python-react-h-f_paris | **45–55 k€** |
+| `36_Wavestone_Junior_IA_SI.pdf` | Wavestone Junior IA & SI | https://jobs.smartrecruiters.com/wavestone1/744000160871986 | Junior cabinet · **10 nov.** |
+| `37_Eridanis_Data_Engineer_Junior.pdf` | Eridanis Data Engineer Junior | https://www.welcometothejungle.com/fr/companies/eridanis/jobs/data-engineer_paris | **45–70 k€** |
+| `38_Wezen_Java_Angular.pdf` | Wezen Full Stack Java Levallois | https://www.welcometothejungle.com/fr/companies/wezen/jobs/full-stack-java-developer_levallois-perret | ~2 j · junior/mid |
+
+Re-vérifiés : Jimini `05` · Escape `10` (**55–75 k€**) · Skello `09` · Theodo HealthTech `18`.
+
+**Fermées / skip batch 2 :** Pigment Lever 404 · Eleven Labs (>5 ans) · Capgemini (drop user) · Carbon IT (~30–38 k€) · Ekkiden (2–6 ans).
+
 Exclus globaux: Talan (>1 mois), Theodo Extend (5+ ans), BlaBlaCar Junior Care (fermée), Pigment/Capgemini (indispo).
