@@ -56,6 +56,21 @@ Autres Safran vues (pas de CV sauf demande) :
 |----|-------|----------|------|
 | `30_Pennylane_Junior_Rails_React.pdf` | Junior Fullstack Rails/React | Miroir Okko (pas sur Ashby) | **Probablement pourvue** ; Shift reformulé Rails/React |
 
-Liste fraîche 12 nov. : `LISTE_OFFRES_FRAICHES_12nov.md` (VINCI Toulouse, Pigment republished, Courbevoie Java/Angular 15h, AXOPEN Lyon…).
+## Batch vérifié 12 nov. 2026 (P0 + extras bien payés)
 
-Exclus globaux: Talan (>1 mois), Theodo Extend (5+ ans), BlaBlaCar Junior Care (fermée).
+Détail complet : `LISTE_OFFRES_VERIFIEES_12nov.md`
+
+| CV | Offre | Postuler | Salaire / note |
+|----|-------|----------|----------------|
+| `31_VINCI_Junior_Python_Toulouse.pdf` | VINCI Energies Junior Python Toulouse | https://www.welcometothejungle.com/fr/companies/vinci-energies/jobs/developpeur-euse-junior-python-f-h_toulouse_VEEF_Wd5VjYV | P0 · ~3 j · salaire N/A |
+| `32_Courbevoie_Java_Angular_Junior.pdf` | Java/Angular Junior Courbevoie | https://www.cadremploi.fr/emploi/detail_offre?offreId=156589910392994987 | **38–45 k€** · ~2 j |
+| `33_KAPIA_Python_IA.pdf` | KAPIA-RGI Python IA Paris/Lille | https://www.welcometothejungle.com/fr/companies/kapia-rgi/jobs/developpeur-python-ia_paris | P0 · **~14 h** |
+| `34_Theodo_GovTech.pdf` | Theodo GovTech Fullstack | https://www.welcometothejungle.com/fr/companies/solona/jobs/developpeur-se-fullstack-cdi-paris_paris_TG_x4997bp | **40–50 k€** · ~2 j |
+| `17_Theodo_FinTech.pdf` | Theodo FinTech Fullstack | https://www.welcometothejungle.com/fr/companies/sipios/jobs/dev-junior-sipios_paris | **40–50 k€** · ~2 j |
+| `16_Theodo_Fullstack.pdf` | Theodo / Theodo Retail Fullstack | https://www.welcometothejungle.com/fr/companies/theodo/jobs/software-engineer-fullstack-cdi-paris-theodo_paris_TF_qgPO5Xr | **40–50 k€** |
+| `06_Atexo_Java_Fullstack_Junior.pdf` | Atexo Java Full-stack junior | https://www.welcometothejungle.com/fr/companies/atexo/jobs/ingenieur-java-full-stack-junior-h-f_paris | **45–55 k€** · ~6 j |
+| `19_Code_Busters_Java.pdf` | Code Busters Java | https://www.welcometothejungle.com/fr/companies/code-busters/jobs/software-engineer-java-h-f_paris | **40–70 k€** · cabinet lean |
+
+**Fermées / skip :** Ippon JD (indispo) · Mistral New Grad (Ashby 404) · AXOPEN Lyon (28–34 k€ trop bas).
+
+Exclus globaux: Talan (>1 mois), Theodo Extend (5+ ans), BlaBlaCar Junior Care (fermée), Pigment/Capgemini (indispo).
