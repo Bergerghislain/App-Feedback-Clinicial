@@ -51,4 +51,11 @@ Autres Safran vues (pas de CV sauf demande) :
 - Dev Mesures Moissy — instrumentation physique → hors cœur
 - Full Stack Digital Factory Montereau — low-code/UiPath → faible
 
-Exclus globaux: Pigment (à re-vérifier), Talan (>1 mois), Theodo Extend (5+ ans).
+## Pennylane
+| CV | Offre | Postuler | Note |
+|----|-------|----------|------|
+| `30_Pennylane_Junior_Rails_React.pdf` | Junior Fullstack Rails/React | Miroir Okko (pas sur Ashby) | **Probablement pourvue** ; Shift reformulé Rails/React |
+
+Liste fraîche 12 nov. : `LISTE_OFFRES_FRAICHES_12nov.md` (VINCI Toulouse, Pigment republished, Courbevoie Java/Angular 15h, AXOPEN Lyon…).
+
+Exclus globaux: Talan (>1 mois), Theodo Extend (5+ ans), BlaBlaCar Junior Care (fermée).
