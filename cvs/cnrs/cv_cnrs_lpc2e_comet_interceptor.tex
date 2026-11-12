@@ -1,0 +1,173 @@
+\documentclass[letterpaper,10.5pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{1.15in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-1.5pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
+    \small Paris / mobile Orl\'eans $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+    \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French (B2+) $|$ \href{https://github.com/Bergerghislain}{GitHub}
+\end{center}
+
+\vspace{-6pt}
+
+\section{Professional Summary}
+\small{
+Application Development Engineer (Ensimag) with strong \textbf{Python} and \textbf{C/C++}, production scientific/data software at \textbf{Gustave Roussy \& CentraleSup\'elec MICS}, real-time sensor pipelines at \textbf{INRIA} (C/FreeRTOS), and industrial software craft at \textbf{Dassault Syst\`emes}. Practiced in Agile, unit/functional tests, Git, CI/CD, databases, and Linux. Eager to apply software engineering to space-plasma data tools (analysis, intercalibration, scientific products, databases, diffusion) for \textbf{Comet Interceptor / COMPLIMENT} at LPC2E -- CNRS (Orl\'eans, CDI de mission 84 months, start from Jan 2027).
+}
+
+\section{Core Strengths}
+\small{
+\textbf{Python} $\cdot$ \textbf{C/C++} $\cdot$ Scientific / sensor data pipelines $\cdot$ Algorithms \& databases $\cdot$ Agile / TDD / CI/DevOps $\cdot$ Linux \& Windows $\cdot$ English B2+ $\cdot$ Teamwork with scientists \& instrument engineers $\cdot$ Autonomy \& rigor
+}
+
+\section{Experience}
+
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Shift Technology -- Platform Software Engineering}{Paris, France}
+    {Software Engineer (CDI -- Platform / Backend)}{Sept 2026 -- Nov 2026}
+    \resumeItemListStart
+      \resumeItem{Contributed to the \textbf{platform / foundations} squad building shared services used by product teams: design and implementation of \textbf{C\# / .NET} components and \textbf{high-performance APIs} on \textbf{Microsoft Azure}.}
+      \resumeItem{Worked with cloud data and messaging building blocks (\textbf{Azure Cosmos DB}, \textbf{Service Bus}), configuration/transversal services, and infrastructure-as-code awareness (\textbf{Terraform}) in a hybrid SaaS environment.}
+      \resumeItem{Practiced production engineering habits: design discussions, code reviews, monitoring mindset, incremental delivery, and collaboration with platform and product engineers.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Backend / Scientific Data Platforms)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{Built and maintained production software for \textbf{research / clinical scientific workflows}: REST APIs in \textbf{Python/FastAPI}, validation, RBAC, structured logging, observability.}
+      \resumeItem{Modeled and tuned \textbf{PostgreSQL} (indexing, query profiling --- \textbf{$\sim$30\%} faster critical reads); ensured coherent, auditable data products for researchers.}
+      \resumeItem{Docker + \textbf{GitHub Actions} CI; technical documentation for data flows and operational handoff to scientific users.}
+      \resumeItem{Daily collaboration with domain experts --- translating measurement/analysis needs into robust, testable tools (same scientist--engineer loop as LPC2E).}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern (Full-Stack Module Rewrite)}{Mar 2025 -- Sept 2025}
+    \resumeItemListStart
+      \resumeItem{Full overhaul of a legacy module with \textbf{Java 17 / Spring Boot / Hibernate}; applied \textbf{TDD} (JUnit), design patterns, Agile/MoSCoW with product Champions.}
+      \resumeItem{Results: \textbf{$\sim$35\%} performance improvement, \textbf{$\sim$85\%} test coverage --- quality, versioning, and maintainability habits aligned with CNRS software engineering expectations.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab / Froll'N'Roll}{Montbonnot-Saint-Martin, France}
+    {Research Intern -- Real-Time Sensor / Control Software}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{Developed \textbf{C/FreeRTOS} and Python modules for sensor-driven control on constrained hardware; redesigned pipelines (\textbf{$\sim$40\%} responsiveness).}
+      \resumeItem{Worked with instrumentalists/scientists; documented codebases; continuous validation against real measurements --- transferable to electrical-sensor data tools for space plasma.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {LIG -- Laboratoire d'Informatique de Grenoble}{Grenoble, France}
+    {Cloud Infrastructure Intern (OpenStack / Grid'5000)}{Feb 2025 -- Mar 2025}
+    \resumeItemListStart
+      \resumeItem{Automated experiments and performance analyses under Linux research infrastructure --- reproducible tooling mindset.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Selected Projects (mission-aligned)}
+
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{Plasma-like Sensor Pipeline Lab} $|$ Python, NumPy/SciPy, C++ extension notions, HDF5/CSV}{GitHub}
+    \resumeItemListStart
+      \resumeItem{End-to-end pipeline: ingest multi-sensor time series $\rightarrow$ cleaning/intercalibration stubs $\rightarrow$ derived scientific products $\rightarrow$ indexed store + export for analysts.}
+      \resumeItem{Unit/functional tests, CI, Linux-first; documented product levels (L0/L1-style) for diffusion to a mock data centre.}
+    \resumeItemListEnd
+  \resumeProjectHeading
+    {\textbf{Scientific API + DB for Research Data} $|$ Python/FastAPI, PostgreSQL}{Gustave Roussy / personal}
+    \resumeItemListStart
+      \resumeItem{Production APIs and schemas that make research datasets queryable, coherent, and handoff-ready --- same class of work as COMPLIMENT data generation.}
+    \resumeItemListEnd
+  \resumeProjectHeading
+    {\textbf{C++ Numerical Kernels + Python Bindings Sketch} $|$ C++, pybind11 notions, Catch2}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Performance-minded compute kernels callable from Python --- ramp for mixed Python/Fortran/C++ scientific stacks at LPC2E.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+\textbf{Languages}: Python (strong), C/C++ (strong), Java/Spring; Fortran ramp-up readiness \\
+\textbf{Software eng.}: Agile, unit \& functional tests, Git, CI/CD, DevOps notions, quality discipline \\
+\textbf{Data / science}: algorithms, databases (SQL), scientific computing (NumPy/SciPy), sensor pipelines \\
+\textbf{OS}: Linux (daily), Windows \\
+\textbf{Soft}: project ownership, written/oral communication, international English B2+, scientist collaboration
+  }}
+\end{itemize}
+
+\section{Education \& Certifications}
+
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP - Ensimag}{Grenoble, France}
+    {Engineering Degree -- Information Systems / Software Engineering (Double Degree)}{2023 -- 2025}
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}
+    {Master's Degree in Computer Engineering -- Top 12\% of class}{2019 -- 2023}
+\resumeSubHeadingListEnd
+\small{
+\textbf{Certifications:} Programming Foundations -- TDD (LinkedIn, 2025) $\cdot$ Primerli -- Insurance Industry Foundations (2025)
+}
+
+\section{Languages \& Extra}
+\small{
+\textbf{English:} bilingual / professional (B2+) $\cdot$ \textbf{French:} fluent $\cdot$ \textbf{Spanish:} intermediate \\
+\textbf{Extra:} tutoring $\cdot$ tennis, football $\cdot$ motivation for space research software (Comet Interceptor)
+}
+
+\end{document}
