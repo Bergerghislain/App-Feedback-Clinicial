@@ -38,4 +38,17 @@ Board: https://jobs.ashbyhq.com/harmattan-ai · Détail: `cvs/harmattan/RESUME_O
 | idem | Version EN | https://emploi.cnrs.fr/Offres/CDI/UMR7328-ISALAN-052/Default.aspx?lang=EN |
 | idem | Miroir Ensimag Alumni | https://www.ensimag-alumni.com/jobs/10082 |
 
+## Safran Aircraft Engines (nov. 2026)
+| CV | Offre | Postuler | Avis |
+|----|-------|----------|------|
+| `28_Safran_Outils_Metiers_Python.pdf` | Dev Logiciel Outils Métiers — Réau/Moissy — Python/HPC — *il y a 6 j* | https://www.safran-group.com/fr/offres/france/moissy-cramayel/ingenieur-e-developpement-logiciel-outils-metiers-fh-188220 | Stack OK; site Safran affiche **>5 ans** → stretch |
+| `29_Safran_3DExperience.pdf` | Dev Logiciel 3DExperience — Corbeil — *il y a 1 sem* | https://www.hellowork.com/fr-fr/emplois/81463699.html | Hook Dassault 3DSwym; **5 ans 3DEX** → stretch fort |
+
+Autres Safran vues (pas de CV sauf demande) :
+- DevOps/Full Stack Châteaufort (3+ ans, Python/FastAPI/React/Docker/AWS) — https://www.safran-group.com/fr/offres/france/chateaufort/developpeur-euse-devops-full-stack-fh-190218 — **meilleur stack match relatif**
+- Chef Projet Java Full Stack Magny — **8 ans** → skip
+- Architecte Système Junior Éragny — ingénierie système guidage, pas software → hors cœur
+- Dev Mesures Moissy — instrumentation physique → hors cœur
+- Full Stack Digital Factory Montereau — low-code/UiPath → faible
+
 Exclus globaux: Pigment (à re-vérifier), Talan (>1 mois), Theodo Extend (5+ ans).
