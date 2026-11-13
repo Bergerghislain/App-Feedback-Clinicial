@@ -36,8 +36,39 @@ Ne postule **pas** HealthTech / FinTech / GovTech / Retail en parallèle.
 
 ---
 
+## Message Trusty → recruteurs Theodo
+
+Champ : **« Votre message pour les recruteurs de Theodo »**  
+Poste choisi : **Software Engineer Fullstack – CDI Paris – Theodo (AI-Build)**  
+CV : `41_Theodo_Fullstack.pdf`  
+Recommandé par : **Hugo Brunet**
+
+> Bonjour,
+>
+> Je postule au poste **Software Engineer Fullstack – CDI Paris – Theodo (AI-Build)**, recommandé par **Hugo Brunet**.
+>
+> Diplômé **Ensimag** (Bac+5), j’ai shippé en production sur des stacks proches de vos missions client :
+> - **Java / Spring Boot** — rewrite fullstack du module Survey (Dassault Systèmes / 3DSwym), TDD, ~35 % perf, ~85 % coverage
+> - **Python / FastAPI** — APIs métier en prod (Gustave Roussy), PostgreSQL, Docker, CI
+> - **Azure / plateforme** — APIs .NET et fondations cloud (Shift Technology)
+>
+> Ce qui m’attire chez Theodo : la culture Lean, le craft (qualité, reviews, ownership) et l’impact produit côté client — avec une vraie curiosité GenAI, utilisée avec jugement.
+>
+> Disponible immédiatement pour un CDI à Paris. Merci pour votre lecture, je serais ravi d’échanger.
+>
+> Ghislain THEUBO  
+> 06 82 86 62 79 · bergerghislaintheubo@gmail.com  
+> https://www.linkedin.com/in/berger-ghislain
+
+**Version courte** (si limite de caractères) :
+
+> Bonjour, je postule au poste **Software Engineer Fullstack – CDI Paris – AI-Build**, recommandé par **Hugo Brunet**. Diplômé Ensimag, j’ai shippé en prod : Java/Spring (Dassault), Python/FastAPI (Gustave Roussy), Azure/.NET (Shift). Attiré par le craft Lean et l’impact client Theodo. Dispo CDI Paris. Merci — Ghislain THEUBO · 06 82 86 62 79
+
+---
+
 ## Après envoi
 1. Envoie **dans le même fil** LinkedIn (pas un nouveau cold message).
 2. Si Hugo confirme → postule **uniquement** via Trusty / AI-Build.
 3. Si le lien Trusty est mort → il t’en renverra un ; sinon postule Lever AI-Build en indiquant **Hugo Brunet**.
 4. Ne multiplie pas les verticales tant que ce process tourne.
+5. Sur Trusty : colle le **message recruteurs** ci-dessus + uploade `41_Theodo_Fullstack.pdf`.
