@@ -1,42 +1,43 @@
-# Cooptation Hugo BRUNET — Theodo AI-Build
+# Relance Hugo BRUNET — Theodo AI-Build (suite Trusty déc. 2025)
+
+## Contexte
+Hugo a déjà répondu le **9 déc. 2025** avec le lien Trusty de recommandation :  
+https://refer.hellotrusty.io/ogaqcqgbwj  
+→ Il a dit de choisir **une** offre Software Engineer parmi les verticales (HealthTech, FinTech, public, mobile…).
 
 ## Cible unique (max cooptation)
-**Software Engineer Fullstack - CDI Paris - Theodo** (practice **AI-Build**)  
-Lien : https://jobs.lever.co/theodo/c388767f-f564-4fbd-a712-e4190076e872  
-CV : `41_Theodo_Fullstack.pdf`  
-Salaire annoncé : 40–50 k€ · 0–2 ans · top école
+**Software Engineer Fullstack - CDI Paris - Theodo (AI-Build)**  
+Lever : https://jobs.lever.co/theodo/c388767f-f564-4fbd-a712-e4190076e872  
+CV : `41_Theodo_Fullstack.pdf`
 
-Ne postule **pas** en parallèle HealthTech / FinTech / GovTech / Retail tant que ce process tourne.
+Ne postule **pas** HealthTech / FinTech / GovTech / Retail en parallèle.
 
 ---
 
-## Message LinkedIn → Hugo Brunet
+## Message LinkedIn → Hugo (relance, thread existant)
 
 > Bonjour Hugo,
 >
-> Je me permets de te contacter suite à ta présence sur Trusty / Theodo. Je suis **Ghislain THEUBO**, jeune diplômé **Ensimag**, en recherche de CDI Fullstack à Paris.
+> J’espère que tu vas bien. Merci encore pour ton message de décembre et pour le lien Trusty — je n’avais pas finalisé à l’époque, mon parcours n’était pas encore stabilisé.
 >
-> Ton profil Tech Lead chez Theodo m’intéresse particulièrement : j’aimerais postuler au poste **Software Engineer Fullstack – CDI Paris – Theodo (AI-Build)**  
-> https://jobs.lever.co/theodo/c388767f-f564-4fbd-a712-e4190076e872  
-> et je me demandais si tu serais ok pour une **cooptation**.
+> Aujourd’hui je suis prêt : après relecture des verticales, je cible **Software Engineer Fullstack – CDI Paris – Theodo (AI-Build)**.
 >
-> En bref : j’ai shippé du fullstack / backend en prod — **Java/Spring** (Dassault 3DSwym), **Python/FastAPI** (Gustave Roussy), et plateforme **Azure** (Shift). Je suis à l’aise avec qualité (TDD, reviews), GenAI au quotidien avec jugement, et la culture Lean / impact client que Theodo met en avant.
+> Depuis, j’ai consolidé mon expérience : **Java/Spring** (Dassault), **Python/FastAPI** en prod (Gustave Roussy), et plateforme **Azure** (Shift). CV à jour en pièce jointe.
 >
-> Si tu peux me recommander ou transmettre mon CV à l’équipe recrutement / ta practice, ce serait une aide énorme. Je joins mon CV ciblé Theodo Fullstack.
->
-> Dispo pour un call rapide 10–15 min si utile avant que tu cooptes.
+> Est-ce que ton lien Trusty est toujours valable pour que je postule via ta reco ?  
+> https://refer.hellotrusty.io/ogaqcqgbwj  
+> Sinon dis-moi comment tu préfères procéder et je m’aligne.
 >
 > Merci beaucoup Hugo,  
-> Ghislain THEUBO  
-> 06 82 86 62 79  
-> https://www.linkedin.com/in/berger-ghislain
+> Ghislain  
+> 06 82 86 62 79
 
 **Joindre :** `41_Theodo_Fullstack.pdf`
 
 ---
 
 ## Après envoi
-1. Envoie le message + CV à Hugo.
-2. **Attends sa réponse** (ou 48–72 h) avant de cliquer « Postuler » sur Lever — idéalement il te coopté / te donne un lien / te met en relation RH.
-3. Si il dit « postule et mets mon nom » → postule **uniquement** AI-Build et indique Hugo Brunet comme cooptation.
-4. Si silence après ~5 j → relance polie 3 lignes, puis postule quand même AI-Build en mentionnant « contacté Hugo Brunet ».
+1. Envoie **dans le même fil** LinkedIn (pas un nouveau cold message).
+2. Si Hugo confirme → postule **uniquement** via Trusty / AI-Build.
+3. Si le lien Trusty est mort → il t’en renverra un ; sinon postule Lever AI-Build en indiquant **Hugo Brunet**.
+4. Ne multiplie pas les verticales tant que ce process tourne.
