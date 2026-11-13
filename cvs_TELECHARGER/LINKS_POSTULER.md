@@ -100,3 +100,14 @@ Re-vérifiés : Jimini `05` · Escape `10` (**55–75 k€**) · Skello `09` · 
 | `40_Meritis_Python_Angular.pdf` | Meritis Python/Angular Paris | https://www.welcometothejungle.com/fr/companies/meritis/jobs/developpeur-python-angular-h-f_paris | ESN · ~3 j |
 
 Exclus globaux: Talan (>1 mois), Theodo Extend (5+ ans), BlaBlaCar Junior Care (fermée), Pigment/Capgemini (indispo), Warren Walter (5+ ans).
+
+## Batch 13 nov. 2026 — Theodo / Meritis / Pigment
+
+| Offre | Lien | CV |
+|-------|------|-----|
+| Theodo Fullstack Paris (~3 j) | https://www.welcometothejungle.com/fr/companies/theodo/jobs/software-engineer-fullstack-cdi-paris-theodo_paris | `41_Theodo_Fullstack.pdf` |
+| Meritis Python/Angular (~3 j) | https://www.welcometothejungle.com/fr/companies/meritis/jobs/developpeur-python-angular-h-f_paris | `42_Meritis_Python_Angular.pdf` |
+| Meritis IT Quant (~3 j) | https://www.welcometothejungle.com/fr/companies/meritis/jobs/it-quant-h-f_paris_MERIT_Nym28xZ | `43_Meritis_IT_Quant.pdf` |
+| Pigment Junior Data & Automation (~3 j) | https://jobs.lever.co/pigment/80b6b73c-eccf-4844-b3fd-31e6f8765249 | `44_Pigment_Junior_Data_Automation.pdf` |
+
+Message Aurélien Pepin (referral Pigment) : `MESSAGES_PIGMENT_AURELIEN.md`
