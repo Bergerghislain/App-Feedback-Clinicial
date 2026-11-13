@@ -111,3 +111,11 @@ Exclus globaux: Talan (>1 mois), Theodo Extend (5+ ans), BlaBlaCar Junior Care (
 | Pigment Junior Data & Automation (~3 j) | https://jobs.lever.co/pigment/80b6b73c-eccf-4844-b3fd-31e6f8765249 | `44_Pigment_Junior_Data_Automation.pdf` |
 
 Message Aurélien Pepin (referral Pigment) : `MESSAGES_PIGMENT_AURELIEN.md`
+
+## Batch 13 nov. 2026 (après-midi) — ASI + Meritis relance
+
+| Offre | Lien | CV |
+|-------|------|-----|
+| ASI AI Engineer IA générative Lyon (~6 j, 42–48 k€) | https://www.welcometothejungle.com/fr/companies/asi/jobs/ai-engineer-ia-generative_lyon | `45_ASI_AI_Engineer_Lyon.pdf` |
+
+Mail Esma Meritis + explication ASI : `MESSAGES_ASI_ET_ESMA_MERITIS.md`
