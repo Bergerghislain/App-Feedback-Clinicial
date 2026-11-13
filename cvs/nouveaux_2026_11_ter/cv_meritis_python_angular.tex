@@ -1,0 +1,103 @@
+\documentclass[letterpaper,10.5pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{0.20in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-1.5pt}}}
+\newcommand{\resumeSubheading}[4]{\vspace{-1pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1} & #2 \\\textit{\small#3} & \textit{\small #4} \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeProjectHeading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small#1 & #2 \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+\begin{document}
+\begin{center}
+{\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
+\small Paris $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French $|$ \href{https://github.com/Bergerghislain}{GitHub}
+\end{center}
+\vspace{-6pt}
+\section{Professional Summary}
+\small{Software Engineer (Ensimag) strong in \textbf{Python} production APIs (Gustave Roussy), \textbf{Java/Spring} product delivery (Dassault), and SaaS platform habits (Shift). Comfortable with SQL, REST, Git/CI, and Angular/TypeScript ramp. Seeking \textbf{D\'eveloppeur Python / Angular} at Meritis (Paris) to design, develop, test, and operate client applications in Agile teams.}
+\section{Core Strengths}
+\small{\textbf{Python} $\cdot$ Angular / TypeScript ramp $\cdot$ Spring / Hibernate exposure $\cdot$ SQL $\cdot$ REST APIs $\cdot$ Git / GitLab $\cdot$ English B2+}
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Shift Technology -- Platform Software Engineering}{Paris, France}
+    {Software Engineer (CDI -- Platform / Backend)}{Sept 2026 -- Nov 2026}
+    \resumeItemListStart
+      \resumeItem{Platform / foundations: \textbf{C\# / .NET} high-performance APIs on \textbf{Azure}; Cosmos DB, Service Bus.}
+      \resumeItem{Production habits: design discussions, code reviews, monitoring, incremental delivery.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Backend / Data Platforms)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{Production \textbf{Python/FastAPI} REST APIs with validation, RBAC, logging; PostgreSQL (\textbf{$\sim$30\%} faster critical reads).}
+      \resumeItem{\textbf{Docker} + \textbf{GitHub Actions}; documentation; Agile collaboration with domain stakeholders.}
+      \resumeItem{Incident diagnosis and quality ownership --- support L3 / maintenance mindset.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern (Full-Stack Module Rewrite)}{Mar 2025 -- Sept 2025}
+    \resumeItemListStart
+      \resumeItem{Full-stack rewrite: \textbf{Java 17 / Spring Boot / Hibernate}, TDD, design patterns.}
+      \resumeItem{Results: \textbf{$\sim$35\%} performance, \textbf{$\sim$85\%} coverage --- Spring/Hibernate signal for Meritis stack.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab / Froll'N'Roll}{Montbonnot-Saint-Martin, France}
+    {Research Intern -- Real-Time Control}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{\textbf{C/FreeRTOS} + Python; \textbf{$\sim$40\%} responsiveness; clear technical communication.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {LIG -- Laboratoire d'Informatique de Grenoble}{Grenoble, France}
+    {Cloud Infrastructure Intern (OpenStack / Grid'5000)}{Feb 2025 -- Mar 2025}
+    \resumeItemListStart
+      \resumeItem{Cloud experiments; reproducible scripts; Git collaboration.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Selected Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{Python + Angular Feature Slice} $|$ Python/FastAPI, Angular/TS, SQL}{GitHub}
+    \resumeItemListStart
+      \resumeItem{End-to-end feature: REST API + Angular UI + SQL model; unit tests; GitLab/GitHub CI notes.}
+      \resumeItem{Design patterns and maintainability focus --- matches Meritis quality expectations.}
+    \resumeItemListEnd
+  \resumeProjectHeading{\textbf{Clinical FastAPI + Spring Survey} $|$ Python \& Java}{Gustave Roussy / Dassault}
+    \resumeItemListStart
+      \resumeItem{Production Python APIs + industrial Java/Spring delivery --- dual-stack readiness for Meritis missions.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]\small{\item{\textbf{Languages}: Python, Java, TypeScript notions, SQL \\ \textbf{Frameworks}: FastAPI, Spring/Hibernate, Angular ramp \\ \textbf{Tooling}: Git/GitLab, Maven/npm, Docker, REST \\ \textbf{Soft}: Agile ceremonies, bilingual FR/EN}}\end{itemize}
+\section{Education \& Certifications}
+\resumeSubHeadingListStart
+  \resumeSubheading{Grenoble INP - Ensimag}{Grenoble, France}{Engineering Degree -- Information Systems / Software Engineering (Double Degree)}{2023 -- 2025}
+  \resumeSubheading{\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}{Master's Degree in Computer Engineering -- Top 12\% of class}{2019 -- 2023}
+\resumeSubHeadingListEnd
+\small{\textbf{Certifications:} Programming Foundations -- TDD (LinkedIn, 2025) $\cdot$ Primerli -- Insurance Industry Foundations (2025)}
+\section{Languages \& Extra}
+\small{\textbf{English:} bilingual / professional $\cdot$ \textbf{French:} fluent $\cdot$ \textbf{Spanish:} intermediate \\ \textbf{Extra:} tutoring $\cdot$ tennis, football}
+\end{document}
