@@ -119,3 +119,9 @@ Message Aurélien Pepin (referral Pigment) : `MESSAGES_PIGMENT_AURELIEN.md`
 | ASI AI Engineer IA générative Lyon (~6 j, 42–48 k€) | https://www.welcometothejungle.com/fr/companies/asi/jobs/ai-engineer-ia-generative_lyon | `45_ASI_AI_Engineer_Lyon.pdf` |
 
 Mail Esma Meritis + explication ASI : `MESSAGES_ASI_ET_ESMA_MERITIS.md`
+
+## Theodo — cooptation Hugo Brunet (AI-Build only)
+
+| Offre | Lien | CV | Message |
+|-------|------|-----|---------|
+| Software Engineer Fullstack CDI Paris — **AI-Build** | https://jobs.lever.co/theodo/c388767f-f564-4fbd-a712-e4190076e872 | `41_Theodo_Fullstack.pdf` | `MESSAGE_HUGO_BRUNET_THEODO.md` |
