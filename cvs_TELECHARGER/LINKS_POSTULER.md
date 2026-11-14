@@ -125,3 +125,11 @@ Mail Esma Meritis + explication ASI : `MESSAGES_ASI_ET_ESMA_MERITIS.md`
 | Offre | Lien | CV | Message |
 |-------|------|-----|---------|
 | Software Engineer Fullstack CDI Paris — **AI-Build** | https://jobs.lever.co/theodo/c388767f-f564-4fbd-a712-e4190076e872 | `41_Theodo_Fullstack.pdf` | `MESSAGE_HUGO_BRUNET_THEODO.md` |
+
+## Batch 14 nov. 2026 — OGF Courbevoie
+
+| Offre | Lien | CV |
+|-------|------|-----|
+| OGF — Développeur .Net/Angular & IA (Courbevoie, CDI, ~2 j) | https://offres-emploi.ogf.fr/ (Développeur .Net/Angular & IA H/F) | `46_OGF_DotNet_Angular_IA.pdf` |
+
+Explication + tips candidature : `EXPLIQUE_OGF_DOTNET_ANGULAR_IA.md`

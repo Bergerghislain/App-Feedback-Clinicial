@@ -1,0 +1,111 @@
+\documentclass[letterpaper,10.5pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{0.25in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-1.5pt}}}
+\newcommand{\resumeSubheading}[4]{\vspace{-1pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1} & #2 \\\textit{\small#3} & \textit{\small #4} \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeProjectHeading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small#1 & #2 \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+\begin{document}
+\begin{center}
+{\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
+\small Paris / Courbevoie $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French $|$ \href{https://github.com/Bergerghislain}{GitHub}
+\end{center}
+\vspace{-6pt}
+\section{Professional Summary}
+\small{Software Engineer (Ensimag, Bac+5) with hands-on \textbf{C\# / .NET} production work (Shift, Azure), \textbf{SQL} \& REST APIs (Gustave Roussy), and fullstack delivery with front collaboration (Dassault). Daily user of \textbf{Cursor / Claude / Copilot-class} tools --- always \textbf{review, test, and challenge} AI-generated code before merge. Seeking \textbf{D\'eveloppeur .NET / Angular \& IA} at \textbf{OGF} (Courbevoie, CDI) to ship reliable features for m\'etier teams with quality, empathy, and continuous improvement.}
+\section{Core Strengths}
+\small{\textbf{C\# / .NET} $\cdot$ Angular / TypeScript $\cdot$ SQL $\cdot$ Git $\cdot$ Tests \& MCO $\cdot$ GenAI-assisted coding with ownership $\cdot$ M\'etier workshops $\cdot$ Empathy \& rigor}
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Shift Technology -- Platform Software Engineering}{Paris, France}
+    {Software Engineer (CDI -- C\# / .NET Platform)}{Sept 2026 -- Nov 2026}
+    \resumeItemListStart
+      \resumeItem{Developed and evolved \textbf{C\# / .NET} shared services and high-performance \textbf{REST APIs} on \textbf{Microsoft Azure} used by product squads --- feature delivery end-to-end.}
+      \resumeItem{Technical design discussions, unit/integration tests, debugging, code reviews, and \textbf{production readiness} (monitoring mindset, incremental releases).}
+      \resumeItem{Data \& messaging: \textbf{SQL}-oriented modeling habits + \textbf{Cosmos DB} / \textbf{Service Bus}; Git workflows; pair work with platform \& product engineers.}
+      \resumeItem{\textbf{AI-assisted development} (Cursor / Copilot-class): accelerate boilerplate, tests, and docs --- then \textbf{challenge} generated diffs for correctness, security, and maintainability.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- APIs / SQL / Angular UI)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{Built production REST backends (Python/FastAPI) with strong \textbf{SQL / PostgreSQL} modeling \& indexing (\textbf{$\sim$30\%} faster critical reads).}
+      \resumeItem{Shipped \textbf{Angular / TypeScript} admin screens for internal workflows (forms, lists, API contracts); Git + GitHub Actions; Docker.}
+      \resumeItem{Workshops with m\'etier / research users: clarify needs, propose pragmatic solutions, support \textbf{MCO} (incidents, fixes, handoff docs).}
+      \resumeItem{Used GenAI assistants for scaffolding \& refactoring; ownership of every merge after tests and human review.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern (Full-Stack Module Rewrite)}{Mar 2025 -- Sept 2025}
+    \resumeItemListStart
+      \resumeItem{End-to-end rewrite of the Survey module: analyze, design, implement, test, and deliver with product Champions (MoSCoW / Agile).}
+      \resumeItem{Backend Java 17 / Spring Boot / Hibernate + front collaboration (\textbf{TypeScript / Angular}-style UI contracts); \textbf{TDD} (JUnit).}
+      \resumeItem{Outcomes: \textbf{$\sim$35\%} performance, \textbf{$\sim$85\%} coverage --- continuous quality \& performance improvement mindset.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab / Froll'N'Roll}{Montbonnot-Saint-Martin, France}
+    {Research Intern -- Real-Time Control Modules}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{C/FreeRTOS + Python pipelines; \textbf{$\sim$40\%} responsiveness; continuous validation with end users.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {LIG -- Laboratoire d'Informatique de Grenoble}{Grenoble, France}
+    {Cloud Infrastructure Intern (OpenStack / Grid'5000)}{Feb 2025 -- Mar 2025}
+    \resumeItemListStart
+      \resumeItem{Automated cloud experiments; Git collaboration; reproducible scripts --- ops curiosity for MCO contexts.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Selected Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{.NET + Angular Internal App} $|$ C\# / .NET, Angular/TS, SQL, Git}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Full feature slice: \textbf{C\# / .NET} API + \textbf{Angular} UI + SQL model; unit tests; CI; README with AI-assisted workflow notes.}
+      \resumeItem{Workflow: Copilot/Cursor draft $\rightarrow$ \textbf{review \& challenge} $\rightarrow$ tests $\rightarrow$ merge --- matches OGF ``IA avec jugement'' expectation.}
+    \resumeItemListEnd
+  \resumeProjectHeading{\textbf{Shift .NET platform + Gustave Angular/SQL} $|$ Production craft}{Shift / Gustave Roussy}
+    \resumeItemListStart
+      \resumeItem{Production C\#/.NET APIs + Angular/SQL internal tools --- ready for OGF transversal apps (directions m\'etier).}
+    \resumeItemListEnd
+  \resumeProjectHeading{\textbf{CI Quality Pack} $|$ GitHub Actions, tests, Docker}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Reusable CI: lint, unit tests, container build; docs for handoff --- quality gates for continuous improvement.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]\small{\item{\textbf{Back}: C\#, .NET, REST APIs, SQL / PostgreSQL \\ \textbf{Front}: Angular, TypeScript, HTML/CSS \\ \textbf{Tooling}: Git, GitHub Actions, Docker, Azure notions \\ \textbf{IA}: Cursor, Claude, GitHub Copilot --- understand / test / challenge generated code \\ \textbf{Soft}: curiosity, m\'etier listening, rigor, team spirit, bilingual FR/EN}}}\end{itemize}
+\section{Education \& Certifications}
+\resumeSubHeadingListStart
+  \resumeSubheading{Grenoble INP - Ensimag}{Grenoble, France}{Engineering Degree -- Information Systems / Software Engineering (Double Degree)}{2023 -- 2025}
+  \resumeSubheading{\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}{Master's Degree in Computer Engineering -- Top 12\% of class}{2019 -- 2023}
+\resumeSubHeadingListEnd
+\small{\textbf{Certifications:} Programming Foundations -- TDD (LinkedIn, 2025) $\cdot$ Primerli -- Insurance Industry Foundations (2025)}
+\section{Languages \& Extra}
+\small{\textbf{English:} bilingual / professional $\cdot$ \textbf{French:} fluent $\cdot$ \textbf{Spanish:} intermediate \\ \textbf{Extra:} tutoring $\cdot$ tennis, football $\cdot$ GitHub projects with AI-assisted delivery (human ownership)}
+\end{document}
