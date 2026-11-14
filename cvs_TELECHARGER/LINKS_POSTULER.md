@@ -138,7 +138,7 @@ Explication + tips candidature : `EXPLIQUE_OGF_DOTNET_ANGULAR_IA.md`
 
 | Offre | Lien | CV | LM |
 |-------|------|-----|-----|
-| ANTENJ Développeur DSA (Paris 19e, deadline **20/11/2026**) | https://choisirleservicepublic.gouv.fr/offre-emploi/developpeur---antenj-reference-2026-2438291/ | `47_ANTENJ_Developpeur.pdf` | `LM_ANTENJ_DEVELOPPEUR.md` |
-| Assas Ingénieur données & stats pilotage (Paris 5e, deadline **04/12/2026**) | https://choisirleservicepublic.gouv.fr/offre-emploi/ingenieur-donnees-et-statistiques-pour-l-aide-au-pilotage-hf-reference-2026-2461608/ | `48_Assas_Data_Stats_Pilotage.pdf` | `LM_ASSAS_DATA_STATS.md` |
+| ANTENJ Développeur DSA (Paris 19e, deadline **20/11/2026**) | https://choisirleservicepublic.gouv.fr/offre-emploi/developpeur---antenj-reference-2026-2438291/ | `47_ANTENJ_Developpeur.pdf` | `47_LM_ANTENJ_Developpeur.pdf` |
+| Assas Ingénieur données & stats pilotage (Paris 5e, deadline **04/12/2026**) | https://choisirleservicepublic.gouv.fr/offre-emploi/ingenieur-donnees-et-statistiques-pour-l-aide-au-pilotage-hf-reference-2026-2461608/ | `48_Assas_Data_Stats_Pilotage.pdf` | `48_LM_Assas_Data_Stats.pdf` |
 
 Pack : `EXPLIQUE_ANTENJ_ASSAS.md` · mails : recrutement.antenj@justice.gouv.fr · drh-recrutement-biatss@assas-universite.fr

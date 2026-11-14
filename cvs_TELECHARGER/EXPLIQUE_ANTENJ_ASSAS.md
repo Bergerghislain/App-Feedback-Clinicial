@@ -9,7 +9,8 @@
 | **Deadline** | **20/11/2026** |
 | **Mail** | recrutement.antenj@justice.gouv.fr |
 | **CV** | `47_ANTENJ_Developpeur.pdf` |
-| **LM** | `LM_ANTENJ_DEVELOPPEUR.md` |
+| **LM PDF** | `47_LM_ANTENJ_Developpeur.pdf` |
+| **LM texte** | `LM_ANTENJ_DEVELOPPEUR.md` |
 | **Début** | 01/02/2027 |
 
 **Statut étranger :** carte de séjour valide + droit au travail → **mentionné dans CV header + LM**.  
@@ -28,7 +29,8 @@
 | **Deadline** | **04/12/2026** |
 | **Mail** | drh-recrutement-biatss@assas-universite.fr |
 | **CV** | `48_Assas_Data_Stats_Pilotage.pdf` |
-| **LM** | `LM_ASSAS_DATA_STATS.md` |
+| **LM PDF** | `48_LM_Assas_Data_Stats.pdf` |
+| **LM texte** | `LM_ASSAS_DATA_STATS.md` |
 | **Début** | 04/01/2027 |
 
 **Statut :** même mention carte de séjour. Moins sensible que ANTENJ côté habilitation défense.
