@@ -1,0 +1,114 @@
+\documentclass[letterpaper,10.5pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{0.25in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-1.5pt}}}
+\newcommand{\resumeSubheading}[4]{\vspace{-1pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1} & #2 \\\textit{\small#3} & \textit{\small #4} \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeProjectHeading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small#1 & #2 \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+\begin{document}
+\begin{center}
+{\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
+\small Paris 5e / IDF $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ FR/EN bilingual $|$ \href{https://github.com/Bergerghislain}{GitHub} $|$ Carte de s\'ejour valide (droit au travail)
+\end{center}
+\vspace{-6pt}
+\section{Professional Summary}
+\small{Software / Data Engineer (Ensimag, Bac+5) strong in \textbf{SQL / PostgreSQL}, \textbf{Python} data services, automated pipelines, and documented quality controls. Production experience extracting, modeling, and validating sensitive datasets (Gustave Roussy) plus platform reliability habits (Shift). Seeking \textbf{Ing\'enieur donn\'ees et statistiques --- aide au pilotage} at \textbf{Universit\'e Paris-Panth\'eon-Assas} to build reliable extractions, ETL chains, indicators, and steering dashboards with DSI and m\'etier correspondants.}
+\section{Core Strengths}
+\small{\textbf{SQL avanc\'e} $\cdot$ Python for data $\cdot$ ETL / automation $\cdot$ Data quality \& documentation $\cdot$ Descriptive stats $\cdot$ Git $\cdot$ Cross-domain collaboration $\cdot$ Discretion}
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Data Platforms / SQL)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{\textbf{PostgreSQL}: relational modeling, joins, indexing strategy (\textbf{$\sim$30\%} faster critical reads); completeness/coherence checks on exports.}
+      \resumeItem{\textbf{Python} services (FastAPI): CSV/JSON handling, APIs, missing-data validation, structured logging, RBAC on sensitive clinical/research data.}
+      \resumeItem{Worked with domain experts to identify sources, clarify calculation rules, document handoffs --- CAP-style m\'etier / DSI interface.}
+      \resumeItem{\textbf{Git} + GitHub Actions automation; Dockerized runs; reproducible treatments and operational notes.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Shift Technology -- Platform Software Engineering}{Paris, France}
+    {Software Engineer (CDI -- Platform / Data Services)}{Sept 2026 -- Nov 2026}
+    \resumeItemListStart
+      \resumeItem{Platform data \& messaging on \textbf{Azure} (Cosmos, Service Bus) with \textbf{C\# / .NET} APIs --- reliability, monitoring mindset, multi-team delivery.}
+      \resumeItem{Insurance SaaS context: process discipline, reviews, discretion --- transferable to personal/finance/RH data handling.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern (Full-Stack / Data Module)}{Mar 2025 -- Sept 2025}
+    \resumeItemListStart
+      \resumeItem{\textbf{Java/Spring} + Hibernate: structured data model rewrite; TDD; performance (\textbf{$\sim$35\%}) and coverage (\textbf{$\sim$85\%}).}
+      \resumeItem{Prioritization with product Champions; clear documentation of assumptions and limits --- indicator-style rigor.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab / Froll'N'Roll}{Montbonnot-Saint-Martin, France}
+    {Research Intern -- Measurement Pipelines}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{Python + C pipelines; measurement and responsiveness gains (\textbf{$\sim$40\%}); continuous validation with end users.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {LIG -- Laboratoire d'Informatique de Grenoble}{Grenoble, France}
+    {Cloud Infrastructure Intern (OpenStack / Grid'5000)}{Feb 2025 -- Mar 2025}
+    \resumeItemListStart
+      \resumeItem{Automated experiment scripts; reproducible measurement notes --- ETL/orchestration curiosity.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Selected Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{Steering Indicators Kit} $|$ SQL, Python, Git}{GitHub}
+    \resumeItemListStart
+      \resumeItem{SQL extractions with CTEs / aggregations; Python ETL scripts (schedule notes, logging, retry); documented calculation rules.}
+      \resumeItem{Descriptive stats \& evolution tables; completeness checks; CSV/JSON exports --- mirrors CAP P2CA / COMP-style work.}
+    \resumeItemListEnd
+  \resumeProjectHeading{\textbf{Clinical SQL + API deliveries} $|$ PostgreSQL, Python}{Gustave Roussy}
+    \resumeItemListStart
+      \resumeItem{Production relational craft + quality gates --- ready for Assas multi-source rapprochements (finance, RH, formation\ldots).}
+    \resumeItemListEnd
+  \resumeProjectHeading{\textbf{CI Quality Pack} $|$ GitHub Actions, pytest, Docker}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Versioned automated pipelines with tests and failure notes --- DSI-friendly handoff habits.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]\small{\item{
+\textbf{SQL}: PostgreSQL --- joins, CTE, aggregations, window functions notions, indexing / plans \\
+\textbf{Data code}: Python, Java, CSV/JSON, APIs \\
+\textbf{ETL}: scripted chains, Git, logging, retries, CI \\
+\textbf{Stats}: descriptive analyses, evolution / cohort curiosity \\
+\textbf{Soft}: rigor, autonomy, pedagogy, discretion
+}}\end{itemize}
+\section{Education \& Certifications}
+\resumeSubHeadingListStart
+  \resumeSubheading{Grenoble INP - Ensimag}{Grenoble, France}{Engineering Degree -- Information Systems / Software Engineering (Double Degree)}{2023 -- 2025}
+  \resumeSubheading{\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}{Master's Degree in Computer Engineering -- Top 12\% of class}{2019 -- 2023}
+\resumeSubHeadingListEnd
+\small{\textbf{Certifications:} Programming Foundations -- TDD (LinkedIn, 2025) $\cdot$ Primerli -- Insurance Industry Foundations (2025)}
+\section{Languages \& Status}
+\small{\textbf{French:} fluent $\cdot$ \textbf{English:} bilingual / professional $\cdot$ \textbf{Spanish:} intermediate \\ \textbf{Administrative status:} valid French residence permit with work authorization}
+\end{document}
