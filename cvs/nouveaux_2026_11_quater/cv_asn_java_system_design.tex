@@ -1,0 +1,105 @@
+\documentclass[letterpaper,10.5pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{0.25in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-1.5pt}}}
+\newcommand{\resumeSubheading}[4]{\vspace{-1pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1} & #2 \\\textit{\small#3} & \textit{\small #4} \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeProjectHeading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small#1 & #2 \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+\begin{document}
+\begin{center}
+{\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
+\small Les Ulis / Paris $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French $|$ \href{https://github.com/Bergerghislain}{GitHub}
+\end{center}
+\vspace{-6pt}
+\section{Professional Summary}
+\small{Software Engineer (Ensimag, Bac+5) with a first solid experience in \textbf{Java OOP}, software design, \textbf{SQL / PostgreSQL}, Git, and building/supporting \textbf{internal tools} used by domain engineers. Comfortable debugging, shipping new features, updating documentation and databases, and iterating with end users. Seeking \textbf{Ing\'enieur d\'eveloppement logiciel} at \textbf{Alcatel Submarine Networks} (System Design, Les Ulis) to evolve the submarine fiber cable design tool --- with strong interest in large-scale optical / WDM systems.}
+\section{Core Strengths}
+\small{\textbf{Java / OOP} $\cdot$ Software design $\cdot$ SQL / PostgreSQL $\cdot$ Git $\cdot$ Tool support (debug / features / docs) $\cdot$ User workshops $\cdot$ English $\cdot$ Curiosity for optical / WDM}
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern -- Java OOP \& Software Design}{Mar 2025 -- Sept 2025}
+    \resumeItemListStart
+      \resumeItem{Designed and coded a full module rewrite in \textbf{Java 17 / Spring Boot / Hibernate} with strong \textbf{OOP}, design patterns, and \textbf{TDD} (JUnit).}
+      \resumeItem{Software design end-to-end: analyze existing behavior, propose architecture, implement, test, document, deliver with product Champions.}
+      \resumeItem{Results: \textbf{$\sim$35\%} performance, \textbf{$\sim$85\%} coverage --- quality bar suited to long-lived engineering tools.}
+      \resumeItem{Industrial R\&D culture on large products --- transferable to ASN System Design tooling for offer engineers.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Internal Tools / SQL / User Support)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{Built and maintained internal applications for research/clinical engineers: APIs + UI workflows; strong \textbf{SQL / PostgreSQL} (indexing, \textbf{$\sim$30\%} faster critical reads).}
+      \resumeItem{\textbf{Support \& evolution}: debugging, new features, documentation updates, regular interactions with users to capture needs.}
+      \resumeItem{Database updates / data hygiene tasks; Git workflows; handoff notes for continuity --- matches ASN ``support outil + BDD + docs''.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Shift Technology -- Platform Software Engineering}{Paris, France}
+    {Software Engineer (CDI -- Design Discussions \& Delivery)}{Sept 2026 -- Nov 2026}
+    \resumeItemListStart
+      \resumeItem{Contributed to shared services with design discussions, code reviews, tests, and production-minded delivery.}
+      \resumeItem{Teamwork in a large engineering organization; clear technical communication in English when needed.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab / Froll'N'Roll}{Montbonnot-Saint-Martin, France}
+    {Research Intern -- Systems \& Algorithms}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{C/FreeRTOS + Python pipelines; continuous validation with users; appetite for physical/systems domains (optics curiosity).}
+    \resumeItemListEnd
+  \resumeSubheading
+    {LIG -- Laboratoire d'Informatique de Grenoble}{Grenoble, France}
+    {Cloud Infrastructure Intern}{Feb 2025 -- Mar 2025}
+    \resumeItemListStart
+      \resumeItem{Reproducible experiments; rigorous measurement and documentation habits.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Selected Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{Engineering Design Helper (Java desktop-oriented)} $|$ Java, OOP, JavaFX ramp, SQL/PostgreSQL, XML, Git}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Internal-tool style app: domain parameters, \textbf{PostgreSQL} persistence, \textbf{XML} import/export, Git history; JavaFX UI experiments for engineer-facing screens.}
+      \resumeItem{Focus: debugging, feature increments, user feedback loops, documentation --- mirrors ASN cable-design tool lifecycle.}
+    \resumeItemListEnd
+  \resumeProjectHeading{\textbf{3DSwym Survey Module} $|$ Java OOP, design, TDD}{Dassault}
+    \resumeItemListStart
+      \resumeItem{Large-module software design with measurable quality --- proof of Java coding experience for ASN profile.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]\small{\item{\textbf{Code}: Java (OOP), SQL, XML, Python/C notions \\ \textbf{UI}: JavaFX ramp / desktop Java UI interest; TypeScript/Angular experience transferable \\ \textbf{Data}: PostgreSQL, Git \\ \textbf{Method}: software design, tests, debugging, user support, documentation \\ \textbf{Domain interest}: optical / WDM / submarine fiber systems (learning appetite) \\ \textbf{Spoken}: English bilingual / professional $\cdot$ French fluent}}\end{itemize}
+\section{Education \& Certifications}
+\resumeSubHeadingListStart
+  \resumeSubheading{Grenoble INP - Ensimag}{Grenoble, France}{Engineering Degree -- Information Systems / Software Engineering (Double Degree)}{2023 -- 2025}
+  \resumeSubheading{\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}{Master's Degree in Computer Engineering -- Top 12\% of class}{2019 -- 2023}
+\resumeSubHeadingListEnd
+\small{\textbf{Certifications:} Programming Foundations -- TDD (LinkedIn, 2025)}
+\section{Languages \& Extra}
+\small{\textbf{English:} bilingual / professional (formulaire ASN : Bilingue) $\cdot$ \textbf{French:} fluent \\ \textbf{Extra:} tutoring $\cdot$ tennis, football $\cdot$ motivated by large-scale engineering adventures (ASN submarine systems)}
+\end{document}
