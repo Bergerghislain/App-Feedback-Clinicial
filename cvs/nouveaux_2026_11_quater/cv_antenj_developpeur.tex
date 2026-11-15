@@ -1,0 +1,113 @@
+\documentclass[letterpaper,10.5pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{0.25in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-1.5pt}}}
+\newcommand{\resumeSubheading}[4]{\vspace{-1pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1} & #2 \\\textit{\small#3} & \textit{\small #4} \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeProjectHeading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small#1 & #2 \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+\begin{document}
+\begin{center}
+{\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
+\small Paris 19e / IDF $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ FR/EN bilingual $|$ \href{https://github.com/Bergerghislain}{GitHub} $|$ Carte de s\'ejour valide (droit au travail)
+\end{center}
+\vspace{-6pt}
+\section{Professional Summary}
+\small{Software Engineer (Ensimag, Bac+5) --- junior profile with production delivery on APIs, data quality, tests, and technical design. Experience in \textbf{sensitive contexts} (clinical data at Gustave Roussy; insurance SaaS at Shift) with discretion, rigor, and m\'etier collaboration. Seeking \textbf{D\'eveloppeur --- ANTENJ / DSA} (Paris 19e) to contribute to investigation tooling, API/outillage interne, test strategy, and continuous quality improvement for the cha\^ine p\'enale.}
+\section{Core Strengths}
+\small{\textbf{APIs \& outillage} $\cdot$ Tests \& quality $\cdot$ Data quality / SQL $\cdot$ Technical analysis $\cdot$ Team delivery $\cdot$ Curiosity \& synthesis $\cdot$ Discretion $\cdot$ FR/EN}
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Shift Technology -- Platform Software Engineering}{Paris, France}
+    {Software Engineer (CDI -- Platform / APIs)}{Sept 2026 -- Nov 2026}
+    \resumeItemListStart
+      \resumeItem{Designed and shipped \textbf{C\# / .NET} platform APIs on \textbf{Azure}; technical design discussions; code reviews; production mindset.}
+      \resumeItem{Collaborated with product/platform engineers; messaging \& data services; incremental delivery in a regulated SaaS context.}
+      \resumeItem{Contributed to quality: tests, debugging, monitoring awareness --- habits transferable to ANTENJ DSA tooling and MCO.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Backend / Data Quality)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{Production \textbf{REST APIs} (Python/FastAPI) for clinical/research workflows --- validation, RBAC, structured logging, confidentiality.}
+      \resumeItem{\textbf{SQL / PostgreSQL}: modeling, indexing (\textbf{$\sim$30\%} faster critical reads); data quality checks; Docker + GitHub Actions.}
+      \resumeItem{Workshops with domain experts: clarify needs, propose pragmatic solutions, document handoffs --- DSA-style m\'etier interface.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern (Full-Stack Module Rewrite)}{Mar 2025 -- Sept 2025}
+    \resumeItemListStart
+      \resumeItem{End-to-end rewrite: functional analysis with Champions, technical design, implementation (\textbf{Java/Spring}), TDD, delivery.}
+      \resumeItem{Results: \textbf{$\sim$35\%} performance, \textbf{$\sim$85\%} coverage --- code quality, knowledge base, continuous improvement.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab / Froll'N'Roll}{Montbonnot-Saint-Martin, France}
+    {Research Intern -- Real-Time Modules}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{C/FreeRTOS + Python; pipeline redesign (\textbf{$\sim$40\%} responsiveness); continuous end-user validation.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {LIG -- Laboratoire d'Informatique de Grenoble}{Grenoble, France}
+    {Cloud Infrastructure Intern (OpenStack / Grid'5000)}{Feb 2025 -- Mar 2025}
+    \resumeItemListStart
+      \resumeItem{Automated experiments; measurement notes; Git collaboration --- ops curiosity for web app resource analysis.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Selected Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{API + Test Automation Pack} $|$ REST, GitHub Actions, JUnit/pytest}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Reusable CI: unit/integration tests, lint, container build; notes on CPU/memory-aware test strategy for web apps.}
+      \resumeItem{Documents technical choices for handoff --- matches ANTENJ knowledge-base enrichment expectation.}
+    \resumeItemListEnd
+  \resumeProjectHeading{\textbf{Clinical data APIs + platform services} $|$ Python \& C\#}{Gustave Roussy / Shift}
+    \resumeItemListStart
+      \resumeItem{Sensitive-data APIs + platform craft --- ready for investigation tooling, data normalization, and industrial partner interfaces.}
+    \resumeItemListEnd
+  \resumeProjectHeading{\textbf{Android / mobile curiosity} $|$ Kotlin notions}{Personal}
+    \resumeItemListStart
+      \resumeItem{Explored Android app structure and API consumption --- open to contributing to ANTENJ Android tracks if needed.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]\small{\item{
+\textbf{Dev}: Java/Spring, Python/FastAPI, C\#/.NET, REST, Git \\
+\textbf{Data}: SQL/PostgreSQL, validation, logging \\
+\textbf{Quality}: TDD, CI, debugging, documentation \\
+\textbf{Soft}: synthesis, adaptation, curiosity, discretion, teamwork
+}}\end{itemize}
+\section{Education \& Certifications}
+\resumeSubHeadingListStart
+  \resumeSubheading{Grenoble INP - Ensimag}{Grenoble, France}{Engineering Degree -- Information Systems / Software Engineering (Double Degree)}{2023 -- 2025}
+  \resumeSubheading{\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}{Master's Degree in Computer Engineering -- Top 12\% of class}{2019 -- 2023}
+\resumeSubHeadingListEnd
+\small{\textbf{Certifications:} Programming Foundations -- TDD (LinkedIn, 2025) $\cdot$ Primerli -- Insurance Industry Foundations (2025)}
+\section{Languages \& Status}
+\small{\textbf{French:} fluent $\cdot$ \textbf{English:} bilingual / professional $\cdot$ \textbf{Spanish:} intermediate \\ \textbf{Administrative status:} valid French residence permit with work authorization $\cdot$ available for security screening process}
+\end{document}

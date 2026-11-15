@@ -1,0 +1,110 @@
+\documentclass[letterpaper,10.5pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{0.25in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-1.5pt}}}
+\newcommand{\resumeSubheading}[4]{\vspace{-1pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1} & #2 \\\textit{\small#3} & \textit{\small #4} \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeProjectHeading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small#1 & #2 \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+\begin{document}
+\begin{center}
+{\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
+\small Paris $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French $|$ \href{https://github.com/Bergerghislain}{GitHub}
+\end{center}
+\vspace{-6pt}
+\section{Professional Summary}
+\small{Software Engineer (Ensimag, Bac+5) --- 0--2 years --- coding daily in \textbf{Java}, \textbf{Python}, and \textbf{C\#}. Production APIs at Gustave Roussy, industrial Java/Spring at Dassault, Azure/.NET platform at Shift (insurance SaaS). Rigorous, reactive under pressure, creative problem-solver. Seeking \textbf{IT Quant} at Meritis (Paris) to build trading/funding tools interacting with Front Office, ALM, and IT.}
+\section{Core Strengths}
+\small{\textbf{Java} $\cdot$ \textbf{Python} $\cdot$ \textbf{C\# / .NET} $\cdot$ Numerical rigor $\cdot$ APIs \& data pipelines $\cdot$ Cloud (Azure) $\cdot$ English $\cdot$ Stress-resilient delivery}
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Shift Technology -- Platform Software Engineering}{Paris, France}
+    {Software Engineer (CDI -- Platform / Backend)}{Sept 2026 -- Nov 2026}
+    \resumeItemListStart
+      \resumeItem{\textbf{C\# / .NET} high-performance APIs on \textbf{Azure} for shared platform services used by product squads.}
+      \resumeItem{Cloud data \& messaging: \textbf{Cosmos DB}, \textbf{Service Bus}; config/transversal services; \textbf{Terraform} awareness.}
+      \resumeItem{Insurance / regulated SaaS context --- process discipline, reviews, monitoring; multi-team collaboration (FO-style stakeholders).}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Backend / Data Platforms)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{\textbf{Python/FastAPI} services for clinical/research data workflows --- correctness, auditability, latency-sensitive reads.}
+      \resumeItem{\textbf{PostgreSQL} modeling \& indexing (\textbf{$\sim$30\%} faster critical queries); Docker + GitHub Actions; structured logging.}
+      \resumeItem{Translated complex domain rules into reliable code with researchers --- similar to interacting with trading/ALM users.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern (Full-Stack Module Rewrite)}{Mar 2025 -- Sept 2025}
+    \resumeItemListStart
+      \resumeItem{\textbf{Java 17 / Spring Boot / Hibernate}: end-to-end rewrite of Survey module; TDD; design patterns.}
+      \resumeItem{Results: \textbf{$\sim$35\%} performance, \textbf{$\sim$85\%} coverage --- industrial Java craft for calculation/API chains.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab / Froll'N'Roll}{Montbonnot-Saint-Martin, France}
+    {Research Intern -- Real-Time Control Modules}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{Real-time pipelines in \textbf{C} + \textbf{Python}; \textbf{$\sim$40\%} responsiveness --- numerical rigor under constraints.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {LIG -- Laboratoire d'Informatique de Grenoble}{Grenoble, France}
+    {Cloud Infrastructure Intern (OpenStack / Grid'5000)}{Feb 2025 -- Mar 2025}
+    \resumeItemListStart
+      \resumeItem{Automated cloud experiments; reproducible measurement --- ops mindset for overnight calculation chains.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Selected Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{Multi-language Service Kit} $|$ Java, Python, C\#}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Same domain API prototyped in Java/Spring, Python/FastAPI, and C\# --- demonstrates Meritis IT Quant language triad.}
+      \resumeItem{Benchmarks, tests, and clear trade-off notes; English technical write-up.}
+    \resumeItemListEnd
+  \resumeProjectHeading{\textbf{Clinical data + Azure platform deliveries} $|$ Python \& C\#}{Gustave Roussy / Shift}
+    \resumeItemListStart
+      \resumeItem{Production Python correctness + Azure/.NET scale --- ready for funding/trading tooling missions.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+  \resumeProjectHeading{\textbf{CI Quality Pack} $|$ GitHub Actions, pytest/JUnit, Docker}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Reusable CI templates: lint, unit tests, container build; failure alerts notes; docs for handoff.}
+      \resumeItem{Demonstrates automation and quality gates transferable to client and platform teams.}
+    \resumeItemListEnd
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]\small{\item{\textbf{Languages}: Java, Python, C\#, SQL \\ \textbf{Frameworks}: Spring Boot, FastAPI, .NET \\ \textbf{Data/Cloud}: PostgreSQL, Azure (Cosmos, Service Bus), Docker, CI \\ \textbf{Mindset}: rigor, reactivity, creative problem-solving, English}}}\end{itemize}
+\section{Education \& Certifications}
+\resumeSubHeadingListStart
+  \resumeSubheading{Grenoble INP - Ensimag}{Grenoble, France}{Engineering Degree -- Information Systems / Software Engineering (Double Degree)}{2023 -- 2025}
+  \resumeSubheading{\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}{Master's Degree in Computer Engineering -- Top 12\% of class}{2019 -- 2023}
+\resumeSubHeadingListEnd
+\small{\textbf{Certifications:} Programming Foundations -- TDD (LinkedIn, 2025) $\cdot$ Primerli -- Insurance Industry Foundations (2025)}
+\section{Languages \& Extra}
+\small{\textbf{English:} bilingual / professional (Do you speak English? --- yes) $\cdot$ \textbf{French:} fluent $\cdot$ \textbf{Spanish:} intermediate \\ \textbf{Extra:} tutoring $\cdot$ tennis, football $\cdot$ coding contests curiosity}
+\end{document}
