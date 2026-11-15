@@ -1,0 +1,170 @@
+\documentclass[letterpaper,10.5pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{1.15in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-1.5pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
+    \small Paris, France $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+    \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French $|$ \href{https://github.com/Bergerghislain}{GitHub}
+\end{center}
+
+\vspace{-6pt}
+
+\section{Professional Summary}
+\small{
+Junior Embedded Software Engineer (Ensimag) with proven \textbf{C/FreeRTOS} development on MCU-class constraints at \textbf{INRIA}: real-time control loops, sensor/comm pipelines, HW/SW bring-up with electrical partners, and rigorous validation. Comfortable with SPI/I2C/UART notions, Git, CI habits, and Python test scripts. Seeking \textbf{Embedded Software Engineer -- Launcher} at Harmattan AI (Paris) --- junior band of the 2--10y range --- to own firmware on launchers/controllers under bare-metal/RTOS with strong test maturity path.
+}
+
+\section{Core Strengths}
+\small{
+\textbf{Embedded C/C++} $\cdot$ \textbf{FreeRTOS / bare-metal notions} $\cdot$ Drivers \& buses (SPI/I2C/UART) $\cdot$ Real-time control loops $\cdot$ Bring-up with HW $\cdot$ Unit/HITL testing mindset $\cdot$ Git/CI $\cdot$ English $\cdot$ Autonomy
+}
+
+\section{Experience}
+
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Shift Technology -- Platform Software Engineering}{Paris, France}
+    {Software Engineer (CDI -- Platform / Backend)}{Sept 2026 -- Nov 2026}
+    \resumeItemListStart
+      \resumeItem{Contributed to the \textbf{platform / foundations} squad building shared services used by product teams: design and implementation of \textbf{C\# / .NET} components and \textbf{high-performance APIs} on \textbf{Microsoft Azure}.}
+      \resumeItem{Worked with cloud data and messaging building blocks (\textbf{Azure Cosmos DB}, \textbf{Service Bus}), configuration/transversal services, and infrastructure-as-code awareness (\textbf{Terraform}) in a hybrid SaaS environment.}
+      \resumeItem{Practiced production engineering habits: design discussions, code reviews, monitoring mindset, incremental delivery, and collaboration with platform and product engineers.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Backend / Data Platforms)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{Production Python services with tests, CI (GitHub Actions), Docker --- software maturity habits transferable to firmware HITL/CI.}
+      \resumeItem{PostgreSQL tuning and structured logging; clear documentation for operators of the system.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern (Full-Stack Module Rewrite)}{Mar 2025 -- Sept 2025}
+    \resumeItemListStart
+      \resumeItem{Large module delivery with TDD (\textbf{$\sim$85\%} coverage) and measurable performance (\textbf{$\sim$35\%}) --- proof of quality discipline under industrial constraints.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab / Froll'N'Roll}{Montbonnot-Saint-Martin, France}
+    {Research Intern -- Real-Time Control Modules (Assistive Wheelchair)}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{Owned firmware-side \textbf{C/FreeRTOS} modules: scheduling, interrupts/timing awareness, sensor/comm pipelines on constrained hardware.}
+      \resumeItem{Partnered daily with hardware-oriented teammates for integration and debug; iterative bring-up and field validation with end user.}
+      \resumeItem{Improved pipeline responsiveness by \textbf{$\sim$40\%}; documented code for reproducibility --- prototype toward reliable deployment.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {LIG -- Laboratoire d'Informatique de Grenoble}{Grenoble, France}
+    {Cloud Infrastructure Intern (OpenStack / Grid'5000)}{Feb 2025 -- Mar 2025}
+    \resumeItemListStart
+      \resumeItem{Automation and measurement scripts --- tooling mindset useful for bring-up and test benches.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Selected Projects}
+
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{MCU FreeRTOS Control Pack} $|$ C, FreeRTOS, SPI/I2C/UART stubs}{GitHub}
+    \resumeItemListStart
+      \resumeItem{RTOS tasks for sensor poll + actuator loop; driver stubs from datasheet excerpts; unit tests on framing/CRC.}
+      \resumeItem{Bring-up checklist + mock HITL harness --- path toward production maturity.}
+    \resumeItemListEnd
+  \resumeProjectHeading
+    {\textbf{INRIA FreeRTOS Product Path} $|$ C, FreeRTOS, Python}{INRIA}
+    \resumeItemListStart
+      \resumeItem{Real device, real user, measurable latency work --- strongest signal for Launcher junior firmware role.}
+    \resumeItemListEnd
+  \resumeProjectHeading
+    {\textbf{Bootloader / OTA Study Notes} $|$ C, flash layout concepts}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Documented secure-update concepts (A/B slots, CRC, rollback) as ramp for launcher OTA responsibilities.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+\textbf{Core}: Embedded C/C++, FreeRTOS, MCU peripherals, SPI/I2C/UART, Git \\
+\textbf{Practices}: unit tests, CI notions, bring-up scripts (Python), code review culture \\
+\textbf{Bonus path}: RF framing lab, OTA/bootloader study notes, ruggedized system interest \\
+\textbf{Languages}: English professional; French fluent
+  }}
+\end{itemize}
+
+\section{Education \& Certifications}
+
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP - Ensimag}{Grenoble, France}
+    {Engineering Degree -- Information Systems / Software Engineering (Double Degree)}{2023 -- 2025}
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}
+    {Master's Degree in Computer Engineering -- Top 12\% of class}{2019 -- 2023}
+\resumeSubHeadingListEnd
+\small{
+\textbf{Certifications:} Programming Foundations -- TDD (LinkedIn, 2025) $\cdot$ Primerli -- Insurance Industry Foundations (2025)
+}
+
+\section{Languages \& Extra}
+\small{
+\textbf{English:} bilingual / professional $\cdot$ \textbf{French:} fluent $\cdot$ \textbf{Spanish:} intermediate \\
+\textbf{Extra:} tutoring $\cdot$ tennis, football
+}
+
+\end{document}
