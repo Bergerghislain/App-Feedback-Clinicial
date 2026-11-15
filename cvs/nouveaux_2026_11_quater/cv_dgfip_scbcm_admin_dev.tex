@@ -1,0 +1,103 @@
+\documentclass[letterpaper,10.5pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{0.25in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-1.5pt}}}
+\newcommand{\resumeSubheading}[4]{\vspace{-1pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1} & #2 \\\textit{\small#3} & \textit{\small #4} \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeProjectHeading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small#1 & #2 \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+\begin{document}
+\begin{center}
+{\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
+\small Paris 12e / Bercy $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French $|$ \href{https://github.com/Bergerghislain}{GitHub} \\
+\small Carte de s\'ejour valide --- candidature contractuelle (art. L332-2-2$^\circ$ CGFP)
+\end{center}
+\vspace{-6pt}
+\section{Professional Summary}
+\small{Ing\'enieur logiciel (Ensimag, Bac+5) with strong \textbf{Linux / Docker} practice, cloud virtualization experiments (OpenStack), scripting, \textbf{PostgreSQL}, and application development --- ready to contribute to SI modernization (Proxmox, secure remote access, Rocky Linux target) while supporting the PHP/PostgreSQL application park. Seeking \textbf{Administrateur syst\`eme -- D\'eveloppeur} at \textbf{SCBCM / DGFiP} (Bercy, r\'ef. 2026-33691, deadline 12/12/2026) as contractuel Cat. A: rigor, pedagogy, documentation, and cybersecurity alignment.}
+\section{Core Strengths}
+\small{\textbf{Linux administration} $\cdot$ Docker / virtualization $\cdot$ Scripting $\cdot$ PostgreSQL $\cdot$ App maintenance (PHP curiosity) $\cdot$ Security hygiene $\cdot$ Documentation \& training $\cdot$ Reporting}
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {LIG -- Laboratoire d'Informatique de Grenoble}{Grenoble, France}
+    {Cloud Infrastructure Intern -- Virtualization / Automation}{Feb 2025 -- Mar 2025}
+    \resumeItemListStart
+      \resumeItem{Ran automated \textbf{VM migration} experiments on \textbf{OpenStack / Grid'5000} --- direct transferable skill to \textbf{Proxmox} virtualization modernization.}
+      \resumeItem{Wrote reproducible scripts; measured results; documented procedures for peers --- pedagogical handoff mindset.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Apps / PostgreSQL / Docker)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{Operated production apps with \textbf{PostgreSQL 15}-class modeling, Dockerized runtimes, GitHub Actions; MCO and incident diagnosis.}
+      \resumeItem{Documented procedures for domain users; proposed pragmatic improvements --- reporting to stakeholders.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Shift Technology -- Platform Software Engineering}{Paris, France}
+    {Software Engineer (CDI -- Cloud / Secure Services)}{Sept 2026 -- Nov 2026}
+    \resumeItemListStart
+      \resumeItem{Cloud platform services: secure configuration habits, monitoring mindset, incremental hardening of shared components.}
+      \resumeItem{Collaboration with experienced engineers; clear oral/written communication for technical and non-technical audiences.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern (Application Development)}{Mar 2025 -- Sept 2025}
+    \resumeItemListStart
+      \resumeItem{Full application lifecycle: design, develop, test, deliver; strong documentation and quality culture.}
+      \resumeItem{Web stack experience transferable to PHP/JS/PostgreSQL park evolution at SCBCM.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab / Froll'N'Roll}{Montbonnot-Saint-Martin, France}
+    {Research Intern -- Embedded / Linux-adjacent}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{C/FreeRTOS + Python on constrained systems; rigor and debugging under operational constraints.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Selected Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{Linux + Docker Lab Stack} $|$ Rocky/Ubuntu, Docker, PostgreSQL, scripts}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Homelab-style stack: containerized apps, volume backups notes, firewall/update hygiene checklist (ANSSI-inspired).}
+    \resumeItemListEnd
+  \resumeProjectHeading{\textbf{OpenStack VM Automation} $|$ scripts, measurement, docs}{LIG}
+    \resumeItemListStart
+      \resumeItem{Documented automation procedures --- template for SCBCM SI modernization reporting.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]\small{\item{\textbf{Sys}: Linux (admin basics $\rightarrow$ hardening), Docker, virtualization (OpenStack; Proxmox ramp), VPN/OpenVPN notions \\ \textbf{Dev}: scripting (Bash/Python), PHP curiosity, JavaScript, PostgreSQL 15 \\ \textbf{Sec}: updates, least privilege, logs/audit curiosity, RGPD awareness \\ \textbf{Soft}: pedagogy, documentation, initiative, multi-priority organization, FR/EN}}}\end{itemize}
+\section{Education \& Certifications}
+\resumeSubHeadingListStart
+  \resumeSubheading{Grenoble INP - Ensimag}{Grenoble, France}{Engineering Degree -- Information Systems / Software Engineering (Double Degree)}{2023 -- 2025}
+  \resumeSubheading{\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}{Master's Degree in Computer Engineering -- Top 12\% of class}{2019 -- 2023}
+\resumeSubHeadingListEnd
+\small{\textbf{Certifications:} Programming Foundations -- TDD (LinkedIn, 2025) \\ \textbf{Note:} Bac+5 Ensimag --- niveau Licence+ largement couvert; profil contractuel CDD 3 ans possible.}
+\section{Languages \& Extra}
+\small{\textbf{English:} bilingual / professional $\cdot$ \textbf{French:} fluent \\ \textbf{Extra:} tutoring (p\'edagogie) $\cdot$ tennis, football $\cdot$ t\'el\'etravail possible selon organisation SCBCM}
+\end{document}

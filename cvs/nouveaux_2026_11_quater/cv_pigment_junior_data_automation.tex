@@ -1,0 +1,111 @@
+\documentclass[letterpaper,10.5pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{0.25in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-1.5pt}}}
+\newcommand{\resumeSubheading}[4]{\vspace{-1pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1} & #2 \\\textit{\small#3} & \textit{\small #4} \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeProjectHeading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small#1 & #2 \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+\begin{document}
+\begin{center}
+{\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
+\small Paris $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French $|$ \href{https://github.com/Bergerghislain}{GitHub}
+\end{center}
+\vspace{-6pt}
+\section{Professional Summary}
+\small{Software Engineer (Ensimag) with strong \textbf{Python}, \textbf{SQL}, and production data-workflow craft (Gustave Roussy), plus Azure platform experience (Shift) and CI/Docker habits. Curious about ELT, automations, and LLM-assisted pipelines. Seeking \textbf{Junior Data \& Automation Engineer} at Pigment to build ingestion, dbt-style models, Python automations, and AI-ready datasets for G\&A / GTM teams.}
+\section{Core Strengths}
+\small{\textbf{Python} $\cdot$ SQL \& data modeling $\cdot$ ETL/ELT curiosity $\cdot$ Cloud (Azure $\rightarrow$ GCP ramp) $\cdot$ Git / CI/CD $\cdot$ Automations $\cdot$ AI tools daily $\cdot$ FR/EN communication}
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Shift Technology -- Platform Software Engineering}{Paris, France}
+    {Software Engineer (CDI -- Platform / Backend)}{Sept 2026 -- Nov 2026}
+    \resumeItemListStart
+      \resumeItem{Platform services on \textbf{Microsoft Azure}: APIs, \textbf{Cosmos DB}, \textbf{Service Bus} --- cloud data/messaging patterns.}
+      \resumeItem{\textbf{Terraform} awareness; production reviews, monitoring mindset; SaaS scale and governance habits.}
+      \resumeItem{Collaborated across platform and product teams --- transferable to Pigment stakeholder work (Finance, People, GTM).}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Backend / Data Platforms)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{Built production backends for research/clinical \textbf{data workflows} --- validation, quality, auditability.}
+      \resumeItem{\textbf{Python/FastAPI} + \textbf{PostgreSQL} modeling/indexing (\textbf{$\sim$30\%} faster critical reads); structured logging.}
+      \resumeItem{\textbf{Docker} + \textbf{GitHub Actions}; documented data flows; workshops with domain experts on data meaning.}
+      \resumeItem{Incident diagnosis and hardening --- pipeline monitoring / root-cause mindset for Airflow-style ops.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern (Full-Stack Module Rewrite)}{Mar 2025 -- Sept 2025}
+    \resumeItemListStart
+      \resumeItem{Java/Spring delivery with TDD and measurable outcomes (\textbf{$\sim$35\%} perf, \textbf{$\sim$85\%} coverage).}
+      \resumeItem{Translated product requirements into reliable software --- requirements gathering $\rightarrow$ production ownership.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab / Froll'N'Roll}{Montbonnot-Saint-Martin, France}
+    {Research Intern -- Real-Time Control Modules}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{\textbf{Python} pipelines under constraints; \textbf{$\sim$40\%} responsiveness; rigorous validation with end users.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {LIG -- Laboratoire d'Informatique de Grenoble}{Grenoble, France}
+    {Cloud Infrastructure Intern (OpenStack / Grid'5000)}{Feb 2025 -- Mar 2025}
+    \resumeItemListStart
+      \resumeItem{Automated cloud experiments; reproducible scripts --- infra/ops curiosity for Composer/Airflow environments.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Selected Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{Mini-ELT + Automations} $|$ Python, SQL, Docker, pytest}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Ingest APIs/files $\rightarrow$ validate/transform $\rightarrow$ clean tables; tests; basic metrics/alerting notes.}
+      \resumeItem{Reverse-sync sketch (warehouse $\rightarrow$ app) and LLM enrichment POC on unstructured text --- AI-ready datasets.}
+    \resumeItemListEnd
+  \resumeProjectHeading{\textbf{Clinical Data APIs} $|$ Python/FastAPI, PostgreSQL}{Gustave Roussy}
+    \resumeItemListStart
+      \resumeItem{Production data services with quality bars and stakeholder communication (EN/FR) --- Pigment G\&A/GTM style.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+  \resumeProjectHeading{\textbf{CI Quality Pack} $|$ GitHub Actions, pytest/JUnit, Docker}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Reusable CI templates: lint, unit tests, container build; failure alerts notes; docs for handoff.}
+      \resumeItem{Demonstrates automation and quality gates transferable to client and platform teams.}
+    \resumeItemListEnd
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]\small{\item{\textbf{Data}: SQL, PostgreSQL, ETL/ELT patterns, data quality testing, layered modeling curiosity \\ \textbf{Python}: FastAPI, scripting, automations, pytest \\ \textbf{Platform}: Docker, GitHub Actions, Azure (GCP/BigQuery/dbt/Airflow ramp) \\ \textbf{AI}: daily AI tools; LLM pipeline curiosity (extract/classify/enrich)}}}\end{itemize}
+\section{Education \& Certifications}
+\resumeSubHeadingListStart
+  \resumeSubheading{Grenoble INP - Ensimag}{Grenoble, France}{Engineering Degree -- Information Systems / Software Engineering (Double Degree)}{2023 -- 2025}
+  \resumeSubheading{\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}{Master's Degree in Computer Engineering -- Top 12\% of class}{2019 -- 2023}
+\resumeSubHeadingListEnd
+\small{\textbf{Certifications:} Programming Foundations -- TDD (LinkedIn, 2025) $\cdot$ Primerli -- Insurance Industry Foundations (2025)}
+\section{Languages \& Extra}
+\small{\textbf{English:} bilingual / professional (primary working language OK) $\cdot$ \textbf{French:} fluent $\cdot$ \textbf{Spanish:} intermediate \\ \textbf{Extra:} tutoring $\cdot$ tennis, football $\cdot$ GitHub: \href{https://github.com/Bergerghislain}{Bergerghislain}}
+\end{document}
