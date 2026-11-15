@@ -1,0 +1,170 @@
+\documentclass[letterpaper,10.5pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{1.15in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-1.5pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
+    \small Paris, France $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+    \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French $|$ \href{https://github.com/Bergerghislain}{GitHub}
+\end{center}
+
+\vspace{-6pt}
+
+\section{Professional Summary}
+\small{
+Embedded Software Engineer (Ensimag) focused on \textbf{real-time firmware} and human--machine control loops. At \textbf{INRIA}, built C/FreeRTOS modules for an assisted wheelchair: inputs, latency-sensitive pipelines, and continuous validation with the operator. Strong C/C++, MCU/RTOS notions (SPI/I2C/UART), Python tooling, and hardware/software collaboration. Seeking \textbf{Embedded Software Engineer -- GCS} at Harmattan AI (Paris) to develop firmware for handheld UAV ground stations --- inputs, radio link interface, power/responsiveness, and field stability.
+}
+
+\section{Core Strengths}
+\small{
+\textbf{C/C++ firmware} $\cdot$ \textbf{FreeRTOS / real-time} $\cdot$ Operator control loops $\cdot$ Serial \& radio-link notions $\cdot$ Power/latency trade-offs $\cdot$ HW/SW co-debug $\cdot$ Clean production code $\cdot$ English
+}
+
+\section{Experience}
+
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Shift Technology -- Platform Software Engineering}{Paris, France}
+    {Software Engineer (CDI -- Platform / Backend)}{Sept 2026 -- Nov 2026}
+    \resumeItemListStart
+      \resumeItem{Contributed to the \textbf{platform / foundations} squad building shared services used by product teams: design and implementation of \textbf{C\# / .NET} components and \textbf{high-performance APIs} on \textbf{Microsoft Azure}.}
+      \resumeItem{Worked with cloud data and messaging building blocks (\textbf{Azure Cosmos DB}, \textbf{Service Bus}), configuration/transversal services, and infrastructure-as-code awareness (\textbf{Terraform}) in a hybrid SaaS environment.}
+      \resumeItem{Practiced production engineering habits: design discussions, code reviews, monitoring mindset, incremental delivery, and collaboration with platform and product engineers.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Backend / Data Platforms)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{Python/FastAPI production APIs with validation, RBAC, logging; PostgreSQL indexing (\textbf{$\sim$30\%} faster critical reads); Docker + CI.}
+      \resumeItem{Sat with domain users; turned ambiguous needs into reliable software with clear operational docs.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern (Full-Stack Module Rewrite)}{Mar 2025 -- Sept 2025}
+    \resumeItemListStart
+      \resumeItem{Survey module rewrite in Java 17 / Spring Boot / Hibernate with TDD; \textbf{$\sim$35\%} perf, \textbf{$\sim$85\%} coverage --- industrial R\&D quality bar.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab / Froll'N'Roll}{Montbonnot-Saint-Martin, France}
+    {Research Intern -- Real-Time Control (Assistive Wheelchair)}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{\textbf{C/FreeRTOS} control modules for an operator-driven assistive device --- direct analogy to GCS handheld control: inputs, responsiveness, safety under latency.}
+      \resumeItem{Redesigned communication pipelines; \textbf{$\sim$40\%} responsiveness gain; continuous field validation with the end user.}
+      \resumeItem{DIY HW/SW integration with electrical/mechanical partners; iterative bring-up and debugging.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {LIG -- Laboratoire d'Informatique de Grenoble}{Grenoble, France}
+    {Cloud Infrastructure Intern (OpenStack / Grid'5000)}{Feb 2025 -- Mar 2025}
+    \resumeItemListStart
+      \resumeItem{Automation scripts and measurement under constrained environments --- discipline transferable to firmware tooling.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Selected Projects}
+
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{Handheld Control Firmware Sketch} $|$ C, FreeRTOS, UART, input debounce}{GitHub}
+    \resumeItemListStart
+      \resumeItem{MCU-oriented tasks for joystick/button sampling, debounce, and command framing over UART --- GCS-like control path.}
+      \resumeItem{Power/responsiveness notes: sleep modes vs poll rates; logging for field debug.}
+    \resumeItemListEnd
+  \resumeProjectHeading
+    {\textbf{INRIA Operator Control Loop} $|$ C, FreeRTOS, Python}{INRIA}
+    \resumeItemListStart
+      \resumeItem{Production-minded real-time control with human-in-the-loop validation --- closest proof for GCS operator experience.}
+    \resumeItemListEnd
+  \resumeProjectHeading
+    {\textbf{Radio Link Framing Lab} $|$ C++, CRC, packet loss simulation}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Simple framed packets with CRC and drop/reorder stress tests --- warm-up for UAV radio interface work.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+\textbf{Firmware}: C, C++, FreeRTOS, MCU notions (ARM plus), HAL, SPI/I2C/UART \\
+\textbf{Systems}: Embedded Linux notions, multi-thread, latency \& power trade-offs \\
+\textbf{Tooling}: Git, Python scripts, unit tests, bring-up discipline \\
+\textbf{Fit}: operator-facing control + HW collaboration (INRIA)
+  }}
+\end{itemize}
+
+\section{Education \& Certifications}
+
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP - Ensimag}{Grenoble, France}
+    {Engineering Degree -- Information Systems / Software Engineering (Double Degree)}{2023 -- 2025}
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}
+    {Master's Degree in Computer Engineering -- Top 12\% of class}{2019 -- 2023}
+\resumeSubHeadingListEnd
+\small{
+\textbf{Certifications:} Programming Foundations -- TDD (LinkedIn, 2025) $\cdot$ Primerli -- Insurance Industry Foundations (2025)
+}
+
+\section{Languages \& Extra}
+\small{
+\textbf{English:} bilingual / professional $\cdot$ \textbf{French:} fluent $\cdot$ \textbf{Spanish:} intermediate \\
+\textbf{Extra:} tutoring $\cdot$ tennis, football
+}
+
+\end{document}
