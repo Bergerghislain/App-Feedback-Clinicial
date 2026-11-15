@@ -1,0 +1,105 @@
+\documentclass[letterpaper,10.5pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{1.15in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-1.5pt}}}
+\newcommand{\resumeSubheading}[4]{\vspace{-1pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1} & #2 \\\textit{\small#3} & \textit{\small #4} \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeProjectHeading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small#1 & #2 \\\end{tabular*}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+\begin{document}
+\begin{center}
+{\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
+\small Paris $|$ +33 6 82 86 62 79 $|$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\
+\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$ Bilingual English/French $|$ \href{https://github.com/Bergerghislain}{GitHub}
+\end{center}
+\vspace{-6pt}
+\section{Professional Summary}
+\small{Engineer from a \textbf{grande \'ecole (Ensimag)} with hands-on delivery in SaaS platforms (Shift / Azure), research backends (Gustave Roussy), and product R\&D (Dassault). Strong curiosity for \textbf{GenAI, agents, and SI modernization}; builds RAG/agent prototypes and production APIs. Seeking \textbf{Consultant·e Junior -- IA \& SI (CTO Advisory)} at Wavestone (posted 10 nov. 2026) to industrialize AI-ready platforms, agents, and architecture roadmaps for large accounts.}
+\section{Core Strengths}
+\small{\textbf{Top \'ecole} $\cdot$ GenAI / agents / RAG $\cdot$ APIs \& cloud (Azure) $\cdot$ Analytical mindset $\cdot$ Client collaboration $\cdot$ English $\cdot$ Fast learner}
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Shift Technology -- Platform Software Engineering}{Paris, France}
+    {Software Engineer (CDI -- Platform / Backend)}{Sept 2026 -- Nov 2026}
+    \resumeItemListStart
+      \resumeItem{Platform / foundations squad: design and implementation of \textbf{C\# / .NET} components and \textbf{high-performance APIs} on \textbf{Microsoft Azure}.}
+      \resumeItem{Cloud data/messaging (\textbf{Azure Cosmos DB}, \textbf{Service Bus}), transversal configuration, \textbf{Terraform} awareness --- SI / platform literacy.}
+      \resumeItem{Design discussions, code reviews, monitoring mindset, incremental delivery with platform and product engineers.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec MICS Lab}{Paris / Saclay, France}
+    {Software Engineer (CDD -- Backend / Data Platforms)}{Jan 2026 -- Sept 2026}
+    \resumeItemListStart
+      \resumeItem{Software Engineer (CDD) between \textbf{Gustave Roussy} and \textbf{CentraleSup\'elec MICS}: production backends for research/clinical data workflows.}
+      \resumeItem{Designed \textbf{REST APIs} (\textbf{Python/FastAPI}) with validation, RBAC, structured logging; PostgreSQL indexing (\textbf{$\sim$30\%} faster critical reads).}
+      \resumeItem{\textbf{Docker} + \textbf{GitHub Actions}; documentation; daily collaboration with domain experts --- consulting-style translation of needs.}
+      \resumeItem{Auditable, reliable delivery under research/clinical constraints --- governance and quality mindset for AI platforms.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE / 3DSwym R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern (Full-Stack Module Rewrite)}{Mar 2025 -- Sept 2025}
+    \resumeItemListStart
+      \resumeItem{Full-stack overhaul of the \textbf{Survey module}: \textbf{Java 17 / Spring Boot / Hibernate}, TDD, design patterns.}
+      \resumeItem{Results: \textbf{$\sim$35\%} performance, \textbf{$\sim$85\%} test coverage; Agile with product Champions.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab / Froll'N'Roll}{Montbonnot-Saint-Martin, France}
+    {Research Intern -- Real-Time Control Modules}{May 2024 -- Aug 2024}
+    \resumeItemListStart
+      \resumeItem{\textbf{C/FreeRTOS} + Python; pipeline redesign (\textbf{$\sim$40\%} responsiveness); multidisciplinary communication.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {LIG -- Laboratoire d'Informatique de Grenoble}{Grenoble, France}
+    {Cloud Infrastructure Intern (OpenStack / Grid'5000)}{Feb 2025 -- Mar 2025}
+    \resumeItemListStart
+      \resumeItem{Automated \textbf{VM migration} experiments on OpenStack; reproducible scripts --- foundations for AI-ready platform talks.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Selected Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{Enterprise RAG + Agent Demo} $|$ Python, LangGraph, FastAPI}{GitHub}
+    \resumeItemListStart
+      \resumeItem{Document RAG with source citation, human validation gates, streaming API --- agent / Copilot-style use case.}
+      \resumeItem{Notes on cost/latency, eval harness, and ``AI Ready'' deployment constraints (security, observability).}
+    \resumeItemListEnd
+  \resumeProjectHeading{\textbf{Azure Platform APIs} $|$ C\#/.NET, Cosmos, Service Bus}{Shift}
+    \resumeItemListStart
+      \resumeItem{Shared platform services --- SI integration and cloud foundation experience for CTO Advisory missions.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]\small{\item{\textbf{Tech}: Python/FastAPI, C\#/.NET Azure, Java/Spring, Docker, CI \\ \textbf{AI}: RAG, LangChain/LangGraph, agents, prompt evals \\ \textbf{Consulting}: workshops mindset, docs, English presentations}}\end{itemize}
+\section{Education \& Certifications}
+\resumeSubHeadingListStart
+  \resumeSubheading{Grenoble INP - Ensimag}{Grenoble, France}{Engineering Degree -- Information Systems / Software Engineering (Double Degree)}{2023 -- 2025}
+  \resumeSubheading{\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}{Master's Degree in Computer Engineering -- Top 12\% of class}{2019 -- 2023}
+\resumeSubHeadingListEnd
+\small{\textbf{Certifications:} Programming Foundations -- TDD (LinkedIn, 2025) $\cdot$ Primerli -- Insurance Industry Foundations (2025)}
+\section{Languages \& Extra}
+\small{\textbf{English:} bilingual / professional $\cdot$ \textbf{French:} fluent $\cdot$ \textbf{Spanish:} intermediate \\ \textbf{Extra:} tutoring $\cdot$ tennis, football}
+\end{document}
