@@ -19,7 +19,7 @@
 | 7 | **Licorne** — Solutions SWE Fullstack **Python/FastAPI + React** | Paris / Saint-Ouen | ~2 j | **45–55 k€** | ★★★★☆ 1–3 ans ; FastAPI + Azure | https://www.welcometothejungle.com/fr/companies/licorne-society/jobs/solutions-software-engineer-fullstack-python-react-h-f_paris | `35_Licorne_Python_React_FastAPI.pdf` |
 | 8 | **Courbevoie Java/Angular Junior** (gestion d’actifs / Core Dev) | Courbevoie | ~récente | **38–45 k€** | ★★★★☆ Java/Spring + Angular + IA agents | https://www.cadremploi.fr/emploi/detail_offre?offreId=156589910392994987 · miroir https://symbiose-emploi.com/offres/developpeur-fullstack-java-angular-junior-cdi-h-f-8744478 | `32_Courbevoie_Java_Angular_Junior.pdf` |
 | 9 | **Pigment** — Junior Data & Automation | Paris | ~live Lever | N/A + equity | ★★★★☆ SQL/Python/ETL ; referral Aurélien | https://jobs.lever.co/pigment/80b6b73c-eccf-4844-b3fd-31e6f8765249 | `44_Pigment_Junior_Data_Automation.pdf` |
-| 10 | **KAPIA-RGI** — Développeur Python IA | Paris/Lille | ~récente | N/A | ★★★★☆ Python + IA | https://www.welcometothejungle.com/fr/companies/kapia-rgi/jobs/developpeur-python-ia_paris | `33_KAPIA_Python_IA.pdf` |
+| 10 | **KAPIA-RGI** — Développeur Python IA | Paris/Lille | ~3 j | N/A | ★★★★☆ Python/FastAPI + RAG/agents + assurance | https://www.welcometothejungle.com/fr/companies/kapia-rgi/jobs/developpeur-python-ia_paris | `49_KAPIA_Python_IA.pdf` (aussi `33`) |
 
 **Relance Esma Meritis** (si pas encore envoyée) : `MESSAGES_ASI_ET_ESMA_MERITIS.md` — couvre Python/Angular + IT Quant ; ajouter C#/.NET dans le mail.
 
