@@ -1,0 +1,175 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{4pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.15in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlist[itemize]{nosep, leftmargin=0.15in, topsep=1pt, itemsep=1pt}
+
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\titlerule \vspace{-4pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{1pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small #1 & #2 \\
+  \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.10in,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\begin{document}
+
+\begin{center}
+  {\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
+  \small Paris $\,|\,$ +33 6 82 86 62 79 $\,|\,$
+  \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} $\,|\,$
+  \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $\,|\,$
+  \href{https://github.com/Bergerghislain}{GitHub} $\,|\,$ FR / EN
+\end{center}
+\vspace{-8pt}
+
+\begin{center}
+  \textbf{Data Scientist -- Analytics} \\
+  \vspace{1pt}
+  \small{Ensimag engineer (AI \& Data Science). Hands-on with Python, SQL, Airflow, PySpark, ML/NLP and LLM-assisted
+  extraction. Motivated to enrich client data and deliver actionable risk insights at Allphins.}
+\end{center}
+\vspace{-4pt}
+
+\section{Work Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Shift Technology}{Sep.~2026 -- Present}
+    {Software Engineer (CDI) -- InsurTech}{Paris, France}
+    \begin{itemize}
+      \resumeItem{Contribute to backend services in an \textbf{InsurTech} product used by insurance clients; testing, code reviews, CI/CD.}
+      \resumeItem{Collaborate with product/engineering in a bilingual environment; clear communication on technical trade-offs.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec -- MICS Lab}{Jan.~2026 -- Sep.~2026}
+    {Software Engineer -- Research Data Platform (CDD)}{Paris, France}
+    \begin{itemize}
+      \resumeItem{Built data-platform backends (\textbf{Python/FastAPI}, \textbf{PostgreSQL}): modelling, SQL, validation and controlled access for sensitive data.}
+      \resumeItem{Translated multidisciplinary requirements into reliable data services and documented APIs.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Dassault Syst\`emes}{April 2025 -- Dec.~2025}
+    {Software Engineer Intern -- Data Processing \& ML}{V\'elizy, France}
+    \begin{itemize}
+      \resumeItem{Developed/deployed \textbf{ML models} (scikit-learn, MLflow); validated improvements with A/B testing and metrics.}
+      \resumeItem{Built \textbf{PySpark pipelines} on 1TB+ datasets (cleaning, transformation, enrichment) and exposed services via \textbf{FastAPI}.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Inria}{May 2024 -- Aug.~2024}
+    {Research Intern -- AI \& Embedded Systems}{Montbonnot, France}
+    \begin{itemize}
+      \resumeItem{Trained DL models (PyTorch/TensorFlow); used \textbf{SHAP / error analysis} to challenge predictions and improve robustness.}
+    \end{itemize}
+
+  \resumeSubheading
+    {CAMTEL}{June 2023 -- Sep.~2023}
+    {Data Engineer Intern -- Predictive Analytics}{Yaound\'e, Cameroon}
+    \begin{itemize}
+      \resumeItem{Automated ETL with \textbf{Apache Airflow} and predictive maintenance models -- contributed to \textbf{20\%} lower maintenance costs.}
+      \resumeItem{Presented insights to operational stakeholders to support day-to-day decisions.}
+    \end{itemize}
+
+\resumeSubHeadingListEnd
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP -- Ensimag}{Sep.~2023 -- Sep.~2025}
+    {Engineer's Degree -- Artificial Intelligence \& Data Science}{Grenoble, France}
+    \begin{itemize}
+      \resumeItem{Statistical Learning, Deep Learning, \textbf{NLP}, Big Data Architecture; model evaluation and large-scale data workflows}
+    \end{itemize}
+  \resumeSubheading
+    {NASEY -- National Advanced School of Engineering}{Sep.~2019 -- Sep.~2024}
+    {Master's -- Computer Engineering \& AI (top 12\%)}{Yaound\'e, Cameroon}
+\resumeSubHeadingListEnd
+
+\section{Selected Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{Qube Research Hackathon -- Predictive Football (10th/300+)} $|$ \emph{Python, XGBoost, LightGBM, SHAP}}{Sep.~2024}
+    \begin{itemize}
+      \resumeItem{Full modelling pipeline with CV/tuning; top 3\%; SHAP analysis to explain and validate key drivers.}
+    \end{itemize}
+  \resumeProjectHeading
+    {\textbf{Customer Retention \& LTV} $|$ \emph{Scikit-learn, Survival Analysis, MLflow}}{Nov.~2024}
+    \begin{itemize}
+      \resumeItem{Churn + residual lifetime value models packaged with MLflow into actionable risk scores for business users.}
+    \end{itemize}
+  \resumeProjectHeading
+    {\textbf{Distributed Data Platform} $|$ \emph{PySpark, Spark ML, Docker} \quad
+     \textbf{LLM extraction practice} $|$ \emph{Python, LLM APIs, prompt iteration}}{2024--25}
+    \begin{itemize}
+      \resumeItem{Modular large-scale ETL-style jobs; personal practice on LLM APIs for structuring/classifying heterogeneous text with simple accuracy checks.}
+    \end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.10in, label={}]
+  \small{\item{
+    \textbf{Core}: \textbf{Python}, \textbf{SQL}, Excel, Git, Linux \\
+    \textbf{Data pipelines}: Pandas/NumPy, ETL/ELT, data quality mindset, \textbf{Airflow}, \textbf{PySpark}, Docker, large datasets \\
+    \textbf{ML / NLP / LLM}: Scikit-learn, XGBoost, PyTorch/TensorFlow, SHAP, NLP foundations, LLM APIs, \textbf{prompt engineering}, output evaluation, AI coding assistants \\
+    \textbf{Serving}: FastAPI, MLflow, CI/CD, testing \quad
+    \textbf{Ramp-up}: BigQuery, geospatial matching
+  }}
+\end{itemize}
+
+\section{Fit for Allphins}
+\begin{itemize}[leftmargin=0.10in, label={}]
+  \item \textbf{Data \& analytics}: ingestion, transformation, enrichment and quality control with Python/SQL/Airflow/PySpark.
+  \item \textbf{LLM pragmatism}: prompt iteration + evaluation mindset (accuracy, consistency) rather than one-shot generation.
+  \item \textbf{Rigour \& communication}: challenge model outputs; explain complex results clearly; InsurTech exposure; fluent French \& English (TOEIC 950).
+\end{itemize}
+
+\section{Languages \& Interests}
+\begin{itemize}[leftmargin=0.10in, label={}]
+  \item \textbf{French} (native), \textbf{English} (fluent, TOEIC 950), Spanish (B2) \quad$|$\quad
+  Tennis (2$\times$ UGA champion), football, theatre (public speaking)
+\end{itemize}
+
+\end{document}
