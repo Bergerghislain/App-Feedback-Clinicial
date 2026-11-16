@@ -1,4 +1,4 @@
-\documentclass[a4paper,9.5pt]{extarticle}
+\documentclass[a4paper,10.5pt]{extarticle}
 
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
@@ -15,150 +15,155 @@
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\setlength{\footskip}{4pt}
+\setlength{\footskip}{8pt}
 
-\addtolength{\oddsidemargin}{-0.55in}
-\addtolength{\evensidemargin}{-0.55in}
-\addtolength{\textwidth}{1.1in}
-\addtolength{\topmargin}{-0.62in}
-\addtolength{\textheight}{1.2in}
+% Marges confortables (lisibilit\'e RH)
+\addtolength{\oddsidemargin}{-0.4in}
+\addtolength{\evensidemargin}{-0.4in}
+\addtolength{\textwidth}{0.8in}
+\addtolength{\topmargin}{-0.45in}
+\addtolength{\textheight}{0.9in}
 
 \urlstyle{same}
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
-\setlist[itemize]{nosep, leftmargin=0.13in, topsep=0pt, itemsep=0.8pt, parsep=0pt}
 
-\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\titlerule \vspace{-3pt}]
+% Espacement lisible : ni coll\'e, ni a\'er\'e excessif
+\setlist[itemize]{nosep, leftmargin=0.18in, topsep=2pt, itemsep=3pt, parsep=0pt}
+
+\titleformat{\section}{
+  \vspace{6pt}\scshape\raggedright\large
+}{}{0em}{}[\titlerule\vspace{4pt}]
 
 \newcommand{\resumeItem}[1]{\item\small{#1}}
 \newcommand{\resumeSubheading}[4]{
-  \vspace{0.5pt}\item
-  \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+  \vspace{4pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
     \textbf{#1} & #2 \\
     \textit{\small #3} & \textit{\small #4} \\
-  \end{tabular*}\vspace{-5pt}
+  \end{tabular*}\vspace{2pt}
 }
 \newcommand{\resumeProjectHeading}[2]{
-  \item
-  \begin{tabular*}{0.98\textwidth}{l@{\extracolsep{\fill}}r}
+  \vspace{2pt}\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
     \small #1 & #2 \\
-  \end{tabular*}\vspace{-5pt}
+  \end{tabular*}\vspace{1pt}
 }
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.06in,label={}]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.08in,label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 
 \begin{document}
 
 \begin{center}
-  {\LARGE \scshape Ghislain THEUBO} \\ \vspace{1pt}
-  \small Paris $|$ +33 6 82 86 62 79 $|$
-  \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} $|$
-  \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $|$
-  \href{https://github.com/Bergerghislain}{GitHub} $|$ FR / EN (TOEIC 950)
+  {\Huge \scshape Ghislain THEUBO} \\[4pt]
+  \small Paris $\,|\,$ +33~6~82~86~62~79 $\,|\,$
+  \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\[2pt]
+  \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $\,|\,$
+  \href{https://github.com/Bergerghislain}{GitHub} $\,|\,$
+  French \& English (TOEIC 950)
 \end{center}
-\vspace{-6pt}
 
+\vspace{4pt}
 \begin{center}
-  \textbf{Data Scientist -- Analytics} \\
-  \small{Ensimag (AI \& Data Science) $|$ Python, SQL, Airflow, PySpark, ML/NLP, LLM extraction \& data quality $|$ InsurTech experience -- targeting Allphins Exposure Management}
+  {\large \textbf{Data Scientist -- Analytics}} \\[3pt]
+  \small Ensimag engineer (AI \& Data Science) -- Python, SQL, Airflow, PySpark, ML/NLP and LLM-assisted data enrichment.\\
+  Motivated to join Allphins Exposure Management to make (re)insurance risk data reliable and actionable.
 \end{center}
-\vspace{-2pt}
 
 \section{Profile}
 \small{
-Analytics / data science profile specialized in \textbf{client data ingestion, transformation, enrichment and reconciliation}.
-Combines classical ML + NLP with \textbf{LLM pipelines} (prompting, structuring heterogeneous inputs, evaluating accuracy/consistency/cost).
-Rigorous on data quality and model outputs; clear communicator of actionable insights to business stakeholders. Fluent French \& English.
+I build and operate data workflows that turn messy client datasets into trusted inputs for decision-making:
+ingestion, transformation, enrichment, reconciliation and quality control.
+I combine classical ML/NLP with pragmatic LLM usage (prompt iteration, structured extraction, output evaluation)
+and I am used to explaining results clearly to non-technical stakeholders. Current experience in InsurTech.
 }
 
-\section{Work Experience}
+\section{Selected Experience}
 \resumeSubHeadingListStart
 
   \resumeSubheading
-    {Shift Technology}{Sep.~2026 -- Present}
-    {Software Engineer (CDI) -- InsurTech}{Paris, France}
-    \begin{itemize}
-      \resumeItem{Deliver and maintain production backend services for an InsurTech product used by insurance clients (risk/claims context).}
-      \resumeItem{Own delivery quality: tests, code reviews, CI/CD, debugging; bilingual collaboration with product \& engineering on technical trade-offs.}
-    \end{itemize}
-
-  \resumeSubheading
-    {Gustave Roussy \& CentraleSup\'elec -- MICS Lab}{Jan.~2026 -- Sep.~2026}
+    {Gustave Roussy \& CentraleSup\'elec -- MICS Lab}{January 2026 -- September 2026}
     {Software Engineer -- Research Data Platform (CDD)}{Paris, France}
     \begin{itemize}
-      \resumeItem{Built a sensitive-data platform (\textbf{Python/FastAPI}, \textbf{PostgreSQL}, React): modelling, SQL optimization, validation, JWT/RBAC access control.}
-      \resumeItem{Turned multidisciplinary research needs into reliable data services with explicit acceptance criteria and documented APIs.}
+      \resumeItem{Developed backend services for a research platform handling sensitive datasets (\textbf{Python/FastAPI}, \textbf{PostgreSQL}, React/Vite), with emphasis on data integrity and controlled access.}
+      \resumeItem{Improved \textbf{data modelling} and SQL queries; implemented validation, JWT authentication and role-based access to support reliable enrichment and analysis workflows.}
+      \resumeItem{Translated ambiguous multidisciplinary requests into clear scopes, acceptance criteria and maintainable data services -- useful when reconciling heterogeneous client inputs.}
     \end{itemize}
 
   \resumeSubheading
-    {Dassault Syst\`emes}{April 2025 -- Sep.~2025}
-    {Software Engineer Intern -- Data Processing \& Machine Learning}{V\'elizy, France}
+    {Dassault Syst\`emes}{April 2025 -- September 2025}
+    {Software Engineer Intern -- Data Processing \& Machine Learning}{V\'elizy-Villacoublay, France}
     \begin{itemize}
-      \resumeItem{Developed/deployed \textbf{ML models} (scikit-learn, MLflow) with A/B testing and metric validation before production exposure.}
-      \resumeItem{Built \textbf{PySpark} pipelines on \textbf{1TB+} data: ingestion, cleaning, enrichment, consistency checks; served recommendations via \textbf{FastAPI} + tests.}
-      \resumeItem{Agile collaboration with product \& data engineering to industrialize models into the existing technical ecosystem.}
+      \resumeItem{Owned end-to-end data \& ML workstreams: prepared behavioral datasets, engineered features, trained models with \textbf{scikit-learn}, tracked experiments with \textbf{MLflow}, and validated gains through A/B testing before release.}
+      \resumeItem{Designed production-oriented \textbf{PySpark} pipelines on \textbf{1TB+} datasets: ingestion, cleaning, transformation, enrichment and consistency checks, with reproducible runs.}
+      \resumeItem{Exposed recommendation services through documented \textbf{FastAPI} endpoints, with unit/integration tests; collaborated with product \& data engineering in Agile.}
     \end{itemize}
 
   \resumeSubheading
-    {Inria}{May 2024 -- Aug.~2024}
-    {Research Intern -- AI \& Embedded Systems}{Montbonnot, France}
-    \begin{itemize}
-      \resumeItem{End-to-end DL (PyTorch/TensorFlow): data lifecycle to deployment; \textbf{SHAP}/error analysis to challenge predictions and improve robustness.}
-    \end{itemize}
-
-  \resumeSubheading
-    {CAMTEL}{June 2023 -- Sep.~2023}
+    {CAMTEL (Cameroon Telecommunications)}{June 2023 -- September 2023}
     {Data Engineer Intern -- Predictive Analytics}{Yaound\'e, Cameroon}
     \begin{itemize}
-      \resumeItem{Automated \textbf{ETL with Apache Airflow} + predictive maintenance models; contributed to \textbf{20\%} maintenance cost reduction; presented insights to ops.}
+      \resumeItem{Built a predictive maintenance platform with automated \textbf{ETL pipelines in Apache Airflow}, scheduled quality checks and operational monitoring dashboards.}
+      \resumeItem{Implemented failure-prediction algorithms used by operations teams; contribution linked to a measured \textbf{20\% reduction in maintenance costs}.}
+      \resumeItem{Worked directly with end users: gathered requirements, investigated data inconsistencies, and presented actionable insights for day-to-day decisions.}
     \end{itemize}
 
+\resumeSubHeadingListEnd
+
+\section{Current Role}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Shift Technology}{September 2026 -- Present}
+    {Software Engineer (CDI) -- InsurTech}{Paris, France}
+    \begin{itemize}
+      \resumeItem{Contribute to production backend services in an InsurTech product used by insurance clients; testing, CI/CD and bilingual collaboration with product \& engineering.}
+    \end{itemize}
 \resumeSubHeadingListEnd
 
 \section{Education}
 \resumeSubHeadingListStart
   \resumeSubheading
-    {Grenoble INP -- Ensimag}{Sep.~2023 -- Sep.~2025}
-    {Engineer's Degree -- AI \& Data Science (Statistical Learning, DL, \textbf{NLP}, Big Data)}{Grenoble, France}
+    {Grenoble INP -- Ensimag}{September 2023 -- September 2025}
+    {Engineer's Degree -- Artificial Intelligence \& Data Science}{Grenoble, France}
+    \begin{itemize}
+      \resumeItem{Specialization: Statistical Learning, Deep Learning, \textbf{Natural Language Processing}, Big Data Architecture, model evaluation.}
+    \end{itemize}
   \resumeSubheading
-    {NASEY -- National Advanced School of Engineering}{Sep.~2019 -- Sep.~2024}
-    {Master's -- Computer Engineering \& AI (top 12\%)}{Yaound\'e, Cameroon}
+    {National Advanced School of Engineering of Yaound\'e (NASEY)}{September 2019 -- September 2024}
+    {Master's Degree -- Computer Engineering \& Artificial Intelligence (top 12\%)}{Yaound\'e, Cameroon}
 \resumeSubHeadingListEnd
 
-\section{Selected Projects}
+\section{Projects Aligned with the Role}
 \resumeSubHeadingListStart
   \resumeProjectHeading
-    {\textbf{Qube Research Hackathon -- Predictive Football (10th/300+, top 3\%)} $|$ \emph{Python, XGBoost, LightGBM, SHAP}}{Sep.~2024}
+    {\textbf{LLM extraction \& enrichment practice} $|$ \emph{Python, LLM APIs, prompt engineering, evaluation checks}}{Ongoing}
     \begin{itemize}
-      \resumeItem{Full modelling pipeline with CV/tuning; SHAP analysis to explain drivers and reject unstable signals.}
+      \resumeItem{Practice pipelines to extract, structure and classify heterogeneous text; iterate prompts; evaluate accuracy, consistency and cost before trusting outputs -- useful for asset attributes / unstructured client files.}
     \end{itemize}
   \resumeProjectHeading
-    {\textbf{Customer Retention \& LTV} $|$ \emph{Survival Analysis, MLflow} \quad \textbf{Distributed Data Platform} $|$ \emph{PySpark, Docker}}{2024}
+    {\textbf{Qube Research Hackathon -- Predictive Football (10th / 300+)} $|$ \emph{Python, XGBoost, LightGBM, SHAP}}{September 2024}
     \begin{itemize}
-      \resumeItem{Churn + residual LTV risk scores for business users; modular large-scale ETL-style jobs packaged with Docker.}
-    \end{itemize}
-  \resumeProjectHeading
-    {\textbf{LLM extraction \& enrichment} $|$ \emph{Python, LLM APIs, prompt engineering, eval harness mindset}}{Ongoing}
-    \begin{itemize}
-      \resumeItem{Extract/structure/classify heterogeneous text; iterate prompts; measure accuracy, consistency and cost before trusting outputs.}
+      \resumeItem{End-to-end predictive pipeline with cross-validation and tuning (top 3\%); SHAP analysis to explain drivers and challenge unstable signals.}
     \end{itemize}
 \resumeSubHeadingListEnd
 
 \section{Technical Skills}
-\begin{itemize}[leftmargin=0.06in, label={}]
+\begin{itemize}[leftmargin=0.08in, label={}]
   \small{\item{
-    \textbf{Core}: \textbf{Python}, \textbf{SQL}, Excel, Git, Linux \quad
-    \textbf{Pipelines}: Pandas/NumPy, ETL/ELT, data quality/reconciliation, \textbf{Airflow}, \textbf{PySpark}, Docker, 1TB+ datasets \\
-    \textbf{ML/NLP/LLM}: Scikit-learn, XGBoost, PyTorch/TensorFlow, SHAP, NLP, LLM APIs, prompt engineering, output evaluation \\
+    \textbf{Core}: Python, SQL (PostgreSQL, MySQL), Excel, Git, Linux \\[2pt]
+    \textbf{Data \& analytics}: Pandas, NumPy, ETL/ELT, data quality / reconciliation, exploratory analysis, visualization \\[2pt]
+    \textbf{Pipelines \& scale}: Apache Airflow, PySpark, Docker, large datasets (1TB+) \\[2pt]
+    \textbf{ML / NLP / LLM}: Scikit-learn, XGBoost/LightGBM, PyTorch/TensorFlow, SHAP, NLP foundations, LLM APIs, prompt engineering, output evaluation \\[2pt]
     \textbf{Serving}: FastAPI, MLflow, CI/CD, testing \quad
-    \textbf{Ramp-up}: BigQuery, geospatial/entity matching, (re)insurance domain
+    \textbf{Ready to ramp}: BigQuery, geospatial / entity matching, (re)insurance domain
   }}
 \end{itemize}
 
 \section{Languages \& Interests}
-\begin{itemize}[leftmargin=0.06in, label={}]
-  \item \textbf{French} native $\cdot$ \textbf{English} fluent (TOEIC 950) $\cdot$ Spanish B2 $|$ Tennis (2$\times$ UGA champion), football, theatre (public speaking)
+\begin{itemize}[leftmargin=0.08in, label={}]
+  \item \textbf{French}: native \quad \textbf{English}: fluent (TOEIC 950) \quad \textbf{Spanish}: B2
+  \item Tennis (2$\times$ UGA champion), football, theatre (public speaking)
 \end{itemize}
 
 \end{document}
