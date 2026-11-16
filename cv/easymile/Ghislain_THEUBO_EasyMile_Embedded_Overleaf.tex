@@ -1,0 +1,162 @@
+\documentclass[letterpaper,10.5pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{8pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{1.05in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\setlist[itemize]{leftmargin=0.15in, topsep=2pt, itemsep=2.5pt, parsep=0pt}
+
+\titleformat{\section}{
+  \vspace{4pt}\scshape\raggedright\large
+}{}{0em}{}[\titlerule \vspace{3pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{3pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{1pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{2pt}\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small #1 & #2 \\
+  \end{tabular*}\vspace{1pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.08in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\begin{document}
+
+%----------HEADER----------
+\begin{center}
+  {\Huge \scshape Ghislain THEUBO} \\[3pt]
+  \textbf{Embedded Software Engineer -- C / RTOS / Safety-minded} \\[3pt]
+  \small Toulouse-ready $\,|\,$ +33~6~82~86~62~79 $\,|\,$
+  \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\[1pt]
+  \href{https://www.linkedin.com/in/berger-ghislain}{linkedin.com/in/berger-ghislain} $\,|\,$
+  \href{https://github.com/Bergerghislain}{github.com/Bergerghislain}
+\end{center}
+
+\section{Professional Summary}
+\small{
+Embedded-oriented software engineer with hands-on \textbf{C} development on constrained targets (\textbf{FreeRTOS}, sensors, BLE)
+and a strong validation mindset: unit/integration tests, benches, and owning code from build to debug.
+Comfortable with \textbf{Linux}, \textbf{Git}, GCC/GDB, shell scripting, Python for test automation, and CI/CD basics (Docker, pipelines).
+Motivated to join EasyMile's \textbf{Safety ECU} team in Toulouse to develop reliable embedded C for autonomous vehicles,
+test on HIL benches and prototypes, and contribute to safety-driven delivery.
+}
+
+\section{Core Strengths}
+\small{
+\textbf{Embedded C} $\cdot$ \textbf{FreeRTOS / RTOS} $\cdot$ Sensors \& communication (TOF, BLE) $\cdot$
+Python (tests / automation) $\cdot$ Linux / Git / GCC / GDB $\cdot$
+Unit \& integration testing $\cdot$ CI/CD awareness (Docker, pipelines) $\cdot$
+Rigor \& ownership $\cdot$ French (native) / English (professional, TOEIC 950)
+}
+
+\section{Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {INRIA Grenoble -- Humanlab / Froll'N'Roll}{Montbonnot-Saint-Martin, France}
+    {Research Intern (Real-Time / Embedded Systems)}{May 2024 -- Aug 2024}
+    \begin{itemize}
+      \resumeItem{Developed \textbf{embedded C} modules on microcontroller targets with \textbf{FreeRTOS} (tasks, timing, memory constraints, robust error handling).}
+      \resumeItem{Integrated \textbf{TOF sensors} and a \textbf{BLE} communication path; prototyped on Arduino and validated behaviour on a physical test setup.}
+      \resumeItem{Owned the loop \textbf{develop $\rightarrow$ test $\rightarrow$ debug $\rightarrow$ iterate}: behaviour checks, failure analysis, safety-oriented controls under hardware constraints.}
+      \resumeItem{Improved responsiveness by \textbf{$\sim$40\%} under latency constraints through careful real-time scheduling and profiling.}
+      \resumeItem{Used Linux tooling, Git and experimental infrastructure (incl. Grid'5000) for reproducible campaigns and scripting -- close to EasyMile's ``test your own code on benches'' culture.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern (Full-Stack / Quality-focused module)}{April 2025 -- Sept 2025}
+    \begin{itemize}
+      \resumeItem{Delivered measurable quality gains on a production module (\textbf{$\sim$35\%} performance improvement, \textbf{$\sim$85\%} test coverage) with TDD-oriented practices.}
+      \resumeItem{Wrote unit/integration tests, documented behaviour, and validated changes before exposure -- transferable to Safety ECU validation discipline.}
+      \resumeItem{Worked with Git, CI-oriented workflows and anomaly diagnosis in an industrial engineering environment.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec -- MICS Lab}{Paris, France}
+    {Software Engineer (CDD -- Backend / Data Platforms)}{Jan 2026 -- Sept 2026}
+    \begin{itemize}
+      \resumeItem{Built production Python/FastAPI services with PostgreSQL, validation and RBAC under high integrity constraints.}
+      \resumeItem{Translated ambiguous requirements into clear scopes, acceptance criteria and maintainable deliverables -- useful when co-designing safety features with tech leads.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Shift Technology -- AI for Insurance}{Paris, France}
+    {Software Engineer (CDI -- Platform / Backend)}{Sept 2026 -- Present}
+    \begin{itemize}
+      \resumeItem{Contribute to production platform services: code reviews, testing, CI/CD and incremental delivery with ownership through deployment.}
+    \end{itemize}
+
+\resumeSubHeadingListEnd
+
+\section{Projects -- Embedded \& Validation}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{Real-Time Embedded Sensing Prototype} $|$ \emph{C, FreeRTOS, Arduino, TOF, BLE, Python}}{}
+    \begin{itemize}
+      \resumeItem{End-to-end embedded feature: sensing, RTOS tasking, wireless link and host-side Python checks -- mirrors EasyMile's develop-and-validate-on-hardware loop.}
+    \end{itemize}
+
+  \resumeProjectHeading
+    {\textbf{Automated Test Harness Practice} $|$ \emph{Python, shell, Git, Docker}}{}
+    \begin{itemize}
+      \resumeItem{Scripts and repeatable checks to catch regressions early; habit of automating validation rather than relying on manual one-shots.}
+    \end{itemize}
+
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.08in, label={}]
+  \small{\item{
+    \textbf{Embedded}: C, FreeRTOS / RTOS concepts, constrained targets, sensors, BLE, Arduino prototyping \\
+    \textbf{Tooling}: Linux, Git, shell scripting, GCC, GDB, Docker, CI/CD awareness (Jenkins/GitLab-style pipelines) \\
+    \textbf{Validation}: unit testing, integration testing, bench validation, failure analysis, documentation \\
+    \textbf{Also}: Python (automation/tests), basic multicore/ARM curiosity (ready to ramp), ISO 26262 / 13849 -- to deepen on the job
+  }}
+\end{itemize}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP -- Ensimag}{Grenoble, France}
+    {Engineering Degree -- Computer Science / AI \& Software Engineering}{2023 -- 2025}
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}
+    {Master's Degree in Computer Engineering (Top 12\%)}{2019 -- 2024}
+\resumeSubHeadingListEnd
+
+\section{Languages}
+\begin{itemize}[leftmargin=0.08in, label={}]
+  \item \textbf{French}: Native / fluent \quad \textbf{English}: Professional working proficiency (TOEIC 950) \quad \textbf{Spanish}: Intermediate
+\end{itemize}
+
+\end{document}
