@@ -1,0 +1,172 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{4pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{1.1in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlist[itemize]{nosep, leftmargin=0.15in, topsep=1pt, itemsep=1.5pt}
+
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\titlerule \vspace{-3pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{1pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-4pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small #1 & #2 \\
+  \end{tabular*}\vspace{-4pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.10in,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\begin{document}
+
+%----- En-tête (normes RH : identité + contacts + titre ciblé) -----
+\begin{center}
+  {\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
+  \small Paris $\,|\,$ +33~6~82~86~62~79 $\,|\,$
+  \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} $\,|\,$
+  \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $\,|\,$
+  \href{https://github.com/Bergerghislain}{GitHub}
+\end{center}
+\vspace{-8pt}
+
+\begin{center}
+  \textbf{AI Product Engineer} \\
+  \vspace{1pt}
+  \small{Ing\'enieur logiciel (Ensimag) -- applications web en production, sens produit,\\
+  pratique quotidienne des agents IA pour livrer, tester et industrialiser.}
+\end{center}
+\vspace{-3pt}
+
+\section{Profil}
+\small{
+Ing\'enieur qui transforme un besoin ambigu en p\'erim\`etre, crit\`eres d'acceptation et livrable fiable.
+Exp\'erience de bout en bout sur des applications en production (API, base de donn\'ees, front, CI/CD).
+Utilise les agents de d\'eveloppement pour explorer, impl\'ementer et v\'erifier, tout en gardant la ma\^itrise
+technique, la s\'ecurit\'e et la maintenabilit\'e de ce qui part en prod. Motiv\'e par un produit \`a impact
+(finance responsable / climat).
+}
+
+\section{Exp\'erience professionnelle}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Shift Technology}{Sep.~2026 -- Aujourd'hui}
+    {Software Engineer (CDI) -- plateforme InsurTech}{Paris}
+    \begin{itemize}
+      \resumeItem{Livre et maintient des services backend en \textbf{production} dans un produit utilis\'e par des clients assurance.}
+      \resumeItem{Modernisation applicative, tests, revues de code et \textbf{CI/CD} ; responsabilisation sur la qualit\'e des livraisons.}
+      \resumeItem{Travaille au quotidien avec des \textbf{assistants / agents de code} : cadrage de la t\^ache, revue du diff, validation avant merge.}
+      \resumeItem{Interface produit / tech : clarifie le besoin, propose un d\'ecoupage incr\'emental, v\'erifie l'usage r\'eel.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec -- Labo MICS}{Jan.~2026 -- Sep.~2026}
+    {Software Engineer -- plateforme data de recherche (CDD)}{Paris}
+    \begin{itemize}
+      \resumeItem{Construit une application web full-stack : \textbf{Python/FastAPI}, \textbf{PostgreSQL}, \textbf{React/Vite}.}
+      \resumeItem{Auth JWT, contr\^ole d'acc\`es, validation API et mod\'elisation de donn\'ees sensibles -- fiabilit\'e et s\'ecurit\'e prioritaires.}
+      \resumeItem{Traduit des besoins m\'etier multidisciplinaires en sp\'ecifications actionnables (p\'erim\`etre, contraintes, crit\`eres de validation).}
+    \end{itemize}
+
+  \resumeSubheading
+    {Dassault Syst\`emes}{Avr.~2025 -- D\'ec.~2025}
+    {Software Engineer Intern -- Data Processing \& ML}{V\'elizy}
+    \begin{itemize}
+      \resumeItem{D\'eveloppe des APIs \textbf{FastAPI}, pipelines \textbf{PySpark} (1~To+) et mod\`eles ML industrialis\'es (MLflow, tests, A/B).}
+      \resumeItem{Collabore produit / data engineering en Agile ; documente et int\`egre les livrables dans l'\'ecosyst\`eme existant.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Inria}{Mai 2024 -- Ao\^ut 2024}
+    {Research Intern -- IA \& syst\`emes embarqu\'es}{Montbonnot}
+    \begin{itemize}
+      \resumeItem{Prototype IA de bout en bout (donn\'ees $\rightarrow$ mod\`ele $\rightarrow$ d\'eploiement) ; analyse d'erreurs et interpr\'etabilit\'e (SHAP).}
+    \end{itemize}
+
+  \resumeSubheading
+    {CAMTEL}{Juin 2023 -- Sep.~2023}
+    {Data Engineer Intern -- analytics pr\'edictive}{Yaound\'e}
+    \begin{itemize}
+      \resumeItem{Plateforme de maintenance pr\'edictive avec ETL \textbf{Airflow} et dashboards ; \textbf{-20\%} de co\^uts de maintenance.}
+      \resumeItem{Recueil des besoins utilisateurs et pr\'esentation des r\'esultats aux op\'erationnels.}
+    \end{itemize}
+
+\resumeSubHeadingListEnd
+
+\section{Projets \& pratique agentique}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{Workflow agentique de d\'eveloppement} $|$ \emph{Cursor / agents IA, Git, tests, revue}}{2025--2026}
+    \begin{itemize}
+      \resumeItem{Pilote des t\^aches multi-\'etapes avec agents : exploration du repo, impl\'ementation, tests, diagnostic, PR.}
+      \resumeItem{R\'edige des \textbf{skills / instructions r\'eutilisables} (conventions, checklists de revue, crit\`eres d'acceptation).}
+      \resumeItem{D\'efinit le niveau d'autonomie, les points de validation humaine et v\'erifie architecture, s\'ecurit\'e et maintenabilit\'e du code g\'en\'er\'e.}
+    \end{itemize}
+  \resumeProjectHeading
+    {\textbf{Plateforme data recherche} $|$ \emph{FastAPI, PostgreSQL, React} \quad
+     \textbf{APIs recommandation} $|$ \emph{FastAPI, MLflow}}{2025--2026}
+    \begin{itemize}
+      \resumeItem{Applications web livr\'ees avec API, base relationnelle, auth et boucle de feedback utilisateurs / m\'etier.}
+    \end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Comp\'etences}
+\begin{itemize}[leftmargin=0.10in, label={}]
+  \small{\item{
+    \textbf{Produit \& delivery} : cadrage besoin $\rightarrow$ crit\`eres d'acceptation, livraison incr\'ementale, mesure d'impact, ownership \\
+    \textbf{D\'eveloppement agentique} : orchestration d'agents, skills / prompts r\'eutilisables, revue de code IA, contr\^oles qualit\'e \\
+    \textbf{Software} : Python, TypeScript/JavaScript, SQL, FastAPI, React, PostgreSQL, Git, CI/CD, Docker, tests \\
+    \textbf{Architecture} : APIs REST, mod\'elisation de donn\'ees, contraintes web prod (s\'ecurit\'e, fiabilit\'e, maintenabilit\'e)
+  }}
+\end{itemize}
+
+\section{Formation}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP -- Ensimag}{2023 -- 2025}
+    {Dipl\^ome d'ing\'enieur -- Intelligence Artificielle \& Data Science}{Grenoble}
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e (NASEY)}{2019 -- 2024}
+    {Master -- G\'enie informatique \& IA (top 12\%)}{Yaound\'e}
+\resumeSubHeadingListEnd
+
+\section{Langues \& centres d'int\'er\^et}
+\begin{itemize}[leftmargin=0.10in, label={}]
+  \item \textbf{Fran\c{c}ais} : natif \quad \textbf{Anglais} : courant (TOEIC 950) \quad \textbf{Espagnol} : B2
+  \item Tennis (2$\times$ champion UGA), football, th\'e\^atre (prise de parole) -- int\'er\^et pour la finance \`a impact / climat
+\end{itemize}
+
+\end{document}
