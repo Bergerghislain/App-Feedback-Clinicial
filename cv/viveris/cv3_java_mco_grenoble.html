@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Ghislain THEUBO — Développeur Java / MCO</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #1a2332;
+    background: #fff;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 68mm 1fr;
+  }
+  .sidebar {
+    background: linear-gradient(165deg, #3c1f1a 0%, #7a3b2e 45%, #b85c38 100%);
+    color: #fff8f4;
+    padding: 22mm 8mm 12mm 8mm;
+  }
+  .sidebar h1 {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+  .sidebar .role {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #ffd7c2;
+    margin-bottom: 18px;
+    line-height: 1.35;
+  }
+  .side-block { margin-bottom: 16px; }
+  .side-block h2 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #ffc9a8;
+    border-bottom: 1.5px solid rgba(255,255,255,0.3);
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+  }
+  .side-block p, .side-block li {
+    font-size: 10.5px;
+    line-height: 1.45;
+    color: #fff1ea;
+  }
+  .side-block ul { list-style: none; }
+  .side-block li { margin-bottom: 4px; }
+  .chip {
+    display: inline-block;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 999px;
+    padding: 3px 8px;
+    margin: 0 4px 5px 0;
+    font-size: 9.5px;
+  }
+  .main { padding: 16mm 11mm 12mm 11mm; }
+  .banner {
+    background: #fff3ec;
+    border-left: 5px solid #b85c38;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+    border-radius: 0 8px 8px 0;
+  }
+  .banner h2 { font-size: 13px; color: #5a2a20; margin-bottom: 4px; }
+  .banner p { font-size: 10.5px; line-height: 1.45; color: #2c3e50; }
+  .main h2 {
+    font-size: 12.5px;
+    color: #5a2a20;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #b85c38;
+    padding-bottom: 4px;
+    margin: 14px 0 10px;
+  }
+  .job { margin-bottom: 12px; }
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .job-head strong { font-size: 12px; color: #5a2a20; }
+  .job-head span { font-size: 9.5px; color: #5a6a7a; white-space: nowrap; }
+  .job-sub {
+    font-size: 10.5px;
+    color: #b85c38;
+    font-weight: 600;
+    margin: 2px 0 5px;
+  }
+  .job ul { padding-left: 14px; }
+  .job li {
+    font-size: 10.5px;
+    line-height: 1.42;
+    margin-bottom: 3.5px;
+    color: #243041;
+  }
+  .note {
+    background: #eef6ff;
+    border: 1px solid #b7d0ef;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #1e3a5f;
+    margin-top: 6px;
+  }
+  .edu strong { font-size: 11.5px; color: #5a2a20; }
+  .edu p { font-size: 10.5px; color: #334155; margin: 2px 0 8px; line-height: 1.4; }
+  a { color: inherit; text-decoration: none; }
+</style>
+</head>
+<body>
+  <aside class="sidebar">
+    <h1>Ghislain<br/>THEUBO</h1>
+    <p class="role">Développeur Logiciel — MCO<br/>&amp; Évolutions applicatives</p>
+
+    <div class="side-block">
+      <h2>Contact</h2>
+      <p>Mobility Grenoble<br/>+33 6 82 86 62 79<br/>
+      <a href="mailto:bergerghislaintheubo@gmail.com">bergerghislaintheubo@gmail.com</a><br/>
+      LinkedIn · GitHub</p>
+    </div>
+
+    <div class="side-block">
+      <h2>Stack</h2>
+      <span class="chip">Java</span>
+      <span class="chip">SQL</span>
+      <span class="chip">Python</span>
+      <span class="chip">C# / .NET</span>
+      <span class="chip">PostgreSQL</span>
+      <span class="chip">APIs REST</span>
+      <span class="chip">Git</span>
+      <span class="chip">CI/CD</span>
+      <span class="chip">Docker</span>
+    </div>
+
+    <div class="side-block">
+      <h2>MCO / qualité</h2>
+      <ul>
+        <li>Correction d’incidents</li>
+        <li>Évolutions applicatives</li>
+        <li>Tests &amp; non-régression</li>
+        <li>Revue de code</li>
+        <li>Documentation</li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <h2>Langues</h2>
+      <p>Français — natif<br/>Anglais — courant (TOEIC 950)<br/>Espagnol — B2</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="banner">
+      <h2>Profil pour Viveris Grenoble — Java MCO &amp; évolutions</h2>
+      <p>
+        Ingénieur Ensimag, développeur polyvalent avec une expérience concrète de
+        <strong>maintenance et d’évolution d’applications en production</strong>
+        (diagnostic, corrections, tests, CI/CD). Bases Java / SQL solides, pratique intensive
+        Python et C#/.NET en poste. Candidature motivée pour Grenoble, ouverte à un échange
+        sur l’adéquation d’expérience au niveau « confirmé ».
+      </p>
+    </div>
+
+    <h2>Expériences — MCO, prod &amp; évolutions</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <strong>Shift Technology</strong>
+        <span>Sep. 2026 – Aujourd’hui · Paris</span>
+      </div>
+      <div class="job-sub">Software Engineer (CDI) — plateforme InsurTech</div>
+      <ul>
+        <li>Assure le <strong>MCO</strong> et les évolutions de services backend en production : corrections, modernisation, compatibilité builds/containers.</li>
+        <li>Résout des incidents via analyse de logs, reproduction, correctifs ciblés et tests de non-régression.</li>
+        <li>Participe aux revues de code, CI/CD et qualité des livraisons en collaboration avec l’équipe.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <strong>Gustave Roussy &amp; CentraleSupélec — MICS</strong>
+        <span>Jan. – Sep. 2026 · Paris</span>
+      </div>
+      <div class="job-sub">Software Engineer — plateforme data (CDD)</div>
+      <ul>
+        <li>Développé et maintenu une application (Python/FastAPI, <strong>SQL/PostgreSQL</strong>, React) : évolutions fonctionnelles et corrections.</li>
+        <li>Amélioré le modèle de données et les requêtes SQL ; sécurisé les accès (JWT, RBAC) ; diagnostiqué les dysfonctionnements API.</li>
+        <li>Travaillé au contact du métier pour prioriser correctifs et livrer des évolutions stables.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <strong>Dassault Systèmes</strong>
+        <span>Avr. – Sep. 2025 · Vélizy</span>
+      </div>
+      <div class="job-sub">Software Engineer Intern — Data Processing &amp; ML</div>
+      <ul>
+        <li>Livré des services et pipelines industrialisés avec tests, documentation et suivi d’anomalies de performance.</li>
+        <li>Pratique Git, CI et collaboration transverse — posture MCO / évolutions plutôt que prototype jetable.</li>
+      </ul>
+    </div>
+
+    <h2>Formation &amp; Java / SQL</h2>
+    <div class="edu">
+      <strong>Grenoble INP — Ensimag</strong>
+      <p>Diplôme d’ingénieur — IA &amp; Data Science · 2023–2025 · Grenoble<br/>
+      Formation Bac+5 avec bases génie logiciel, <strong>Java</strong>, bases de données / SQL, conception applicative.</p>
+      <strong>NASEY — Yaoundé</strong>
+      <p>Master Génie informatique &amp; IA (top 12%) · 2019–2024 · Java, SQL, algorithmique, génie logiciel.</p>
+    </div>
+
+    <div class="note">
+      <strong>Note de candidature :</strong> le poste est annoncé « confirmé » / ~3 ans sur certains canaux.
+      Mon expérience productive est plus junior, mais déjà ancrée en <strong>MCO, incidents, SQL et évolutions en production</strong>.
+      Je suis prêt à démontrer rapidement mon niveau Java sur un cas concret et à discuter d’un accompagnement avec Émilie / le manager.
+    </div>
+
+    <h2>Compétences utiles au poste</h2>
+    <div class="job">
+      <ul>
+        <li><strong>Java &amp; SQL</strong> : formation + pratique projets ; SQL intensif en production (PostgreSQL).</li>
+        <li><strong>MCO</strong> : incidents, correctifs, non-régression, CI/CD (Shift, Gustave Roussy).</li>
+        <li><strong>Transfert de stack</strong> : Python / C#/.NET → Java : mêmes réflexes OO, API, tests, revue.</li>
+        <li>IBMi : non pratiqué — à apprendre en poste si besoin.</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
