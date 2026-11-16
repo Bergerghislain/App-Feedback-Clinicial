@@ -1,0 +1,166 @@
+\documentclass[letterpaper,10.5pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{8pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{1.05in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlist[itemize]{leftmargin=0.15in, topsep=2pt, itemsep=2.5pt, parsep=0pt}
+
+\titleformat{\section}{
+  \vspace{4pt}\scshape\raggedright\large
+}{}{0em}{}[\titlerule \vspace{3pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{3pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{1pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{2pt}\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small #1 & #2 \\
+  \end{tabular*}\vspace{1pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.08in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\begin{document}
+
+\begin{center}
+  {\Huge \scshape Ghislain THEUBO} \\[3pt]
+  \textbf{Finance Data Engineer -- Python / SQL / Pipelines} \\[3pt]
+  \small Paris $\,|\,$ +33~6~82~86~62~79 $\,|\,$
+  \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\[1pt]
+  \href{https://www.linkedin.com/in/berger-ghislain}{linkedin.com/in/berger-ghislain} $\,|\,$
+  \href{https://github.com/Bergerghislain}{github.com/Bergerghislain}
+\end{center}
+
+\section{Professional Summary}
+\small{
+Data-oriented software engineer specializing in \textbf{Python}, \textbf{SQL} and production data workflows.
+I build reliable pipelines and data services (ingestion, transformation, quality checks, documentation) and turn
+spreadsheet-heavy processes into tested, maintainable code.
+Experienced with \textbf{Airflow}, \textbf{PySpark}, PostgreSQL, Docker/CI and stakeholder-facing delivery.
+Motivated to join \textbf{Voodoo}'s Corporate Finance transformation: migrate critical Finance workflows to a modern,
+automated data platform and help FP\&A / Accounting / Controlling trust and use their data every day.
+}
+
+\section{Core Strengths}
+\small{
+\textbf{Python \& SQL (production)} $\cdot$ ETL/ELT \& data modelling $\cdot$ \textbf{Apache Airflow} $\cdot$ \textbf{PySpark} $\cdot$
+Data quality / observability mindset $\cdot$ Docker, Git, CI/CD $\cdot$
+Dashboards \& internal tooling $\cdot$ AI-assisted automation with ownership $\cdot$
+Business partnership (non-technical stakeholders) $\cdot$ French (native) / English (professional, TOEIC 950)
+}
+
+\section{Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec -- MICS Lab}{Paris, France}
+    {Software Engineer (CDD) -- Research Data Platform}{Jan 2026 -- Sept 2026}
+    \begin{itemize}
+      \resumeItem{Built production \textbf{Python/FastAPI + PostgreSQL} data services with validation, RBAC and reliable access for multidisciplinary users.}
+      \resumeItem{Improved \textbf{SQL modelling/queries} and data integrity controls -- making datasets trustworthy for reporting and analysis.}
+      \resumeItem{Translated ambiguous stakeholder needs into scoped deliverables, documentation and incremental releases (product thinking for data).}
+      \resumeItem{Operated under high standards (sensitive data, security, auditability) -- transferable to Finance data governance.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern -- Data Processing \& ML}{April 2025 -- Sept 2025}
+    \begin{itemize}
+      \resumeItem{Built large-scale \textbf{PySpark} pipelines (1TB+) for ingestion, cleaning, transformation and enrichment with reproducibility in mind.}
+      \resumeItem{Industrialized services with tests ($\sim$85\% coverage), docs and performance gains ($\sim$35\%) -- code-based reliability over fragile notebooks.}
+      \resumeItem{Practiced Git, CI-oriented delivery and anomaly diagnosis in an industrial engineering environment.}
+    \end{itemize}
+
+  \resumeSubheading
+    {CAMTEL}{Yaound\'e, Cameroon}
+    {Data Engineer Intern -- Predictive Analytics \& Automation}{June 2023 -- Sept 2023}
+    \begin{itemize}
+      \resumeItem{Automated recurring workflows with \textbf{Apache Airflow} ETL pipelines and monitoring dashboards for operations stakeholders.}
+      \resumeItem{Replaced manual follow-ups with scheduled, observable jobs; contribution linked to $\sim$20\% maintenance cost reduction.}
+      \resumeItem{Partnered with end users to gather requirements and present actionable metrics -- close to Finance enablement work.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Shift Technology}{Paris, France}
+    {Software Engineer (CDI) -- Platform / Backend}{Sept 2026 -- Present}
+    \begin{itemize}
+      \resumeItem{Contribute to production services: testing, code reviews, CI/CD, incremental delivery and ownership through deployment.}
+      \resumeItem{Use AI coding tools daily while keeping responsibility for correctness, maintainability and measurable outcomes.}
+    \end{itemize}
+
+\resumeSubHeadingListEnd
+
+\section{Projects -- Finance Data Transformation Mindset}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{From spreadsheets to tested pipelines (prototype)} $|$ \emph{Python, SQL, PostgreSQL, Docker}}{}
+    \begin{itemize}
+      \resumeItem{Rebuilt a recurring spreadsheet workflow as versioned SQL/Python jobs with basic tests and documentation -- mirroring Voodoo's migrate-from-Excel ambition.}
+    \end{itemize}
+  \resumeProjectHeading
+    {\textbf{Airflow orchestration \& quality checks} $|$ \emph{Airflow, Python, monitoring dashboards}}{}
+    \begin{itemize}
+      \resumeItem{Scheduled pipelines with failure visibility and stakeholder-ready outputs; focus on reliability and incremental delivery.}
+    \end{itemize}
+  \resumeProjectHeading
+    {\textbf{Internal data app practice} $|$ \emph{Python, FastAPI/Streamlit notions, SQL}}{}
+    \begin{itemize}
+      \resumeItem{Exposed clean metrics/endpoints for non-technical users to explore data without breaking source systems.}
+    \end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.08in, label={}]
+  \small{\item{
+    \textbf{Languages}: Python, SQL (advanced), Bash \\
+    \textbf{Data platform}: Airflow, PySpark, PostgreSQL, ETL/ELT, data modelling, quality checks \\
+    \textbf{Engineering}: Git, Docker, CI/CD, testing, documentation, monitoring mindset \\
+    \textbf{Analytics / apps}: dashboards, FastAPI; Streamlit / dbt / AWS -- ready to ramp to Voodoo's stack \\
+    \textbf{AI}: Cursor/Claude-style assistants for delivery acceleration with human ownership \\
+    \textbf{Finance}: solid analytical rigor; core corporate Finance/accounting concepts -- deepening on the job (French GAAP interest)
+  }}
+\end{itemize}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP -- Ensimag}{Grenoble, France}
+    {Engineering Degree -- AI \& Data Science / Software Engineering}{2023 -- 2025}
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}
+    {Master's Degree in Computer Engineering (Top 12\%)}{2019 -- 2024}
+\resumeSubHeadingListEnd
+
+\section{Languages}
+\begin{itemize}[leftmargin=0.08in, label={}]
+  \item \textbf{French}: Native \quad \textbf{English}: Professional working proficiency (TOEIC 950) \quad \textbf{Spanish}: Intermediate
+\end{itemize}
+
+\end{document}
