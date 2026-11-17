@@ -1,0 +1,159 @@
+\documentclass[a4paper,10.5pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{8pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlist[itemize]{leftmargin=0.15in, topsep=2pt, itemsep=2.5pt, parsep=0pt}
+
+\titleformat{\section}{
+  \vspace{4pt}\scshape\raggedright\large
+}{}{0em}{}[\titlerule \vspace{3pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{3pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{1pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{2pt}\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small #1 & #2 \\
+  \end{tabular*}\vspace{1pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.08in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\begin{document}
+
+\begin{center}
+  {\Huge \scshape Ghislain THEUBO} \\[3pt]
+  \textbf{Data Engineer -- Python / SQL / Pipelines / LLM} \\[3pt]
+  \small Paris $\,|\,$ +33~6~82~86~62~79 $\,|\,$
+  \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\[1pt]
+  \href{https://www.linkedin.com/in/berger-ghislain}{linkedin.com/in/berger-ghislain} $\,|\,$
+  \href{https://github.com/Bergerghislain}{github.com/Bergerghislain}
+\end{center}
+
+\section{Profil}
+\small{
+Data engineer en d\'ebut de carri\`ere, tr\`es \`a l'aise en \textbf{Python} et \textbf{SQL}, avec une premi\`ere exp\'erience concr\`ete
+de pipelines (ETL/ELT, \textbf{Airflow}, PySpark), de qualit\'e de donn\'ees et de mise en production.
+Fort int\'er\^et pour les \textbf{agents LLM} (extraction, structuration, \'evaluation) et la construction de r\'ef\'erentiels fiables
+\`a partir de sources h\'et\'erog\`enes. Motiv\'e pour rejoindre \textbf{Edumapper} et prendre en charge la cha\^ine de donn\'ees
+du catalogue de formations --- de la collecte \`a la mise \`a disposition --- au service d'un produit \`a fort impact social.
+}
+
+\section{Atouts cl\'es}
+\small{
+\textbf{Python} $\cdot$ \textbf{SQL} $\cdot$ ETL/ELT $\cdot$ \textbf{Apache Airflow} $\cdot$ PySpark $\cdot$
+Qualit\'e / d\'eduplication / tests de donn\'ees $\cdot$ LLM (prompting, extraction, eval) $\cdot$
+Docker / Git / CI $\cdot$ Autonomie \& rigueur $\cdot$ Fran\c{c}ais (natif) / Anglais (TOEIC 950)
+}
+
+\section{Exp\'erience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec -- MICS}{Paris, France}
+    {Software Engineer (CDD) -- plateforme data}{Jan.~2026 -- Sep.~2026}
+    \begin{itemize}
+      \resumeItem{Construit des services data en prod (\textbf{Python/FastAPI}, \textbf{PostgreSQL}) : ingestion, validation, mod\'elisation, acc\`es contr\^ol\'e.}
+      \resumeItem{Am\'elior\'e la fiabilit\'e du r\'ef\'erentiel (int\'egrit\'e, SQL, contr\^oles) et document\'e les livrables pour des utilisateurs pluridisciplinaires.}
+      \resumeItem{Traduit des besoins ambigus en p\'erim\`etre clair, it\'erations et mise \`a disposition -- proche du mode produit d'Edumapper.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE R\&D}{V\'elizy, France}
+    {Software Engineer Intern -- Data Processing \& ML}{Avr.~2025 -- Sep.~2025}
+    \begin{itemize}
+      \resumeItem{Pipelines \textbf{PySpark} \`a grande \'echelle (1~To+) : nettoyage, transformation, enrichissement, reproductibilit\'e.}
+      \resumeItem{Industrialisation avec tests ($\sim$85\% couverture), docs et CI -- prototype $\rightarrow$ production.}
+    \end{itemize}
+
+  \resumeSubheading
+    {CAMTEL}{Yaound\'e, Cameroun}
+    {Data Engineer Intern -- analytics \& automatisation}{Juin 2023 -- Sep.~2023}
+    \begin{itemize}
+      \resumeItem{ETL automatis\'es avec \textbf{Apache Airflow}, dashboards de suivi et monitoring des traitements r\'ecurrents.}
+      \resumeItem{Contribution \`a $\sim$20\% de r\'eduction des co\^uts de maintenance ; collaboration \'etroite avec les m\'etiers.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Shift Technology}{Paris, France}
+    {Software Engineer (CDI) -- plateforme}{Sep.~2026 -- Aujourd'hui}
+    \begin{itemize}
+      \resumeItem{Qualit\'e en production : tests, revues, CI/CD, ownership des changements ; usage quotidien d'agents IA avec responsabilit\'e humaine.}
+    \end{itemize}
+
+\resumeSubHeadingListEnd
+
+\section{Projets -- agents LLM, scraping \& qualit\'e}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{Pipeline LLM d'extraction / structuration} $|$ \emph{Python, LLM APIs, eval, SQL}}{}
+    \begin{itemize}
+      \resumeItem{Extraction et normalisation de textes h\'et\'erog\`enes vers un sch\'ema structur\'e ; it\'eration de prompts ; contr\^oles pr\'ecision/coh\'erence -- align\'e agents d'enrichissement Edumapper.}
+    \end{itemize}
+  \resumeProjectHeading
+    {\textbf{Orchestration ETL \& monitoring} $|$ \emph{Airflow, Python, Docker}}{}
+    \begin{itemize}
+      \resumeItem{Jobs planifi\'es, \'echecs visibles, sorties exploitables ; sensibilit\'e Dagster / outillage moderne (prise en main rapide).}
+    \end{itemize}
+  \resumeProjectHeading
+    {\textbf{R\'ef\'erentiel \& d\'eduplication (pratique)} $|$ \emph{Python, SQL}}{}
+    \begin{itemize}
+      \resumeItem{R\`egles de matching / nettoyage pour limiter doublons et incoh\'erences dans une base de r\'ef\'erence.}
+    \end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Comp\'etences techniques}
+\begin{itemize}[leftmargin=0.08in, label={}]
+  \small{\item{
+    \textbf{Socle} : Python (tr\`es bon niveau), SQL, Git, Linux \\
+    \textbf{Data eng} : ETL/ELT, Airflow, PySpark, PostgreSQL, Docker, CI \\
+    \textbf{IA g\'en\'erative} : LLM APIs, agents / prompting, extraction, \'evaluation de sorties, RAG (bases) \\
+    \textbf{Plus} : DuckDB / Dagster / analytics produit -- envie forte de monter vite en poste
+  }}
+\end{itemize}
+
+\section{Formation}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP -- Ensimag}{Grenoble, France}
+    {Dipl\^ome d'ing\'enieur -- IA \& Data Science}{2023 -- 2025}
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroun}
+    {Master -- G\'enie informatique \& IA (top 12\%)}{2019 -- 2024}
+\resumeSubHeadingListEnd
+
+\section{Langues \& centres d'int\'er\^et}
+\begin{itemize}[leftmargin=0.08in, label={}]
+  \item \textbf{Fran\c{c}ais} natif $\cdot$ \textbf{Anglais} courant (TOEIC 950) $\cdot$ Espagnol B2
+  \item Tennis, th\'e\^atre -- int\'er\^et pour l'\'education / orientation et les produits \`a impact
+\end{itemize}
+
+\end{document}
