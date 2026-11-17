@@ -1,0 +1,94 @@
+\documentclass[a4paper,10.5pt]{article}
+\usepackage[empty]{fullpage}\usepackage{titlesec}\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}\setlength{\footskip}{8pt}
+\addtolength{\oddsidemargin}{-0.48in}\addtolength{\evensidemargin}{-0.48in}\addtolength{\textwidth}{0.96in}
+\addtolength{\topmargin}{-0.48in}\addtolength{\textheight}{0.95in}
+\urlstyle{same}\raggedbottom\raggedright\setlength{\tabcolsep}{0in}
+\setlist[itemize]{leftmargin=0.15in, topsep=1.2pt, itemsep=2.2pt, parsep=0pt}
+\titleformat{\section}{\vspace{3.5pt}\scshape\raggedright\large}{}{0em}{}[\titlerule \vspace{2pt}]
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{\vspace{2.5pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1}&{#2}\\\textit{\small #3}&\textit{\small #4}\\\end{tabular*}\vspace{1pt}}
+\newcommand{\resumeProjectHeading}[2]{\vspace{1.5pt}\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small #1&#2\\\end{tabular*}\vspace{1pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.08in,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\begin{document}
+\begin{center}
+{\Huge \scshape Ghislain THEUBO}\\[2pt]
+\textbf{D\'eveloppeur Java / API -- Spring Boot mindset $\cdot$ Int\'egrations partenaires}\\[2pt]
+\small Paris $\,|\,$ +33~6~82~86~62~79 $\,|\,$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com}\\[1pt]
+\href{https://www.linkedin.com/in/berger-ghislain}{linkedin.com/in/berger-ghislain} $\,|\,$ Bac+5 Ensimag $\,|\,$ Yield Studio $\,|\,$ Cible 45--55k
+\end{center}
+
+\section{Profil}
+\small{
+Ing\'enieur logiciel Bac+5, orient\'e \textbf{conception et fiabilisation d'API} expos\'ees \`a des partenaires :
+contrats d'interface, authentification, versionnement, int\'egrations tierces, tests automatis\'es, qualit\'e CI.
+Socle fort \textbf{Python/FastAPI + PostgreSQL + React} transf\'erable \`a \textbf{Java 17+ / Spring Boot / Spring Data JPA} ;
+discipline Clean Code, SOLID, revues, monitoring. Motiv\'e pour Yield : produit d'ouverture d'API, bin\^ome
+Tech Lead / PM / QA, d\'eploiements cloud AWS, run et coh\'erence de donn\'ees entre syst\`emes.
+}
+
+\section{Comp\'etences techniques}
+\begin{itemize}[leftmargin=0.08in,label={}]\small{\item{
+\textbf{Back-end / API} : Java (mont\'ee Spring Boot, Spring Data JPA), Python/FastAPI, C\#/.NET, REST, OpenAPI, JWT/OAuth2 \\
+\textbf{Front-end} : React, JavaScript, HTML/CSS \\
+\textbf{Data} : PostgreSQL, SQL (optimisation, transactions, coh\'erence) \\
+\textbf{Qualit\'e \& DevOps} : tests unitaires/int\'egration, Postman, mocks, Git, GitHub Actions, Docker, Clean Code/SOLID \\
+\textbf{Cloud} : AWS (bases), monitoring / logs structur\'es \\
+\textbf{M\'ethodes} : Agile/Scrum, revues de code, documentation technique \\
+\textbf{Langues} : Fran\c{c}ais (natif), Anglais professionnel (TOEIC 950)
+}}\end{itemize}
+
+\section{Exp\'erience d\'etaill\'ee}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec -- Labo MICS}{Paris}
+    {Software Engineer (CDD) -- APIs, int\'egrations, donn\'ees sensibles}{Jan.~2026 -- Sep.~2026}
+    \begin{itemize}
+      \resumeItem{\textbf{APIs REST} (Python/FastAPI) : conception, documentation, versionnement logique, authentification JWT / RBAC, validation stricte des entr\'ees.}
+      \resumeItem{\textbf{Int\'egrations \& flux} : ingestion multi-sources, gestion d'erreurs, idempotence pragmatique, coh\'erence de donn\'ees entre services et UI.}
+      \resumeItem{\textbf{PostgreSQL} : sch\'ema, requ\^etes, optimisation ($\sim$30\% lectures critiques) ; enjeux de concurrence / ressources partag\'ees.}
+      \resumeItem{\textbf{Tests \& qualit\'e} : unitaires + int\'egration, non-r\'egression ; Postman ; CI GitHub Actions ; Docker.}
+      \resumeItem{Front \textbf{React/Vite} pour parcours m\'etier ; collaboration PM-like / m\'etier / recherche --- analogie bin\^ome Yield.}
+      \resumeItem{Run : logs structur\'es, diagnostic d'incidents, correctifs, documentation technique.}
+    \end{itemize}
+  \resumeSubheading
+    {Shift Technology}{Paris}
+    {Software Engineer (CDI) -- production SaaS, revues, OO}{Sep.~2026 -- Aujourd'hui}
+    \begin{itemize}
+      \resumeItem{Services en production (stack OO \textbf{C\#}/.NET + Python) : patterns proches Spring (DI, couches, tests) ; Clean Code, revues, CI/CD.}
+      \resumeItem{Qualit\'e livr\'ee, dette technique, monitoring ; culture am\'elioration continue (esprit SonarQube).}
+    \end{itemize}
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE R\&D}{V\'elizy}
+    {Software Engineer Intern -- industrialisation \& tests}{Avr.~2025 -- Sep.~2025}
+    \begin{itemize}
+      \resumeItem{APIs Python, tests $\sim$85\% couverture, +35\% perf ; documentation ; industrialisation r\'ep\'etable.}
+    \end{itemize}
+  \resumeSubheading
+    {Inria}{Grenoble}
+    {Research Intern -- syst\`emes, validation}{Mai--Ao\^ut 2024}
+    \begin{itemize}
+      \resumeItem{D\'eveloppement sous contraintes, validation rigoureuse, Linux/Git --- discipline ing\'enieur.}
+    \end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Projets -- API partenaires / Java Spring}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{API catalogue partenaires (Spring Boot)} $|$ \emph{OpenAPI, JPA, s\'ecurit\'e}}{}
+  \begin{itemize}\resumeItem{CRUD + JWT/OAuth2-like, OpenAPI, Postgres, tests JUnit ; contrat d'interface versionn\'e.}\end{itemize}
+  \resumeProjectHeading{\textbf{Client d'int\'egration tierce} $|$ \emph{retries, mocks, Postman}}{}
+  \begin{itemize}\resumeItem{Consommation API externe, rejeux, mocks de contrat ; CI GitHub Actions.}\end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Formation}
+\resumeSubHeadingListStart
+  \resumeSubheading{Grenoble INP -- Ensimag}{Grenoble}{Dipl\^ome d'ing\'enieur -- IA \& g\'enie logiciel}{2023 -- 2025}
+  \resumeSubheading{NASEY}{Yaound\'e}{Master G\'enie informatique \& IA (top 12\%)}{2019 -- 2024}
+\resumeSubHeadingListEnd
+
+\vspace{3pt}
+\small{\textit{Note} : gap Java Spring assum\'e ; angle candidature = ownership API/int\'egrations/tests en prod + mont\'ee Spring Boot structur\'ee pour 45--55k.}
+\end{document}
