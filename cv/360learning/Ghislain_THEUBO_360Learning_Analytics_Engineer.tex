@@ -1,0 +1,162 @@
+\documentclass[letterpaper,10.5pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{8pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{1.05in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlist[itemize]{leftmargin=0.15in, topsep=2pt, itemsep=2.5pt, parsep=0pt}
+
+\titleformat{\section}{
+  \vspace{4pt}\scshape\raggedright\large
+}{}{0em}{}[\titlerule \vspace{3pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{3pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{1pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{2pt}\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small #1 & #2 \\
+  \end{tabular*}\vspace{1pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.08in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\begin{document}
+
+\begin{center}
+  {\Huge \scshape Ghislain THEUBO} \\[3pt]
+  \textbf{Analytics Engineer -- SQL / Data Modeling / Self-Service} \\[3pt]
+  \small Paris / Remote France $\,|\,$ +33~6~82~86~62~79 $\,|\,$
+  \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\[1pt]
+  \href{https://www.linkedin.com/in/berger-ghislain}{linkedin.com/in/berger-ghislain} $\,|\,$
+  \href{https://github.com/Bergerghislain}{github.com/Bergerghislain}
+\end{center}
+
+\section{Professional Summary}
+\small{
+Analytics-minded data practitioner with strong \textbf{SQL}, solid \textbf{data modelling}, and a bias for trusted,
+well-documented datasets that help non-technical teams answer their own questions.
+Experienced building production data services and clean analytical tables (Python/PostgreSQL), collaborating with
+Product/Research stakeholders, and applying software practices (Git, tests, docs, CI).
+Motivated to join \textbf{360Learning} as Analytics Engineer: bridge the data platform and business teams with
+reliable KPIs, clearer models, and practical AI-assisted analytics --- enabling self-service on Snowflake / Looker-Metabase.
+}
+
+\section{Core Strengths}
+\small{
+\textbf{Strong SQL} $\cdot$ Data modelling \& warehouse thinking $\cdot$ Trusted KPIs / metrics definitions $\cdot$
+Git \& documentation $\cdot$ Stakeholder communication (FR/EN) $\cdot$
+Python for data workflows $\cdot$ AI tools for analytics acceleration with ownership $\cdot$
+Curiosity \& problem-solving on ambiguous business questions
+}
+
+\section{Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec -- MICS Lab}{Paris, France}
+    {Software Engineer (CDD) -- Research Data Platform / Analytics enablement}{Jan 2026 -- Sept 2026}
+    \begin{itemize}
+      \resumeItem{Built production \textbf{Python/FastAPI + PostgreSQL} data services and improved \textbf{SQL models/queries} so multidisciplinary users could trust and reuse datasets.}
+      \resumeItem{Turned ambiguous research/business questions into clear metrics, documented definitions, and maintainable tables (source-of-truth mindset).}
+      \resumeItem{Partnered closely with non-technical stakeholders: clarify needs, iterate fast, explain trade-offs simply --- core Analytics Engineer skill.}
+      \resumeItem{Operated under high data-quality / access-control standards; focus on reliability and reusable documentation.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern -- Data Processing \& quality}{April 2025 -- Sept 2025}
+    \begin{itemize}
+      \resumeItem{Delivered data-intensive pipelines (\textbf{PySpark}/SQL mindset) with testing ($\sim$85\% coverage) and measurable performance gains ($\sim$35\%).}
+      \resumeItem{Applied engineering discipline to data work: Git, reviews, documentation, reproducible transformations.}
+    \end{itemize}
+
+  \resumeSubheading
+    {CAMTEL}{Yaound\'e, Cameroon}
+    {Data Engineer Intern -- analytics \& dashboards}{June 2023 -- Sept 2023}
+    \begin{itemize}
+      \resumeItem{Built automated data workflows (\textbf{Airflow}) and monitoring dashboards for operational KPIs used by non-technical teams.}
+      \resumeItem{Improved decision-making with cleaner indicators; contribution linked to $\sim$20\% maintenance cost reduction.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Shift Technology}{Paris, France}
+    {Software Engineer (CDI) -- Platform}{Sept 2026 -- Present}
+    \begin{itemize}
+      \resumeItem{Production ownership: code reviews, CI/CD, incremental delivery; daily AI-assisted development with human validation.}
+    \end{itemize}
+
+\resumeSubHeadingListEnd
+
+\section{Projects -- Analytics Engineering Practice}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{Trusted metrics layer (SQL-first)} $|$ \emph{PostgreSQL, SQL, docs, tests}}{}
+    \begin{itemize}
+      \resumeItem{Designed clean analytical tables and KPI definitions with explicit business rules; documented grain, filters and ownership --- dbt-ready habits.}
+    \end{itemize}
+  \resumeProjectHeading
+    {\textbf{Self-service enablement mindset} $|$ \emph{SQL + dashboarding notions (Metabase/Grafana)}}{}
+    \begin{itemize}
+      \resumeItem{Exposed clear datasets/endpoints so stakeholders explore data without breaking sources --- aligned with 360Learning self-service goals.}
+    \end{itemize}
+  \resumeProjectHeading
+    {\textbf{AI for analytics workflows} $|$ \emph{Cursor / LLM assistants}}{}
+    \begin{itemize}
+      \resumeItem{Use AI to draft SQL/docs faster, then challenge outputs for correctness before publishing metrics --- practical, ownership-first AI.}
+    \end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.08in, label={}]
+  \small{\item{
+    \textbf{Analytics core}: SQL (complex queries), data modelling, KPI design, documentation \\
+    \textbf{Warehouse / transform}: PostgreSQL; BigQuery/Snowflake/dbt -- strong foundations + fast ramp \\
+    \textbf{BI}: dashboarding experience; Looker / Metabase -- ready to deepen as primary tools \\
+    \textbf{Engineering}: Git, Python, Docker, CI, testing, Airflow/PySpark background \\
+    \textbf{Languages}: French native, English professional (TOEIC 950)
+  }}
+\end{itemize}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP -- Ensimag}{Grenoble, France}
+    {Engineering Degree -- AI \& Data Science}{2023 -- 2025}
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroon}
+    {Master's -- Computer Engineering \& AI (Top 12\%)}{2019 -- 2024}
+\resumeSubHeadingListEnd
+
+\section{Languages}
+\begin{itemize}[leftmargin=0.08in, label={}]
+  \item \textbf{French}: Native/Fluent \quad \textbf{English}: Fluent (professional) \quad \textbf{Spanish}: Intermediate
+\end{itemize}
+
+\end{document}
