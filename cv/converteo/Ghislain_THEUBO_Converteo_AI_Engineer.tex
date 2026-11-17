@@ -1,0 +1,82 @@
+\documentclass[a4paper,10.5pt]{article}
+\usepackage[empty]{fullpage}\usepackage{titlesec}\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}\setlength{\footskip}{8pt}
+\addtolength{\oddsidemargin}{-0.5in}\addtolength{\evensidemargin}{-0.5in}\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.5in}\addtolength{\textheight}{1.0in}
+\urlstyle{same}\raggedbottom\raggedright\setlength{\tabcolsep}{0in}
+\setlist[itemize]{leftmargin=0.15in, topsep=1.5pt, itemsep=2.4pt, parsep=0pt}
+\titleformat{\section}{\vspace{4pt}\scshape\raggedright\large}{}{0em}{}[\titlerule \vspace{2.5pt}]
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{\vspace{3pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1}&{#2}\\\textit{\small #3}&\textit{\small #4}\\\end{tabular*}\vspace{1pt}}
+\newcommand{\resumeProjectHeading}[2]{\vspace{2pt}\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small #1&#2\\\end{tabular*}\vspace{1pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.08in,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\begin{document}
+\begin{center}
+{\Huge \scshape Ghislain THEUBO}\\[3pt]
+\textbf{AI Engineer -- GenAI / Agents / Python / LLMOps}\\[2pt]
+\small Paris $\,|\,$ +33~6~82~86~62~79 $\,|\,$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com}\\[1pt]
+\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $\,|\,$ \href{https://github.com/Bergerghislain}{GitHub} $\,|\,$ Ensimag (AI \& Data)
+\end{center}
+
+\section{Profil -- Hub Tech Converteo}
+\small{
+Jeune ing\'enieur Ensimag (IA \& Data) avec premi\`ere exp\'erience software/data engineering et
+\textbf{forte app\'etence GenAI / agentique}. Je construis en \textbf{Python} (APIs, clean code),
+j'utilise quotidiennement des LLMs (Claude, Cursor, OpenAI) avec ownership, et je vise le
+passage notebook $\rightarrow$ prod (CI/CD, \'evaluation, fiabilit\'e). Motiv\'e pour rejoindre l'activit\'e
+\textbf{IA Engineering} du Hub Tech : RAG, multi-agents, LLMOps, squads agiles avec mentoring seniors.
+}
+
+\section{Exp\'erience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Shift Technology}{Paris}
+    {Software Engineer (CDI) -- prod + craft GenAI quotidien}{Sep.~2026 -- Aujourd'hui}
+    \begin{itemize}
+      \resumeItem{Ing\'enierie logicielle en production : APIs, tests, CI/CD, revues, industrialisation.}
+      \resumeItem{\textbf{GenAI au quotidien} (Claude/Cursor) : prompting, exploration code, drafts + tests --- merge seulement apr\`es validation humaine.}
+      \resumeItem{Culture squad / delivery Agile --- pr\^et \`a collaborer avec PO Data/IA.}
+    \end{itemize}
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec -- MICS}{Paris}
+    {Software Engineer (CDD) -- software engineering + APIs}{Jan.~2026 -- Sep.~2026}
+    \begin{itemize}
+      \resumeItem{\textbf{Python} fort : FastAPI, PostgreSQL, React ; clean code, scalabilit\'e basique, auth/RBAC.}
+      \resumeItem{APIs REST / microservices-minded ; Docker, CI --- bases cloud/software engineering.}
+      \resumeItem{Traduction cas d'usage m\'etier $\rightarrow$ architecture technique avec utilisateurs non techniques.}
+    \end{itemize}
+  \resumeSubheading
+    {Dassault Syst\`emes}{V\'elizy}
+    {Software Engineer Intern -- ML industrialization (vers LLMOps mindset)}{Avr.~2025 -- Sep.~2025}
+    \begin{itemize}
+      \resumeItem{Pipelines PySpark, \textbf{MLflow}, \'evaluation A/B, APIs FastAPI --- au-del\`a du notebook.}
+      \resumeItem{Tests ($\sim$85\% couverture), perf +35\% ; sensibilit\'e observabilit\'e / fiabilit\'e.}
+    \end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Projets GenAI / Agents (align\'es Hub Tech)}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{Agent tool-calling + eval} $|$ \emph{Python, LLM APIs, tools, regression checks}}{}
+  \begin{itemize}\resumeItem{Prototype agent avec outils (lookup SQL, extraction) ; prompts it\'er\'es ; garde-fous avant trust --- esprit LangChain/CrewAI.}\end{itemize}
+  \resumeProjectHeading{\textbf{RAG-style Q\&A} $|$ \emph{embeddings notions, retrieval, grounding}}{}
+  \begin{itemize}\resumeItem{Q\&A sur docs internes avec contexte r\'ecup\'er\'e ; focus hallucination control et r\'eponses \'evaluables.}\end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Comp\'etences}
+\begin{itemize}[leftmargin=0.08in,label={}]\small{\item{
+\textbf{Python \& SE} : FastAPI, SQL, clean code, APIs REST, Docker, CI/CD \\
+\textbf{GenAI} : Claude/OpenAI/Mistral usage, prompting, agents tools ; RAG/LangChain (projets + mont\'ee) \\
+\textbf{LLMOps} : tests, eval mindset, MLflow background ; LangSmith/vector DB -- learning path \\
+\textbf{Cloud} : Azure notions ; GCP First -- curiosit\'e active \\
+\textbf{Soft} : apprentissage rapide, humilit\'e, mentoring welcome, guilds/R\&D appetite
+}}\end{itemize}
+
+\section{Formation}
+\resumeSubHeadingListStart
+  \resumeSubheading{Grenoble INP -- Ensimag}{Grenoble}{Dipl\^ome d'ing\'enieur -- IA \& Data Science}{2023 -- 2025}
+  \resumeSubheading{NASEY}{Yaound\'e}{Master G\'enie informatique \& IA (top 12\%)}{2019 -- 2024}
+\resumeSubHeadingListEnd
+\end{document}
