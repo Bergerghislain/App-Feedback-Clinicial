@@ -1,0 +1,154 @@
+\documentclass[a4paper,10.5pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{8pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlist[itemize]{leftmargin=0.15in, topsep=2pt, itemsep=2.5pt, parsep=0pt}
+
+\titleformat{\section}{
+  \vspace{4pt}\scshape\raggedright\large
+}{}{0em}{}[\titlerule \vspace{3pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{3pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{1pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{2pt}\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small #1 & #2 \\
+  \end{tabular*}\vspace{1pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.08in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\begin{document}
+
+\begin{center}
+  {\Huge \scshape Ghislain THEUBO} \\[3pt]
+  \textbf{Junior Data Engineer -- Pipelines / SQL / Qualit\'e} \\[3pt]
+  \small Paris $\,|\,$ +33~6~82~86~62~79 $\,|\,$
+  \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\[1pt]
+  \href{https://www.linkedin.com/in/berger-ghislain}{linkedin.com/in/berger-ghislain} $\,|\,$
+  \href{https://github.com/Bergerghislain}{github.com/Bergerghislain}
+\end{center}
+
+\section{Profil}
+\small{
+Junior Data Engineer motiv\'e par un impact concret dans la \textbf{sant\'e}.
+Exp\'erience de construction et de maintenance de \textbf{pipelines ETL/ELT} (Python, SQL, Airflow, PySpark),
+de contr\^oles qualit\'e, de documentation et de livraison en \'equipe (revues, CI, prod).
+D\'ej\`a expos\'e \`a des donn\'ees sensibles / contraintes fortes (plateforme data recherche Gustave Roussy).
+Envie de rejoindre \textbf{Hublo} pour fiabiliser les donn\'ees qui aident les \'etablissements \`a recruter,
+organiser et fid\'eliser les soignants --- au sein d'une scale-up B-Corp \`a mission.
+}
+
+\section{Atouts cl\'es}
+\small{
+\textbf{Python} $\cdot$ \textbf{SQL} $\cdot$ ETL/ELT $\cdot$ \textbf{Airflow} $\cdot$ PySpark $\cdot$
+Contr\^oles qualit\'e \& monitoring $\cdot$ Documentation $\cdot$ Git / CI / Docker $\cdot$
+Travail d'\'equipe Agile $\cdot$ Contexte sant\'e / donn\'ees sensibles $\cdot$
+Fran\c{c}ais (natif) / Anglais (TOEIC 950)
+}
+
+\section{Exp\'erience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec -- MICS}{Paris, France}
+    {Software Engineer (CDD) -- plateforme data (sant\'e / recherche)}{Jan.~2026 -- Sep.~2026}
+    \begin{itemize}
+      \resumeItem{D\'evelopp\'e et maintenu des flux data (\textbf{Python}, \textbf{PostgreSQL}) : extraction, transformation, validation, mise \`a disposition.}
+      \resumeItem{Renforc\'e la \textbf{qualit\'e} et l'int\'egrit\'e des donn\'ees (contr\^oles, mod\'elisation SQL, acc\`es s\'ecuris\'e) dans un contexte exigeant.}
+      \resumeItem{Document\'e les processus et collabor\'e avec des profils m\'etier / recherche -- communication claire, livraison it\'erative.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE R\&D}{V\'elizy, France}
+    {Software Engineer Intern -- Data Processing}{Avr.~2025 -- Sep.~2025}
+    \begin{itemize}
+      \resumeItem{Construit des pipelines \textbf{PySpark} robustes (1~To+) et industrialis\'e avec tests, docs et CI.}
+      \resumeItem{Particip\'e aux revues / mises en production ; code lisible et maintenable valid\'e en \'equipe.}
+    \end{itemize}
+
+  \resumeSubheading
+    {CAMTEL}{Yaound\'e, Cameroun}
+    {Data Engineer Intern -- pipelines \& monitoring}{Juin 2023 -- Sep.~2023}
+    \begin{itemize}
+      \resumeItem{Pipelines \textbf{Airflow} + dashboards : monitoring des workflows, r\'esolution d'incidents, am\'elioration continue.}
+      \resumeItem{Automatisation de traitements r\'ecurrents ; impact op\'erationnel mesurable ($\sim$20\% co\^uts maintenance).}
+    \end{itemize}
+
+  \resumeSubheading
+    {Shift Technology}{Paris, France}
+    {Software Engineer (CDI) -- plateforme}{Sep.~2026 -- Aujourd'hui}
+    \begin{itemize}
+      \resumeItem{Rituels d'\'equipe, code reviews, CI/CD, diagnostic d'incidents et ownership des livraisons en production.}
+    \end{itemize}
+
+\resumeSubHeadingListEnd
+
+\section{Projets -- data engineering}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{Pipelines ETL + contr\^oles qualit\'e} $|$ \emph{Python, SQL, Airflow, Docker}}{}
+    \begin{itemize}
+      \resumeItem{Jobs planifi\'es, validations, documentation \`a jour -- align\'e sur les crit\`eres de succ\`es Hublo (fiabilit\'e, maintenabilit\'e).}
+    \end{itemize}
+  \resumeProjectHeading
+    {\textbf{Mod\'elisation pour le reporting} $|$ \emph{PostgreSQL, SQL}}{}
+    \begin{itemize}
+      \resumeItem{Sch\'emas et requ\^etes pens\'es pour une exploitation efficace (analytics / d\'ecision).}
+    \end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Comp\'etences techniques}
+\begin{itemize}[leftmargin=0.08in, label={}]
+  \small{\item{
+    \textbf{Data} : Python, SQL, ETL/ELT, Airflow, PySpark, PostgreSQL, contr\^oles qualit\'e \\
+    \textbf{Ing\'enierie} : Git, Docker, CI/CD, tests, documentation, monitoring de workflows \\
+    \textbf{Soft} : travail d'\'equipe, communication, autonomie, rigueur
+  }}
+\end{itemize}
+
+\section{Formation}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP -- Ensimag}{Grenoble, France}
+    {Dipl\^ome d'ing\'enieur -- IA \& Data Science}{2023 -- 2025}
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e, Cameroun}
+    {Master -- G\'enie informatique \& IA (top 12\%)}{2019 -- 2024}
+\resumeSubHeadingListEnd
+
+\section{Langues}
+\begin{itemize}[leftmargin=0.08in, label={}]
+  \item \textbf{Fran\c{c}ais} : natif \quad \textbf{Anglais} : courant (TOEIC 950) \quad \textbf{Espagnol} : B2
+\end{itemize}
+
+\end{document}
