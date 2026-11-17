@@ -36,6 +36,22 @@ That’s why this program feels like the right next step for me.
 
 ---
 
+## Q3 — Difficult task and how you addressed it
+
+**Describe a difficult task you were faced with and how you addressed it.**
+
+One difficult task was at Gustave Roussy, when I had to deliver a usable data platform under messy constraints.
+
+The difficulty wasn’t a single bug. Stakeholders had conflicting requests, the data was sensitive so access mistakes weren’t acceptable, and early SQL queries were too slow for real use. If I had just coded the first version of the request, we would have shipped something insecure or unusable.
+
+I addressed it step by step. First, I ran short workshops to turn vague needs into clear acceptance criteria and priorities. Second, I designed access control with JWT and role-based permissions, plus validation on the APIs. Third, I profiled the slow queries, fixed indexing and SQL design, and improved critical reads by about 30%. Finally, I shipped in small increments with tests and documentation, then gathered user feedback and iterated.
+
+What I learned is that hard tasks are often about clarity and trade-offs, not only code. By structuring the problem and involving users early, we went from ambiguity to a tool people actually trusted and used.
+
+*(~75–90 sec spoken)*
+
+---
+
 ## Optional shorter versions (if HireVue cuts you off early)
 
 **Achievement (45 sec):**  
