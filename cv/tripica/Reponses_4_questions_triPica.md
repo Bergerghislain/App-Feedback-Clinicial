@@ -40,28 +40,52 @@ Aujourd’hui je viens surtout du backend Python/C#, donc mon choix Java pour ce
 
 ## 4. Parlez-moi du projet le plus complexe sur lequel vous avez travaillé.
 
-Le plus complexe, c’est la **plateforme data** que j’ai construite à **Gustave Roussy / CentraleSupélec (labo MICS)** en 2026.
+*(version développée — à coller telle quelle)*
 
-Le truc dur, ce n’était pas “écrire une API” : c’était de faire tenir ensemble plein de contraintes en même temps.
+Le projet le plus complexe sur lequel j’ai travaillé, c’est la **plateforme data** construite à **Gustave Roussy avec le labo MICS de CentraleSupélec** (CDD, 2026).
 
-- Données sensibles (recherche / santé) → droits d’accès, validation, traçabilité.
-- Besoins métier souvent ambigus → il fallait challenger, cadrer, prioriser avec des non-dev.
-- Stack bout-en-bout : **Python/FastAPI + PostgreSQL + React**, auth JWT/RBAC, SQL à optimiser (lectures critiques ~30 % plus rapides après indexation).
-- Qualité : tests, Docker, CI, docs, et ownership quand ça cassait.
+Sur le papier, ça peut ressembler à “une app FastAPI + React”. En vrai, la complexité venait du fait que **tout devait tenir en même temps**, avec peu de droit à l’erreur.
 
-Le vrai défi, c’était l’**intégration** : plusieurs sources, plusieurs utilisateurs, peu de droit à l’erreur sur la donnée, et une UI que les gens doivent réellement adopter. J’ai appris à découper, livrer petit, mesurer l’usage, et ne pas sur-ingénierer. C’est le genre de complexité “produit multi-projets” que je retrouve dans votre annonce.
+**Le contexte**  
+On avait des données de recherche / santé, donc sensibles : pas question de bricoler. Il fallait contrôler qui voit quoi, valider ce qui entre, et garder une trace crédible de ce qui se passe. En face, les utilisateurs n’étaient pas des dévs : chercheurs, métiers, profils très différents, avec des besoins souvent flous ou contradictoires (“on veut juste pouvoir accéder aux données”… sauf que derrière il y a 10 règles implicites).
+
+**Ce que j’ai vraiment fait**  
+J’ai pris le sujet de bout en bout :
+- reformuler les besoins en specs et critères d’acceptation compréhensibles ;
+- concevoir le modèle **PostgreSQL** et les **APIs Python/FastAPI** (validation, auth **JWT**, **RBAC**) ;
+- brancher un front **React/Vite** pour que les gens puissent vraiment explorer et agir, pas juste “consommer un endpoint” ;
+- industrialiser un minimum : tests, **Docker**, **CI**, documentation, logs.
+
+Un exemple concret de complexité technique : certaines lectures SQL critiques étaient trop lentes pour l’usage réel. J’ai travaillé indexation / requêtes, et on a gagné de l’ordre de **~30 %** sur ces lectures. Pas un exploit de hero coding — juste du travail propre, mesuré, utile.
+
+**Pourquoi c’était le plus dur**  
+Parce que le problème n’était pas un algo isolé. C’était un système :
+plusieurs sources / cas d’usage, plusieurs profils utilisateurs, contraintes de qualité de donnée, et une obligation d’**adoption**. Si l’outil est techniquement correct mais personne ne s’en sert, c’est un échec.
+
+J’ai appris à découper, livrer petit, challenger les demandes, et ne pas sur-ingénierer. Exactement le genre de complexité “produit multi-sujets / multi-équipes” que je retrouve dans l’annonce triPica (specs, code, tests, déploiement, coordination).
 
 ---
 
 ## 5. Avez-vous déjà développé en utilisant l’IA ? Si oui, parlez-moi d’un de ces projets.
 
-Oui — tous les jours, surtout chez **Shift Technology**, et aussi sur mes side projects.
+*(version développée — à coller telle quelle)*
 
-Exemple concret : sur un ticket de modernisation / bug backend, je m’en sers (Claude / Cursor) pour explorer le code, proposer un plan, générer une première version de fix + tests. Ensuite je fais le travail sérieux : je relis le diff ligne à ligne, je vérifie les edge cases, je lance les tests, et je ne merge que si je comprends et assume le changement. L’IA accélère ; elle ne signe pas à ma place.
+Oui, et pas juste “j’ai essayé ChatGPT une fois”. Je développe **avec l’IA au quotidien**, surtout chez **Shift Technology**, avec **Claude / Cursor**.
 
-Autre usage : à Gustave Roussy, pour accélérer la doc d’API et des cas de test à partir des specs — toujours avec relecture humaine, parce que la doc pourrie coûte plus cher qu’elle ne rapporte.
+**Un projet / usage concret**  
+Sur des tickets backend de prod (bug, modernisation, petit feature), mon process est toujours le même :
 
-En gros : je suis très à l’aise avec l’IA comme copilote, et très strict sur la responsabilité du code en prod. Ça colle à une équipe qui livre souvent et qui se revue.
+1. Je cadre le problème moi-même (repro, impact, contraintes).
+2. Je demande à l’IA d’explorer le code, de proposer un plan, parfois un premier draft de fix + tests.
+3. Ensuite je fais le vrai travail d’ingénieur : je **relis le diff ligne à ligne**, je chasse les hallucinations, je vérifie les edge cases, je lance les tests, je regarde les régressions.
+4. Je ne merge **que** si je comprends et j’assume le changement. L’IA n’a pas de responsabilité en prod — moi si.
+
+Ça m’a clairement fait gagner du temps sur l’exploration et le boilerplate, surtout dans une codebase que je découvre. Mais dès qu’il y a un risque métier / prod, je ralentis et je valide comme un humain.
+
+**Autre exemple (Gustave Roussy)**  
+Je m’en suis aussi servi pour accélérer la **doc d’API** et des **cas de test** à partir des specs. Là encore : draft IA → relecture humaine. Une doc fausse fait plus de dégâts qu’une doc absente, donc pas de copier-coller aveugle.
+
+En résumé : je suis très à l’aise avec l’IA comme **copilote**, et très strict sur l’**ownership**. Pour une équipe qui livre souvent, se revue, et veut de la qualité (comme triPica), c’est exactement l’usage que je défends.
 
 ---
 
