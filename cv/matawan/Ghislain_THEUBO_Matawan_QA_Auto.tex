@@ -3,67 +3,92 @@
 \usepackage[hidelinks]{hyperref}\usepackage{fancyhdr}
 \usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}
 \pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}\setlength{\footskip}{8pt}
-\addtolength{\oddsidemargin}{-0.5in}\addtolength{\evensidemargin}{-0.5in}\addtolength{\textwidth}{1.0in}
-\addtolength{\topmargin}{-0.5in}\addtolength{\textheight}{1.0in}
+\addtolength{\oddsidemargin}{-0.48in}\addtolength{\evensidemargin}{-0.48in}\addtolength{\textwidth}{0.96in}
+\addtolength{\topmargin}{-0.48in}\addtolength{\textheight}{0.95in}
 \urlstyle{same}\raggedbottom\raggedright\setlength{\tabcolsep}{0in}
-\setlist[itemize]{leftmargin=0.15in, topsep=1.5pt, itemsep=2.4pt, parsep=0pt}
-\titleformat{\section}{\vspace{4pt}\scshape\raggedright\large}{}{0em}{}[\titlerule \vspace{2.5pt}]
+\setlist[itemize]{leftmargin=0.15in, topsep=1.2pt, itemsep=2.2pt, parsep=0pt}
+\titleformat{\section}{\vspace{3.5pt}\scshape\raggedright\large}{}{0em}{}[\titlerule \vspace{2pt}]
 \newcommand{\resumeItem}[1]{\item\small{#1}}
-\newcommand{\resumeSubheading}[4]{\vspace{3pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1}&{#2}\\\textit{\small #3}&\textit{\small #4}\\\end{tabular*}\vspace{1pt}}
+\newcommand{\resumeSubheading}[4]{\vspace{2.5pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1}&{#2}\\\textit{\small #3}&\textit{\small #4}\\\end{tabular*}\vspace{1pt}}
+\newcommand{\resumeProjectHeading}[2]{\vspace{1.5pt}\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small #1&#2\\\end{tabular*}\vspace{1pt}}
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.08in,label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \begin{document}
 \begin{center}
-{\Huge \scshape Ghislain THEUBO}\\[3pt]
-\textbf{QA Tester Auto -- Tests / TypeScript / Qualit\'e Mobile \& Web}\\[2pt]
-\small Lyon / Paris (mobilit\'e) $\,|\,$ +33~6~82~86~62~79 $\,|\,$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com}\\[1pt]
-\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $\,|\,$ Anglais C1 (TOEIC 950) $\,|\,$ Ensimag
+{\Huge \scshape Ghislain THEUBO}\\[2pt]
+\textbf{QA Tester Automation -- E2E / TypeScript / Mobile \& Web / Agile}\\[2pt]
+\small Lyon (mobilit\'e) / Paris $\,|\,$ +33~6~82~86~62~79 $\,|\,$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com}\\[1pt]
+\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $\,|\,$ English C1 (TOEIC 950) $\,|\,$ Ensimag
 \end{center}
 
-\section{Profil}
+\section{Profil -- WanFare / WanPay Mobile QA}
 \small{
-Profil technique issu du d\'eveloppement, capable de \textbf{mod\'eliser et automatiser} des parcours
-de bout en bout. Je traduis des cas fonctionnels en tests ex\'ecutables, je stabilise les suites,
-je documente, et je collabore avec Dev/PO en Agile. App\'etit fort pour l'automatisation mobile
-(WanFare/WanPay) : TypeScript, CI, rigueur, am\'elioration continue. Anglais C1.
+Profil technique capable de \textbf{mod\'eliser et automatiser} des parcours bout-en-bout.
+Je pars de cas fonctionnels r\'edig\'es par l'\'equipe, je les transforme en tests ex\'ecutables,
+je stabilise/optimise les suites, je documente la logique, et je collabore avec Dev/PO pour
+r\'eduire les bugs en amont. Motiv\'e par la cr\'eation de poste QA Auto mobile chez Matawan :
+Cypress / TypeScript / Appium / WebdriverIO, Agile/Scrum, anglais C1, am\'elioration continue.
 }
 
-\section{Exp\'erience orient\'ee qualit\'e \& automatisation}
+\section{Mapping offre}
+\small{
+\begin{tabular*}{0.97\textwidth}{@{}p{0.42\textwidth}@{\extracolsep{\fill}}p{0.52\textwidth}@{}}
+\textbf{Attendu Matawan} & \textbf{Preuves} \\
+Automatiser tests fonctionnels & Suites API/UI + CI ; repro steps \\
+Maintenir / stabiliser / optimiser & Couverture $\sim$85\% mindset ; r\'eduction flakiness \\
+Sensibiliser les d\'evs & Revues, cas limites, tickets clairs \\
+Documenter logique outils & Docs Markdown/Notion-like \\
+Agile + Jira + TS tooling & Scrum rituals ; TypeScript ramp \\
+Anglais C1 & TOEIC 950 \\
+\end{tabular*}
+}
+
+\section{Exp\'erience d\'etaill\'ee}
 \resumeSubHeadingListStart
   \resumeSubheading
     {Gustave Roussy \& CentraleSup\'elec -- MICS}{Paris}
-    {Software Engineer (CDD) -- validation \& non-r\'egression}{Jan.~2026 -- Sep.~2026}
+    {Software Engineer (CDD) -- validation, non-r\'egression, automatisation}{Jan.~2026 -- Sep.~2026}
     \begin{itemize}
-      \resumeItem{Analys\'e US / crit\`eres d'acceptation avec m\'etier et d\'evs ; ex\'ecut\'e tests fonctionnels/exploratoires.}
-      \resumeItem{Automatis\'e des checks via tests d'API/UI et CI ; document\'e sc\'enarios et logique de validation.}
-      \resumeItem{Sensibilis\'e \`a la r\'eduction de bugs en amont (revues, cas limites, repro steps clairs).}
+      \resumeItem{\textbf{Analyse \& cas de test} : challenge des crit\`eres d'acceptation avec m\'etier/d\'evs ; sc\'enarios fonctionnels et exploratoires sur parcours critiques (auth, droits, donn\'ees).}
+      \resumeItem{\textbf{Automatisation} : checks r\'ep\'etables (API + UI) branch\'es en CI ; documentation de la logique pour rejeu et handoff.}
+      \resumeItem{\textbf{Qualit\'e transverse} : tickets bugs pr\'ecis (\'etapes, logs, captures), v\'erification des correctifs, sensibilisation d\'evs aux r\'egressions.}
+      \resumeItem{Stack web React --- compr\'ehension front utile pour automatiser des apps mobiles/web Matawan.}
     \end{itemize}
   \resumeSubheading
     {Dassault Syst\`emes}{V\'elizy}
-    {Software Engineer Intern -- strat\'egie de tests}{Avr.~2025 -- Sep.~2025}
+    {Software Engineer Intern -- strat\'egie de tests \& stabilit\'e}{Avr.~2025 -- Sep.~2025}
     \begin{itemize}
-      \resumeItem{Tests unitaires/int\'egration ($\sim$85\% couverture) ; mindset stabilit\'e / dur\'ee d'ex\'ecution.}
-      \resumeItem{Agile/Scrum ; tickets pr\'ecis ; am\'elioration continue des suites.}
+      \resumeItem{Conception/ex\'ecution de tests unitaires \& int\'egration ($\sim$85\% couverture) ; focus stabilit\'e et signal utile.}
+      \resumeItem{Agile/Scrum ; m\'etriques de qualit\'e ; am\'elioration continue des suites (moins long, plus fiable).}
     \end{itemize}
   \resumeSubheading
     {Shift Technology}{Paris}
-    {Software Engineer (CDI) -- qualit\'e en squad}{Sep.~2026 -- Aujourd'hui}
+    {Software Engineer (CDI) -- CI/CD \& qualit\'e en squad}{Sep.~2026 -- Aujourd'hui}
     \begin{itemize}
-      \resumeItem{CI/CD, revues, d\'ebogage ; collaboration transverse Dev --- pr\'et \`a accompagner sur la r\'eduction de bugs.}
+      \resumeItem{Rituels Agile, revues, d\'ebogage ; collaboration Dev pour emp\^echer les bugs d'arriver en prod.}
+      \resumeItem{Culture industrialisation --- pr\^et \`a contribuer \`a une strat\'egie d'automatisation mobile avec le QA Manager.}
     \end{itemize}
 \resumeSubHeadingListEnd
 
-\section{Comp\'etences QA Auto}
+\section{Projets QA Auto}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{Suite E2E web} $|$ \emph{TypeScript ramp, CI, assertions}}{}
+  \begin{itemize}\resumeItem{Parcours login $\rightarrow$ action critique $\rightarrow$ assert ; retries/stabilit\'e ; docs pour l'\'equipe.}\end{itemize}
+  \resumeProjectHeading{\textbf{Mobile automation path} $|$ \emph{Appium / WebdriverIO concepts}}{}
+  \begin{itemize}\resumeItem{Mont\'ee cibl\'ee outillage mobile pour WanFare/WanPay d\`es l'arriv\'ee.}\end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Comp\'etences}
 \begin{itemize}[leftmargin=0.08in,label={}]\small{\item{
-\textbf{Automatisation} : conception de cas E2E, maintenance de suites, CI \\
-\textbf{Stack cible} : TypeScript (bases + mont\'ee), Cypress / WebdriverIO / Appium (ramp cibl\'e) \\
-\textbf{M\'ethode} : Agile/Scrum, Jira, Notion/docs, ISTQB interest \\
-\textbf{Soft} : proactif, assertif, autonome, anglais C1
+\textbf{QA} : E2E, non-r\'egression, exploratory, bug reporting, acceptance challenge \\
+\textbf{Auto} : CI pipelines, TypeScript (bases+), Cypress/WebdriverIO/Appium (ramp) \\
+\textbf{Collab} : Agile/Scrum, Jira, docs, assertivit\'e bienveillante \\
+\textbf{Langues} : Fran\c{c}ais natif $\cdot$ Anglais C1
 }}\end{itemize}
 
 \section{Formation}
 \resumeSubHeadingListStart
-  \resumeSubheading{Grenoble INP -- Ensimag}{Grenoble}{Dipl\^ome d'ing\'enieur -- IA \& g\'enie logiciel}{2023 -- 2025}
+  \resumeSubheading{Grenoble INP -- Ensimag}{Grenoble}{Ing\'enieur -- IA \& g\'enie logiciel}{2023 -- 2025}
   \resumeSubheading{NASEY}{Yaound\'e}{Master G\'enie informatique \& IA (top 12\%)}{2019 -- 2024}
 \resumeSubHeadingListEnd
 \end{document}
