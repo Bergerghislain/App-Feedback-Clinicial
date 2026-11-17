@@ -1,0 +1,103 @@
+\documentclass[a4paper,10.5pt]{article}
+\usepackage[empty]{fullpage}\usepackage{titlesec}\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}\setlength{\footskip}{8pt}
+\addtolength{\oddsidemargin}{-0.48in}\addtolength{\evensidemargin}{-0.48in}\addtolength{\textwidth}{0.96in}
+\addtolength{\topmargin}{-0.48in}\addtolength{\textheight}{0.95in}
+\urlstyle{same}\raggedbottom\raggedright\setlength{\tabcolsep}{0in}
+\setlist[itemize]{leftmargin=0.15in, topsep=2pt, itemsep=2.8pt, parsep=0pt}
+\titleformat{\section}{\vspace{5pt}\scshape\raggedright\large}{}{0em}{}[\titlerule \vspace{3pt}]
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{\vspace{4pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1}&{#2}\\\textit{\small #3}&\textit{\small #4}\\\end{tabular*}\vspace{2pt}}
+\newcommand{\resumeProjectHeading}[2]{\vspace{2pt}\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small #1&#2\\\end{tabular*}\vspace{1pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.08in,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\begin{document}
+\begin{center}
+{\Huge \scshape Ghislain THEUBO}\\[3pt]
+\textbf{Backend Engineer -- Data Ingestion / APIs / Reliability}\\[3pt]
+\small Paris $\,|\,$ +33~6~82~86~62~79 $\,|\,$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com}\\[1pt]
+\href{https://www.linkedin.com/in/berger-ghislain}{linkedin.com/in/berger-ghislain} $\,|\,$ \href{https://github.com/Bergerghislain}{github.com/Bergerghislain}
+\end{center}
+
+\section{Profil}
+\small{
+Backend engineer orient\'e \textbf{ingestion de donn\'ees}, APIs et fiabilit\'e en production, avec une exp\'erience concr\`ete en
+\textbf{HealthTech / donn\'ees sensibles} (plateforme data Gustave Roussy). Je construis des services Python (FastAPI),
+des connecteurs d'int\'egration, des pipelines orchestr\'es et des APIs consomm\'ees par d'autres produits --- avec tests,
+CI/CD, monitoring et ownership des incidents. \`A l'aise en SQL/NoSQL, Docker, et usage quotidien d'outils IA (Claude/Cursor)
+avec validation humaine. Motiv\'e pour rejoindre la \textbf{squad Ingestion d'Implicity} et fiabiliser l'entr\'ee des donn\'ees
+de dispositifs cardiaques dans un chemin clinique critique (HDS, tra\c{c}abilit\'e).
+}
+
+\section{Atouts cl\'es}
+\small{
+\textbf{Python / FastAPI} $\cdot$ APIs \& int\'egration de sources externes $\cdot$ PostgreSQL / SQL $\cdot$
+Orchestration (Airflow) $\cdot$ Docker / CI/CD $\cdot$ Observabilit\'e \& incidents $\cdot$
+Donn\'ees de sant\'e / auditabilit\'e $\cdot$ TypeScript/Node (bases, mont\'ee rapide) $\cdot$
+FR natif / EN professionnel (TOEIC 950) $\cdot$ IA au quotidien avec craftsmanship
+}
+
+\section{Exp\'erience d\'etaill\'ee}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec -- Labo MICS}{Paris, France}
+    {Software Engineer (CDD) -- Research Data Platform (backend / ingestion / APIs)}{Jan.~2026 -- Sep.~2026}
+    \begin{itemize}
+      \resumeItem{\textbf{Backend data critique} : con\c{c}u et livr\'e des services \textbf{Python/FastAPI} pour ing\'erer, valider et exposer des donn\'ees de recherche clinique sensibles --- p\'erim\`etre proche d'une plateforme de t\'el\'esurveillance (fiabilit\'e, droits d'acc\`es, tra\c{c}abilit\'e).}
+      \resumeItem{\textbf{Int\'egration multi-sources} : branch\'e des flux provenant de syst\`emes h\'et\'erog\`enes ; normalisation, contr\^oles de sch\'ema, gestion des erreurs et reprises --- logique de connecteurs.}
+      \resumeItem{\textbf{APIs plateforme} : endpoints consomm\'es par front React et utilisateurs internes ; auth JWT, refresh, \textbf{RBAC}, validation stricte des payloads.}
+      \resumeItem{\textbf{Bases de donn\'ees} : mod\'elisation \textbf{PostgreSQL}, optimisation SQL (indexation, requ\^etes critiques $\sim$30\% plus rapides), int\'egrit\'e r\'ef\'erentielle et coh\'erence des jeux de donn\'ees.}
+      \resumeItem{\textbf{Prod \& qualit\'e} : tests, documentation, monitoring de base, diagnostic d'incidents ; culture audit trail (qui a trait\'e quoi, quand) dans un contexte r\'eglement\'e / GDPR-lourd.}
+      \resumeItem{\textbf{Produit} : collaboration \'etroite avec chercheurs/cliniciens pour transformer des besoins ambigus en sp\'ecs, crit\`eres d'acceptation et livraisons incr\'ementales.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE R\&D}{V\'elizy-Villacoublay, France}
+    {Software Engineer Intern -- Data Processing, APIs \& industrialisation}{Avr.~2025 -- Sep.~2025}
+    \begin{itemize}
+      \resumeItem{Pipelines \textbf{PySpark} (1~To+) : ingestion, nettoyage, transformation, enrichissement --- conception pour runs reproductibles et reprise sur erreur.}
+      \resumeItem{Services \textbf{FastAPI} exposant des r\'esultats \`a d'autres composants ; tests unitaires/int\'egration ($\sim$85\% couverture), docs, CI.}
+      \resumeItem{Gains mesurables ($\sim$35\% perf) via profiling et refactor ; pratique TDD-oriented et revues de code industrielles.}
+      \resumeItem{Habitude Git, d\'eploiement et suivi d'anomalies en environnement d'ing\'enierie structur\'e.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Shift Technology}{Paris, France}
+    {Software Engineer (CDI) -- backend plateforme / exploitation}{Sep.~2026 -- Aujourd'hui}
+    \begin{itemize}
+      \resumeItem{Services backend en production : d\'eploiement, tests, CI/CD, code reviews, modernisation et \textbf{gestion d'incidents}.}
+      \resumeItem{Usage intensif d'agents IA (Claude/Cursor) pour explorer, impl\'ementer et g\'en\'erer des tests --- avec revue syst\'ematique du diff et ownership final.}
+    \end{itemize}
+
+  \resumeSubheading
+    {CAMTEL}{Yaound\'e, Cameroun}
+    {Data Engineer Intern -- orchestration \& monitoring}{Juin 2023 -- Sep.~2023}
+    \begin{itemize}
+      \resumeItem{Orchestration \textbf{Airflow} de jobs r\'ecurrents ; dashboards de suivi ; r\'esolution d'\'echecs ; impact $\sim$20\% sur les co\^uts de maintenance.}
+    \end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Projets align\'es squad Ingestion}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{Connecteur / API d'int\'egration} $|$ \emph{Python, FastAPI, PostgreSQL, retries}}{}
+  \begin{itemize}\resumeItem{Service d'ingestion avec validation, idempotence basique, logs structur\'es et endpoint de statut --- esprit Temporal/workers.}\end{itemize}
+  \resumeProjectHeading{\textbf{Mont\'ee TypeScript / NestJS} $|$ \emph{Node.js, NestJS (apprentissage cibl\'e)}}{}
+  \begin{itemize}\resumeItem{Bases TypeScript/Node et patterns NestJS (modules, DI, controllers) pour converger rapidement vers la stack principale Implicity.}\end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Stack \& ramp-up Implicity}
+\begin{itemize}[leftmargin=0.08in,label={}]\small{\item{
+\textbf{Ma\^itrise} : Python, FastAPI, PostgreSQL/SQL, Docker, Git, CI/CD, tests, APIs, int\'egration data \\
+\textbf{En place / \`a renforcer} : TypeScript/NestJS, Temporal, RabbitMQ, Kubernetes, AWS, Grafana/Prometheus, MongoDB/MariaDB \\
+\textbf{Diff\'erenciant} : donn\'ees de sant\'e, tra\c{c}abilit\'e, fiabilit\'e clinique, IA craftsmanship
+}}\end{itemize}
+
+\section{Formation \& langues}
+\resumeSubHeadingListStart
+  \resumeSubheading{Grenoble INP -- Ensimag}{Grenoble}{Dipl\^ome d'ing\'enieur -- IA \& Data Science / g\'enie logiciel}{2023 -- 2025}
+  \resumeSubheading{\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{Yaound\'e}{Master G\'enie informatique \& IA (top 12\%)}{2019 -- 2024}
+\resumeSubHeadingListEnd
+\begin{itemize}[leftmargin=0.08in,label={}]\item \textbf{Fran\c{c}ais} natif $\cdot$ \textbf{Anglais} professionnel (TOEIC 950) $\cdot$ Espagnol B2\end{itemize}
+\end{document}

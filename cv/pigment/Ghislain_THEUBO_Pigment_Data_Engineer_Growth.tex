@@ -1,0 +1,162 @@
+\documentclass[letterpaper,10.5pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{8pt}
+
+\addtolength{\oddsidemargin}{-0.52in}
+\addtolength{\evensidemargin}{-0.52in}
+\addtolength{\textwidth}{1.04in}
+\addtolength{\topmargin}{-0.52in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlist[itemize]{leftmargin=0.15in, topsep=1.5pt, itemsep=2.4pt, parsep=0pt}
+
+\titleformat{\section}{\vspace{4pt}\scshape\raggedright\large}{}{0em}{}[\titlerule \vspace{2.5pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{3pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{1pt}
+}
+\newcommand{\resumeProjectHeading}[2]{%
+  \vspace{2pt}\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small #1 & #2 \\
+  \end{tabular*}\vspace{1pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.08in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\begin{document}
+
+\begin{center}
+  {\Huge \scshape Ghislain THEUBO} \\[3pt]
+  \textbf{Data Engineer -- Growth Team} \\[2pt]
+  \small Python $\cdot$ SQL $\cdot$ FastAPI/React $\cdot$ Data models $\cdot$ GenAI agents \\[3pt]
+  \small Paris $\,|\,$ +33~6~82~86~62~79 $\,|\,$
+  \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\[1pt]
+  \href{https://www.linkedin.com/in/berger-ghislain}{linkedin.com/in/berger-ghislain} $\,|\,$
+  \href{https://github.com/Bergerghislain}{github.com/Bergerghislain}
+\end{center}
+
+\section{Why Pigment Growth}
+\small{
+I build \textbf{internal data products} that non-technical teams actually use: reliable SQL models, \textbf{Python/FastAPI + React} apps,
+orchestration, and LLM/tool workflows with human-in-the-loop. That maps directly to Pigment Growth --- a product team inside Revenue
+shipping a GTM warehouse, internal apps (100+ weekly users), and \textbf{Newton}-style agents --- not one-off growth hacks.
+I prioritize impact, adoption and maintainability; I work fast with ownership, and I already use GenAI daily with a strong review bar.
+}
+
+\section{Mapped to the role}
+\small{
+\begin{tabular*}{0.97\textwidth}{@{}p{0.46\textwidth}@{\extracolsep{\fill}}p{0.48\textwidth}@{}}
+\textbf{Pigment asks} & \textbf{What I bring} \\
+Business-ready datasets (SFDC / HubSpot / Slack) & SQL modelling + APIs turning raw tables into trusted datasets \\
+Internal FastAPI / React apps & Shipped FastAPI + PostgreSQL + React/Vite for real users \\
+Newton / OpenAI Agent SDK tools & Tool-calling agent POCs + prompt/eval discipline \\
+GCP / BigQuery / Cloud Run / dbt & Strong Python/SQL + cloud (Azure); fast GCP/dbt ramp \\
+Autonomy, reviews, CI, architecture & Prod ownership, reviews, CI/CD, refactor for reliability \\
+\end{tabular*}
+}
+
+\section{Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec -- MICS Lab}{Paris, France}
+    {Software Engineer (CDD) -- Internal data platform (closest to Growth apps)}{Jan 2026 -- Sept 2026}
+    \begin{itemize}
+      \resumeItem{\textbf{Internal product, not a script}: designed and shipped a \textbf{FastAPI + PostgreSQL + React/Vite} platform so multidisciplinary users could explore data and take action --- same loop as Pigment's 20+ internal sub-apps.}
+      \resumeItem{\textbf{Business-ready data models}: transformed raw/operational tables into clean, documented datasets with validation, integrity checks and clear definitions owned end-to-end.}
+      \resumeItem{\textbf{APIs that power tools}: JWT auth, \textbf{RBAC}, payload validation, versioned endpoints consumed by UI and workflows; optimized critical SQL reads ($\sim$30\% faster via indexing/query design).}
+      \resumeItem{\textbf{Adoption \& feedback}: ran workshops with end users, prioritized friction, shipped increments, wrote docs --- treated the platform as a product with real stakeholders.}
+      \resumeItem{\textbf{Governance}: sensitive data, auditability, access control --- habits that transfer when partnering with RevOps / Data / Security on GTM systems.}
+      \resumeItem{\textbf{Delivery craft}: Docker packaging, GitHub Actions CI, structured logging, incident diagnosis and hardening after failures.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Shift Technology}{Paris, France}
+    {Software Engineer (CDI) -- Platform / production ownership}{Sept 2026 -- Present}
+    \begin{itemize}
+      \resumeItem{Ship and maintain production backend services in a B2B SaaS: reviews, CI/CD, monitoring mindset, incremental delivery under quality gates.}
+      \resumeItem{Cloud/data patterns on \textbf{Azure} (APIs, messaging/Service Bus, Cosmos DB) + \textbf{Terraform} awareness --- transferable to Pigment's GCP / Cloud Run / terraformed infra.}
+      \resumeItem{Daily GenAI usage (Claude/Cursor) for exploration, implementation and tests --- with systematic human review of every diff before merge.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE R\&D}{V\'elizy, France}
+    {Software Engineer Intern -- Large-scale data transforms \& APIs}{April 2025 -- Sept 2025}
+    \begin{itemize}
+      \resumeItem{Built \textbf{PySpark}/SQL pipelines on \textbf{1TB+} datasets (ingest $\rightarrow$ clean $\rightarrow$ transform $\rightarrow$ enrich) with reproducible, recoverable runs.}
+      \resumeItem{Industrialized with unit/integration tests ($\sim$85\% coverage), docs and $\sim$35\% runtime gains; exposed results via \textbf{FastAPI}.}
+      \resumeItem{Agile collaboration with product \& data engineering --- requirements $\rightarrow$ measurable delivery.}
+    \end{itemize}
+
+  \resumeSubheading
+    {CAMTEL}{Yaound\'e, Cameroon}
+    {Data Engineer Intern -- Ops enablement (Airflow)}{June 2023 -- Sept 2023}
+    \begin{itemize}
+      \resumeItem{Orchestrated \textbf{Airflow} ETL jobs and dashboards for non-technical operators; replaced manual follow-ups with scheduled, observable workflows ($\sim$20\% maintenance cost impact).}
+      \resumeItem{Translated field pain into metrics and automations --- Growth enablement mindset (Sales/Marketing ops analogue).}
+    \end{itemize}
+
+\resumeSubHeadingListEnd
+
+\section{Projects -- Growth / Newton direction}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{Tool-using GTM-style agent (Newton practice)} $|$ \emph{Python, LLM APIs, tools, eval}}{Personal}
+  \begin{itemize}
+    \resumeItem{Modular agent with tools (SQL lookup, structured extraction, summarize) --- prompt iteration, regression checks, human gate before trusting outputs (mirrors OpenAI Agent SDK patterns).}
+  \end{itemize}
+  \resumeProjectHeading{\textbf{Mini warehouse models + FastAPI surface} $|$ \emph{SQL, Python, dbt-style layers}}{Personal}
+  \begin{itemize}
+    \resumeItem{Layered transforms (raw $\rightarrow$ staging $\rightarrow$ business-ready) with tests; APIs that let operators query and act --- sketch of BigQuery/dbt + Cloud Run style delivery.}
+  \end{itemize}
+  \resumeProjectHeading{\textbf{CRM-oriented enrichment POC} $|$ \emph{Python, GenAI classify/clean}}{Personal}
+  \begin{itemize}
+    \resumeItem{Clean/categorize contact \& account fields at scale with prompts + validation --- aligned with GTM data quality feeding Salesforce/HubSpot-style systems.}
+  \end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.08in, label={}]
+\small{\item{
+\textbf{Core (strong)}: Python, SQL, FastAPI, PostgreSQL, React/Vite, Git, Docker, CI/CD (GitHub Actions), pytest \\
+\textbf{Data}: modelling for business-ready datasets, ETL/ELT, Airflow, PySpark; \textbf{dbt / BigQuery / GCP Cloud Run} -- active ramp \\
+\textbf{Cloud}: Azure production patterns; Terraform awareness; GCP (Cloud Functions / BigQuery / Cloud Tasks) -- fast transfer \\
+\textbf{GenAI}: prompting, tool-based agents, evaluation / human-in-the-loop; daily AI craftsmanship \\
+\textbf{Working style}: autonomy, prioritization, code reviews, cross-functional delivery with Sales/ops-style users
+}}
+\end{itemize}
+
+\section{Education \& Languages}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP -- Ensimag}{Grenoble, France}
+    {Engineering Degree -- AI \& Data Science / Software Engineering}{2023 -- 2025}
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e (NASEY)}{Yaound\'e}
+    {Master's -- Computer Engineering \& AI (Top 12\%)}{2019 -- 2024}
+\resumeSubHeadingListEnd
+\begin{itemize}[leftmargin=0.08in, label={}]
+\item \textbf{French} native $\cdot$ \textbf{English} professional (TOEIC 950) --- Pigment bilingual OK $\cdot$ Spanish B2
+\end{itemize}
+
+\end{document}

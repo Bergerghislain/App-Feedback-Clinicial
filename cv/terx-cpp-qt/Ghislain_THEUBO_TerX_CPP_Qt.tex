@@ -1,0 +1,106 @@
+\documentclass[a4paper,10.5pt]{article}
+\usepackage[empty]{fullpage}\usepackage{titlesec}\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}\setlength{\footskip}{8pt}
+\addtolength{\oddsidemargin}{-0.48in}\addtolength{\evensidemargin}{-0.48in}\addtolength{\textwidth}{0.96in}
+\addtolength{\topmargin}{-0.48in}\addtolength{\textheight}{0.95in}
+\urlstyle{same}\raggedbottom\raggedright\setlength{\tabcolsep}{0in}
+\setlist[itemize]{leftmargin=0.15in, topsep=1.2pt, itemsep=2.2pt, parsep=0pt}
+\titleformat{\section}{\vspace{3.5pt}\scshape\raggedright\large}{}{0em}{}[\titlerule \vspace{2pt}]
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{\vspace{2.5pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1}&{#2}\\\textit{\small #3}&\textit{\small #4}\\\end{tabular*}\vspace{1pt}}
+\newcommand{\resumeProjectHeading}[2]{\vspace{1.5pt}\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small #1&#2\\\end{tabular*}\vspace{1pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.08in,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\begin{document}
+\begin{center}
+{\Huge \scshape Ghislain THEUBO}\\[2pt]
+\textbf{D\'eveloppeur Logiciel -- C++ / Qt / Python / Environnement M\'edical}\\[2pt]
+\small Levallois / Paris $\,|\,$ +33~6~82~86~62~79 $\,|\,$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com}\\[1pt]
+\href{https://www.linkedin.com/in/berger-ghislain}{linkedin.com/in/berger-ghislain} $\,|\,$ Bac+5 Ensimag $\,|\,$ R\'ef. TerX 2750182 $\,|\,$ Cible 45--50k
+\end{center}
+
+\section{Profil}
+\small{
+Ing\'enieur logiciel Bac+5, rigoureux, \`a l'aise dans des environnements \textbf{m\'edicaux / exigeants}
+o\`u qualit\'e, tra\c{c}abilit\'e et fiabilit\'e comptent. Socle fort en \textbf{Python} (outils, APIs, tests),
+bases solides \textbf{C/C++} et OO, UI moderne (React) transf\'erable \`a \textbf{Qt}, Git, Windows/Linux.
+Motiv\'e pour rejoindre via TerX une \'equipe logiciel applicatif m\'edical : features C++, UI Qt,
+scripts Python, docs, tests unitaires/int\'egration, revues, collaboration validation/syst\`eme/produit.
+}
+
+\section{Mapping offre (r\'ef. 2750182)}
+\small{
+\begin{tabular*}{0.97\textwidth}{@{}p{0.40\textwidth}@{\extracolsep{\fill}}p{0.54\textwidth}@{}}
+\textbf{Attendu} & \textbf{Preuves} \\
+C++ d\'eveloppement & Bases C/C++ + OO prod (C\#) + ramp Qt/C++ \\
+Qt Widgets / Quick & UI engineering (React) + mont\'ee Qt cibl\'ee \\
+Python outils / scripts & Fort (FastAPI, automation, tests) \\
+Besoins $\rightarrow$ conception $\rightarrow$ docs & Specs, architecture, documentation \\
+Tests, int\'egration, debug & $\sim$85\% couverture ; ownership bugs \\
+Revues \& am\'elioration continue & CI, code review, dette technique \\
+Collab validation / syst\`eme / produit & Ateliers pluridisciplinaires sant\'e \\
+Qualit\'e \& tra\c{c}abilit\'e m\'edicale & Donn\'ees sensibles Gustave Roussy \\
+\end{tabular*}
+}
+
+\section{Exp\'erience d\'etaill\'ee}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec -- MICS}{Paris}
+    {Software Engineer (CDD) -- applicatif exigeant / sant\'e}{Jan.~2026 -- Sep.~2026}
+    \begin{itemize}
+      \resumeItem{\textbf{Conception \& d\'eveloppement} de fonctionnalit\'es applicatives (back Python + UI React) \`a partir de besoins fonctionnels/techniques.}
+      \resumeItem{\textbf{Documentation technique} : specs, acceptances, docs d\'ev ; tra\c{c}abilit\'e des changements.}
+      \resumeItem{\textbf{Tests unitaires/int\'egration}, d\'ebogage, correction d'anomalies ; CI Git + Docker.}
+      \resumeItem{\textbf{Python} intensif pour services et outils ; SQL ; rigueur sur donn\'ees de sant\'e.}
+      \resumeItem{Collaboration avec m\'etier/validation-like users ; UI claire et robuste --- transfert mental vers Qt.}
+    \end{itemize}
+  \resumeSubheading
+    {Shift Technology}{Paris}
+    {Software Engineer (CDI) -- OO, revues, maintenance}{Sep.~2026 -- Aujourd'hui}
+    \begin{itemize}
+      \resumeItem{D\'eveloppement OO en production (\textbf{C\#}/.NET) : patterns proches C++ moderne (RAII mindset, encapsulation, tests).}
+      \resumeItem{Revues de code, am\'elioration continue, Git, diagnostic d'anomalies, qualit\'e livr\'ee.}
+    \end{itemize}
+  \resumeSubheading
+    {Dassault Syst\`emes}{V\'elizy}
+    {Software Engineer Intern -- industrialisation Windows/Linux-like}{Avr.~2025 -- Sep.~2025}
+    \begin{itemize}
+      \resumeItem{Python tooling + APIs ; tests $\sim$85\% ; +35\% perf ; docs ; environnement industriel structur\'e.}
+    \end{itemize}
+  \resumeSubheading
+    {Inria}{Grenoble}
+    {Research Intern -- C/syst\`emes, validation}{Mai--Ao\^ut 2024}
+    \begin{itemize}
+      \resumeItem{D\'eveloppement sous contraintes, pratique \textbf{C}/syst\`eme, validation rigoureuse, Linux --- socle C++.}
+    \end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Projets -- C++ / Qt / Python m\'edical}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{Prototype UI Qt + logique C++} $|$ \emph{Qt Widgets/Quick ramp, Git}}{}
+  \begin{itemize}\resumeItem{Mont\'ee active Qt (widgets/QML) branch\'ee sur logique C++ ; patterns UI desktop m\'edical.}\end{itemize}
+  \resumeProjectHeading{\textbf{Outils Python de test/automatisation} $|$ \emph{scripts, CI}}{}
+  \begin{itemize}\resumeItem{Scripts de v\'erification et helpers autour d'un applicatif --- r\^ole Python de l'offre.}\end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Comp\'etences}
+\begin{itemize}[leftmargin=0.08in,label={}]\small{\item{
+\textbf{Langages} : Python (fort), C/C++ (bases + mont\'ee), C\# OO prod, SQL, JavaScript \\
+\textbf{UI} : React (fort) ; \textbf{Qt} Widgets/Quick (mont\'ee priorit\'e poste) \\
+\textbf{Qualit\'e} : tests unitaires/int\'egration, Git, revues, docs, debug \\
+\textbf{OS} : Linux ; Windows (cible poste) \\
+\textbf{Soft} : rigueur, analyse, collaboratif, impact m\'edical
+}}\end{itemize}
+
+\section{Formation}
+\resumeSubHeadingListStart
+  \resumeSubheading{Grenoble INP -- Ensimag}{Grenoble}{Dipl\^ome d'ing\'enieur -- IA \& g\'enie logiciel / syst\`emes}{2023 -- 2025}
+  \resumeSubheading{NASEY}{Yaound\'e}{Master G\'enie informatique \& IA (top 12\%)}{2019 -- 2024}
+\resumeSubHeadingListEnd
+
+\vspace{3pt}
+\small{\textit{Note} : l'annonce mentionne 3--6 ans C++/Qt. Angle = Bac+5 + prod OO/Python + bases C + UI engineering, mont\'ee Qt/C++ assum\'ee pour 45--50k.}
+\end{document}

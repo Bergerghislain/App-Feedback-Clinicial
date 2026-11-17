@@ -1,0 +1,163 @@
+\documentclass[a4paper,10.5pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{8pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlist[itemize]{leftmargin=0.15in, topsep=1.5pt, itemsep=2.5pt, parsep=0pt}
+
+\titleformat{\section}{\vspace{4pt}\scshape\raggedright\large}{}{0em}{}[\titlerule \vspace{2.5pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{3pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{1pt}
+}
+\newcommand{\resumeProjectHeading}[2]{%
+  \vspace{2pt}\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small #1 & #2 \\
+  \end{tabular*}\vspace{1pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.08in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\begin{document}
+
+\begin{center}
+  {\Huge \scshape Ghislain THEUBO} \\[3pt]
+  \textbf{D\'eveloppeur Python -- FastAPI / SQL / Data / CI-CD} \\[2pt]
+  \small Paris / Puteaux $\,|\,$ +33~6~82~86~62~79 $\,|\,$
+  \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} \\[1pt]
+  \href{https://www.linkedin.com/in/berger-ghislain}{linkedin.com/in/berger-ghislain} $\,|\,$
+  \href{https://github.com/Bergerghislain}{github.com/Bergerghislain} $\,|\,$ Bac+5 Ensimag
+\end{center}
+
+\section{Profil -- pourquoi Finaxys}
+\small{
+D\'eveloppeur \textbf{Python} Bac+5, je con\c{c}ois des solutions performantes et \'evolutives autour de
+\textbf{FastAPI}, \textbf{SQL} et de traitements data/calculs complexes. J'ai livr\'e des services en production
+(plateforme critique Gustave Roussy, SaaS \textbf{InsurTech} Shift Technology) avec CI/CD, tests et collaboration
+m\'etier/IT en Agile. \`A l'aise sur microservices, cloud et frameworks web Python (FastAPI ma\^itrise ;
+Django/Flask mont\'ee rapide). Motiv\'e pour rejoindre Finaxys et intervenir chez des clients
+\textbf{Banque / Finance / Assurance} (BNP, SG, AXA\ldots) sur des projets data-intensifs --- anglais courant (TOEIC 950).
+}
+
+\section{Alignement offre Apec 179509804W}
+\small{
+\begin{tabular*}{0.97\textwidth}{@{}p{0.42\textwidth}@{\extracolsep{\fill}}p{0.52\textwidth}@{}}
+\textbf{Finaxys attend} & \textbf{Ce que je prouve} \\
+Python + FastAPI / Flask / Django & FastAPI en prod ; Flask/Django bases + ramp \\
+SQL \& environnements data/calculs & PostgreSQL avanc\'e, PySpark 1~To+, Pandas/NumPy \\
+Microservices \& cloud & Services API, Docker, Azure patterns \\
+CI/CD \& Agile m\'etier/IT & GitHub Actions, revues, ateliers m\'etier \\
+Banque / Finance / Assurance & InsurTech Shift + app\'etit finance de march\'e \\
+Bac+5 \& anglais & Ensimag + TOEIC 950 \\
+\end{tabular*}
+}
+
+\section{Exp\'erience d\'etaill\'ee}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec -- Labo MICS}{Paris}
+    {Software Engineer (CDD) -- Python / FastAPI / SQL}{Jan.~2026 -- Sep.~2026}
+    \begin{itemize}
+      \resumeItem{\textbf{Con\c{c}u et d\'evelopp\'e} des services \textbf{Python/FastAPI} sur mesure : APIs REST, validation, auth JWT/RBAC, documentation --- solutions \'evolutives pour des utilisateurs m\'etier.}
+      \resumeItem{\textbf{SQL \& performance} : mod\'elisation PostgreSQL, optimisation de requ\^etes/index ($\sim$30\% lectures critiques plus rapides), int\'egrit\'e des donn\'ees.}
+      \resumeItem{Environnement \textbf{riche en donn\'ees} sensibles : qualit\'e, tra\c{c}abilit\'e, logs --- exigences proches grands comptes r\'eglement\'es.}
+      \resumeItem{\textbf{CI/CD} : Docker, GitHub Actions, tests, d\'eploiements ; collaboration Agile avec m\'etier et IT.}
+      \resumeItem{Front React consommateur des APIs --- vision bout-en-bout utile en mission client.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Shift Technology}{Paris}
+    {Software Engineer (CDI) -- SaaS InsurTech (Assurance)}{Sep.~2026 -- Aujourd'hui}
+    \begin{itemize}
+      \resumeItem{D\'eveloppement et industrialisation de services en production pour un \'editeur \textbf{Assurance / InsurTech} --- contexte proche des clients Finaxys (AXA, Malakoff\ldots).}
+      \resumeItem{Qualit\'e, \textbf{CI/CD}, revues de code, diagnostic d'incidents, modernisation ; culture Agile grand compte.}
+      \resumeItem{Usage d'IA (Claude/Cursor) pour acc\'el\'erer le delivery avec ownership final du code.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE R\&D}{V\'elizy}
+    {Software Engineer Intern -- data, calculs \& APIs Python}{Avr.~2025 -- Sep.~2025}
+    \begin{itemize}
+      \resumeItem{Pipelines \textbf{PySpark}/SQL sur \textbf{1~To+} : ingestion, nettoyage, transformation, enrichissement --- calculs complexes \& data engineering.}
+      \resumeItem{Services \textbf{FastAPI} exposant les r\'esultats ; tests unitaires/int\'egration ($\sim$85\% couverture) ; +35\% perf sur un module.}
+      \resumeItem{\textbf{ML} : scikit-learn, MLflow, validation A/B --- plus Data/ML recherch\'e par Finaxys.}
+      \resumeItem{Pandas / NumPy au quotidien pour l'analyse et la pr\'eparation de jeux de donn\'ees.}
+    \end{itemize}
+
+  \resumeSubheading
+    {CAMTEL}{Yaound\'e}
+    {Data Engineer Intern -- Python \& orchestration}{Juin 2023 -- Sep.~2023}
+    \begin{itemize}
+      \resumeItem{Jobs \textbf{Python} orchestr\'es avec Airflow, SQL, dashboards ; impact $\sim$20\% sur les co\^uts de maintenance.}
+    \end{itemize}
+
+\resumeSubHeadingListEnd
+
+\section{Projets -- stack Finaxys}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{API microservice FastAPI} $|$ \emph{Python, FastAPI, PostgreSQL, Docker, CI}}{}
+  \begin{itemize}
+    \resumeItem{Service d\'eployable, OpenAPI, tests, pipeline CI --- pattern microservices cloud-ready.}
+  \end{itemize}
+  \resumeProjectHeading{\textbf{Flask / Django ramp} $|$ \emph{Python web frameworks}}{}
+  \begin{itemize}
+    \resumeItem{Bases Flask (apps l\'eg\`eres) et Django (ORM, admin) pour converger vite vers la stack client.}
+  \end{itemize}
+  \resumeProjectHeading{\textbf{Data \& calculs} $|$ \emph{Pandas, NumPy, SQL, PySpark}}{}
+  \begin{itemize}
+    \resumeItem{Notebooks et scripts de calcul/analyse ; pr\'epare les missions data-intensives finance.}
+  \end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Comp\'etences techniques}
+\begin{itemize}[leftmargin=0.08in, label={}]
+\small{\item{
+\textbf{Python} : FastAPI (fort), Flask/Django (bases + mont\'ee), packaging, typing \\
+\textbf{Data} : SQL/PostgreSQL, Pandas, NumPy, PySpark, Airflow ; ML (scikit-learn, MLflow) \\
+\textbf{Architecture} : APIs REST, microservices-minded, Docker, cloud (Azure notions) \\
+\textbf{Qualit\'e} : CI/CD (GitHub Actions), tests, revues, docs \\
+\textbf{M\'ethodes} : Agile, collaboration m\'etier/IT, anglais professionnel
+}}
+\end{itemize}
+
+\section{Formation \& langues}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP -- Ensimag}{Grenoble}
+    {Dipl\^ome d'ing\'enieur -- IA \& Data Science / g\'enie logiciel (Bac+5)}{2023 -- 2025}
+  \resumeSubheading
+    {NASEY}{Yaound\'e}
+    {Master G\'enie informatique \& IA (top 12\%)}{2019 -- 2024}
+\resumeSubHeadingListEnd
+\begin{itemize}[leftmargin=0.08in, label={}]
+\item \textbf{Fran\c{c}ais} natif $\cdot$ \textbf{Anglais} courant / professionnel (TOEIC 950)
+\end{itemize}
+
+\end{document}
