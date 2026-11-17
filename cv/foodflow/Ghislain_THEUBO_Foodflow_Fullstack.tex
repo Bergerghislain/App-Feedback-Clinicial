@@ -1,0 +1,104 @@
+\documentclass[a4paper,10.5pt]{article}
+\usepackage[empty]{fullpage}\usepackage{titlesec}\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}\setlength{\footskip}{8pt}
+\addtolength{\oddsidemargin}{-0.5in}\addtolength{\evensidemargin}{-0.5in}\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.5in}\addtolength{\textheight}{1.0in}
+\urlstyle{same}\raggedbottom\raggedright\setlength{\tabcolsep}{0in}
+\setlist[itemize]{leftmargin=0.15in, topsep=1.5pt, itemsep=2.5pt, parsep=0pt}
+\titleformat{\section}{\vspace{4pt}\scshape\raggedright\large}{}{0em}{}[\titlerule \vspace{2.5pt}]
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{\vspace{3pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1}&{#2}\\\textit{\small #3}&\textit{\small #4}\\\end{tabular*}\vspace{1pt}}
+\newcommand{\resumeProjectHeading}[2]{\vspace{2pt}\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small #1&#2\\\end{tabular*}\vspace{1pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.08in,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\begin{document}
+\begin{center}
+{\Huge \scshape Ghislain THEUBO}\\[3pt]
+\textbf{D\'eveloppeur Fullstack -- React / Python / Produit / Data}\\[2pt]
+\small Paris $\,|\,$ +33~6~82~86~62~79 $\,|\,$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com}\\[1pt]
+\href{https://www.linkedin.com/in/berger-ghislain}{linkedin.com/in/berger-ghislain} $\,|\,$ \href{https://github.com/Bergerghislain}{github.com/Bergerghislain}
+\end{center}
+
+\section{Profil -- pourquoi Foodflow}
+\small{
+Ing\'enieur Ensimag, fullstack pragmatique : je livre des features de bout en bout
+(\textbf{React} + \textbf{Python}), je parle produit avec les m\'etiers, et j'utilise
+\textbf{Claude / Cursor} au quotidien avec une revue humaine stricte.
+Chez Gustave Roussy j'ai construit une plateforme interne FastAPI + React utilis\'ee
+par des \'equipes non techniques ; j'ai aussi touch\'e data (SQL, transformations, Airflow)
+--- exactement le p\'erim\`etre Foodflow (back-office / apps client + Python + dbt/BigQuery).
+Motiv\'e pour scaler la tech restaurants aupr\`es du CTO, avec autonomie et impact terrain.
+}
+
+\section{Alignement offre}
+\small{
+\textbf{React (web / back-office)} : oui $\cdot$
+\textbf{Python backend} : oui (FastAPI $\rightarrow$ Odoo rapide) $\cdot$
+\textbf{Vision produit} : oui $\cdot$
+\textbf{Claude/Cursor} : usage quotidien $\cdot$
+\textbf{Data (SQL / dbt / BQ)} : bases solides + mont\'ee $\cdot$
+React Native / Next : bases JS + mont\'ee cibl\'ee
+}
+
+\section{Exp\'erience d\'etaill\'ee}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec -- Labo MICS}{Paris}
+    {Software Engineer (CDD) -- plateforme fullstack produit}{Jan.~2026 -- Sep.~2026}
+    \begin{itemize}
+      \resumeItem{\textbf{Fullstack livr\'e} : application \textbf{Python/FastAPI + PostgreSQL + React/Vite} pour des utilisateurs m\'etier --- auth JWT, RBAC, validation API, UI pour explorer et agir sur la donn\'ee.}
+      \resumeItem{\textbf{Casquette produit} : ateliers avec chercheurs/ops, reformulation des besoins, crit\`eres d'acceptation, priorit\'es, it\'erations courtes jusqu'\`a l'adoption.}
+      \resumeItem{\textbf{Process \& outils} : cartographie de workflows manuels, automatisation via APIs et jobs, documentation claire pour handoff.}
+      \resumeItem{\textbf{SQL \& fiabilit\'e} : mod\`eles PostgreSQL, indexation ($\sim$30\% lectures critiques plus rapides), int\'egrit\'e des donn\'ees, Docker + CI GitHub Actions.}
+      \resumeItem{Esprit startup interne : petite \'equipe, multi-sujets, force de proposition sur UX technique et dette.}
+    \end{itemize}
+  \resumeSubheading
+    {Shift Technology}{Paris}
+    {Software Engineer (CDI) -- backend SaaS + craft IA}{Sep.~2026 -- Aujourd'hui}
+    \begin{itemize}
+      \resumeItem{Services en production : qualit\'e, CI/CD, revues, modernisation ; collaboration produit/tech.}
+      \resumeItem{\textbf{IA au quotidien} (Claude/Cursor) pour explorer, coder et tester --- ownership final syst\'ematique du diff (culture Foodflow).}
+    \end{itemize}
+  \resumeSubheading
+    {Dassault Syst\`emes -- 3DEXPERIENCE R\&D}{V\'elizy}
+    {Software Engineer Intern -- APIs, data \& qualit\'e}{Avr.~2025 -- Sep.~2025}
+    \begin{itemize}
+      \resumeItem{Pipelines data \textbf{PySpark}/SQL (1~To+) + services \textbf{FastAPI} ; tests $\sim$85\% couverture ; +35\% perf sur un module.}
+      \resumeItem{Habitudes clean code, TDD-oriented, docs --- pragmatisme industriel.}
+    \end{itemize}
+  \resumeSubheading
+    {CAMTEL}{Yaound\'e}
+    {Data Engineer Intern -- automatisation m\'etier}{Juin 2023 -- Sep.~2023}
+    \begin{itemize}
+      \resumeItem{\textbf{Airflow} + dashboards pour op\'erateurs non techniques ; impact $\sim$20\% co\^uts maintenance --- analogie ops restaurants / marge.}
+    \end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Projets align\'es Foodflow}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{Back-office style features} $|$ \emph{React, FastAPI, PostgreSQL}}{}
+  \begin{itemize}\resumeItem{CRUD m\'etier, droits, \'ecrans op\'erationnels, feedback utilisateurs --- esprit Next/back-office Foodflow.}\end{itemize}
+  \resumeProjectHeading{\textbf{Mini stack data} $|$ \emph{SQL, Python, dbt-style layers}}{}
+  \begin{itemize}\resumeItem{Couches raw $\rightarrow$ business-ready + m\'etriques ; pr\'epare dbt/BigQuery/Metabase.}\end{itemize}
+  \resumeProjectHeading{\textbf{Mobile-ready JS} $|$ \emph{React, notions React Native}}{}
+  \begin{itemize}\resumeItem{Composants React solides ; mont\'ee React Native / Next sur le poste.}\end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Comp\'etences}
+\begin{itemize}[leftmargin=0.08in,label={}]\small{\item{
+\textbf{Front} : React, JavaScript/TypeScript, Vite ; Next / React Native (mont\'ee) \\
+\textbf{Back} : Python (FastAPI), SQL/PostgreSQL ; Odoo (mont\'ee cibl\'ee) \\
+\textbf{Data} : SQL avanc\'e, Airflow, PySpark ; dbt / BigQuery / Metabase (ramp) \\
+\textbf{Craft} : Claude, Cursor, Git, Docker, CI/CD, tests, docs \\
+\textbf{Soft} : produit, autonomie, relationnel, multi-sujets
+}}\end{itemize}
+
+\section{Formation \& langues}
+\resumeSubHeadingListStart
+  \resumeSubheading{Grenoble INP -- Ensimag}{Grenoble}{Dipl\^ome d'ing\'enieur -- IA \& Data Science / g\'enie logiciel}{2023 -- 2025}
+  \resumeSubheading{NASEY}{Yaound\'e}{Master G\'enie informatique \& IA (top 12\%)}{2019 -- 2024}
+\resumeSubHeadingListEnd
+\begin{itemize}[leftmargin=0.08in,label={}]\item \textbf{Fran\c{c}ais} natif $\cdot$ \textbf{Anglais} professionnel (TOEIC 950)\end{itemize}
+\end{document}
