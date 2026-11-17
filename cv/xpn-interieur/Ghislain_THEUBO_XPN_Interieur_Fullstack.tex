@@ -1,0 +1,99 @@
+\documentclass[a4paper,10.5pt]{article}
+\usepackage[empty]{fullpage}\usepackage{titlesec}\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}\setlength{\footskip}{8pt}
+\addtolength{\oddsidemargin}{-0.5in}\addtolength{\evensidemargin}{-0.5in}\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.5in}\addtolength{\textheight}{1.0in}
+\urlstyle{same}\raggedbottom\raggedright\setlength{\tabcolsep}{0in}
+\setlist[itemize]{leftmargin=0.15in, topsep=1.5pt, itemsep=2.4pt, parsep=0pt}
+\titleformat{\section}{\vspace{4pt}\scshape\raggedright\large}{}{0em}{}[\titlerule \vspace{2.5pt}]
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{\vspace{3pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1}&{#2}\\\textit{\small #3}&\textit{\small #4}\\\end{tabular*}\vspace{1pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.08in,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\begin{document}
+\begin{center}
+{\Huge \scshape Ghislain THEUBO}\\[3pt]
+\textbf{D\'eveloppeur Fullstack -- APIs / Qualit\'e / S\'ecurit\'e / CI-CD}\\[2pt]
+\small Paris / Issy $\,|\,$ +33~6~82~86~62~79 $\,|\,$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com}\\[1pt]
+\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $\,|\,$ \href{https://github.com/Bergerghislain}{GitHub} $\,|\,$ Bac+5 Ensimag
+\end{center}
+
+\section{Profil}
+\small{
+Ing\'enieur Bac+5 (Ensimag) avec exp\'erience de r\'ealisation de projets informatiques \`a fort enjeu
+(plateforme data sensible Gustave Roussy, services SaaS en production). Je con\c{c}ois des modules
+\textbf{backend + front React}, des \textbf{APIs REST}, du SQL avanc\'e, avec culture \textbf{qualit\'e}
+(tests, revues, CI/CD), documentation as code et exigences de s\'ecurit\'e / tra\c{c}abilit\'e.
+Candidature au programme \textbf{XPN} (ANFSI) : je vise l'ownership de composants sur une cha\^ine
+everything-as-code, avec mont\'ee rapide et assum\'ee sur \textbf{Java/Spring Boot} (bases Java + OO
+solides en C\#/.NET/Python) et approfondissement DevSecOps / Linux.
+}
+
+\section{Ce que j'apporte \`a XPN}
+\small{
+\begin{tabular*}{0.97\textwidth}{@{}p{0.46\textwidth}@{\extracolsep{\fill}}p{0.48\textwidth}@{}}
+\textbf{Attendu XPN} & \textbf{Preuves} \\
+Modules front + back, ownership & Fullstack FastAPI + React ; ownership features \\
+APIs REST, SQL, migrations & APIs versionn\'ees, PostgreSQL, indexation \\
+CI/CD, tests, qualit\'e & GitHub Actions, $\sim$85\% couverture, revues \\
+S\'ecurit\'e / donn\'ees sensibles & JWT/RBAC, auditabilit\'e HealthTech \\
+Docs as code, Agile & Markdown/LaTeX, rituels, handoffs \\
+Java/Spring, Linux, Kafka & Ramp structur\'e (bases + transfert OO) \\
+\end{tabular*}
+}
+
+\section{Exp\'erience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Gustave Roussy \& CentraleSup\'elec -- MICS}{Paris}
+    {Software Engineer (CDD) -- plateforme critique / donn\'ees sensibles}{Jan.~2026 -- Sep.~2026}
+    \begin{itemize}
+      \resumeItem{Con\c{c}u et livr\'e des modules \textbf{backend Python/FastAPI} et \textbf{front React/Vite} sur une plateforme \`a fort enjeu (donn\'ees de recherche/sant\'e).}
+      \resumeItem{\textbf{APIs REST} document\'ees, auth JWT, \textbf{RBAC}, validation stricte ; ownership qualit\'e / performance / \'evolutivit\'e du p\'erim\`etre.}
+      \resumeItem{\textbf{SQL avanc\'e} : mod\'elisation PostgreSQL, optimisation requ\^etes/index ($\sim$30\% lectures critiques), coh\'erence et migrations ma\^itris\'ees.}
+      \resumeItem{Exigences proches s\'ecu publique : contr\^ole d'acc\`es, tra\c{c}abilit\'e, logs structur\'es, moindre privil\`ege.}
+      \resumeItem{CI (GitHub Actions), Docker, revues, documentation technique ; collaboration pluridisciplinaire (Agile).}
+    \end{itemize}
+  \resumeSubheading
+    {Shift Technology}{Paris}
+    {Software Engineer (CDI) -- services critiques SaaS}{Sep.~2026 -- Aujourd'hui}
+    \begin{itemize}
+      \resumeItem{D\'eveloppement et maintenance de services en production (C\#/.NET) : tests, \textbf{revues de code}, CI/CD, d\'eploiements, diagnostic d'incidents.}
+      \resumeItem{Culture industrialisation : standards, dette technique, secrets/configs, monitoring de base --- transfert DevSecOps.}
+      \resumeItem{OO professionnel (interfaces, DI, APIs) --- pont naturel vers \textbf{Java/Spring Boot}.}
+    \end{itemize}
+  \resumeSubheading
+    {Dassault Syst\`emes}{V\'elizy}
+    {Software Engineer Intern -- qualit\'e logicielle \& industrialisation}{Avr.~2025 -- Sep.~2025}
+    \begin{itemize}
+      \resumeItem{Strat\'egie de tests (unitaires/int\'egration, $\sim$85\% couverture), +35\% perf ; FastAPI, SQL, pipelines data.}
+      \resumeItem{Habitude de profilage, design patterns, documentation et livraison sous contraintes industrielles.}
+    \end{itemize}
+  \resumeSubheading
+    {Inria / environnements Linux}{Grenoble}
+    {Research Intern + pratique syst\`eme}{Mai--Ao\^ut 2024}
+    \begin{itemize}
+      \resumeItem{D\'eveloppement sous \textbf{Linux}, scripts, validation rigoureuse ; sensibilit\'e admin (services, droits, reproductibilit\'e Grid'5000).}
+    \end{itemize}
+\resumeSubHeadingListEnd
+
+\section{Comp\'etences techniques}
+\begin{itemize}[leftmargin=0.08in,label={}]\small{\item{
+\textbf{Ma\^itrise actuelle} : APIs REST, SQL/PostgreSQL, React, Python/FastAPI, C\#/.NET, Git, Docker, CI/CD, tests, docs (Markdown/LaTeX) \\
+\textbf{Cible XPN (mont\'ee active)} : Java, Spring Boot (MVC, Security, Data), TypeScript avanc\'e, GitLab CI, SonarQube, Linux hardening, Kafka/RabbitMQ \\
+\textbf{S\'ecurit\'e} : threat-aware design, secrets, chiffrement en transit (TLS), contr\^ole d'acc\`es, logs/audit --- approfondissement ANSSI sur le poste \\
+\textbf{M\'ethodes} : Agile/Scrum, revues, ownership composant, transmission aux juniors
+}}\end{itemize}
+
+\section{Formation}
+\resumeSubHeadingListStart
+  \resumeSubheading{Grenoble INP -- Ensimag}{Grenoble}{Dipl\^ome d'ing\'enieur -- IA \& g\'enie logiciel (Bac+5)}{2023 -- 2025}
+  \resumeSubheading{NASEY}{Yaound\'e}{Master G\'enie informatique \& IA (top 12\%)}{2019 -- 2024}
+\resumeSubHeadingListEnd
+\begin{itemize}[leftmargin=0.08in,label={}]\item \textbf{Fran\c{c}ais} natif $\cdot$ \textbf{Anglais} professionnel (TOEIC 950) --- docs \& \'changes techniques\end{itemize}
+
+\vspace{4pt}
+\small{\textit{Note candidature} : l'annonce vise un profil senior Java/Spring. Mon angle est Bac+5 + projets \`a fort enjeu + fullstack/prod/s\'ecu donn\'ees, avec plan de mont\'ee Spring assum\'e d\`es l'arriv\'ee.}
+\end{document}
