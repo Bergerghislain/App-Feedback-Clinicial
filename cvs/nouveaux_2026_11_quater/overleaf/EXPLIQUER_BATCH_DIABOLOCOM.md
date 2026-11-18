@@ -1,15 +1,15 @@
 # Expliquer — batch Diabolocom / D-EDGE / Dedalus / Loft / Galadrim / Reply / Sharp / Accenture
 
-| # | Offre | Fit | Angle CV | Priorité |
-|---|-------|-----|----------|----------|
-| 68 | **Diabolocom** Full Stack (Paris) | 3/5 | Gustave PostgreSQL+TS+ownership ; React/Node/Sequelize = montée ; ~3y stretch (apprentissage OK) | Haute |
-| 69 | **D-EDGE** SWE Digital Media | 3/5 | Shift C#/.NET + IA daily + Azure ; 4+ ans = stretch honnête | Moyenne |
-| 70 | **Dedalus** Node.js (Antony) | 3.5/5 | **Santé Gustave** + Angular + agents IA responsables ; Node = montée | Haute |
-| 71 | **Loft Orbital** Backend (Toulouse) | 3/5 | **CV anglais** ; Python FastAPI + system design ; mobilité Toulouse | Moyenne |
-| 72 | **Galadrim Renfort** (Senior 3+) | 2.5/5 | Ownership produit / startup energy ; ne pas se vendre Senior 3+ ans | Basse (stretch titre) |
-| 73 | **Reply** Junior Data Engineer | **4/5** | Python+SQL+pipelines Gustave ; Databricks montée | **Top** |
-| 74 | **Sharp DX** D365 F&O | 3.5/5 | C# Shift + SQL + posture consultant ; junior welcome | Haute |
-| 75 | **Accenture** Python/AWS (St-Herblain) | 3.5/5 | Python prod + cloud ; mobilité Nantes | Haute si OK Loire-Atlantique |
+| # | Offre | Fit (agents) | Angle CV | Prétentions | Priorité |
+|---|-------|--------------|----------|-------------|----------|
+| 68 | **Diabolocom** Full Stack (Paris) | 3/5 | Gustave PostgreSQL+TS+ownership ; React/Node/Sequelize = montée | **50–54 k€** | Haute |
+| 69 | **D-EDGE** SWE Digital Media | 3/5 | Shift C#/.NET + IA daily + Azure ; 4+ ans = stretch | 44–50 k€ | Moyenne |
+| 70 | **Dedalus** Node.js (Antony) | **3.5/5** | **Santé Gustave** + Angular + agents IA ; Node = montée | 42–48 k€ | Haute |
+| 71 | **Loft Orbital** Backend (Toulouse) | 2.5/5 | **CV anglais** ; Python ; OR/space = gap ; relocate Toulouse | equity + relocate | Basse–Moyenne |
+| 72 | **Galadrim Renfort** (Senior 3+) | **2/5** | Titre SWE (pas Senior) ; ownership ; barrière >3 ans | 42–46 k€ | Basse |
+| 73 | **Reply** Junior Data Engineer | **4/5** | Gustave → LIG → Shift ; Databricks montée | **40–43 k€** | **Top** |
+| 74 | **Sharp DX** D365 F&O | 3.5/5 | C# Shift + SQL + consultant ; D365 = formation | 38–44 k€ | Haute |
+| 75 | **Accenture** Python/AWS (St-Herblain) | 3.5/5 | Python prod ; AWS lab honnête ; mobilité Nantes | **38–42 k€** | Haute si OK 44 |
 
 ## Mapping expériences → postes
 - **Gustave Roussy** : Diabolocom, Dedalus (santé), Reply (data), Accenture (Python), Galadrim, Sharp (SQL/JS)
