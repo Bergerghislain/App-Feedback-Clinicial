@@ -1,0 +1,87 @@
+% OVERLEAF: New Project > Blank > coller ce fichier dans main.tex > pdfLaTeX
+% Offre: ChapsVision — Fullstack Software Engineer (Lille / Nancy)
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref,enumitem,titlesec}
+\hypersetup{hidelinks}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\titleformat{\section}{\bfseries\large\uppercase}{}{0em}{}[\vspace{1pt}\titlerule\vspace{3pt}]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+\setlist[itemize]{leftmargin=*,itemsep=1pt,topsep=1pt,parsep=0pt}
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Ghislain THEUBO}\\[2pt]
+{\large Ing\'enieur Fullstack --- C\# / .NET \& React}\\[3pt]
++33 6 82 86 62 79 $\cdot$
+\href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} $\cdot$
+\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $\cdot$
+\href{https://github.com/Bergerghislain}{GitHub}\\[1pt]
+Paris --- mobilit\'e \textbf{Lille} (prioritaire) ou Nancy $\cdot$ Hybride $\cdot$ Dispo imm\'ediate\\[1pt]
+\small Pr\'etentions : 40--43\,k€ brut/an $\cdot$ React + ASP.NET : oui
+\end{center}
+
+\section{Profil}
+Ing\'enieur logiciel Bac+5 (Grenoble INP -- Ensimag), d\'eveloppeur fullstack \`a l'aise backend et frontend, avec une forte exigence sur la qualit\'e du code, la fiabilit\'e et l'observabilit\'e. Exp\'erience en production sur \textbf{C\# / .NET / ASP.NET Core} (Shift Technology), APIs et interfaces TypeScript en environnement sensible (Gustave Roussy), culture tests / CI (Dassault Syst\`emes). Motiv\'e pour rejoindre le p\'ole Professional Services Forensic de ChapsVision : concevoir, faire \'evoluer et fiabiliser une solution logicielle \`a fort enjeu op\'erationnel.
+
+\section{Exp\'eriences professionnelles}
+\textbf{Shift Technology --- Platform Software Engineering} \hfill Paris, France\\
+\textit{Software Engineer (CDI) --- Backend C\# / .NET} \hfill Sept. 2026 -- Nov. 2026
+\begin{itemize}
+  \item Conception et d\'eveloppement de services backend et d'APIs REST haute performance en \textbf{C\# / .NET} pour une plateforme SaaS multi-\'equipes.
+  \item Contribution aux fondations plateforme : validation, contrats d'API, revues de code, livraisons incr\'ementales.
+  \item Travail sur Azure (stockage, messaging) ; mindset monitoring et ownership des livrables en production.
+  \item Collaboration quotidienne avec ing\'enieurs seniors ; documentation technique et standards d'\'equipe.
+\end{itemize}
+
+\textbf{Gustave Roussy \& CentraleSup\'elec MICS} \hfill Paris / Saclay\\
+\textit{Software Engineer (CDD) --- Fullstack APIs \& UI} \hfill Jan. 2026 -- Sept. 2026
+\begin{itemize}
+  \item D\'eveloppement d'APIs backend (Python/FastAPI) : authentification, validation, contr\^ole d'acc\`es (RBAC), \textbf{journalisation structur\'ee}.
+  \item Conception d'interfaces TypeScript (Angular) pour utilisateurs experts : formulaires complexes, listes, orchestration d'actions.
+  \item Optimisation SQL / PostgreSQL : indexation, requ\^etes critiques --- gain d'environ \textbf{30\,\%} sur les lectures sensibles.
+  \item Mise en place Docker, pipelines CI, documentation ; diagnostic d'incidents via logs (observabilit\'e / tra\c{c}abilit\'e).
+  \item Collaboration \'etroite avec experts m\'etier dans un contexte de donn\'ees sensibles (sant\'e / recherche).
+\end{itemize}
+
+\textbf{Dassault Syst\`emes --- 3DEXPERIENCE / 3DSwym R\&D} \hfill V\'elizy-Villacoublay\\
+\textit{Stagiaire Software Engineer --- Java / Spring} \hfill Mars 2025 -- Sept. 2025
+\begin{itemize}
+  \item Refonte compl\`ete d'un module collaboratif : analyse, conception, d\'eveloppement, tests, livraison.
+  \item Approche TDD : couverture de tests $\sim$\textbf{85\,\%} ; am\'elioration des performances d'environ \textbf{35\,\%}.
+  \item Ateliers avec product Champions (Agile / MoSCoW) ; revues de code et exigence de lisibilit\'e.
+\end{itemize}
+
+\textbf{INRIA Grenoble --- Humanlab} \hfill Montbonnot-Saint-Martin\\
+\textit{Stagiaire recherche --- syst\`emes temps r\'eel} \hfill Mai 2024 -- Ao\^ut 2024
+\begin{itemize}
+  \item D\'eveloppement C / FreeRTOS et outillage Python ; optimisation de latence ($\sim$\textbf{40\,\%}) ; validation utilisateurs.
+\end{itemize}
+
+\textbf{LIG --- Laboratoire d'Informatique de Grenoble} \hfill Grenoble\\
+\textit{Stagiaire infrastructure cloud} \hfill F\'evr. 2025 -- Mars 2025
+\begin{itemize}
+  \item Automatisation Linux / OpenStack ; mesures de performance ; culture DevOps et reproductibilit\'e.
+\end{itemize}
+
+\section{Formation}
+\textbf{Grenoble INP -- Ensimag} \hfill 2023 -- 2025\\
+Dipl\^ome d'ing\'enieur --- Syst\`emes d'information / G\'enie logiciel\\[2pt]
+\textbf{\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e} \hfill 2019 -- 2023\\
+Master G\'enie informatique --- Top 12\,\% de la promotion
+
+\section{Comp\'etences techniques}
+\textbf{Backend :} C\#, .NET 8, ASP.NET Core, REST, SQL (PostgreSQL / MariaDB), tests (MSTest)\\
+\textbf{Frontend :} React, TypeScript, Angular (transfert), UI complexes, Jest\\
+\textbf{Qualit\'e \& Ops :} revues de code, TDD, Docker, CI/CD, logging, observabilit\'e, Git\\
+\textbf{Environnements :} Azure ; notions Kubernetes / Docker ; curiosit\'e Proxmox / VMware
+
+\section{Langues \& soft skills}
+\textbf{Fran\c{c}ais} : natif/courant $\cdot$ \textbf{Anglais} : bilingue (travail technique)\\
+Esprit d'\'equipe, revues de code, recherche collective de solutions, communication technique claire
+
+\end{document}
