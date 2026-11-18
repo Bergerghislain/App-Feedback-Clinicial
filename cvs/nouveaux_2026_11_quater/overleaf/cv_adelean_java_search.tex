@@ -1,70 +1,91 @@
-% OVERLEAF: New Project > Blank > replace main.tex > Recompile
-% Offre: Adelean Développeur Java / Technologies Search Confirmé — Paris Station F — 42-68k
+% OVERLEAF: New Project > Blank > coller ce fichier dans main.tex > pdfLaTeX
+% Offre: Adelean — Développeur Java / Technologies Search Confirmé (Paris, Station F)
 \documentclass[10pt,a4paper]{article}
-\usepackage[margin=1.35cm]{geometry}
+\usepackage[margin=1.2cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref,enumitem,titlesec}
 \hypersetup{hidelinks}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule\vspace{1.5pt}]
-\setlist[itemize]{leftmargin=*,itemsep=0.8pt,topsep=1.5pt,parsep=0pt}
+\setlength{\parskip}{0pt}
+\titleformat{\section}{\bfseries\large\uppercase}{}{0em}{}[\vspace{1pt}\titlerule\vspace{3pt}]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+\setlist[itemize]{leftmargin=*,itemsep=1pt,topsep=1pt,parsep=0pt}
 \begin{document}
 
 \begin{center}
-{\LARGE\bfseries Ghislain THEUBO}\\[1pt]
-{\large D\'eveloppeur Java --- APIs \& donn\'ees (orientation search)}\\[2pt]
-Paris (Station F) $\cdot$ +33 6 82 86 62 79 $\cdot$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com}\\
-\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $\cdot$ \href{https://github.com/Bergerghislain}{GitHub} $\cdot$ FR/EN\\
-\small Dispo imm\'ediate $\cdot$ Pr\'etentions \textbf{44--48\,k€} $\cdot$ T\'el\'etravail partiel OK
+{\LARGE\bfseries Ghislain THEUBO}\\[2pt]
+{\large D\'eveloppeur Java --- APIs, donn\'ees \& orientation search}\\[3pt]
++33 6 82 86 62 79 $\cdot$
+\href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} $\cdot$
+\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $\cdot$
+\href{https://github.com/Bergerghislain}{GitHub}\\[1pt]
+Paris (Station F) $\cdot$ T\'el\'etravail partiel OK $\cdot$ Dispo imm\'ediate $\cdot$ 44--48\,k€
 \end{center}
 
-\section{Accroche}
-Ing\'enieur Ensimag (Bac+5) \textbf{Java / Spring}-fluent, qui aime manipuler des donn\'ees sous toutes leurs formes, livrer des \textbf{APIs} et des \textbf{batchs} performants, et industrialiser avec Docker/CI. Motiv\'e pour Adelean (\textbf{a2 / a//}) et pour monter vite sur \textbf{Elasticsearch / Solr / Lucene} --- esprit critique, pragmatisme, int\'egrit\'e. Parcours atypique orient\'e impact : vous encouragez les candidatures hors case exacte --- voici la mienne.
+\section{Profil}
+Ing\'enieur Bac+5 (Grenoble INP -- Ensimag), d\'eveloppeur \textbf{Java / Spring} \`a l'aise avec les APIs, la manipulation de donn\'ees et l'industrialisation (Docker, CI, tests). Exp\'erience industrielle chez Dassault Syst\`emes (refonte de module Java/Spring, TDD) et backends orient\'es donn\'ees \`a Gustave Roussy (SQL, indexation, pipelines, APIs). Motiv\'e pour rejoindre Adelean sur \textbf{a2} / \textbf{a//} et monter rapidement sur \textbf{Elasticsearch / Solr / Lucene} et la suite ELK, avec esprit critique et pragmatisme.
 
-\section{Impact}
+\section{Exp\'eriences professionnelles}
+\textbf{Dassault Syst\`emes --- 3DEXPERIENCE / 3DSwym R\&D} \hfill V\'elizy-Villacoublay\\
+\textit{Stagiaire Software Engineer --- Java / Spring Boot / Hibernate} \hfill Mars 2025 -- Sept. 2025
 \begin{itemize}
-  \item \textbf{Java industrial} (Dassault) : rewrite module --- design, TDD, \textbf{$\sim$35\%} perf, \textbf{$\sim$85\%} couverture.
-  \item \textbf{Data performance} (Gustave) : indexation SQL \& craft requ\^etes --- \textbf{$\sim$30\%} lectures critiques plus rapides; ingest $\rightarrow$ index $\rightarrow$ API.
-  \item \textbf{APIs \& batch mindset} : services FastAPI + CI/Docker --- transferable Spring Boot / Spring Batch.
-  \item \textbf{Learn-fast} : polyglotte (Java, Python, .NET) --- pr\^et pour ELK / search sous mentorat.
-\end{itemize}
-
-\section{Exp\'eriences}
-\textbf{Dassault Syst\`emes --- 3DEXPERIENCE / 3DSwym R\&D} \hfill V\'elizy\\
-\textit{Software Engineer Intern --- Java / Spring Boot / Hibernate} \hfill Mar--Sept 2025
-\begin{itemize}
-  \item Cycle complet : conception $\rightarrow$ code $\rightarrow$ tests $\rightarrow$ livraison product-minded avec Champions.
-  \item Java OOP profond, \'ecosyst\`eme Spring, habitudes JVM/qualit\'e --- c\oe ur de l'ask Adelean Java.
+  \item Participation \`a toutes les \'etapes : conception, d\'eveloppement, tests, livraison, suivi avec product Champions.
+  \item Refonte d'un module collaboratif en \textbf{Java 17 / Spring / Hibernate} : architecture maintenable, APIs, acc\`es donn\'ees.
+  \item Approche TDD : couverture $\sim$\textbf{85\,\%} ; gain de performance d'environ \textbf{35\,\%} sur chemins critiques.
+  \item Ma\^itrise de la biblioth\`eque Java, notions JVM, revues de code, culture qualit\'e --- socle Adelean Java.
 \end{itemize}
 
 \textbf{Gustave Roussy \& CentraleSup\'elec MICS} \hfill Paris / Saclay\\
-\textit{Software Engineer (CDD) --- APIs, SQL, pipelines de donn\'ees} \hfill Jan--Sept 2026
+\textit{Software Engineer (CDD) --- APIs \& pipelines de donn\'ees} \hfill Jan. 2026 -- Sept. 2026
 \begin{itemize}
-  \item REST APIs + couches d'acc\`es donn\'ees; SQL fort; traitements batch/fil-de-l'eau friendly.
-  \item Docker + GitHub Actions; suivi / MCO --- culture d'industrialisation.
-  \item Pont search : intuition d'indexation, pertinence du mod\`ele de donn\'ees, perf sous charge.
+  \item D\'eveloppement d'APIs REST et couches d'acc\`es donn\'ees ; mod\'elisation SQL / PostgreSQL.
+  \item Optimisation par indexation et craft de requ\^etes : $\sim$\textbf{30\,\%} plus rapide sur lectures critiques (ingest $\rightarrow$ index $\rightarrow$ API).
+  \item Traitements batch / fil de l'eau ; Docker, GitHub Actions, suivi de production / MCO.
+  \item Manipulation de donn\'ees structur\'ees sous contraintes m\'etier ; documentation et industrialisation.
 \end{itemize}
 
-\textbf{Shift Technology --- Platform} \hfill Paris \hfill Sept--Nov 2026\\
-APIs haute performance, cloud, revues --- discipline SaaS pour missions clients.\\[2pt]
-\textbf{INRIA / LIG} \hfill 2024--2025 \quad Syst\`emes \& automatisation Linux --- curiosit\'e DevOps (Ansible/AWS/OVH).
+\textbf{Shift Technology --- Platform Software Engineering} \hfill Paris\\
+\textit{Software Engineer (CDI) --- APIs \& plateforme} \hfill Sept. 2026 -- Nov. 2026
+\begin{itemize}
+  \item Contribution \`a des APIs haute performance et services cloud (Azure) ; revues de code ; livraisons incr\'ementales.
+  \item Discipline SaaS transferable aux missions conseil / adaptation client Adelean.
+\end{itemize}
 
-\section{Projets (labeled perso --- pas de prod ES invent\'ee)}
-\textbf{Search sandbox} : stack Elasticsearch locale (index, query DSL, analyzers) + client Java d\'emo; notes Solr/Lucene.\\
-\textbf{Spring Boot API + batch} : pipeline ingest $\rightarrow$ transform $\rightarrow$ index; Docker Compose.\\
-\textbf{Esprit critique} : courtes notes comparant stockage/requ\^ete par cas d'usage.
+\textbf{LIG --- Laboratoire d'Informatique de Grenoble} \hfill Grenoble\\
+\textit{Stagiaire infrastructure cloud} \hfill F\'evr. 2025 -- Mars 2025
+\begin{itemize}
+  \item Automatisation Linux, mesures, environnements cloud --- curiosit\'e DevOps (Ansible, AWS, OVH).
+\end{itemize}
 
-\section{Stack}
-\textbf{Must}: Java, Spring Boot, APIs, SQL, Docker, Git, CI, tests\\
-\textbf{Search ramp}: Elasticsearch / ELK, Solr, Lucene (apprentissage actif)\\
-\textbf{Plus}: Kotlin curiosit\'e, Angular/Node notions, Kafka, AWS/OVH/GCP curiosit\'e\\
-\textbf{Soft}: autonomie, organisation, apprentissage rapide, \'energie Station F
+\textbf{INRIA Grenoble --- Humanlab} \hfill Montbonnot\\
+\textit{Stagiaire recherche} \hfill Mai 2024 -- Ao\^ut 2024
+\begin{itemize}
+  \item Pipelines C/Python sous contraintes de performance ; rigueur de validation --- transferable aux batchs.
+\end{itemize}
+
+\section{Projets personnels}
+\begin{itemize}
+  \item \textbf{Sandbox Elasticsearch} : indexation locale, Query DSL, analyzers ; client Java de d\'emo ; notes Solr / Lucene.
+  \item \textbf{Spring Boot + batch} : pipeline ingest $\rightarrow$ transform $\rightarrow$ index ; Docker Compose.
+  \item \textbf{Comparatifs techniques} : choix d'outils stockage / requ\^ete selon cas d'usage (esprit critique Adelean).
+\end{itemize}
 
 \section{Formation}
-\textbf{Grenoble INP -- Ensimag} --- Ing\'enieur SI / G\'enie logiciel (2023--2025)\\
-\textbf{Polytech Yaound\'e} --- Master G\'enie informatique, Top 12\% (2019--2023)\\
-Certif. TDD (LinkedIn, 2025)
+\textbf{Grenoble INP -- Ensimag} \hfill 2023 -- 2025\\
+Dipl\^ome d'ing\'enieur --- Syst\`emes d'information / G\'enie logiciel\\[2pt]
+\textbf{\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e} \hfill 2019 -- 2023\\
+Master G\'enie informatique --- Top 12\,\% de la promotion\\[2pt]
+Certification TDD (LinkedIn Learning, 2025)
+
+\section{Comp\'etences techniques}
+\textbf{Java \& backend :} Java, Spring Boot, Hibernate, APIs REST, batchs, SQL / PostgreSQL, tests\\
+\textbf{Search (mont\'ee) :} Elasticsearch / ELK, Solr, Lucene --- apprentissage actif (pas de prod invent\'ee)\\
+\textbf{Outillage :} Docker, Docker Compose, Git, CI/CD (GitHub Actions), notions Kafka / messaging\\
+\textbf{Plus :} Kotlin (curiosit\'e), Angular / Node (notions), cloud (AWS / OVH / GCP curiosit\'e)
+
+\section{Langues}
+\textbf{Fran\c{c}ais} : courant $\cdot$ \textbf{Anglais} : bilingue $\cdot$ Autonomie, organisation, apprentissage rapide
 
 \end{document}

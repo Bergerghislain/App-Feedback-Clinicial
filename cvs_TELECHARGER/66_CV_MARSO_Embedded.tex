@@ -1,59 +1,83 @@
-% OVERLEAF: New Project > Blank > replace main.tex > Recompile
-% Offre: MARSO Robotics Embedded Software Engineer — Paris on-site — 45-60k
+% OVERLEAF: New Project > Blank > coller ce fichier dans main.tex > pdfLaTeX
+% Offre: MARSO Robotics — Embedded Software Engineer (Paris, 45-60k)
 \documentclass[10pt,a4paper]{article}
-\usepackage[margin=1.35cm]{geometry}
+\usepackage[margin=1.2cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref,enumitem,titlesec}
 \hypersetup{hidelinks}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule\vspace{1.5pt}]
-\setlist[itemize]{leftmargin=*,itemsep=0.8pt,topsep=1.5pt,parsep=0pt}
+\setlength{\parskip}{0pt}
+\titleformat{\section}{\bfseries\large\uppercase}{}{0em}{}[\vspace{1pt}\titlerule\vspace{3pt}]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+\setlist[itemize]{leftmargin=*,itemsep=1pt,topsep=1pt,parsep=0pt}
 \begin{document}
 
 \begin{center}
-{\LARGE\bfseries Ghislain THEUBO}\\[1pt]
-{\large Embedded Software Engineer --- Linux / C++ / Real-Time}\\[2pt]
-Paris 10e (on-site) $\cdot$ +33 6 82 86 62 79 $\cdot$ \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com}\\
-\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $\cdot$ \href{https://github.com/Bergerghislain}{GitHub} $\cdot$ EN bilingual\\
-\small Available immediately $\cdot$ Target \textbf{48--55\,k€}
+{\LARGE\bfseries Ghislain THEUBO}\\[2pt]
+{\large Ing\'enieur Logiciel Embarqu\'e --- C/C++ / Linux / Temps r\'eel}\\[3pt]
++33 6 82 86 62 79 $\cdot$
+\href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} $\cdot$
+\href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $\cdot$
+\href{https://github.com/Bergerghislain}{GitHub}\\[1pt]
+Paris (pr\'esentiel) $\cdot$ Dispo imm\'ediate $\cdot$ Objectif salarial 48--55\,k€ $\cdot$ EN/FR
 \end{center}
 
-\section{Hook}
-Embedded-minded Software Engineer (Ensimag Bac+5) with hands-on \textbf{C/C++} and \textbf{Python} on real systems (INRIA FreeRTOS), Linux practice, and a field-first builder mentality. Eager to own \textbf{embedded Linux (Ubuntu)}, sensor integration, low-level drivers, and the bridge between AI models and actuators at \textbf{MARSO}.
+\section{Profil}
+Ing\'enieur Bac+5 (Grenoble INP -- Ensimag) sp\'ecialis\'e logiciel, avec une premi\`ere exp\'erience concr\`ete en \textbf{d\'eveloppement embarqu\'e temps r\'eel} (INRIA : C/FreeRTOS, Python, optimisation de latence sur syst\`eme r\'eel). Solide pratique de \textbf{C/C++}, \textbf{Python}, \textbf{Linux}, et culture qualit\'e / tests en environnement industriel (Dassault). Motiv\'e pour rejoindre MARSO : concevoir, int\'egrer et optimiser le logiciel embarqu\'e qui relie perception / IA et hardware robotique en conditions terrain (entrep\^ots brownfield).
 
-\section{Hero --- INRIA Grenoble / Humanlab (Froll'N'Roll)}
-\textit{Research Intern --- Embedded real-time software (C/FreeRTOS, Python)} \hfill May--Aug 2024
+\section{Exp\'eriences professionnelles}
+\textbf{INRIA Grenoble --- Humanlab (projet Froll'N'Roll)} \hfill Montbonnot-Saint-Martin\\
+\textit{Stagiaire --- Logiciel embarqu\'e temps r\'eel (C/FreeRTOS, Python)} \hfill Mai 2024 -- Ao\^ut 2024
 \begin{itemize}
-  \item Designed and shipped \textbf{C / FreeRTOS} modules + \textbf{Python} tooling for sensor-driven interactive control --- latency, reliability, continuous user validation.
-  \item Redesigned pipelines for responsiveness (\textbf{$\sim$40\%} improvement) under real-time constraints.
-  \item Cross-disciplinary collaboration (hardware-adjacent, research, UX) --- same energy as hardware + AI co-design.
-  \item Quality with pragmatism: ship, measure, fix in the loop (field-test mindset).
+  \item Conception et d\'eveloppement de modules \textbf{C / FreeRTOS} pour le contr\^ole interactif d'un syst\`eme physique (contraintes de latence et de fiabilit\'e).
+  \item Traitement de \textbf{flux capteurs} et pipelines applicatifs ; outillage et scripts de test en \textbf{Python}.
+  \item Refonte de protocoles / structures de donn\'ees : gain d'environ \textbf{40\,\%} de r\'eactivit\'e mesur\'ee.
+  \item Validation continue avec utilisateurs finaux ; it\'eration ship $\rightarrow$ mesure $\rightarrow$ correction (esprit tests terrain).
+  \item Collaboration pluridisciplinaire (recherche, hardware-adjacent, UX) --- interface bas niveau $\leftrightarrow$ couches applicatives.
 \end{itemize}
 
-\section{Complementary craft (kept short)}
-\textbf{Gustave Roussy --- Software Engineer (CDD)} \hfill Jan--Sept 2026\\
-Python services, Docker, CI, rigorous validation with operators --- transferable to prototype test campaigns \& feedback loops.\\[2pt]
-\textbf{Dassault Syst\`emes --- Intern} \hfill Mar--Sept 2025\\
-Engineering rigor: latency/perf \textbf{$\sim$35\%}, tests \textbf{$\sim$85\%}; industrial documentation habits for brownfield robotics.\\[2pt]
-\textbf{LIG --- Cloud Intern} \hfill Feb--Mar 2025 \quad Linux automation, measurement discipline --- foundation for Ubuntu bring-up \& debug.\\[2pt]
-\textbf{Shift Technology --- CDI} \hfill Sept--Nov 2026 \quad Production ownership culture; clear cross-team communication.
-
-\section{Day-1 bring / honest ramp}
+\textbf{Gustave Roussy \& CentraleSup\'elec MICS} \hfill Paris / Saclay\\
+\textit{Software Engineer (CDD)} \hfill Jan. 2026 -- Sept. 2026
 \begin{itemize}
-  \item \textbf{Bring}: C/C++ \& Python strength, FreeRTOS/real-time intuition, Linux comfort, field-test loop, AI-tooling fluency.
-  \item \textbf{Learning targets} (not claimed mastery): ROS2 nodes \& interfaces, CAN/SPI/I2C/UART drivers, camera/IMU/LiDAR calibration, CPU/GPU process placement.
-  \item \textbf{Safety \& robustness}: defensive embedded practices; anomaly hunting on prototypes.
+  \item Services \textbf{Python} en production, tests, \textbf{Docker} et CI (GitHub Actions).
+  \item Validation rigoureuse avec op\'erateurs m\'etier ; collecte de feedback et correction d'anomalies.
+  \item Collaboration avec \'equipes data / IA --- pont naturel avec le volet ``AI collaboration'' de MARSO.
 \end{itemize}
 
-\section{Skills}
-\textbf{Core}: C, C++, Python, Embedded Linux / Ubuntu, real-time / latency, Git, CI/Docker\\
-\textbf{Target}: ROS/ROS2 (active learning), sensors (vision/IMU/LiDAR exposure), buses (UART/SPI/I2C + CAN interest)\\
-\textbf{Mindset}: quality + pragmatism, field testing, continuous improvement, team spirit $\cdot$ EN bilingual / FR fluent
+\textbf{Dassault Syst\`emes --- 3DEXPERIENCE / 3DSwym R\&D} \hfill V\'elizy-Villacoublay\\
+\textit{Stagiaire Software Engineer} \hfill Mars 2025 -- Sept. 2025
+\begin{itemize}
+  \item Exigence industrielle : optimisation de chemins critiques ($\sim$\textbf{35\,\%}), couverture de tests $\sim$\textbf{85\,\%}, TDD.
+  \item Documentation, revues de code, livraison en \'equipe R\&D --- habitudes de robustesse pour syst\`emes complexes.
+\end{itemize}
 
-\section{Education}
-\textbf{Grenoble INP -- Ensimag} --- Software / Information Systems Engineering (2023--2025)\\
-\textbf{Polytech Yaound\'e} --- Master's Computer Engineering, Top 12\% (2019--2023)
+\textbf{LIG --- Laboratoire d'Informatique de Grenoble} \hfill Grenoble\\
+\textit{Stagiaire infrastructure cloud / Linux} \hfill F\'evr. 2025 -- Mars 2025
+\begin{itemize}
+  \item Automatisation Linux, mesures de performance, environnements reproductibles --- base pour bring-up / debug Ubuntu embarqu\'e.
+\end{itemize}
+
+\textbf{Shift Technology --- Platform Software Engineering} \hfill Paris\\
+\textit{Software Engineer (CDI)} \hfill Sept. 2026 -- Nov. 2026
+\begin{itemize}
+  \item Culture ownership en production ; communication transversale claire (utile en startup deeptech).
+\end{itemize}
+
+\section{Formation}
+\textbf{Grenoble INP -- Ensimag} \hfill 2023 -- 2025\\
+Dipl\^ome d'ing\'enieur --- Syst\`emes d'information / G\'enie logiciel\\[2pt]
+\textbf{\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e} \hfill 2019 -- 2023\\
+Master G\'enie informatique --- Top 12\,\% de la promotion
+
+\section{Comp\'etences techniques}
+\textbf{Langages :} C, C++, Python, notions scripts / outillage de test\\
+\textbf{Embarqu\'e :} FreeRTOS, Linux / Ubuntu, contraintes temps r\'eel, optimisation de latence\\
+\textbf{Cible MARSO (mont\'ee en comp\'etence) :} ROS / ROS2, drivers bus (UART, SPI, I2C, CAN), capteurs (cam\'era, IMU, LiDAR), r\'epartition CPU/GPU\\
+\textbf{M\'ethodes :} Git, CI, Docker, tests, qualit\'e pragmatique, am\'elioration continue
+
+\section{Langues}
+\textbf{Anglais} : bilingue $\cdot$ \textbf{Fran\c{c}ais} : courant $\cdot$ Esprit d'\'equipe, curiosit\'e tech, orientation terrain
 
 \end{document}
