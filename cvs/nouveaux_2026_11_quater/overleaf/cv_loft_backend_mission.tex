@@ -1,20 +1,19 @@
-% OVERLEAF — Loft Orbital Backend SWE Mission Planning (Toulouse) — ENGLISH
+% OVERLEAF — Loft Orbital Backend Mission Planning (Toulouse) — ENGLISH
 \documentclass[10pt,a4paper]{article}
-\usepackage[margin=1.2cm]{geometry}
+\usepackage[margin=1.05cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref,enumitem,titlesec}
 \hypersetup{hidelinks}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\titleformat{\section}{\bfseries\large\uppercase}{}{0em}{}[\vspace{1pt}\titlerule\vspace{3pt}]
-\titlespacing*{\section}{0pt}{6pt}{3pt}
-\setlist[itemize]{leftmargin=*,itemsep=1pt,topsep=1pt,parsep=0pt}
+\titleformat{\section}{\bfseries\large\uppercase}{}{0em}{}[\vspace{0.5pt}\titlerule\vspace{2pt}]
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+\setlist[itemize]{leftmargin=*,itemsep=0.4pt,topsep=0.6pt,parsep=0pt}
 \begin{document}
-
 \begin{center}
-{\LARGE\bfseries Ghislain THEUBO}\\[2pt]
-{\large Backend Software Engineer --- Python / APIs / System Design}\\[3pt]
+{\LARGE\bfseries Ghislain THEUBO}\\[1pt]
+{\large Backend Software Engineer --- Python / APIs / System Design}\\[2pt]
 +33 6 82 86 62 79 $\cdot$
 \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} $\cdot$
 \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $\cdot$
@@ -23,51 +22,47 @@ Paris --- \textbf{mobile to Toulouse (on-site)} $\cdot$ Available immediately $\
 \end{center}
 
 \section{Profile}
-Software Engineer (Grenoble INP--Ensimag, Bac+5) with production \textbf{Python} backends (FastAPI), API performance work, and a track record of owning complex systems end-to-end. Comfortable designing services with clear interfaces, optimizing latency-critical paths, and communicating with both technical and non-technical stakeholders. Motivated to join Loft Orbital Mission Platform: build low-latency backend systems that optimize multi-sensor satellite tasking at scale --- from customer orders to execution pipelines.
+Software Engineer (Ensimag Bac+5) with production \textbf{Python} backends, API performance work, and end-to-end ownership of complex systems. Motivated by Loft Mission Platform: low-latency backends for multi-sensor satellite tasking at scale.
 
 \section{Professional Experience}
 \textbf{Gustave Roussy \& CentraleSup\'elec MICS} \hfill Paris / Saclay\\
 \textit{Software Engineer (fixed-term) --- Python backends \& data APIs} \hfill Jan 2026 -- Sept 2026
 \begin{itemize}
-  \item Designed and shipped \textbf{Python/FastAPI} services and APIs used by expert operators --- async design, validation, auth.
-  \item PostgreSQL modeling and query optimization --- $\sim$\textbf{30\%} faster critical reads; indexing and data-flow craft.
-  \item Owned delivery through production: Docker, CI, logging, incident diagnosis, documentation.
-  \item Translated ambiguous domain requirements into workable technical designs with stakeholders.
+  \item Designed, built, tested and maintained \textbf{Python/FastAPI} services used by expert operators (async, validation, auth, RBAC).
+  \item PostgreSQL modeling: schemas, constraints, indexing, transactions; query craft --- $\sim$\textbf{30\%} faster critical reads.
+  \item Owned delivery through production: Docker, GitHub Actions CI, structured logging, incident diagnosis, documentation.
+  \item Shipped TypeScript/Angular UIs consuming those APIs (forms, lists, workflows) --- full-stack awareness of the pipeline.
+  \item Translated ambiguous domain requirements into technical designs with stakeholders; post-production support and iteration.
 \end{itemize}
 
 \textbf{Shift Technology --- Platform Software Engineering} \hfill Paris\\
 \textit{Software Engineer --- high-performance APIs} \hfill Sept 2026 -- Nov 2026
 \begin{itemize}
-  \item Built shared high-performance APIs and platform services (C\#/.NET) on multi-tenant SaaS.
-  \item System thinking: contracts, incremental releases, monitoring mindset, cross-team design discussions.
+  \item Built shared high-performance REST APIs and platform services (C\#/.NET) on multi-tenant SaaS.
+  \item Azure messaging/data building blocks; incremental releases; code reviews; monitoring mindset.
+  \item System thinking: clear contracts, cross-team design discussions, ownership of deliverables in production.
 \end{itemize}
 
 \textbf{Dassault Syst\`emes --- 3DEXPERIENCE / 3DSwym R\&D} \hfill V\'elizy\\
 \textit{Software Engineer Intern --- performance \& quality} \hfill Mar 2025 -- Sept 2025
 \begin{itemize}
-  \item Full module ownership: analyze, design, implement, test, ship with product Champions.
-  \item Performance engineering $\sim$\textbf{35\%}; TDD coverage $\sim$\textbf{85\%} --- rigor for mission-critical software.
+  \item Full module ownership (Survey 3DSwym): analyze, design, implement (Java/Spring/Hibernate), test, ship with Champions.
+  \item Performance engineering $\sim$\textbf{35\%}; TDD coverage $\sim$\textbf{85\%}; Agile/MoSCoW; documentation --- mission-critical rigor.
 \end{itemize}
 
-\textbf{INRIA Grenoble --- Humanlab} \hfill May--Aug 2024\\
-Real-time C/Python pipelines; latency optimization $\sim$\textbf{40\%}; independent problem-solving on physical systems.\\[2pt]
-\textbf{LIG} \hfill Feb--Mar 2025 \quad Linux/cloud automation; measurement discipline for capacity-style analysis.
+\textbf{INRIA Grenoble --- Humanlab (Froll'N'Roll)} \hfill May--Aug 2024\\
+Real-time C/FreeRTOS + Python pipelines; sensor streams; latency optimization $\sim$\textbf{40\%}; independent problem-solving on physical systems; continuous user validation.\\[1pt]
+\textbf{LIG --- Cloud / OpenStack} \hfill Feb--Mar 2025\\
+Linux automation, Grid'5000 environment migration, performance measurement --- capacity-style analysis discipline.
 
-\section{Selected Technical Focus (Loft-aligned)}
-\begin{itemize}
-  \item \textbf{Backend/API performance}: profiling, indexing, async services, clear service boundaries.
-  \item \textbf{System design}: decompose problems into well-bounded services; reason about failure \& scale.
-  \item \textbf{Optimization appetite}: scheduling / multi-constraint problems (learning track); Ensimag math/algo foundation.
-  \item \textbf{Python ecosystem}: FastAPI, tooling, tests; curiosity for high-perf Python (vectorization / Numba).
-\end{itemize}
+\section{Loft-aligned focus}
+Backend/API performance $\cdot$ System design (bounded services, failure \& scale) $\cdot$ Optimization/scheduling appetite (Ensimag math/algo) $\cdot$ High-perf Python curiosity (vectorization / Numba)
 
 \section{Education}
-\textbf{Grenoble INP -- Ensimag} --- Engineering Degree, Software / Information Systems (2023--2025)\\
+\textbf{Grenoble INP -- Ensimag} --- Software / Information Systems (2023--2025) $\cdot$
 \textbf{Polytech Yaound\'e} --- Master's Computer Engineering, Top 12\% (2019--2023)
 
 \section{Skills}
-\textbf{Core:} Python, REST APIs, SQL/PostgreSQL, Docker, CI/CD, Git, system design basics\\
-\textbf{Also:} C\#/.NET, Java/Spring, C/C++, TypeScript UI\\
-\textbf{Languages:} English bilingual $\cdot$ French fluent --- ready for SF/CO/Toulouse cross-office communication
+Python, FastAPI, REST, SQL/PostgreSQL, Docker, CI/CD, Git, system design $\cdot$ Also C\#/.NET, Java/Spring, C/C++, TypeScript $\cdot$ EN bilingual / FR fluent
 
 \end{document}

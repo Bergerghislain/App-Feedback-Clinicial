@@ -1,67 +1,65 @@
 % OVERLEAF — Reply Junior Data Engineer
 \documentclass[10pt,a4paper]{article}
-\usepackage[margin=1.2cm]{geometry}
+\usepackage[margin=1.05cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref,enumitem,titlesec}
 \hypersetup{hidelinks}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\titleformat{\section}{\bfseries\large\uppercase}{}{0em}{}[\vspace{1pt}\titlerule\vspace{3pt}]
-\titlespacing*{\section}{0pt}{6pt}{3pt}
-\setlist[itemize]{leftmargin=*,itemsep=1pt,topsep=1pt,parsep=0pt}
+\titleformat{\section}{\bfseries\large\uppercase}{}{0em}{}[\vspace{0.5pt}\titlerule\vspace{2pt}]
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+\setlist[itemize]{leftmargin=*,itemsep=0.4pt,topsep=0.6pt,parsep=0pt}
 \begin{document}
-
 \begin{center}
-{\LARGE\bfseries Ghislain THEUBO}\\[2pt]
-{\large Junior Data Engineer --- Python, SQL \& pipelines}\\[3pt]
+{\LARGE\bfseries Ghislain THEUBO}\\[1pt]
+{\large Junior Data Engineer --- Python, SQL \& pipelines}\\[2pt]
 +33 6 82 86 62 79 $\cdot$
 \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} $\cdot$
 \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} $\cdot$
 \href{https://github.com/Bergerghislain}{GitHub}\\[1pt]
-France (mobilit\'e) $\cdot$ Dispo imm\'ediate $\cdot$ FR/EN $\cdot$ Pr\'etentions 38--44\,k€
+France (mobilit\'e) $\cdot$ Dispo imm\'ediate $\cdot$ FR/EN $\cdot$ Pr\'etentions 40--43\,k€
 \end{center}
 
 \section{Profil}
-Ing\'enieur Bac+5 (Ensimag) avec \textbf{plus d'un an} d'exp\'erience concr\`ete sur la donn\'ee : cartographie de flux, APIs/pipelines Python, SQL avanc\'e, industrialisation (Docker, CI, tests) et restitution aupr\`es d'utilisateurs m\'etier (Gustave Roussy). Solides bases \textbf{Python} et \textbf{SQL} ; app\'etit Databricks / Snowflake / Foundry et IA g\'en\'erative (Copilot). Motiv\'e pour mettre en œuvre de nouveaux cas d'usage data chez Reply, industrialiser les flux et participer aux Lab Camps / partage de connaissances.
+Ing\'enieur Bac+5 (Ensimag), +1 an sur la donn\'ee : cartographie de flux, pipelines Python, SQL, industrialisation (Docker, CI, tests), restitution m\'etier. App\'etit Databricks/Snowflake/Foundry + IA g\'en\'erative. Motiv\'e cas d'usage data Reply.
 
 \section{Exp\'eriences professionnelles}
 \textbf{Gustave Roussy \& CentraleSup\'elec MICS} \hfill Paris / Saclay\\
 \textit{Software Engineer (CDD) --- data backends \& pipelines} \hfill Jan. 2026 -- Sept. 2026
 \begin{itemize}
-  \item Cartographie et mod\'elisation de donn\'ees / flux m\'etier ; conception de services de traitement Python.
-  \item D\'eveloppement de pipelines d'acc\`es et de transformation (batch-friendly) ; APIs de restitution.
-  \item SQL / PostgreSQL : indexation, requ\^etes --- $\sim$\textbf{30\,\%} plus rapide sur lectures critiques.
-  \item Industrialisation : Docker, CI, tests unitaires / int\'egration, documentation, suivi production.
-  \item Visualisation / reporting via interfaces m\'etier (listes, tableaux, exports) pour d\'ecisionnaires.
+  \item Cartographie et mod\'elisation des donn\'ees / flux m\'etier ; conception de services de traitement Python.
+  \item Pipelines d'acc\`es et de transformation (batch-friendly) ; APIs de restitution pour consommateurs internes.
+  \item SQL / PostgreSQL : sch\'emas, indexation, craft de requ\^etes --- $\sim$\textbf{30\,\%} plus rapide sur lectures critiques (ingest $\rightarrow$ index $\rightarrow$ API).
+  \item Industrialisation : Docker, CI (GitHub Actions), tests unitaires et d'int\'egration, documentation, suivi production / MCO.
+  \item Restitution / reporting via interfaces m\'etier (listes, tableaux, exports) pour d\'ecisionnaires.
+  \item Auth, RBAC, journalisation structur\'ee ; gouvernance de donn\'ees sensibles (sant\'e / recherche).
+  \item Collaboration experts m\'etier ; cadrage de cas d'usage ; it\'eration sur la qualit\'e des donn\'ees.
 \end{itemize}
 
 \textbf{LIG --- Laboratoire d'Informatique de Grenoble} \hfill Grenoble\\
 \textit{Stagiaire cloud / Linux} \hfill F\'evr. 2025 -- Mars 2025
 \begin{itemize}
-  \item Automatisation environnements cloud, mesures de performance --- socle plateforme data / DataOps.
+  \item Automatisation d'environnements cloud OpenStack / Grid'5000 ; scripts Linux ; mesures de performance.
+  \item Reproductibilit\'e des exp\'eriences --- socle DataOps / industrialisation de jobs.
 \end{itemize}
 
 \textbf{Shift Technology --- Platform} \hfill Paris \hfill Sept.--Nov. 2026
 \begin{itemize}
-  \item Services data/messaging cloud (Azure) ; APIs haute performance ; culture qualit\'e et revues.
+  \item Services data/messaging cloud Azure (Service Bus, Cosmos DB notions) ; APIs haute performance ; revues ; qualit\'e.
 \end{itemize}
 
 \textbf{Dassault Syst\`emes --- R\&D} \hfill V\'elizy \hfill Mars--Sept. 2025
 \begin{itemize}
-  \item TDD / tests d'int\'egration ($\sim$\textbf{85\,\%}), perf $\sim$\textbf{35\,\%} --- transferable aux pipelines data.
+  \item Module Java/Spring : TDD / tests d'int\'egration $\sim$\textbf{85\,\%} ; perf $\sim$\textbf{35\,\%} --- discipline transferable aux pipelines data.
+  \item Cycle complet (analyse $\rightarrow$ livraison) avec product Champions ; documentation.
 \end{itemize}
 
-\textbf{INRIA} \hfill 2024 \quad Pipelines C/Python sous contrainte de perf ($\sim$\textbf{40\,\%}).
+\textbf{INRIA Grenoble} \hfill Mai--Ao\^ut 2024\\
+Pipelines C/Python sous contrainte de performance ; latence $\sim$\textbf{40\,\%} ; validation terrain.
 
-\section{Formation}
-\textbf{Grenoble INP -- Ensimag} --- Ing\'enieur SI / G\'enie logiciel (2023--2025)\\
-\textbf{Polytech Yaound\'e} --- Master G\'enie informatique, Top 12\,\% (2019--2023)
-
-\section{Comp\'etences techniques}
-\textbf{Data engineering :} Python, SQL, pipelines batch, mod\'elisation, industrialisation, tests\\
-\textbf{Plateformes (mont\'ee) :} Databricks, Snowflake, Palantir Foundry ; Microsoft Foundry / Copilot curiosit\'e\\
-\textbf{Plus :} Docker, CI/CD, Azure notions, Scala curiosit\'e, IA g\'en\'erative au quotidien\\
-\textbf{Langues :} Fran\c{c}ais \& Anglais (\'ecrit/oral)
+\section{Formation \& comp\'etences}
+\textbf{Ensimag} (2023--2025) $\cdot$ \textbf{Polytech Yaound\'e} Top 12\,\% (2019--2023)\\
+Python, SQL, pipelines batch, mod\'elisation, industrialisation, tests $\cdot$ Databricks/Snowflake/Foundry (mont\'ee) $\cdot$ Docker, CI/CD, Azure notions, Copilot $\cdot$ FR/EN
 
 \end{document}
