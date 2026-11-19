@@ -1,0 +1,88 @@
+% Overleaf — CV RATP Smart Systems / Ixxi Techside (Fullstack Junior TMA)
+% New Project → Blank → coller en main.tex → Recompile → Download PDF
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1.15cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\definecolor{ratp}{HTML}{0A4D3C}
+\setlist[itemize]{leftmargin=1.1em,itemsep=1.5pt,topsep=2pt,parsep=0pt}
+\hypersetup{colorlinks=true,urlcolor=black}
+\titlespacing*{\section}{0pt}{8pt}{3pt}
+\titleformat{\section}{\large\bfseries\color{ratp}}{\thesection}{0em}{}[\titlerule]
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\begin{document}
+\begin{center}
+  {\LARGE\bfseries\color{ratp} Ghislain Berger Theubo}\\[2pt]
+  {\large\bfseries Développeur Fullstack Junior --- TMA $\cdot$ Node.js $\cdot$ React $\cdot$ TypeScript}\\[4pt]
+  Mobilité \textbf{Bordeaux} $\cdot$
+  \href{tel:+33682866279}{06~82~86~62~79} $\cdot$
+  \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com}\\
+  \href{https://linkedin.com/in/berger-ghislain}{linkedin.com/in/berger-ghislain} $\cdot$
+  \href{https://github.com/Bergerghislain}{github.com/Bergerghislain}
+\end{center}
+\vspace{4pt}
+Ingénieur \textbf{Grenoble INP -- Ensimag}, fullstack et orienté service.
+À l'aise pour reprendre un code existant, diagnostiquer des anomalies et livrer des évolutions
+\textbf{Node.js / React / TypeScript / PostgreSQL} en squad (revues, Jira, CI/CD).
+Motivé à rejoindre \textbf{Ixxi Techside -- RATP Smart Systems}.
+
+\section*{Compétences}
+\begin{itemize}
+  \item \textbf{Backend :} Node.js $\cdot$ Express $\cdot$ APIs REST $\cdot$ Python/Flask $\cdot$ intégrations tiers
+  \item \textbf{Frontend :} JavaScript / TypeScript $\cdot$ React $\cdot$ React Native $\cdot$ HTML/CSS
+  \item \textbf{Data :} PostgreSQL $\cdot$ SQL $\cdot$ MongoDB (appétit) $\cdot$ modélisation
+  \item \textbf{Qualité :} Tests $\cdot$ revues de code $\cdot$ Git $\cdot$ CI/CD $\cdot$ documentation $\cdot$ Docker
+  \item \textbf{Méthodes :} Kanban / Agile $\cdot$ Jira $\cdot$ TMA (corrective + évolutive) $\cdot$ sens du service
+  \item \textbf{Langues :} Français C2 $\cdot$ Anglais professionnel (TOEIC 950/990)
+\end{itemize}
+
+\section*{Expériences}
+\textbf{Software Engineer --- Shift Technology} \hfill Sept.\ 2026 -- présent\\
+{\small\textit{Paris $\cdot$ SaaS produit $\cdot$ squad Engineering}}
+\begin{itemize}
+  \item Développement et consolidation de fonctionnalités (qualité, disponibilité).
+  \item Agile : tickets, revues, alerte proactive en cas de blocage.
+\end{itemize}
+
+\textbf{Software Engineer --- Gustave Roussy $\times$ CentraleSupélec} \hfill Janv.\ 2026 -- Sept.\ 2026\\
+{\small\textit{Projet Arcane $\cdot$ app métier $\cdot$ MCO + évolutions}}
+\begin{itemize}
+  \item Correctifs UX/métier, stabilisation, packaging, suivi d'usage pour des utilisateurs cliniciens.
+  \item API Flask (JWT, RBAC), Docker, CI, monitoring ; documentation et passation.
+  \item Boucle incident $\rightarrow$ reproduction $\rightarrow$ correction $\rightarrow$ validation terrain.
+\end{itemize}
+
+\textbf{Software Engineer Intern (R\&D) --- Dassault Systèmes} \hfill Mars 2025 -- Sept.\ 2025\\
+{\small\textit{Vélizy $\cdot$ reprise / modernisation module legacy 3DSwym}}
+\begin{itemize}
+  \item Appropriation d'un code existant ; nouveau modèle de données ; livraison Agile (MoSCoW).
+  \item Backend Java/Spring Boot + collaboration fullstack ; TDD ($\sim$85\,\% couverture) ; +35\,\% perf.
+  \item Écoute utilisateurs pour prioriser corrections et évolutions à fort impact.
+\end{itemize}
+
+\textbf{Stages --- Inria $\cdot$ LIG $\cdot$ CAMTEL} \hfill 2023 -- 2025
+\begin{itemize}
+  \item CAMTEL : parc IT (Django, REST, Docker, K8s), $-$20\,\% coûts maintenance.
+  \item Inria/LIG : diagnostic perf, itérations terrain (+40\,\% réactivité) ; OpenStack.
+\end{itemize}
+
+\section*{Projets fullstack (stack Ixxi)}
+\begin{itemize}
+  \item \textbf{Messagerie web} --- Node.js/Express, \textbf{PostgreSQL}, auth, REST Swagger (Agile).
+  \item \textbf{App mutuelle} --- React Native + Django : parcours utilisateurs et logique métier.
+  \item \textbf{Open Food Facts} --- visualisation JS interactive sur données ouvertes.
+\end{itemize}
+
+\section*{Formation \& atouts TMA}
+\textbf{Grenoble INP -- Ensimag} --- Ingénieur, Systèmes d'information (2023--2025)\\
+\textbf{ENSP Yaoundé} --- Ingénieur, Génie informatique (2019--2023)\\
+Code legacy \& diagnostic d'incidents $\cdot$ esprit d'équipe $\cdot$ CDI Bordeaux $\cdot$ démarrage rapide
+\end{document}

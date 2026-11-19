@@ -1,0 +1,47 @@
+GHISLAIN BERGER THEUBO
+Développeur Fullstack Junior — TMA · Node.js · React · TypeScript
+Mobilité Bordeaux · 06 82 86 62 79 · bergerghislaintheubo@gmail.com
+linkedin.com/in/berger-ghislain · github.com/Bergerghislain
+
+PROFIL
+Ingénieur Grenoble INP – Ensimag, fullstack et orienté service. À l’aise pour reprendre un code existant, diagnostiquer des anomalies et livrer des évolutions Node.js / React / TypeScript / PostgreSQL en squad (revues, Jira, CI/CD). Motivé à rejoindre Ixxi Techside – RATP Smart Systems.
+
+COMPÉTENCES
+Backend : Node.js · Express · APIs REST · Python/Flask · intégrations systèmes tiers
+Frontend : JavaScript / TypeScript · React · React Native · HTML/CSS
+Data : PostgreSQL · SQL · MongoDB (appétit) · modélisation
+Qualité : Tests · revues de code · Git · CI/CD · documentation · Docker
+Méthodes : Kanban / Agile · Jira · TMA (corrective + évolutive) · sens du service
+Langues : Français C2 · Anglais professionnel (TOEIC 950/990)
+
+EXPÉRIENCES
+
+Software Engineer — Shift Technology · Sept. 2026 – présent
+- Développement et consolidation de fonctionnalités (qualité, disponibilité).
+- Agile : tickets, revues, alerte proactive en cas de blocage.
+
+Software Engineer — Gustave Roussy × CentraleSupélec · Janv. 2026 – Sept. 2026
+- Correctifs UX/métier, stabilisation, packaging, suivi d’usage pour cliniciens.
+- API Flask (JWT, RBAC), Docker, CI, monitoring ; documentation et passation.
+- Boucle incident → reproduction → correction → validation terrain.
+
+Software Engineer Intern (R&D) — Dassault Systèmes · Mars 2025 – Sept. 2025
+- Appropriation d’un code legacy ; nouveau modèle de données ; livraison Agile (MoSCoW).
+- Backend Java/Spring Boot + collaboration fullstack ; TDD (~85 % couverture) ; +35 % perf.
+- Écoute utilisateurs pour prioriser corrections et évolutions à fort impact.
+
+Stages — Inria · LIG · CAMTEL · 2023 – 2025
+- CAMTEL : parc IT (Django, REST, Docker, K8s), −20 % coûts maintenance.
+- Inria/LIG : diagnostic perf (+40 % réactivité) ; OpenStack.
+
+PROJETS FULLSTACK
+- Messagerie web — Node.js/Express, PostgreSQL, auth, REST Swagger.
+- App mutuelle — React Native + Django.
+- Open Food Facts — visualisation JS interactive.
+
+FORMATION
+- Grenoble INP – Ensimag — Ingénieur, Systèmes d’information · 2023–2025
+- ENSP Yaoundé — Ingénieur, Génie informatique · 2019–2023
+
+ATOUTS TMA
+Code legacy & diagnostic d’incidents · esprit d’équipe · CDI Bordeaux · démarrage rapide

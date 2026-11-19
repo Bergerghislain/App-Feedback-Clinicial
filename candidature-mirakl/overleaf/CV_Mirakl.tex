@@ -1,0 +1,86 @@
+% Overleaf — CV Mirakl Labs (Junior Software Engineer Java)
+% Mode d'emploi : New Project → Blank → coller ce fichier en main.tex → Recompile → Download PDF
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1.15cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{setspace}
+\setlist[itemize]{leftmargin=1.1em,itemsep=1.5pt,topsep=2pt,parsep=0pt}
+\hypersetup{colorlinks=true,urlcolor=black,linkcolor=black}
+\titlespacing*{\section}{0pt}{8pt}{3pt}
+\titleformat{\section}{\large\bfseries\color{mirakl}}{\thesection}{0em}{}[\titlerule]
+\usepackage{xcolor}
+\definecolor{mirakl}{HTML}{0B3D5C}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\begin{document}
+\begin{center}
+  {\LARGE\bfseries\color{mirakl} Ghislain Berger Theubo}\\[2pt]
+  {\large\bfseries Junior Software Engineer Java --- Spring Boot $\cdot$ APIs REST $\cdot$ Produit SaaS}\\[4pt]
+  Paris, France $\cdot$
+  \href{tel:+33682866279}{06~82~86~62~79} $\cdot$
+  \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com}\\
+  \href{https://linkedin.com/in/berger-ghislain}{linkedin.com/in/berger-ghislain} $\cdot$
+  \href{https://github.com/Bergerghislain}{github.com/Bergerghislain}
+\end{center}
+\vspace{4pt}
+Ingénieur \textbf{Grenoble INP -- Ensimag}, backend-first et product-minded.
+Expérience concrète en \textbf{Java / Spring Boot}, APIs REST, TDD et livraison Agile.
+Habitué à porter une feature de bout en bout (métier $\rightarrow$ API $\rightarrow$ données $\rightarrow$ prod).
+Motivé à rejoindre \textbf{Mirakl Labs -- Financial Services}.
+
+\section*{Compétences}
+\begin{itemize}
+  \item \textbf{Backend :} Java 17/21 $\cdot$ Spring Boot (MVC, Data JPA, Hibernate) $\cdot$ APIs REST $\cdot$ TDD (JUnit)
+  \item \textbf{Data :} SQL $\cdot$ PostgreSQL $\cdot$ JDBC $\cdot$ Elasticsearch (appétit fort)
+  \item \textbf{Frontend :} React / React Native $\cdot$ HTML/CSS/JS
+  \item \textbf{Infra :} Docker $\cdot$ Kubernetes $\cdot$ CI/CD $\cdot$ Azure $\cdot$ AWS/GCP \& Kafka (appétit)
+  \item \textbf{Méthodes :} Agile/Scrum $\cdot$ MoSCoW $\cdot$ ownership \textit{you build it, you run it} $\cdot$ Cursor/Claude
+  \item \textbf{Langues :} Français C2 $\cdot$ Anglais professionnel (TOEIC 950/990)
+\end{itemize}
+
+\section*{Expériences}
+\textbf{Software Engineer --- Shift Technology} \hfill Sept.\ 2026 -- présent\\
+{\small\textit{Paris $\cdot$ SaaS IA assurance}}
+\begin{itemize}
+  \item Features produit en SaaS international ; Agile quotidien ; outils IA (Cursor, Claude).
+\end{itemize}
+
+\textbf{Software Engineer --- Gustave Roussy $\times$ CentraleSupélec} \hfill Janv.\ 2026 -- Sept.\ 2026\\
+{\small\textit{Projet Arcane $\cdot$ ownership bout-en-bout}}
+\begin{itemize}
+  \item App de feedback clinicien (évaluation en aveugle IA vs RCP) déployée sur le terrain.
+  \item API Flask (JWT, RBAC), Docker, CI GitHub Actions, monitoring ; chiffrement AES ; exports d'usage.
+  \item Co-conception avec cliniciens, data scientists et Product.
+\end{itemize}
+
+\textbf{Software Engineer Intern (R\&D) --- Dassault Systèmes} \hfill Mars 2025 -- Sept.\ 2025\\
+{\small\textit{Vélizy $\cdot$ 3DSwym / 3DEXPERIENCE $\cdot$ refonte module Survey}}
+\begin{itemize}
+  \item Refactoring full-stack d'un module legacy : Champions, MoSCoW, Agile.
+  \item Backend \textbf{Java 17 + Spring Boot} (MVC, Data JPA, Hibernate) : modèle de données, API REST.
+  \item \textbf{TDD/JUnit}, $\sim$85\,\% couverture, \textbf{+35\,\% perf} ; Git \& CI/CD.
+\end{itemize}
+
+\textbf{Stages --- Inria $\cdot$ LIG $\cdot$ CAMTEL} \hfill 2023 -- 2025
+\begin{itemize}
+  \item Inria : +40\,\% réactivité (embarqué) $\cdot$ CAMTEL : Django/REST/Docker/K8s, $-$20\,\% coûts maintenance.
+\end{itemize}
+
+\section*{Projets}
+\begin{itemize}
+  \item \textbf{Compilateur Deca (Java)}, équipe de 5 --- sous-ensemble OO de Java $\rightarrow$ assembleur.
+  \item \textbf{API messagerie} --- Node/Express, PostgreSQL $\cdot$ \textbf{App mutuelle} (React Native + Django).
+\end{itemize}
+
+\section*{Formation \& atouts}
+\textbf{Grenoble INP -- Ensimag} --- Ingénieur, Systèmes d'information (2023--2025)\\
+\textbf{ENSP Yaoundé} --- Ingénieur, Génie informatique (2019--2023)\\
+TOEIC 950/990 $\cdot$ certif.\ TDD $\cdot$ CDI Paris $\cdot$ hybride (1~j.\ remote)
+\end{document}
