@@ -1,0 +1,56 @@
+GHISLAIN BERGER THEUBO
+Junior Software Engineer Java — Spring Boot · APIs REST · Produit SaaS
+Paris, France · bergerghislaintheubo@gmail.com
+linkedin.com/in/berger-ghislain · github.com/Bergerghislain
+
+PROFIL
+Ingénieur Grenoble INP – Ensimag, backend-first et product-minded. Expérience concrète en Java / Spring Boot, APIs REST, TDD et livraison en équipe Agile. Habitué à porter une feature de bout en bout (métier → API → données → prod) et à mesurer l’impact réel auprès des utilisateurs. Motivé à rejoindre Mirakl Labs (Financial Services) pour construire des produits marketplace robustes, à fort enjeu business.
+
+COMPÉTENCES
+Backend : Java 17/21 · Spring Boot (MVC, Data JPA, Hibernate) · APIs REST · TDD (JUnit) · design patterns
+Data : SQL · PostgreSQL · JDBC · modélisation de schémas · Elasticsearch (appétit fort)
+Frontend : React / React Native · HTML/CSS/JS · collaboration UX/UI & Product
+Infra & DevOps : Docker · Kubernetes · CI/CD (GitHub Actions, Git) · Azure · AWS / GCP (envie d’approfondir)
+Méthodes : Agile / Scrum · MoSCoW · ownership « you build it, you run it » · outils IA (Cursor, Claude)
+Langues : Français C2 (natif) · Anglais professionnel (TOEIC 950/990) · Espagnol notions
+
+EXPÉRIENCES PROFESSIONNELLES
+
+Software Engineer — Shift Technology (Paris) · Sept. 2026 – présent
+SaaS IA pour l’assurance (fraude, sinistres) · équipe Engineering
+- Développement de fonctionnalités produit dans un environnement SaaS international, orienté impact métier et fiabilité.
+- Collaboration quotidienne en équipe Agile ; usage d’outils IA pour accélérer conception, revue et livraison.
+
+Software Engineer — Gustave Roussy × CentraleSupélec (labo MICS / Oncostat) · Janv. 2026 – Sept. 2026
+Plateforme d’évaluation clinique IA (projet Arcane) · ownership bout-en-bout
+- Conçu et livré une application desktop de feedback clinicien (évaluation en aveugle IA vs RCP), déployée auprès des équipes médicales.
+- Backend Python/Flask : API sécurisée (JWT, RBAC), Docker, CI GitHub Actions, monitoring / health checks.
+- Chiffrement AES des jeux de données patients, packaging exécutable, exports CSV pour analyse d’adoption et d’usage.
+- Travail transverse avec cliniciens, data scientists et Product : traduction du besoin métier en features testables et stables.
+
+Software Engineer Intern (R&D) — Dassault Systèmes (Vélizy) · Mars 2025 – Sept. 2025
+Plateforme collaborative 3DSwym (3DEXPERIENCE) · refactoring module Survey
+- Refonte full-stack d’un module legacy : analyse besoins « Champions », benchmark, priorisation MoSCoW en Agile.
+- Backend Java 17 + Spring Boot (MVC, Data JPA, Hibernate) : nouveau modèle de données, API REST, architecture modulaire.
+- Qualité industrielle : TDD / JUnit, ~85 % de couverture, +35 % de performance backend, Git & pratiques CI/CD.
+- Livraison des features cœur en production R&D : codebase maintenable pour l’ensemble des utilisateurs 3DSwym.
+
+Stages R&D & ingénierie — Inria · LIG (OpenStack/Grid’5000) · CAMTEL · 2023 – 2025
+- Inria (Froll’N’Roll) : modules C/Python embarqués, architecture capteurs TOF + BLE ; +40 % de réactivité, open source.
+- LIG : automatisation de migrations de VMs OpenStack sur Grid’5000 (perf vs disponibilité).
+- CAMTEL : app de gestion de parc IT (microservices, Django, REST, Docker, Kubernetes) ; −20 % de coûts de maintenance.
+
+PROJETS TECHNIQUES SÉLECTIONNÉS
+- Compilateur Deca (Java) — équipe de 5 · langage OO sous-ensemble de Java → assembleur (dont cible Game Boy).
+- API messagerie — Node.js/Express, PostgreSQL, Sequelize, auth, Swagger, Helmet ; méthodo Agile.
+- App mutuelle (React Native + Django) — cotisations, aides, prêts : logique métier financière & parcours utilisateurs.
+
+FORMATION
+- Grenoble INP – Ensimag — Diplôme d’ingénieur, Ingénierie des systèmes d’information · 2023–2025
+- École Nationale Supérieure Polytechnique de Yaoundé — Master / diplôme d’ingénieur, Génie informatique · 2019–2023
+
+CERTIFICATIONS & ATOUTS
+- TOEIC 950/990 — anglais professionnel international
+- TDD (LinkedIn Learning) · bases Assurance (Primerli)
+- 4 ans de tutorat prépa (Cameroun) : pédagogie, transmission, exigence
+- CDI recherché · Paris · hybride OK (1 j. remote)

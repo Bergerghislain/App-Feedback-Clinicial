@@ -1,0 +1,24 @@
+Ghislain Berger Theubo
+Paris · bergerghislaintheubo@gmail.com
+linkedin.com/in/berger-ghislain · github.com/Bergerghislain
+
+À l’attention de l’équipe Recrutement Mirakl Labs
+Objet : Candidature — Junior Software Engineer Java (Financial Services)
+Paris, le 19 novembre 2026
+
+Madame, Monsieur,
+
+Ingénieur Grenoble INP – Ensimag, je candidate au poste de Junior Software Engineer Java au sein de l’équipe Mirakl Labs – Financial Services. Ce qui m’attire n’est pas seulement la stack (Java 21, Spring Boot, Kafka, PostgreSQL), c’est la mission : concevoir et livrer des features métier de bout en bout, dans une culture « you build it, you run it », au service de marketplaces qui font bouger le retail et le B2B.
+
+Chez Dassault Systèmes, j’ai refactorisé un module Survey legacy de la plateforme 3DSwym en Java 17 / Spring Boot (MVC, Data JPA, Hibernate), avec TDD (JUnit), ~85 % de couverture et +35 % de performance backend. J’ai participé aux choix de design avec Product et les « Champions », priorisé en MoSCoW, et livré en CI/CD — exactement le type de cycle que vous décrivez : interfaces / API REST, couche métier, schémas de données, stabilité en production.
+
+À Gustave Roussy / CentraleSupélec, j’ai porté un produit d’évaluation clinique (projet Arcane) de l’idée à l’usage réel : API sécurisée, Docker, monitoring, chiffrement des données, exports pour suivre l’adoption. Travailler avec des cliniciens m’a appris à placer l’utilisateur et la cohérence métier au centre — une posture que je retrouve dans vos valeurs Satisfy & Empower Clients et Get Things Done.
+
+Aujourd’hui chez Shift Technology, je continue à évoluer dans un SaaS produit international, en m’appuyant sur des outils IA (Cursor, Claude) pour accélérer sans sacrifier la qualité. Je parle français couramment et anglais à niveau professionnel (TOEIC 950) : prêt à collaborer avec des équipes Paris / Boston.
+
+Je serais heureux d’échanger sur la façon dont je peux contribuer, dès les premiers sprints, à la roadmap Financial Services de Mirakl Labs — avec exigence technique, ownership, et envie d’apprendre Kafka, Kubernetes et le cloud à votre rythme d’équipe.
+
+Je vous remercie pour l’attention portée à ma candidature et reste disponible pour un premier échange.
+
+Cordialement,
+Ghislain Berger Theubo
