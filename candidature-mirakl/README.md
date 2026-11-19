@@ -26,7 +26,7 @@ Champs identité :
 - **Prénom** : Ghislain  
 - **Nom** : Berger Theubo  
 - **Email** : bergerghislaintheubo@gmail.com  
-- **Téléphone** : à compléter avant envoi  
+- **Téléphone** : 06 82 86 62 79 (+33 6 82 86 62 79)  
 
 ## Pourquoi ce CV est calibré Mirakl
 
@@ -53,7 +53,7 @@ Préparer 5 récits (1 par valeur), structure Situation → Tâche → Action �
 
 ## Points à personnaliser avant envoi
 
-- [ ] Ajouter le **numéro de téléphone** sur le CV / LM / formulaire  
-- [ ] Vérifier les dates exactes Shift Technology si besoin de plus de bullets  
+- [x] Ajouter le **numéro de téléphone** sur le CV / LM / formulaire  
+- [ ] Vérifier les dates exactes Shift Technology si besoin de plus de bullets 
 - [ ] Relire une fois à voix haute la lettre (ton authentique > perfection)  
 - [ ] Optionnel : version EN du CV si le recruteur est international (le FR reste prioritaire pour Paris)
