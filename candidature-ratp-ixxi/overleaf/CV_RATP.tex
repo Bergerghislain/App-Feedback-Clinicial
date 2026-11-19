@@ -1,7 +1,6 @@
-% Overleaf — CV RATP Smart Systems / Ixxi Techside (Fullstack Junior TMA)
-% New Project → Blank → coller en main.tex → Recompile → Download PDF
+% Overleaf — CV RATP Smart Systems / Ixxi (Fullstack Junior TMA) — version détaillée ~2 pages
 \documentclass[10pt,a4paper]{article}
-\usepackage[margin=1.15cm]{geometry}
+\usepackage[margin=1.1cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
@@ -12,77 +11,77 @@
 \usepackage{titlesec}
 \usepackage{xcolor}
 \definecolor{ratp}{HTML}{0A4D3C}
-\setlist[itemize]{leftmargin=1.1em,itemsep=1.5pt,topsep=2pt,parsep=0pt}
+\setlist[itemize]{leftmargin=1.1em,itemsep=1.2pt,topsep=1.5pt,parsep=0pt}
 \hypersetup{colorlinks=true,urlcolor=black}
-\titlespacing*{\section}{0pt}{8pt}{3pt}
+\titlespacing*{\section}{0pt}{7pt}{2pt}
 \titleformat{\section}{\large\bfseries\color{ratp}}{\thesection}{0em}{}[\titlerule]
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \begin{document}
 \begin{center}
   {\LARGE\bfseries\color{ratp} Ghislain Berger Theubo}\\[2pt]
-  {\large\bfseries Développeur Fullstack Junior --- TMA $\cdot$ Node.js $\cdot$ React $\cdot$ TypeScript}\\[4pt]
-  Mobilité \textbf{Bordeaux} $\cdot$
-  \href{tel:+33682866279}{06~82~86~62~79} $\cdot$
+  {\large\bfseries Développeur Fullstack Junior --- TMA $\cdot$ Node.js $\cdot$ React $\cdot$ TypeScript}\\[3pt]
+  Mobilité \textbf{Bordeaux} $\cdot$ \href{tel:+33682866279}{06~82~86~62~79} $\cdot$
   \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com}\\
   \href{https://linkedin.com/in/berger-ghislain}{linkedin.com/in/berger-ghislain} $\cdot$
   \href{https://github.com/Bergerghislain}{github.com/Bergerghislain}
 \end{center}
-\vspace{4pt}
+\vspace{3pt}
 Ingénieur \textbf{Grenoble INP -- Ensimag}, fullstack et orienté service.
-À l'aise pour reprendre un code existant, diagnostiquer des anomalies et livrer des évolutions
-\textbf{Node.js / React / TypeScript / PostgreSQL} en squad (revues, Jira, CI/CD).
+Expérience de \textbf{reprise de legacy}, diagnostic d'incidents, correctifs et évolutions avec tests, revues et CI/CD.
 Motivé à rejoindre \textbf{Ixxi Techside -- RATP Smart Systems}.
 
 \section*{Compétences}
 \begin{itemize}
-  \item \textbf{Backend :} Node.js $\cdot$ Express $\cdot$ APIs REST $\cdot$ Python/Flask $\cdot$ intégrations tiers
-  \item \textbf{Frontend :} JavaScript / TypeScript $\cdot$ React $\cdot$ React Native $\cdot$ HTML/CSS
-  \item \textbf{Data :} PostgreSQL $\cdot$ SQL $\cdot$ MongoDB (appétit) $\cdot$ modélisation
-  \item \textbf{Qualité :} Tests $\cdot$ revues de code $\cdot$ Git $\cdot$ CI/CD $\cdot$ documentation $\cdot$ Docker
-  \item \textbf{Méthodes :} Kanban / Agile $\cdot$ Jira $\cdot$ TMA (corrective + évolutive) $\cdot$ sens du service
-  \item \textbf{Langues :} Français C2 $\cdot$ Anglais professionnel (TOEIC 950/990)
+  \item \textbf{Backend / Front :} Node.js $\cdot$ Express $\cdot$ REST $\cdot$ JS/TS $\cdot$ React $\cdot$ React Native $\cdot$ Python (Django, PyQt) $\cdot$ Java/Spring
+  \item \textbf{Data / Qualité :} PostgreSQL $\cdot$ MongoDB (appétit) $\cdot$ Tests/TDD $\cdot$ Git $\cdot$ CI/CD $\cdot$ Docker $\cdot$ Kubernetes $\cdot$ docs
+  \item \textbf{Méthodes :} Kanban/Agile/Scrum $\cdot$ Jira $\cdot$ MoSCoW $\cdot$ TMA $\cdot$ Français C2 $\cdot$ Anglais (TOEIC 950)
 \end{itemize}
 
-\section*{Expériences}
-\textbf{Software Engineer --- Shift Technology} \hfill Sept.\ 2026 -- présent\\
-{\small\textit{Paris $\cdot$ SaaS produit $\cdot$ squad Engineering}}
+\section*{Expériences professionnelles}
+
+\textbf{Software Engineer --- Shift Technology (CDI)} \hfill Sept.\ 2026 -- présent\\
+{\small\textit{Paris $\cdot$ Hybride $\cdot$ SaaS produit}}
 \begin{itemize}
-  \item Développement et consolidation de fonctionnalités (qualité, disponibilité).
-  \item Agile : tickets, revues, alerte proactive en cas de blocage.
+  \item Features produit (qualité, disponibilité) ; Agile (tickets, revues, alerte en cas de blocage).
 \end{itemize}
 
-\textbf{Software Engineer --- Gustave Roussy $\times$ CentraleSupélec} \hfill Janv.\ 2026 -- Sept.\ 2026\\
-{\small\textit{Projet Arcane $\cdot$ app métier $\cdot$ MCO + évolutions}}
+\textbf{Software Engineer --- Gustave Roussy $\times$ CentraleSupélec (CDD)} \hfill Janv.\ 2026 -- Sept.\ 2026\\
+{\small\textit{Hybride $\cdot$ MICS $\times$ Oncostat $\cdot$ app métier Arcane --- MCO + évolutions}}
 \begin{itemize}
-  \item Correctifs UX/métier, stabilisation, packaging, suivi d'usage pour des utilisateurs cliniciens.
-  \item API Flask (JWT, RBAC), Docker, CI, monitoring ; documentation et passation.
-  \item Boucle incident $\rightarrow$ reproduction $\rightarrow$ correction $\rightarrow$ validation terrain.
+  \item \textbf{Contexte TMA :} outil critique pour cliniciens (fiabilité, UX, collecte de résultats).
+  \item \textbf{Correctif/évolutif :} ownership Python/PyQt6 (2 étapes, verrouillage notes, brouillon, CSV) ; fixes selon feedback terrain.
+  \item \textbf{Exploitation :} coffre AES \texttt{data.zip}, clé app, outils pack/unpack/recover-key ; exécutable clinicien.
+  \item \textbf{Qualité de service :} documentation (deep-dive, backlog, passation) ; validation avec cliniciens et data scientists.
 \end{itemize}
 
-\textbf{Software Engineer Intern (R\&D) --- Dassault Systèmes} \hfill Mars 2025 -- Sept.\ 2025\\
-{\small\textit{Vélizy $\cdot$ reprise / modernisation module legacy 3DSwym}}
+\textbf{Software Engineer Intern (R\&D) --- Dassault Systèmes (Stage)} \hfill Mars 2025 -- Sept.\ 2025\\
+{\small\textit{Vélizy $\cdot$ reprise complète du module Survey legacy (3DSwym)}}
 \begin{itemize}
-  \item Appropriation d'un code existant ; nouveau modèle de données ; livraison Agile (MoSCoW).
-  \item Backend Java/Spring Boot + collaboration fullstack ; TDD ($\sim$85\,\% couverture) ; +35\,\% perf.
-  \item Écoute utilisateurs pour prioriser corrections et évolutions à fort impact.
+  \item \textbf{Mission :} analyser l'existant obsolète, concevoir et livrer un remplacement moderne centré utilisateurs.
+  \item \textbf{Legacy :} diagnostic, benchmark, ateliers Champions, priorisation MoSCoW en Agile.
+  \item \textbf{Dev :} Java~17+ / Spring Boot (MVC, Data JPA, Hibernate), nouveau modèle de données, design patterns, fullstack.
+  \item \textbf{Qualité TMA :} TDD/JUnit, Git/CI/CD, codebase maintenable pour la suite de vie du produit.
+  \item \textbf{Résultats :} features cœur livrées ; $\sim$\textbf{85\,\% couverture} ; \textbf{+35\,\% perf} backend.
 \end{itemize}
 
-\textbf{Stages --- Inria $\cdot$ LIG $\cdot$ CAMTEL} \hfill 2023 -- 2025
+\textbf{Software Engineer Internship --- CAMTEL} \hfill Juin 2023 -- Sept.\ 2023\\
+{\small\textit{Yaoundé $\cdot$ équipe de 4 $\cdot$ gestion de parc IT}}
 \begin{itemize}
-  \item CAMTEL : parc IT (Django, REST, Docker, K8s), $-$20\,\% coûts maintenance.
-  \item Inria/LIG : diagnostic perf, itérations terrain (+40\,\% réactivité) ; OpenStack.
+  \item \textbf{Problème :} visibilité parc insuffisante, maintenance peu efficace, coûts élevés.
+  \item \textbf{Solution :} microservices Python/Django, API REST, monitoring temps réel, analytics prédictives ; Docker + K8s.
+  \item \textbf{Impact :} \textbf{$-$20\,\% coûts de maintenance}, décisions data-driven --- expérience directe MCO / valeur métier.
 \end{itemize}
 
-\section*{Projets fullstack (stack Ixxi)}
+\textbf{Stages --- LIG (OpenStack) $\cdot$ Inria (Froll'N'Roll)} \hfill 2024 -- 2025
 \begin{itemize}
-  \item \textbf{Messagerie web} --- Node.js/Express, \textbf{PostgreSQL}, auth, REST Swagger (Agile).
-  \item \textbf{App mutuelle} --- React Native + Django : parcours utilisateurs et logique métier.
-  \item \textbf{Open Food Facts} --- visualisation JS interactive sur données ouvertes.
+  \item LIG : migrations VM OpenStack/Grid'5000 (perf vs disponibilité).
+  \item Inria : C/Python/FreeRTOS, TOF+BLE ; \textbf{+40\,\% réactivité} ; open source ; validation utilisateur (Agile).
 \end{itemize}
 
-\section*{Formation \& atouts TMA}
-\textbf{Grenoble INP -- Ensimag} --- Ingénieur, Systèmes d'information (2023--2025)\\
-\textbf{ENSP Yaoundé} --- Ingénieur, Génie informatique (2019--2023)\\
-Code legacy \& diagnostic d'incidents $\cdot$ esprit d'équipe $\cdot$ CDI Bordeaux $\cdot$ démarrage rapide
+\section*{Projets fullstack / Formation}
+\begin{itemize}
+  \item Messagerie Node.js/Express + \textbf{PostgreSQL} $\cdot$ App mutuelle React Native + Django $\cdot$ Open Food Facts (JS)
+  \item \textbf{Ensimag} (2023--2025) $\cdot$ \textbf{ENSP Yaoundé} (2019--2023) $\cdot$ CDI Bordeaux $\cdot$ démarrage rapide
+\end{itemize}
 \end{document}

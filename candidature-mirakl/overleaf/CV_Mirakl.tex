@@ -1,7 +1,7 @@
-% Overleaf — CV Mirakl Labs (Junior Software Engineer Java)
-% Mode d'emploi : New Project → Blank → coller ce fichier en main.tex → Recompile → Download PDF
+% Overleaf — CV Mirakl Labs (Junior Software Engineer Java) — version détaillée ~2 pages
+% New Project → Blank → coller en main.tex → Recompile → Download PDF
 \documentclass[10pt,a4paper]{article}
-\usepackage[margin=1.15cm]{geometry}
+\usepackage[margin=1.1cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
@@ -10,77 +10,90 @@
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{titlesec}
-\usepackage{setspace}
-\setlist[itemize]{leftmargin=1.1em,itemsep=1.5pt,topsep=2pt,parsep=0pt}
-\hypersetup{colorlinks=true,urlcolor=black,linkcolor=black}
-\titlespacing*{\section}{0pt}{8pt}{3pt}
-\titleformat{\section}{\large\bfseries\color{mirakl}}{\thesection}{0em}{}[\titlerule]
 \usepackage{xcolor}
 \definecolor{mirakl}{HTML}{0B3D5C}
+\setlist[itemize]{leftmargin=1.1em,itemsep=1.2pt,topsep=1.5pt,parsep=0pt}
+\hypersetup{colorlinks=true,urlcolor=black}
+\titlespacing*{\section}{0pt}{7pt}{2pt}
+\titleformat{\section}{\large\bfseries\color{mirakl}}{\thesection}{0em}{}[\titlerule]
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
 \begin{document}
 \begin{center}
   {\LARGE\bfseries\color{mirakl} Ghislain Berger Theubo}\\[2pt]
-  {\large\bfseries Junior Software Engineer Java --- Spring Boot $\cdot$ APIs REST $\cdot$ Produit SaaS}\\[4pt]
-  Paris, France $\cdot$
-  \href{tel:+33682866279}{06~82~86~62~79} $\cdot$
+  {\large\bfseries Junior Software Engineer Java --- Spring Boot $\cdot$ APIs REST $\cdot$ Produit SaaS}\\[3pt]
+  Paris $\cdot$ \href{tel:+33682866279}{06~82~86~62~79} $\cdot$
   \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com}\\
   \href{https://linkedin.com/in/berger-ghislain}{linkedin.com/in/berger-ghislain} $\cdot$
   \href{https://github.com/Bergerghislain}{github.com/Bergerghislain}
 \end{center}
-\vspace{4pt}
+\vspace{3pt}
 Ingénieur \textbf{Grenoble INP -- Ensimag}, backend-first et product-minded.
-Expérience concrète en \textbf{Java / Spring Boot}, APIs REST, TDD et livraison Agile.
-Habitué à porter une feature de bout en bout (métier $\rightarrow$ API $\rightarrow$ données $\rightarrow$ prod).
+Expérience en \textbf{Java / Spring Boot}, APIs REST, TDD, reprise de legacy et livraison Agile.
+Habitué à porter une feature de bout en bout (besoin $\rightarrow$ design $\rightarrow$ code $\rightarrow$ tests $\rightarrow$ prod).
 Motivé à rejoindre \textbf{Mirakl Labs -- Financial Services}.
 
 \section*{Compétences}
 \begin{itemize}
-  \item \textbf{Backend :} Java 17/21 $\cdot$ Spring Boot (MVC, Data JPA, Hibernate) $\cdot$ APIs REST $\cdot$ TDD (JUnit)
-  \item \textbf{Data :} SQL $\cdot$ PostgreSQL $\cdot$ JDBC $\cdot$ Elasticsearch (appétit fort)
-  \item \textbf{Frontend :} React / React Native $\cdot$ HTML/CSS/JS
-  \item \textbf{Infra :} Docker $\cdot$ Kubernetes $\cdot$ CI/CD $\cdot$ Azure $\cdot$ AWS/GCP \& Kafka (appétit)
-  \item \textbf{Méthodes :} Agile/Scrum $\cdot$ MoSCoW $\cdot$ ownership \textit{you build it, you run it} $\cdot$ Cursor/Claude
-  \item \textbf{Langues :} Français C2 $\cdot$ Anglais professionnel (TOEIC 950/990)
+  \item \textbf{Backend :} Java 17/21 $\cdot$ Spring Boot (MVC, Data JPA, Hibernate) $\cdot$ REST $\cdot$ TDD/JUnit $\cdot$ Python (Django, PyQt)
+  \item \textbf{Data / Front / Infra :} PostgreSQL $\cdot$ React/React Native $\cdot$ Docker $\cdot$ Kubernetes $\cdot$ CI/CD $\cdot$ OpenStack $\cdot$ Kafka/AWS/GCP (appétit)
+  \item \textbf{Méthodes / Langues :} Agile/Scrum $\cdot$ MoSCoW $\cdot$ Cursor/Claude $\cdot$ Français C2 $\cdot$ Anglais (TOEIC 950/990)
 \end{itemize}
 
-\section*{Expériences}
-\textbf{Software Engineer --- Shift Technology} \hfill Sept.\ 2026 -- présent\\
-{\small\textit{Paris $\cdot$ SaaS IA assurance}}
+\section*{Expériences professionnelles}
+
+\textbf{Software Engineer --- Shift Technology (CDI)} \hfill Sept.\ 2026 -- présent\\
+{\small\textit{Paris $\cdot$ Hybride $\cdot$ SaaS IA assurance}}
 \begin{itemize}
-  \item Features produit en SaaS international ; Agile quotidien ; outils IA (Cursor, Claude).
+  \item Développement de fonctionnalités produit dans un SaaS international (fiabilité, impact métier).
+  \item Collaboration Agile ; outils IA (Cursor, Claude) pour accélérer conception, revue et livraison.
 \end{itemize}
 
-\textbf{Software Engineer --- Gustave Roussy $\times$ CentraleSupélec} \hfill Janv.\ 2026 -- Sept.\ 2026\\
-{\small\textit{Projet Arcane $\cdot$ ownership bout-en-bout}}
+\textbf{Software Engineer --- Gustave Roussy $\times$ CentraleSupélec (CDD)} \hfill Janv.\ 2026 -- Sept.\ 2026\\
+{\small\textit{Hybride $\cdot$ labo MICS $\times$ Oncostat/CESP $\cdot$ projet Arcane}}
 \begin{itemize}
-  \item App de feedback clinicien (évaluation en aveugle IA vs RCP) déployée sur le terrain.
-  \item API Flask (JWT, RBAC), Docker, CI GitHub Actions, monitoring ; chiffrement AES ; exports d'usage.
-  \item Co-conception avec cliniciens, data scientists et Product.
+  \item \textbf{Contexte :} outil d'évaluation clinique pour comparer en aveugle conclusions IA vs RCP et noter la réflexion IA.
+  \item \textbf{Produit :} app desktop Python/PyQt6 (2 étapes, verrouillage des notes, brouillon repris, progression patient).
+  \item \textbf{Sécurité :} \texttt{data.zip} chiffré AES, clé app obfusquée, extraction temporaire nettoyée ; outil pack/unpack/recover-key.
+  \item \textbf{Livraison :} exécutable PyInstaller, protocole clinicien, 3 exports CSV pour analyse d'usage ; docs de passation.
+  \item \textbf{Transverse :} cliniciens + data scientists au quotidien pour aligner besoin métier et stabilité technique.
 \end{itemize}
 
-\textbf{Software Engineer Intern (R\&D) --- Dassault Systèmes} \hfill Mars 2025 -- Sept.\ 2025\\
-{\small\textit{Vélizy $\cdot$ 3DSwym / 3DEXPERIENCE $\cdot$ refonte module Survey}}
+\textbf{Software Engineer Intern (R\&D) --- Dassault Systèmes (Stage)} \hfill Mars 2025 -- Sept.\ 2025\\
+{\small\textit{Vélizy $\cdot$ Hybride $\cdot$ 3DSwym / 3DEXPERIENCE $\cdot$ refonte module Survey}}
 \begin{itemize}
-  \item Refactoring full-stack d'un module legacy : Champions, MoSCoW, Agile.
-  \item Backend \textbf{Java 17 + Spring Boot} (MVC, Data JPA, Hibernate) : modèle de données, API REST.
-  \item \textbf{TDD/JUnit}, $\sim$85\,\% couverture, \textbf{+35\,\% perf} ; Git \& CI/CD.
+  \item \textbf{Mission :} module Survey legacy obsolète --- analyser, concevoir, développer et déployer un remplacement moderne, scalable et centré utilisateurs.
+  \item \textbf{Cadrage :} besoins « Champions », benchmark concurrentiel, priorisation MoSCoW en Agile.
+  \item \textbf{Backend :} Java~17+, Spring Boot (MVC, Data JPA), Hibernate ; nouveau modèle de données ; services/API des features cœur.
+  \item \textbf{Qualité :} TDD/JUnit, design patterns, architecture modulaire, Git et CI/CD.
+  \item \textbf{Résultats :} features principales livrées ; $\sim$\textbf{85\,\% de couverture} ; \textbf{+35\,\% de performance} backend ; cycle de vie complet d'un refactoring R\&D.
 \end{itemize}
 
-\textbf{Stages --- Inria $\cdot$ LIG $\cdot$ CAMTEL} \hfill 2023 -- 2025
+\textbf{Software Engineer Intern (Cloud) --- LIG} \hfill Févr.\ 2025 -- Mars 2025\\
+{\small\textit{Grenoble $\cdot$ OpenStack / Grid'5000 $\cdot$ Alain Tchana}}
 \begin{itemize}
-  \item Inria : +40\,\% réactivité (embarqué) $\cdot$ CAMTEL : Django/REST/Docker/K8s, $-$20\,\% coûts maintenance.
+  \item Automatisation de migrations de VMs OpenStack ; scripts + mesure d'impact perf/disponibilité sur applications hébergées.
 \end{itemize}
 
-\section*{Projets}
+\textbf{Research Internship --- Inria (Froll'N'Roll)} \hfill Mai 2024 -- Août 2024\\
+{\small\textit{Montbonnot $\cdot$ fauteuil à assistance électrique}}
 \begin{itemize}
-  \item \textbf{Compilateur Deca (Java)}, équipe de 5 --- sous-ensemble OO de Java $\rightarrow$ assembleur.
-  \item \textbf{API messagerie} --- Node/Express, PostgreSQL $\cdot$ \textbf{App mutuelle} (React Native + Django).
+  \item Architecture TOF + BLE UART ; C/Python/FreeRTOS ; Agile avec utilisateur final ; open source.
+  \item \textbf{+40\,\% de réactivité}, arrêt auto sur obstacle, validation en conditions réelles.
 \end{itemize}
 
-\section*{Formation \& atouts}
-\textbf{Grenoble INP -- Ensimag} --- Ingénieur, Systèmes d'information (2023--2025)\\
-\textbf{ENSP Yaoundé} --- Ingénieur, Génie informatique (2019--2023)\\
-TOEIC 950/990 $\cdot$ certif.\ TDD $\cdot$ CDI Paris $\cdot$ hybride (1~j.\ remote)
+\textbf{Software Engineer Internship --- CAMTEL} \hfill Juin 2023 -- Sept.\ 2023\\
+{\small\textit{Yaoundé $\cdot$ équipe de 4 $\cdot$ gestion de parc IT du Centre régional}}
+\begin{itemize}
+  \item \textbf{Problème :} faible visibilité du parc, maintenance inefficace, coûts élevés.
+  \item \textbf{Solution :} app microservices Python/Django, API REST, monitoring temps réel, analytics prédictives ; Docker + Kubernetes.
+  \item \textbf{Impact :} décisions data-driven, \textbf{$-$20\,\% de coûts de maintenance}, socle scalable pour la croissance du centre.
+\end{itemize}
+
+\section*{Projets / Formation}
+\begin{itemize}
+  \item Compilateur Deca (Java, équipe de 5) $\cdot$ API messagerie (Node/Express, PostgreSQL) $\cdot$ App mutuelle (React Native + Django)
+  \item \textbf{Ensimag} (2023--2025) $\cdot$ \textbf{ENSP Yaoundé} (2019--2023) $\cdot$ TOEIC 950/990 $\cdot$ CDI Paris
+\end{itemize}
 \end{document}

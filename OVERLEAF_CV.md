@@ -1,5 +1,7 @@
 # Comment obtenir les PDF sur Overleaf (Mirakl + RATP)
 
+CV détaillés (~2 pages) : expériences **Dassault**, **CAMTEL** et **Gustave Roussy / Arcane** développées.
+
 Tu n’as **pas besoin** de télécharger les PDF du dépôt : copie les fichiers `.tex` dans Overleaf.
 
 ## Procédure (2 minutes par document)
