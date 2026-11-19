@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Ghislain Berger Theubo — CV</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: "Calibri", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #1c2430;
+    background: #fff;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 68mm 1fr;
+  }
+  .side {
+    background: #153047;
+    color: #f4f7fa;
+    padding: 18mm 8mm 14mm 9mm;
+  }
+  .main {
+    padding: 16mm 11mm 12mm 10mm;
+  }
+  .name {
+    margin: 0 0 4px;
+    font-size: 22pt;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 1.1;
+    color: #153047;
+  }
+  .role {
+    margin: 0 0 10px;
+    font-size: 11pt;
+    font-weight: 600;
+    color: #2f6f8f;
+  }
+  .contact-line {
+    margin: 0 0 12px;
+    font-size: 8.8pt;
+    color: #44505c;
+  }
+  .contact-line a { color: #2f6f8f; text-decoration: none; }
+  .side h2, .main h2 {
+    margin: 0 0 7px;
+    font-size: 9.5pt;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+  }
+  .side h2 {
+    color: #9fd0ea;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    padding-bottom: 4px;
+    margin-top: 14px;
+  }
+  .side h2:first-child { margin-top: 0; }
+  .main h2 {
+    color: #153047;
+    border-bottom: 1.5px solid #d5dee6;
+    padding-bottom: 3px;
+    margin-top: 11px;
+  }
+  .main h2:first-of-type { margin-top: 0; }
+  .side p, .side li, .main p, .main li {
+    font-size: 8.9pt;
+    line-height: 1.35;
+  }
+  .side ul, .main ul {
+    margin: 0;
+    padding-left: 14px;
+  }
+  .side li { margin: 0 0 4px; }
+  .side .block { margin: 0 0 8px; }
+  .side .label {
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 2px;
+    font-size: 9pt;
+  }
+  .about {
+    margin: 0 0 2px;
+    font-size: 9.3pt;
+    line-height: 1.4;
+    color: #2a3440;
+  }
+  .job { margin: 0 0 9px; }
+  .job-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .job-title {
+    margin: 0;
+    font-size: 10pt;
+    font-weight: 700;
+    color: #153047;
+  }
+  .job-dates {
+    white-space: nowrap;
+    font-size: 8.5pt;
+    color: #5a6875;
+    font-weight: 600;
+  }
+  .job-org {
+    margin: 1px 0 3px;
+    font-size: 9pt;
+    color: #2f6f8f;
+    font-weight: 600;
+  }
+  .job ul { margin: 0; padding-left: 15px; }
+  .job li { margin: 1.5px 0; color: #243040; }
+  .edu-item { margin: 0 0 6px; }
+  .edu-item .t { font-weight: 700; font-size: 9.3pt; }
+  .edu-item .s { font-size: 8.7pt; color: #4a5866; }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <aside class="side">
+    <h2>Contact</h2>
+    <div class="block">
+      <div>Paris, France</div>
+      <div>06 82 86 62 79</div>
+      <div>bergerghislaintheubo@gmail.com</div>
+      <div>linkedin.com/in/berger-ghislain</div>
+      <div>github.com/Bergerghislain</div>
+    </div>
+
+    <h2>Compétences</h2>
+    <div class="block">
+      <div class="label">Produit &amp; delivery</div>
+      <ul>
+        <li>Recueil de besoins</li>
+        <li>Priorisation (MoSCoW)</li>
+        <li>Ateliers utilisateurs</li>
+        <li>Documentation claire</li>
+        <li>Agile / Scrum</li>
+      </ul>
+    </div>
+    <div class="block">
+      <div class="label">SI &amp; data</div>
+      <ul>
+        <li>APIs REST</li>
+        <li>Modélisation données</li>
+        <li>PostgreSQL / SQL</li>
+        <li>Sécurité &amp; accès</li>
+        <li>CI/CD, Git</li>
+      </ul>
+    </div>
+    <div class="block">
+      <div class="label">Technologies</div>
+      <ul>
+        <li>Java / Spring Boot</li>
+        <li>Python</li>
+        <li>JavaScript / React</li>
+        <li>Node.js</li>
+        <li>Docker / Kubernetes</li>
+        <li>Azure / OpenStack</li>
+      </ul>
+    </div>
+
+    <h2>Langues</h2>
+    <ul>
+      <li>Français — natif</li>
+      <li>Anglais — professionnel (TOEIC 950)</li>
+      <li>Espagnol — notions</li>
+    </ul>
+
+    <h2>Centres d’intérêt</h2>
+    <ul>
+      <li>Tutorat &amp; transmission</li>
+      <li>Tennis, football</li>
+      <li>Innovation produit</li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <h1 class="name">Ghislain Berger Theubo</h1>
+    <p class="role">Ingénieur SI — Data, APIs &amp; industrialisation logicielle</p>
+    <p class="contact-line">Disponibilité immédiate · CDI · Paris / hybride</p>
+
+    <h2>Profil</h2>
+    <p class="about">
+      Ingénieur Grenoble INP – Ensimag. Expérience sur des environnements grands comptes
+      (industrie logicielle, santé, InsurTech) : moderniser un existant, clarifier un besoin,
+      livrer des APIs / plateformes fiables et mesurer l’impact. À l’aise pour dialoguer avec
+      des profils métier et techniques, documenter des choix, et faire avancer un sujet de bout en bout.
+    </p>
+
+    <h2>Expériences</h2>
+
+    <div class="job">
+      <div class="job-top">
+        <p class="job-title">Software Engineer</p>
+        <span class="job-dates">Sept. 2026 – aujourd’hui</span>
+      </div>
+      <p class="job-org">Shift Technology — Paris · CDI</p>
+      <ul>
+        <li>Contribué au développement de services plateforme sur un SaaS international dédié à l’assurance.</li>
+        <li>Participé aux revues techniques et à la documentation des choix d’implémentation.</li>
+        <li>Travaillé en squad Agile avec un focus qualité, fiabilité et rythme de livraison.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <p class="job-title">Software Engineer</p>
+        <span class="job-dates">Janv. 2026 – Sept. 2026</span>
+      </div>
+      <p class="job-org">Gustave Roussy × CentraleSupélec (MICS / Oncostat) — CDD</p>
+      <ul>
+        <li>Conçu et livré une application d’évaluation clinique (comparaison en aveugle IA vs RCP) utilisée par des cliniciens.</li>
+        <li>Sécurisé le cycle de données (chiffrement AES, contrôle d’accès, packaging) et automatisé les exports d’analyse.</li>
+        <li>Animé les itérations avec cliniciens et data scientists pour transformer le feedback terrain en évolutions concrètes.</li>
+        <li>Rédigé la documentation de passation (architecture, backlog, mode opératoire) pour assurer la continuité du projet.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <p class="job-title">Software Engineer Intern — R&amp;D</p>
+        <span class="job-dates">Mars 2025 – Sept. 2025</span>
+      </div>
+      <p class="job-org">Dassault Systèmes — 3DSwym / 3DEXPERIENCE — Vélizy</p>
+      <ul>
+        <li>Analysé un module Survey legacy et proposé une trajectoire de modernisation avec les Champions produit.</li>
+        <li>Développé le backend Java / Spring Boot (APIs, modèle de données, architecture modulaire) en Agile.</li>
+        <li>Mis en place une démarche TDD (JUnit) et les pratiques Git / CI/CD associées.</li>
+        <li>Livré les fonctionnalités cœur avec ~85&nbsp;% de couverture de tests et +35&nbsp;% de performance backend.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <p class="job-title">Research Intern — Froll’N’Roll</p>
+        <span class="job-dates">Mai 2024 – Août 2024</span>
+      </div>
+      <p class="job-org">Inria — Grenoble</p>
+      <ul>
+        <li>Refondu le contrôle d’un fauteuil à assistance électrique (capteurs TOF, BLE, embarqué C/Python).</li>
+        <li>Testé en conditions réelles avec l’utilisateur final et publié le projet en open source.</li>
+        <li>Amélioré la réactivité du système de ~40&nbsp;% et ajouté l’arrêt automatique sur obstacle.</li>
+      </ul>
+    </div>
+
+    <h2>Formation</h2>
+    <div class="edu-item">
+      <div class="t">Grenoble INP – Ensimag — Diplôme d’ingénieur</div>
+      <div class="s">Systèmes d’information · 2023 – 2025 · Grenoble</div>
+    </div>
+    <div class="edu-item">
+      <div class="t">ENSP Yaoundé — Diplôme d’ingénieur</div>
+      <div class="s">Génie informatique · 2019 – 2023 · Yaoundé</div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
