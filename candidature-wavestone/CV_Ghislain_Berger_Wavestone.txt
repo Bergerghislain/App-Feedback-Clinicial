@@ -1,48 +1,36 @@
 GHISLAIN BERGER THEUBO
-Ingénieur SI — Data, APIs & industrialisation logicielle
-Disponibilité immédiate · CDI · Paris / hybride
-06 82 86 62 79 · bergerghislaintheubo@gmail.com
-linkedin.com/in/berger-ghislain · github.com/Bergerghislain
+Ingénieur Systèmes d’Information
+Disponibilité immédiate · Paris
 
-PROFIL
-Ingénieur Grenoble INP – Ensimag. Expérience sur des environnements grands comptes (industrie logicielle, santé, InsurTech) : moderniser un existant, clarifier un besoin, livrer des APIs / plateformes fiables et mesurer l’impact. À l’aise pour dialoguer avec des profils métier et techniques, documenter des choix, et faire avancer un sujet de bout en bout.
+Coordonnées : 06 82 86 62 79 · bergerghislaintheubo@gmail.com · linkedin.com/in/berger-ghislain
 
-EXPÉRIENCES
+Profil professionnel
+Ingénieur Ensimag avec une première expérience sur des environnements grands comptes (industrie logicielle, santé, InsurTech). Habitué à clarifier un besoin, moderniser un existant, livrer des APIs / plateformes fiables et documenter clairement les choix. Disponibilité immédiate.
 
-Software Engineer — Shift Technology — Paris · CDI
-Sept. 2026 – aujourd’hui
-- Contribué au développement de services plateforme sur un SaaS international dédié à l’assurance.
+Parcours professionnel
+
+Software Engineer — Shift Technology — Paris (CDI) — 09/2026 – Aujourd’hui
+- Développé des services plateforme sur un SaaS international dédié à l’assurance.
 - Participé aux revues techniques et à la documentation des choix d’implémentation.
-- Travaillé en squad Agile avec un focus qualité, fiabilité et rythme de livraison.
+- Collaboré en squad Agile avec un focus qualité, fiabilité et rythme de livraison.
 
-Software Engineer — Gustave Roussy × CentraleSupélec (MICS / Oncostat) · CDD
-Janv. 2026 – Sept. 2026
-- Conçu et livré une application d’évaluation clinique (comparaison en aveugle IA vs RCP) utilisée par des cliniciens.
-- Sécurisé le cycle de données (chiffrement AES, contrôle d’accès, packaging) et automatisé les exports d’analyse.
-- Animé les itérations avec cliniciens et data scientists pour transformer le feedback terrain en évolutions concrètes.
-- Rédigé la documentation de passation (architecture, backlog, mode opératoire) pour assurer la continuité du projet.
+Software Engineer — Gustave Roussy × CentraleSupélec — Île-de-France (CDD) — 01/2026 – 09/2026
+- Conçu et livré une application d’évaluation clinique utilisée par des cliniciens.
+- Sécurisé le cycle de données (chiffrement, accès, packaging) et automatisé les exports d’analyse.
+- Animé les itérations avec cliniciens et data scientists pour prioriser les évolutions.
+- Rédigé la documentation de passation pour assurer la continuité du projet.
 
-Software Engineer Intern — R&D — Dassault Systèmes — 3DSwym / 3DEXPERIENCE — Vélizy
-Mars 2025 – Sept. 2025
-- Analysé un module Survey legacy et proposé une trajectoire de modernisation avec les Champions produit.
-- Développé le backend Java / Spring Boot (APIs, modèle de données, architecture modulaire) en Agile.
-- Mis en place une démarche TDD (JUnit) et les pratiques Git / CI/CD associées.
-- Livré les fonctionnalités cœur avec ~85 % de couverture de tests et +35 % de performance backend.
+Software Engineer Intern — R&D — Dassault Systèmes — Vélizy (Stage) — 03/2025 – 09/2025
+- Analysé un module Survey legacy et défini une trajectoire de modernisation avec les Champions produit.
+- Développé le backend Java / Spring Boot (APIs, modèle de données) en Agile.
+- Mis en place le TDD (JUnit) et les pratiques Git / CI/CD.
+- Livré les fonctionnalités cœur (~85 % de couverture, +35 % de performance).
 
-Research Intern — Froll’N’Roll — Inria — Grenoble
-Mai 2024 – Août 2024
-- Refondu le contrôle d’un fauteuil à assistance électrique (capteurs TOF, BLE, embarqué C/Python).
-- Testé en conditions réelles avec l’utilisateur final et publié le projet en open source.
-- Amélioré la réactivité du système de ~40 % et ajouté l’arrêt automatique sur obstacle.
+Research Intern — Inria — Grenoble (Stage) — 05/2024 – 08/2024
+- Refondu le contrôle d’un fauteuil à assistance électrique (capteurs, embarqué C/Python).
+- Validé la solution avec l’utilisateur final et publié le projet en open source.
+- Amélioré la réactivité du système de ~40 %.
 
-FORMATION
-Grenoble INP – Ensimag — Diplôme d’ingénieur, Systèmes d’information (2023–2025)
-ENSP Yaoundé — Diplôme d’ingénieur, Génie informatique (2019–2023)
-
-COMPÉTENCES
-Produit & delivery : recueil de besoins, MoSCoW, ateliers utilisateurs, documentation, Agile/Scrum
-SI & data : APIs REST, modélisation, PostgreSQL/SQL, sécurité & accès, CI/CD, Git
-Technologies : Java/Spring Boot, Python, JavaScript/React, Node.js, Docker/Kubernetes, Azure/OpenStack
-
-LANGUES
-Français natif · Anglais professionnel (TOEIC 950) · Espagnol notions
+Formation
+Grenoble INP – Ensimag — Diplôme d’ingénieur SI (2023–2025)
+ENSP Yaoundé — Diplôme d’ingénieur Génie informatique (2019–2023)

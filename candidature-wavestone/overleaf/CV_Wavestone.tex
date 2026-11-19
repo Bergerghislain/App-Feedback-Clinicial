@@ -1,7 +1,6 @@
-% Overleaf — CV Wavestone (template clean, style Canva / 1 page)
-% New Project → Blank → coller en main.tex → Recompile → Download PDF
+% Overleaf — CV style template Florent (header navy + sidebar)
 \documentclass[10pt,a4paper]{article}
-\usepackage[left=6.2cm,right=1.3cm,top=1.4cm,bottom=1.3cm]{geometry}
+\usepackage[left=6.6cm,right=1.4cm,top=2.7cm,bottom=1.2cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
@@ -12,121 +11,99 @@
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{titlesec}
-\definecolor{navy}{HTML}{153047}
-\definecolor{accent}{HTML}{2F6F8F}
-\definecolor{muted}{HTML}{5A6875}
-\hypersetup{colorlinks=true,urlcolor=accent}
-\setlist[itemize]{leftmargin=1.05em,itemsep=1.2pt,topsep=1pt,parsep=0pt}
-\titleformat{\section}{\bfseries\color{navy}\large\uppercase}{\thesection}{0em}{}[\vspace{-4pt}{\color{navy}\hrule height 0.6pt}\vspace{4pt}]
-\titlespacing*{\section}{0pt}{9pt}{4pt}
+\definecolor{navy}{HTML}{1E3A5F}
+\definecolor{side}{HTML}{D6E0EA}
+\definecolor{muted}{HTML}{333333}
+\hypersetup{colorlinks=true,urlcolor=navy}
+\setlist[itemize]{leftmargin=1.1em,itemsep=1.5pt,topsep=1.5pt,parsep=0pt}
+\titleformat{\section}{\bfseries\color{navy}\normalsize\uppercase}{\thesection}{0em}{}
+\titlespacing*{\section}{0pt}{10pt}{5pt}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 
 \begin{document}
-
-% Sidebar
 \begin{tikzpicture}[remember picture,overlay]
-  \fill[navy] (current page.north west) rectangle ([xshift=5.5cm]current page.south west);
-  \node[anchor=north west,text=white,inner sep=0pt] at ([xshift=0.55cm,yshift=-1.5cm]current page.north west) {
-    \begin{minipage}[t]{4.3cm}
-      {\color{accent!80!white}\bfseries\scshape Contact}\\[4pt]
-      {\footnotesize
-      Paris, France\\
-      06~82~86~62~79\\
-      bergerghislaintheubo@gmail.com\\
-      linkedin.com/in/berger-ghislain\\
-      github.com/Bergerghislain}\\[10pt]
-
-      {\color{accent!80!white}\bfseries\scshape Compétences}\\[4pt]
-      {\footnotesize\bfseries Produit \& delivery}\\
-      {\footnotesize
-      \begin{itemize}
-        \item Recueil de besoins
-        \item Priorisation (MoSCoW)
-        \item Ateliers utilisateurs
-        \item Documentation claire
-        \item Agile / Scrum
-      \end{itemize}}
-      {\footnotesize\bfseries SI \& data}\\
-      {\footnotesize
-      \begin{itemize}
-        \item APIs REST
-        \item Modélisation données
-        \item PostgreSQL / SQL
-        \item Sécurité \& accès
-        \item CI/CD, Git
-      \end{itemize}}
-      {\footnotesize\bfseries Technologies}\\
+  % header
+  \fill[navy] (current page.north west) rectangle ([yshift=-2.35cm]current page.north east);
+  % sidebar
+  \fill[side] (current page.north west) rectangle ([xshift=5.9cm]current page.south west);
+  % initials box
+  \node[fill=white!85!side,draw=white,line width=2pt,minimum size=2.5cm,font=\bfseries\color{navy}\Large]
+    at ([xshift=2.95cm,yshift=-2.35cm]current page.north west) {GT};
+  % header text
+  \node[anchor=west,text=white] at ([xshift=6.3cm,yshift=-1.15cm]current page.north west) {
+    {\LARGE\bfseries GHISLAIN BERGER THEUBO}\\[2pt]
+    {\small\bfseries INGÉNIEUR SYSTÈMES D'INFORMATION}
+  };
+  % sidebar content
+  \node[anchor=north west,inner sep=0] at ([xshift=0.55cm,yshift=-3.7cm]current page.north west) {
+    \begin{minipage}[t]{4.7cm}
+      {\bfseries\color{navy}\scshape Coordonnées}\\[4pt]
+      {\footnotesize Paris, France\\ 06~82~86~62~79\\ bergerghislaintheubo@gmail.com\\ linkedin.com/in/berger-ghislain}\\[10pt]
+      {\bfseries\color{navy}\scshape Formation}\\[4pt]
+      {\footnotesize\bfseries Diplôme d'ingénieur --- SI}\\
+      {\footnotesize Grenoble INP -- Ensimag\\ 09/2023 -- 09/2025}\\[6pt]
+      {\footnotesize\bfseries Diplôme d'ingénieur --- Génie info.}\\
+      {\footnotesize ENSP Yaoundé\\ 09/2019 -- 07/2023}\\[10pt]
+      {\bfseries\color{navy}\scshape Compétences}\\[3pt]
       {\footnotesize
       \begin{itemize}
-        \item Java / Spring Boot
-        \item Python
-        \item JavaScript / React
-        \item Node.js
-        \item Docker / Kubernetes
-        \item Azure / OpenStack
-      \end{itemize}}\\[6pt]
-
-      {\color{accent!80!white}\bfseries\scshape Langues}\\[3pt]
-      {\footnotesize
-      Français --- natif\\
-      Anglais --- professionnel (TOEIC 950)\\
-      Espagnol --- notions}\\[8pt]
-
-      {\color{accent!80!white}\bfseries\scshape Centres d'intérêt}\\[3pt]
-      {\footnotesize Tutorat $\cdot$ Tennis, football $\cdot$ Innovation produit}
+        \item Recueil de besoins \& ateliers
+        \item APIs REST \& modélisation
+        \item Java / Spring Boot, Python
+        \item JavaScript / React, Node.js
+        \item PostgreSQL, Docker, CI/CD
+        \item Agile / Scrum, documentation
+      \end{itemize}}\\[4pt]
+      {\bfseries\color{navy}\scshape Langues}\\[3pt]
+      {\footnotesize Français --- maternelle\\ Anglais --- courant (TOEIC 950)}\\[8pt]
+      {\bfseries\color{navy}\scshape Centres d'intérêt}\\[3pt]
+      {\footnotesize Tutorat, tennis, football, innovation produit}
     \end{minipage}
   };
 \end{tikzpicture}
 
-{\LARGE\bfseries\color{navy} Ghislain Berger Theubo}\\[2pt]
-{\large\bfseries\color{accent} Ingénieur SI --- Data, APIs \& industrialisation logicielle}\\[2pt]
-{\small\color{muted} Disponibilité immédiate $\cdot$ CDI $\cdot$ Paris / hybride}
+\section*{Profil professionnel}
+Ingénieur Ensimag avec une première expérience sur des environnements grands comptes
+(industrie logicielle, santé, InsurTech). Habitué à clarifier un besoin, moderniser un
+existant, livrer des APIs / plateformes fiables et documenter clairement les choix.
+À l'aise pour travailler avec des interlocuteurs métier et techniques.
+Disponibilité immédiate.
 
-\section*{Profil}
-Ingénieur Grenoble INP -- Ensimag. Expérience sur des environnements grands comptes
-(industrie logicielle, santé, InsurTech)~: moderniser un existant, clarifier un besoin,
-livrer des APIs / plateformes fiables et mesurer l'impact. À l'aise pour dialoguer avec
-des profils métier et techniques, documenter des choix, et faire avancer un sujet de bout en bout.
+\section*{Parcours professionnel}
 
-\section*{Expériences}
-
-\noindent\textbf{Software Engineer} \hfill {\color{muted}\small Sept.\ 2026 -- aujourd'hui}\\
-{\color{accent}\textbf{Shift Technology}} --- Paris $\cdot$ CDI
+\noindent\textbf{Software Engineer} \hfill 09/2026 -- Aujourd'hui\\
+{\small Shift Technology --- Paris (CDI)}
 \begin{itemize}
-  \item Contribué au développement de services plateforme sur un SaaS international dédié à l'assurance.
+  \item Développé des services plateforme sur un SaaS international dédié à l'assurance.
   \item Participé aux revues techniques et à la documentation des choix d'implémentation.
-  \item Travaillé en squad Agile avec un focus qualité, fiabilité et rythme de livraison.
+  \item Collaboré en squad Agile avec un focus qualité, fiabilité et rythme de livraison.
 \end{itemize}
 
-\noindent\textbf{Software Engineer} \hfill {\color{muted}\small Janv.\ 2026 -- Sept.\ 2026}\\
-{\color{accent}\textbf{Gustave Roussy $\times$ CentraleSupélec (MICS / Oncostat)}} --- CDD
+\noindent\textbf{Software Engineer} \hfill 01/2026 -- 09/2026\\
+{\small Gustave Roussy $\times$ CentraleSupélec --- Île-de-France (CDD)}
 \begin{itemize}
-  \item Conçu et livré une application d'évaluation clinique (comparaison en aveugle IA vs RCP) utilisée par des cliniciens.
-  \item Sécurisé le cycle de données (chiffrement AES, contrôle d'accès, packaging) et automatisé les exports d'analyse.
-  \item Animé les itérations avec cliniciens et data scientists pour transformer le feedback terrain en évolutions concrètes.
-  \item Rédigé la documentation de passation (architecture, backlog, mode opératoire) pour assurer la continuité du projet.
+  \item Conçu et livré une application d'évaluation clinique utilisée par des cliniciens.
+  \item Sécurisé le cycle de données (chiffrement, accès, packaging) et automatisé les exports.
+  \item Animé les itérations avec cliniciens et data scientists pour prioriser les évolutions.
+  \item Rédigé la documentation de passation pour assurer la continuité du projet.
 \end{itemize}
 
-\noindent\textbf{Software Engineer Intern --- R\&D} \hfill {\color{muted}\small Mars 2025 -- Sept.\ 2025}\\
-{\color{accent}\textbf{Dassault Systèmes}} --- 3DSwym / 3DEXPERIENCE --- Vélizy
+\noindent\textbf{Software Engineer Intern --- R\&D} \hfill 03/2025 -- 09/2025\\
+{\small Dassault Systèmes --- Vélizy (Stage)}
 \begin{itemize}
-  \item Analysé un module Survey legacy et proposé une trajectoire de modernisation avec les Champions produit.
-  \item Développé le backend Java / Spring Boot (APIs, modèle de données, architecture modulaire) en Agile.
-  \item Mis en place une démarche TDD (JUnit) et les pratiques Git / CI/CD associées.
-  \item Livré les fonctionnalités cœur avec $\sim$85\,\% de couverture de tests et +35\,\% de performance backend.
+  \item Analysé un module Survey legacy et défini une trajectoire de modernisation avec les Champions.
+  \item Développé le backend Java / Spring Boot (APIs, modèle de données) en Agile.
+  \item Mis en place le TDD (JUnit) et les pratiques Git / CI/CD.
+  \item Livré les fonctionnalités cœur ($\sim$85\,\% couverture, +35\,\% performance).
 \end{itemize}
 
-\noindent\textbf{Research Intern --- Froll'N'Roll} \hfill {\color{muted}\small Mai 2024 -- Août 2024}\\
-{\color{accent}\textbf{Inria}} --- Grenoble
+\noindent\textbf{Research Intern} \hfill 05/2024 -- 08/2024\\
+{\small Inria --- Grenoble (Stage)}
 \begin{itemize}
-  \item Refondu le contrôle d'un fauteuil à assistance électrique (capteurs TOF, BLE, embarqué C/Python).
-  \item Testé en conditions réelles avec l'utilisateur final et publié le projet en open source.
-  \item Amélioré la réactivité du système de $\sim$40\,\% et ajouté l'arrêt automatique sur obstacle.
+  \item Refondu le contrôle d'un fauteuil à assistance électrique (capteurs, embarqué C/Python).
+  \item Validé la solution avec l'utilisateur final et publié le projet en open source.
+  \item Amélioré la réactivité du système de $\sim$40\,\%.
 \end{itemize}
-
-\section*{Formation}
-\textbf{Grenoble INP -- Ensimag} --- Diplôme d'ingénieur, Systèmes d'information (2023--2025)\\
-\textbf{ENSP Yaoundé} --- Diplôme d'ingénieur, Génie informatique (2019--2023)
 
 \end{document}
