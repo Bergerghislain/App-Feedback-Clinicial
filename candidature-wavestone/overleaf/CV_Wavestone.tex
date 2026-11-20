@@ -1,0 +1,109 @@
+% Overleaf — CV style template Florent (header navy + sidebar)
+\documentclass[10pt,a4paper]{article}
+\usepackage[left=6.6cm,right=1.4cm,top=2.7cm,bottom=1.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\definecolor{navy}{HTML}{1E3A5F}
+\definecolor{side}{HTML}{D6E0EA}
+\definecolor{muted}{HTML}{333333}
+\hypersetup{colorlinks=true,urlcolor=navy}
+\setlist[itemize]{leftmargin=1.1em,itemsep=1.5pt,topsep=1.5pt,parsep=0pt}
+\titleformat{\section}{\bfseries\color{navy}\normalsize\uppercase}{\thesection}{0em}{}
+\titlespacing*{\section}{0pt}{10pt}{5pt}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\begin{tikzpicture}[remember picture,overlay]
+  % header
+  \fill[navy] (current page.north west) rectangle ([yshift=-2.35cm]current page.north east);
+  % sidebar
+  \fill[side] (current page.north west) rectangle ([xshift=5.9cm]current page.south west);
+  % initials box
+  \node[fill=white!85!side,draw=white,line width=2pt,minimum size=2.5cm,font=\bfseries\color{navy}\Large]
+    at ([xshift=2.95cm,yshift=-2.35cm]current page.north west) {GT};
+  % header text
+  \node[anchor=west,text=white] at ([xshift=6.3cm,yshift=-1.15cm]current page.north west) {
+    {\LARGE\bfseries GHISLAIN BERGER THEUBO}\\[2pt]
+    {\small\bfseries INGÉNIEUR SYSTÈMES D'INFORMATION}
+  };
+  % sidebar content
+  \node[anchor=north west,inner sep=0] at ([xshift=0.55cm,yshift=-3.7cm]current page.north west) {
+    \begin{minipage}[t]{4.7cm}
+      {\bfseries\color{navy}\scshape Coordonnées}\\[4pt]
+      {\footnotesize Paris, France\\ 06~82~86~62~79\\ bergerghislaintheubo@gmail.com\\ linkedin.com/in/berger-ghislain}\\[10pt]
+      {\bfseries\color{navy}\scshape Formation}\\[4pt]
+      {\footnotesize\bfseries Diplôme d'ingénieur --- SI}\\
+      {\footnotesize Grenoble INP -- Ensimag\\ 09/2023 -- 09/2025}\\[6pt]
+      {\footnotesize\bfseries Diplôme d'ingénieur --- Génie info.}\\
+      {\footnotesize ENSP Yaoundé\\ 09/2019 -- 07/2023}\\[10pt]
+      {\bfseries\color{navy}\scshape Compétences}\\[3pt]
+      {\footnotesize
+      \begin{itemize}
+        \item Recueil de besoins \& ateliers
+        \item APIs REST \& modélisation
+        \item Java / Spring Boot, Python
+        \item JavaScript / React, Node.js
+        \item PostgreSQL, Docker, CI/CD
+        \item Agile / Scrum, documentation
+      \end{itemize}}\\[4pt]
+      {\bfseries\color{navy}\scshape Langues}\\[3pt]
+      {\footnotesize Français --- maternelle\\ Anglais --- courant (TOEIC 950)}\\[8pt]
+      {\bfseries\color{navy}\scshape Centres d'intérêt}\\[3pt]
+      {\footnotesize Tutorat, tennis, football, innovation produit}
+    \end{minipage}
+  };
+\end{tikzpicture}
+
+\section*{Profil professionnel}
+Ingénieur Ensimag avec une première expérience sur des environnements grands comptes
+(industrie logicielle, santé, InsurTech). Habitué à clarifier un besoin, moderniser un
+existant, livrer des APIs / plateformes fiables et documenter clairement les choix.
+À l'aise pour travailler avec des interlocuteurs métier et techniques.
+Disponibilité immédiate.
+
+\section*{Parcours professionnel}
+
+\noindent\textbf{Software Engineer} \hfill 09/2026 -- Aujourd'hui\\
+{\small Shift Technology --- Paris (CDI)}
+\begin{itemize}
+  \item Développé des services plateforme sur un SaaS international dédié à l'assurance.
+  \item Participé aux revues techniques et à la documentation des choix d'implémentation.
+  \item Collaboré en squad Agile avec un focus qualité, fiabilité et rythme de livraison.
+\end{itemize}
+
+\noindent\textbf{Software Engineer} \hfill 01/2026 -- 09/2026\\
+{\small Gustave Roussy $\times$ CentraleSupélec --- Île-de-France (CDD)}
+\begin{itemize}
+  \item Conçu et livré une application d'évaluation clinique utilisée par des cliniciens.
+  \item Sécurisé le cycle de données (chiffrement, accès, packaging) et automatisé les exports.
+  \item Animé les itérations avec cliniciens et data scientists pour prioriser les évolutions.
+  \item Rédigé la documentation de passation pour assurer la continuité du projet.
+\end{itemize}
+
+\noindent\textbf{Software Engineer Intern --- R\&D} \hfill 03/2025 -- 09/2025\\
+{\small Dassault Systèmes --- Vélizy (Stage)}
+\begin{itemize}
+  \item Analysé un module Survey legacy et défini une trajectoire de modernisation avec les Champions.
+  \item Développé le backend Java / Spring Boot (APIs, modèle de données) en Agile.
+  \item Mis en place le TDD (JUnit) et les pratiques Git / CI/CD.
+  \item Livré les fonctionnalités cœur ($\sim$85\,\% couverture, +35\,\% performance).
+\end{itemize}
+
+\noindent\textbf{Research Intern} \hfill 05/2024 -- 08/2024\\
+{\small Inria --- Grenoble (Stage)}
+\begin{itemize}
+  \item Refondu le contrôle d'un fauteuil à assistance électrique (capteurs, embarqué C/Python).
+  \item Validé la solution avec l'utilisateur final et publié le projet en open source.
+  \item Amélioré la réactivité du système de $\sim$40\,\%.
+\end{itemize}
+
+\end{document}

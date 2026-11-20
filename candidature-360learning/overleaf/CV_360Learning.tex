@@ -1,0 +1,182 @@
+% =============================================================================
+% Overleaf — CV 360Learning Software Engineer
+% Structure calquée sur le CV Android qui avait donné des entretiens
+% New Project → Blank → coller ce fichier en main.tex → Recompile → Download PDF
+% =============================================================================
+\documentclass[letterpaper,11pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.65in}
+\addtolength{\textheight}{1.25in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+% ----- HEADER (même logique que le CV Android: rôle = offre) -----
+\begin{center}
+    {\Huge \scshape Ghislain THEUBO} \\ \vspace{2pt}
+    \small +33 6 82 86 62 79 --- \href{mailto:bergerghislaintheubo@gmail.com}{bergerghislaintheubo@gmail.com} ---
+    \href{https://www.linkedin.com/in/berger-ghislain}{LinkedIn} ---
+    \href{https://github.com/Bergerghislain}{GitHub} \\
+    Paris, France --- Software Engineer (Node.js, Vue.js, TypeScript) --- Full remote France OK
+\end{center}
+
+\section{Summary}
+\small{
+Passionate about full‑stack product engineering with a strong foundation in modern JavaScript
+(Node.js, Express, React) and clean architecture. Eager to deepen Vue.js, TypeScript and MongoDB
+to ship high‑quality learning experiences. Backend experience in Java/Spring Boot gives me a
+holistic view of SaaS systems, with a strong emphasis on code quality, algorithms, and collaboration.
+I thrive in fast‑paced squads with peer reviews and pair programming, and I care deeply about
+customer experience.
+}
+
+\section{Technical Skills}
+\small{
+\textbf{JavaScript stack:} Node.js, Express, React, TypeScript (growing), JavaScript (ES6+) \\
+\textbf{Interested in / leveling up:} Vue.js, MongoDB, WebSockets \\
+\textbf{APIs \& data:} REST APIs, PostgreSQL, SQL optimisation, JWT \\
+\textbf{Also:} Java, Spring Boot, Python, Docker, Git, CI/CD \\
+\textbf{Quality:} TDD mindset, unit testing (JUnit / Jest basics), peer reviews, Agile / Scrum \\
+\textbf{Algorithms \& Data Structures:} Strong problem‑solving (LeetCode, HackerRank)
+}
+
+\section{Full‑stack Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{Messaging Web App} --- Node.js, Express, PostgreSQL, REST, Swagger, Helmet}{2024}
+    \resumeItemListStart
+      \resumeItem{Built a full‑stack messaging product with auth, group chat and a documented REST API.}
+      \resumeItem{Used Sequelize + PostgreSQL, security headers (Helmet), and iterative Agile delivery.}
+      \resumeItem{Owned the stack end‑to‑end: data model, API contracts, and frontend integration.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Mutual Insurance App} --- React Native, Django, REST APIs}{2024}
+    \resumeItemListStart
+      \resumeItem{Developed member/admin flows (registration, contributions, aid requests) with a clear UX focus.}
+      \resumeItem{Connected mobile UI to backend APIs --- product mindset and attention to user journeys.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Open Food Facts Explorer} --- JavaScript, interactive data visualisation}{2024}
+    \resumeItemListStart
+      \resumeItem{Built an interactive Sankey visualisation to explore product flows --- focus on clear, useful interfaces.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Professional Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Software Engineer --- SaaS product squad}{Sept 2026 -- Present}
+    {Shift Technology}{Paris, France}
+    \resumeItemListStart
+      \resumeItem{Ship features in an international SaaS environment with strong expectations on reliability and delivery pace.}
+      \resumeItem{Work in Agile squads with code reviews, ticket ownership, and continuous collaboration with peers.}
+      \resumeItem{Document technical choices and stay comfortable in remote/hybrid ways of working.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Software Engineer --- ARCANE clinical product}{Jan 2026 -- Sept 2026}
+    {Gustave Roussy $\times$ CentraleSup\'elec (MICS / Oncostat)}{Paris area, France}
+    \resumeItemListStart
+      \resumeItem{Designed and shipped an end‑to‑end product used by clinicians (blind evaluation workflows + structured feedback).}
+      \resumeItem{Collaborated closely with product stakeholders and researchers; iterated quickly from user feedback.}
+      \resumeItem{Owned packaging, data security, exports for analysis, automated checks, and thorough documentation.}
+      \resumeItem{Applied Agile habits and high reliability standards in a sensitive healthcare context.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Software Engineer Intern --- R\&D (3DSwym / 3DEXPERIENCE)}{Mar 2025 -- Sept 2025}
+    {Dassault Syst\`emes}{V\'elizy-Villacoublay, France}
+    \resumeItemListStart
+      \resumeItem{Contributed to a large‑scale collaborative platform; modernised a legacy Survey module in Java/Spring Boot.}
+      \resumeItem{Adopted TDD (\textbf{$\sim$85\% coverage}), peer reviews and design discussions; improved backend performance by \textbf{$\sim$35\%}.}
+      \resumeItem{Worked with product Champions (MoSCoW) to turn business needs into shippable increments.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Software Engineer Intern}{Jun 2023 -- Sept 2023}
+    {CAMTEL}{Yaound\'e, Cameroon}
+    \resumeItemListStart
+      \resumeItem{Designed and deployed a microservices web application (Python/Django) with Docker and Kubernetes.}
+      \resumeItem{Improved operational efficiency through automation and clearer asset‑tracking workflows.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Grenoble INP -- Ensimag}{Sept 2023 -- Sept 2025}
+    {M.Sc. / Engineering Degree --- Information Systems \& Software Engineering}{Grenoble, France}
+    \resumeItemListStart
+      \resumeItem{Courses: Software Architecture, Distributed Systems, Algorithms \& Complexity, Web technologies.}
+    \resumeItemListEnd
+  \resumeSubheading
+    {\'Ecole Nationale Sup\'erieure Polytechnique de Yaound\'e}{2019 -- 2023}
+    {Engineering Degree --- Computer Engineering}{Yaound\'e, Cameroon}
+\resumeSubHeadingListEnd
+
+\section{Algorithms \& Competitive Programming}
+\small{
+Practising algorithmic problems on LeetCode and HackerRank; comfortable with core data structures
+(trees, graphs, DP) and complexity analysis --- ready for take‑home coding screens.
+Participated in internal coding challenges during engineering school / internships.
+}
+
+\section{Languages \& Soft Skills}
+\small{
+\textbf{French:} Native --- \textbf{English:} Fluent (TOEIC 950/990) --- \textbf{Spanish:} Intermediate \\
+Strong communicator, collaborative, and passionate about sharing knowledge --- I actively mentor students in programming. \\
+Driven by impact: excited to build tools that help people learn and grow, aligning with 360Learning's Collaborative Learning mission.
+}
+
+\end{document}

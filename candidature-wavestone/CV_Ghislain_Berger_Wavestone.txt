@@ -1,0 +1,36 @@
+GHISLAIN BERGER THEUBO
+Ingénieur Systèmes d’Information
+Disponibilité immédiate · Paris
+
+Coordonnées : 06 82 86 62 79 · bergerghislaintheubo@gmail.com · linkedin.com/in/berger-ghislain
+
+Profil professionnel
+Ingénieur Ensimag avec une première expérience sur des environnements grands comptes (industrie logicielle, santé, InsurTech). Habitué à clarifier un besoin, moderniser un existant, livrer des APIs / plateformes fiables et documenter clairement les choix. Disponibilité immédiate.
+
+Parcours professionnel
+
+Software Engineer — Shift Technology — Paris (CDI) — 09/2026 – Aujourd’hui
+- Développé des services plateforme sur un SaaS international dédié à l’assurance.
+- Participé aux revues techniques et à la documentation des choix d’implémentation.
+- Collaboré en squad Agile avec un focus qualité, fiabilité et rythme de livraison.
+
+Software Engineer — Gustave Roussy × CentraleSupélec — Île-de-France (CDD) — 01/2026 – 09/2026
+- Conçu et livré une application d’évaluation clinique utilisée par des cliniciens.
+- Sécurisé le cycle de données (chiffrement, accès, packaging) et automatisé les exports d’analyse.
+- Animé les itérations avec cliniciens et data scientists pour prioriser les évolutions.
+- Rédigé la documentation de passation pour assurer la continuité du projet.
+
+Software Engineer Intern — R&D — Dassault Systèmes — Vélizy (Stage) — 03/2025 – 09/2025
+- Analysé un module Survey legacy et défini une trajectoire de modernisation avec les Champions produit.
+- Développé le backend Java / Spring Boot (APIs, modèle de données) en Agile.
+- Mis en place le TDD (JUnit) et les pratiques Git / CI/CD.
+- Livré les fonctionnalités cœur (~85 % de couverture, +35 % de performance).
+
+Research Intern — Inria — Grenoble (Stage) — 05/2024 – 08/2024
+- Refondu le contrôle d’un fauteuil à assistance électrique (capteurs, embarqué C/Python).
+- Validé la solution avec l’utilisateur final et publié le projet en open source.
+- Amélioré la réactivité du système de ~40 %.
+
+Formation
+Grenoble INP – Ensimag — Diplôme d’ingénieur SI (2023–2025)
+ENSP Yaoundé — Diplôme d’ingénieur Génie informatique (2019–2023)

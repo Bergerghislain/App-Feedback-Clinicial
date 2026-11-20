@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>CV — Ghislain Berger Theubo — Développeur Fullstack Junior TMA</title>
+<style>
+  @page { size: A4; margin: 11mm 12mm; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.32;
+    color: #1a1a1a;
+    background: #fff;
+  }
+  .page { max-width: 210mm; margin: 0 auto; }
+  header {
+    border-bottom: 2.2px solid #0a4d3c;
+    padding-bottom: 7px;
+    margin-bottom: 8px;
+  }
+  h1 { margin: 0; font-size: 18pt; font-weight: 700; color: #0a4d3c; }
+  .target { margin: 2px 0 5px; font-size: 11pt; font-weight: 600; color: #1a7a5c; }
+  .contact { margin: 0; font-size: 8.7pt; color: #333; }
+  .contact a { color: #0a4d3c; text-decoration: none; }
+  .pitch { margin: 6px 0 0; font-size: 9.2pt; color: #222; }
+  h2 {
+    margin: 10px 0 4px; padding: 2px 0;
+    font-size: 10pt; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.7px;
+    color: #0a4d3c; border-bottom: 1px solid #b8d4c8;
+  }
+  .job { margin: 0 0 8px; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .job-title { font-weight: 700; font-size: 9.7pt; }
+  .job-title .org { font-weight: 600; color: #1a7a5c; }
+  .dates { white-space: nowrap; font-size: 8.5pt; color: #444; font-weight: 500; }
+  .meta { margin: 1px 0 2px; font-size: 8.4pt; color: #555; font-style: italic; }
+  ul { margin: 2px 0 0; padding-left: 15px; }
+  li { margin: 2px 0; }
+  .skills-grid {
+    display: grid; grid-template-columns: 82px 1fr; gap: 2px 8px; font-size: 9pt;
+  }
+  .skills-grid .label { font-weight: 700; color: #0a4d3c; }
+  .two-col { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 0 16px; }
+  .edu-item { margin-bottom: 4px; }
+  .edu-item strong { display: block; }
+  .edu-item .sub { color: #444; font-size: 8.5pt; }
+  .small { font-size: 8.6pt; color: #333; }
+  .kw { font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>Ghislain Berger Theubo</h1>
+    <p class="target">Développeur Fullstack Junior — TMA · Node.js · React · TypeScript</p>
+    <p class="contact">
+      Mobilité <strong>Bordeaux</strong> ·
+      <a href="tel:+33682866279">06&nbsp;82&nbsp;86&nbsp;62&nbsp;79</a> ·
+      <a href="mailto:bergerghislaintheubo@gmail.com">bergerghislaintheubo@gmail.com</a> ·
+      <a href="https://linkedin.com/in/berger-ghislain">linkedin.com/in/berger-ghislain</a> ·
+      <a href="https://github.com/Bergerghislain">github.com/Bergerghislain</a>
+    </p>
+    <p class="pitch">
+      Ingénieur <span class="kw">Grenoble INP – Ensimag</span>, fullstack et orienté service.
+      Expérience de <span class="kw">reprise de code legacy</span>, diagnostic d’incidents, correctifs et évolutions
+      livrés avec tests, revues et CI/CD. Motivé à rejoindre
+      <span class="kw">Ixxi Techside – RATP Smart Systems</span> pour le MCO et l’évolution des applications métier.
+    </p>
+  </header>
+
+  <h2>Compétences</h2>
+  <div class="skills-grid">
+    <div class="label">Backend</div>
+    <div>Node.js · Express · APIs REST · Python (Django, PyQt) · Java/Spring Boot · intégrations systèmes tiers</div>
+    <div class="label">Frontend</div>
+    <div>JavaScript / TypeScript · React · React Native · HTML/CSS · UX pragmatique</div>
+    <div class="label">Data</div>
+    <div>PostgreSQL · SQL · MongoDB <em>(appétit)</em> · modélisation · exports / reporting</div>
+    <div class="label">Qualité</div>
+    <div>Tests · TDD · revues de code · Git · CI/CD · documentation · Docker · Kubernetes</div>
+    <div class="label">Méthodes</div>
+    <div>Kanban / Agile / Scrum · Jira · MoSCoW · TMA (corrective + évolutive) · sens du service</div>
+    <div class="label">Langues</div>
+    <div>Français C2 · Anglais professionnel (TOEIC 950/990)</div>
+  </div>
+
+  <h2>Expériences professionnelles</h2>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">Software Engineer — <span class="org">Shift Technology</span> · CDI</div>
+      <div class="dates">Sept. 2026 – présent</div>
+    </div>
+    <div class="meta">Paris · Hybride · SaaS produit · squad Engineering</div>
+    <ul>
+      <li>Développement et consolidation de fonctionnalités dans un contexte produit exigeant (qualité, disponibilité).</li>
+      <li>Travail en équipe Agile : tickets, revues, communication proactive en cas de blocage.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">Software Engineer — <span class="org">Gustave Roussy × CentraleSupélec</span> · CDD</div>
+      <div class="dates">Janv. 2026 – Sept. 2026</div>
+    </div>
+    <div class="meta">Hybride · labo MICS × Oncostat/CESP · application métier Arcane (évaluation clinique) · MCO + évolutions</div>
+    <ul>
+      <li><strong>Contexte TMA-like :</strong> outil critique pour des utilisateurs cliniciens ; enjeux de fiabilité, clarté UX et collecte de résultats exploitables.</li>
+      <li><strong>Correctif &amp; évolutif :</strong> ownership d’une app Python/PyQt6 (parcours 2 étapes, verrouillage des notes, reprise de brouillon, exports CSV) ; corrections UX/métier et évolutions selon le feedback terrain.</li>
+      <li><strong>Fiabilité &amp; sécu :</strong> coffre <code>data.zip</code> AES, clé app, nettoyage des extractions temporaires ; outillage admin (pack/unpack/recover-key) pour la continuité d’exploitation.</li>
+      <li><strong>Qualité de service :</strong> packaging exécutable clinicien, documentation (deep-dive, backlog, passation), collaboration transverse data scientists / cliniciens pour valider les corrections.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">Software Engineer Intern (R&amp;D) — <span class="org">Dassault Systèmes</span> · Stage</div>
+      <div class="dates">Mars 2025 – Sept. 2025</div>
+    </div>
+    <div class="meta">Vélizy · Hybride · 3DSwym / 3DEXPERIENCE · reprise complète du module Survey legacy</div>
+    <ul>
+      <li><strong>Mission :</strong> module Survey obsolète → analyser le code existant, concevoir et livrer un remplacement moderne, scalable, centré utilisateurs.</li>
+      <li><strong>Appropriation legacy :</strong> diagnostic de l’existant, benchmark, ateliers avec les « Champions », priorisation MoSCoW en Agile.</li>
+      <li><strong>Développement :</strong> backend Java 17+ / Spring Boot (MVC, Data JPA, Hibernate), nouveau modèle de données, architecture modulaire (design patterns), collaboration fullstack.</li>
+      <li><strong>Qualité TMA :</strong> TDD/JUnit, revues implicites via CI/CD et Git, codebase maintenable pour la suite de vie du produit.</li>
+      <li><strong>Résultats :</strong> features cœur livrées ; <strong>~85&nbsp;% de couverture</strong> ; <strong>+35&nbsp;% de performance</strong> backend ; expérience complète du cycle correctif/évolutif en R&amp;D.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">Software Engineer Internship — <span class="org">CAMTEL</span> · Stage</div>
+      <div class="dates">Juin 2023 – Sept. 2023</div>
+    </div>
+    <div class="meta">Yaoundé · Sur site · équipe de 4 · application de gestion de parc IT du Centre régional</div>
+    <ul>
+      <li><strong>Problème métier :</strong> visibilité insuffisante des équipements, maintenance peu efficace, coûts élevés — besoin d’un outil de suivi et de planification.</li>
+      <li><strong>Solution :</strong> application data-driven en microservices (Python/Django), API REST, monitoring temps réel, analytics prédictives pour une maintenance proactive.</li>
+      <li><strong>Exploitation :</strong> Docker + Kubernetes pour déployer et opérer le service de façon reproductible.</li>
+      <li><strong>Impact :</strong> décisions data-driven, <strong>−20&nbsp;% de coûts de maintenance</strong>, socle scalable pour la croissance du centre — expérience directe de valeur TMA / MCO.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">Stages R&amp;D — <span class="org">LIG (OpenStack)</span> · <span class="org">Inria (Froll’N’Roll)</span></div>
+      <div class="dates">2024 – 2025</div>
+    </div>
+    <ul>
+      <li><strong>LIG :</strong> scripts de migration VM OpenStack/Grid’5000 ; mesure perf vs disponibilité (cloud distribué).</li>
+      <li><strong>Inria :</strong> C/Python/FreeRTOS, capteurs TOF + BLE ; <strong>+40&nbsp;% de réactivité</strong> ; open source ; validation utilisateur réel (Agile).</li>
+    </ul>
+  </div>
+
+  <h2>Projets fullstack (stack Ixxi)</h2>
+  <ul>
+    <li><strong>Messagerie web</strong> — Node.js/Express, <strong>PostgreSQL</strong>, Sequelize, auth, API REST Swagger, Helmet (Agile).</li>
+    <li><strong>App mutuelle</strong> — React Native + Django : cotisations, aides, prêts (parcours utilisateurs + logique métier).</li>
+    <li><strong>Open Food Facts</strong> — visualisation JS interactive (Sankey) sur données ouvertes.</li>
+  </ul>
+
+  <div class="two-col">
+    <div>
+      <h2>Formation</h2>
+      <div class="edu-item">
+        <strong>Grenoble INP – Ensimag</strong>
+        <div class="sub">Ingénieur — Systèmes d’information · 2023–2025</div>
+      </div>
+      <div class="edu-item">
+        <strong>ENSP Yaoundé</strong>
+        <div class="sub">Ingénieur — Génie informatique · 2019–2023</div>
+      </div>
+    </div>
+    <div>
+      <h2>Atouts TMA</h2>
+      <ul class="small">
+        <li>Legacy, diagnostic d’incidents, correctifs &amp; évolutions</li>
+        <li>Rigueur, esprit d’équipe, bonne humeur</li>
+        <li>CDI · démarrage rapide · Bordeaux</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

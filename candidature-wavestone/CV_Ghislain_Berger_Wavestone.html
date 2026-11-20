@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>CV — Ghislain Berger Theubo</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1a1a1a;
+    background: #fff;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    position: relative;
+    background: #fff;
+  }
+
+  /* Header navy like template */
+  .header {
+    background: #1e3a5f;
+    color: #fff;
+    padding: 16px 24px 14px 190px;
+    min-height: 78px;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+  .header .subtitle {
+    margin-top: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.95;
+  }
+
+  /* Layout */
+  .body {
+    display: grid;
+    grid-template-columns: 72mm 1fr;
+    min-height: calc(297mm - 92px);
+  }
+  .sidebar {
+    background: #d6e0ea;
+    padding: 22px 16px 18px 18px;
+  }
+  .content {
+    padding: 18px 22px 16px 20px;
+    background: #fff;
+  }
+
+  /* Photo placeholder (optional, no photo = initials badge like clean gap) */
+  .photo-wrap {
+    position: absolute;
+    top: 28px;
+    left: 26px;
+    width: 100px;
+    height: 100px;
+    background: #c5d0dc;
+    border: 4px solid #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  .photo-wrap span {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e3a5f;
+    letter-spacing: 1px;
+  }
+
+  .side-section { margin-bottom: 14px; }
+  .side-section h2 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: #1e3a5f;
+    margin-bottom: 7px;
+  }
+  .side-item {
+    display: flex;
+    gap: 7px;
+    align-items: flex-start;
+    margin-bottom: 6px;
+    font-size: 10px;
+    line-height: 1.3;
+    color: #222;
+  }
+  .icon {
+    width: 14px;
+    min-width: 14px;
+    height: 14px;
+    margin-top: 2px;
+    color: #1e3a5f;
+  }
+  .side-section ul {
+    list-style: disc;
+    padding-left: 15px;
+    font-size: 10px;
+    line-height: 1.35;
+  }
+  .side-section li { margin-bottom: 3px; }
+  .edu-title { font-size: 10px; font-weight: 700; color: #1a1a1a; }
+  .edu-meta { font-size: 9.5px; color: #333; margin-top: 1px; line-height: 1.3; }
+
+  .lang { margin-bottom: 10px; }
+  .lang .row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    margin-bottom: 3px;
+  }
+  .bar {
+    height: 7px;
+    background: #b7c4d1;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .bar > span {
+    display: block;
+    height: 100%;
+    background: #1e3a5f;
+  }
+
+  .content h2 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: #1e3a5f;
+    margin: 0 0 7px;
+  }
+  .profil {
+    font-size: 10.5px;
+    line-height: 1.35;
+    color: #222;
+    margin-bottom: 14px;
+    text-align: justify;
+  }
+
+  .job { margin-bottom: 11px; }
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 2px;
+  }
+  .job-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+  .job-dates {
+    font-size: 10px;
+    color: #333;
+    white-space: nowrap;
+  }
+  .job-meta {
+    font-size: 10px;
+    color: #333;
+    margin-bottom: 4px;
+  }
+  .job ul {
+    list-style: disc;
+    padding-left: 16px;
+    font-size: 10px;
+    line-height: 1.32;
+    color: #222;
+  }
+  .job li { margin-bottom: 2px; }
+
+  /* push sidebar content below photo */
+  .sidebar { padding-top: 62px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="photo-wrap" aria-hidden="true"><span>GT</span></div>
+
+  <header class="header">
+    <h1>Ghislain Berger Theubo</h1>
+    <div class="subtitle">Ingénieur Systèmes d’Information</div>
+  </header>
+
+  <div class="body">
+    <aside class="sidebar">
+      <div class="side-section">
+        <h2>Coordonnées</h2>
+        <div class="side-item">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+          <div>Paris, France</div>
+        </div>
+        <div class="side-item">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
+          <div>06 82 86 62 79</div>
+        </div>
+        <div class="side-item">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 17.5v-11zm2.2-.3 7.3 5.3a.8.8 0 0 0 .9 0l7.4-5.3H4.2zm15.6 2.2-6.8 4.9a2.3 2.3 0 0 1-2.7 0L3.5 8.4V17c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5V8.4z"/></svg>
+          <div>bergerghislaintheubo@gmail.com</div>
+        </div>
+        <div class="side-item">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M6.9 6.9a5 5 0 0 1 7.1 0l.7.7 1.4-1.4-.7-.7a7 7 0 1 0 0 9.9l.7-.7-1.4-1.4-.7.7a5 5 0 0 1-7.1-7.1zm10.2 1.4-1.4 1.4.7.7a5 5 0 0 1-7.1 7.1l-.7-.7-1.4 1.4.7.7a7 7 0 1 0 0-9.9l-.7.7 1.4 1.4.7-.7a5 5 0 0 1 7.1 0l.7.7zM8.5 13.5h7v-2h-7v2z"/></svg>
+          <div>linkedin.com/in/berger-ghislain</div>
+        </div>
+      </div>
+
+      <div class="side-section">
+        <h2>Formation</h2>
+        <div class="edu-title">Diplôme d’ingénieur — Systèmes d’information</div>
+        <div class="edu-meta">Grenoble INP – Ensimag<br>09/2023 – 09/2025</div>
+        <div style="height:10px"></div>
+        <div class="edu-title">Diplôme d’ingénieur — Génie informatique</div>
+        <div class="edu-meta">ENSP Yaoundé<br>09/2019 – 07/2023</div>
+      </div>
+
+      <div class="side-section">
+        <h2>Compétences</h2>
+        <ul>
+          <li>Recueil de besoins &amp; ateliers utilisateurs</li>
+          <li>APIs REST &amp; modélisation de données</li>
+          <li>Java / Spring Boot, Python</li>
+          <li>JavaScript / React, Node.js</li>
+          <li>PostgreSQL, Docker, CI/CD</li>
+          <li>Agile / Scrum, documentation</li>
+        </ul>
+      </div>
+
+      <div class="side-section">
+        <h2>Langues</h2>
+        <div class="lang">
+          <div class="row"><strong>Français</strong><span>Langue maternelle</span></div>
+          <div class="bar"><span style="width:100%"></span></div>
+        </div>
+        <div class="lang">
+          <div class="row"><strong>Anglais</strong><span>Courant (TOEIC 950)</span></div>
+          <div class="bar"><span style="width:85%"></span></div>
+        </div>
+      </div>
+
+      <div class="side-section">
+        <h2>Centres d’intérêt</h2>
+        <div class="edu-meta">Tutorat, tennis, football, innovation produit</div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <h2>Profil professionnel</h2>
+      <p class="profil">
+        Ingénieur Ensimag avec une première expérience sur des environnements grands comptes
+        (industrie logicielle, santé, InsurTech). Habitué à clarifier un besoin, moderniser un
+        existant, livrer des APIs / plateformes fiables et documenter clairement les choix.
+        À l’aise pour travailler avec des interlocuteurs métier et techniques, en autonomie comme en équipe.
+        Disponibilité immédiate.
+      </p>
+
+      <h2>Parcours professionnel</h2>
+
+      <div class="job">
+        <div class="job-head">
+          <div class="job-title">Software Engineer</div>
+          <div class="job-dates">09/2026 – Aujourd’hui</div>
+        </div>
+        <div class="job-meta">Shift Technology — Paris (CDI)</div>
+        <ul>
+          <li>Développé des services plateforme sur un SaaS international dédié à l’assurance.</li>
+          <li>Participé aux revues techniques et à la documentation des choix d’implémentation.</li>
+          <li>Collaboré en squad Agile avec un focus qualité, fiabilité et rythme de livraison.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div class="job-title">Software Engineer</div>
+          <div class="job-dates">01/2026 – 09/2026</div>
+        </div>
+        <div class="job-meta">Gustave Roussy × CentraleSupélec — Île-de-France (CDD)</div>
+        <ul>
+          <li>Conçu et livré une application d’évaluation clinique utilisée par des cliniciens.</li>
+        <li>Sécurisé les données (chiffrement, accès, packaging) et automatisé les exports d’analyse.</li>
+        <li>Animé les itérations cliniciens / data scientists et rédigé la documentation de passation.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div class="job-title">Software Engineer Intern — R&amp;D</div>
+          <div class="job-dates">03/2025 – 09/2025</div>
+        </div>
+        <div class="job-meta">Dassault Systèmes — Vélizy (Stage)</div>
+        <ul>
+        <li>Analysé un module Survey legacy et défini la modernisation avec les Champions produit.</li>
+        <li>Développé le backend Java / Spring Boot (APIs, modèle de données) en Agile.</li>
+        <li>Mis en place le TDD / CI/CD et livré les features cœur (~85&nbsp;% couverture, +35&nbsp;% perf.).</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div class="job-title">Research Intern</div>
+          <div class="job-dates">05/2024 – 08/2024</div>
+        </div>
+        <div class="job-meta">Inria — Grenoble (Stage)</div>
+        <ul>
+          <li>Refondu le contrôle d’un fauteuil à assistance électrique (capteurs, embarqué C/Python).</li>
+          <li>Validé la solution avec l’utilisateur final et publié le projet en open source.</li>
+          <li>Amélioré la réactivité du système de ~40&nbsp;%.</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>
