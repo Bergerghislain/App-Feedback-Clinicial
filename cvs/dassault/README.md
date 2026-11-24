@@ -8,6 +8,7 @@ Expériences conservées (pas d’employeur inventé) ; bullet points et projets
 | `cv_java_web_rust_sysml.tex` | Ingénieur Dev Java / Web / Rust (CATIA) | 550043 | Vélizy | Java, LSP, indexing, parsing, Rust notions |
 | `cv_rd_interoperabilite_cpp.tex` | Ingénieur R&D Interopérabilité (ENOVIA) | 550893 | Aix-en-Provence | C++, conversion de données, algo, JS |
 | `cv_ingenieur_ia_langchain.tex` | Ingénieur IA (ENOVIA) | 550014 | Vélizy | Java, Python, ML, LangChain/LangGraph, REST |
+| `cv_cpp_3d_ia_550662.tex` | Ingénieur Dev Logiciel C++ — Applications 3D & IA | 550662 | Vélizy | C++, géométrie/maillages, KD-Tree, temps réel, Python/IA |
 
 ## Projets perso à matérialiser avant entretien
 
@@ -25,4 +26,5 @@ Sans repo GitHub + démo locale, les projets perso ne tiendront pas en entretien
 pdflatex cv_java_web_rust_sysml.tex
 pdflatex cv_rd_interoperabilite_cpp.tex
 pdflatex cv_ingenieur_ia_langchain.tex
+pdflatex cv_cpp_3d_ia_550662.tex
 ```
